@@ -1,10 +1,8 @@
-import image from '../../assets/placeholder.svg';
 import {
     GridRow,
     GridColumn,
-    GridImg,
   } from './ProjectsGridStyles';
-
+import GridItem from './GridItem'
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
@@ -19,16 +17,16 @@ const ProjectGrid = () => {
       <GlobalStyle />
         <GridRow>
           <GridColumn>
-            <GridImg src="https://picsum.photos/200" alt="place holder"  style={{width: '100%'}}/>
-            <GridImg src="https://picsum.photos/200" alt="place holder"  style={{width: '100%'}}/>
+            <GridItem />
+            <GridItem />
           </GridColumn>
           <GridColumn>
-            <GridImg src="https://picsum.photos/200" alt="place holder"  style={{width: '100%'}}/>
-            <GridImg src="https://picsum.photos/200" alt="place holder"  style={{width: '100%'}}/>
+            <GridItem />
+            <GridItem />
           </GridColumn>
           <GridColumn>
-            <GridImg src="https://picsum.photos/200" alt="place holder"  style={{width: '100%'}}/>
-            <GridImg src="https://picsum.photos/200" alt="place holder"  style={{width: '100%'}}/>
+            <GridItem />
+            <GridItem />
           </GridColumn>
         </GridRow>   
       </>

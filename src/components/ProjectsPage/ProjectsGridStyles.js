@@ -7,6 +7,7 @@ export const GridRow = styled.div`
     -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
     padding: 0 4px;
+    position: relative;
 `;
   
 export const GridColumn = styled.div`
@@ -14,7 +15,6 @@ export const GridColumn = styled.div`
     flex: 33.33%%;
     max-width: 33.33%;
     padding: 0 4px;
-
     /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
     @media screen and (max-width: 600px) {
         -ms-flex: 100%;
@@ -23,10 +23,29 @@ export const GridColumn = styled.div`
   }  
 `;
 
-export const GridImg = styled.img`
+export const Overlay = styled.div`
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color: #008CBA;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+`;
+
+export const Item = styled.img`
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
+    opacity: 0.5;
+    &:hover {
+        opacity: 0;
+        ${Overlay} {
+            width: 100%;
+            left: 0;
+        }
+    }
 `;
 
 
