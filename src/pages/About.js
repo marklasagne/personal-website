@@ -1,15 +1,10 @@
+import AboutPage from '../components/AboutPage/MainSection';
+
 const About = () => {
     return (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'Right',
-          alignItems: 'Right',
-          height: '100vh'
-        }}
-      >
-        <h1>About me</h1>
-      </div>
+      <>
+        <AboutPage/>
+      </>
     );
   };
     
