@@ -10,7 +10,11 @@ import Blog from './pages/Blog';
 
 const App = () => {
   return (
-    <>
+    <div style={{
+      width: "1000px",
+      marginLeft: "auto",
+      marginRight: "auto"
+    }}>
       <Router>
         <Navbar />
         <SideBar />
@@ -21,7 +25,7 @@ const App = () => {
           <Route path='/blog' element={<Blog/>} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 
