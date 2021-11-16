@@ -1,9 +1,7 @@
 import {
   Nav,
   NavLink,
-  NavMenu,
 } from './NavbarStyles';
-
 
 const Navbar = () => {
   return (
