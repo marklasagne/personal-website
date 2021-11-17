@@ -14,7 +14,6 @@ export const SocialIcon = styled.img`
     width: 32px;
     text-decoration: none;
     margin-bottom: 5px;
-
     &:hover {
         opacity: 75%;
     }

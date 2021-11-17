@@ -6,7 +6,7 @@ import {
 const GridItem = () => {
     return (
         <>
-        <Item src="https://picsum.photos/200" alt="place holder"  style={{width: '100%'}}/>
+        <Item src="https://picsum.photos/id/1/200/300" alt="place holder"  style={{width: '100%'}}/>
             <Overlay>
             </Overlay>
         </>

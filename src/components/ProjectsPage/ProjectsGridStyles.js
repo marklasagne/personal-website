@@ -6,7 +6,7 @@ export const GridRow = styled.div`
     display: flex;
     -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
-    padding: 0 4px;
+    padding: 0 35px;
     position: relative;
 `;
   
@@ -16,7 +16,7 @@ export const GridColumn = styled.div`
     max-width: 33.33%;
     padding: 0 4px;
     /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 960px) {
         -ms-flex: 100%;
         flex: 100%;
         max-width: 100%;
