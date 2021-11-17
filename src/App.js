@@ -13,18 +13,12 @@ const App = () => {
       <Router>
         <Navbar />
         <SideBar />
-        <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
         <Routes>
           <Route path='/' exact element={<Home/>} />
           <Route path='/projects' element={<Projects/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/blog' element={<Blog/>} />
         </Routes>
-        </div>
       </Router>
   );
 }
