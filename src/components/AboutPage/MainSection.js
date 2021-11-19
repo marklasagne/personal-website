@@ -23,7 +23,7 @@ const MainSection = () => {
           <TopSection>
             <Left>
               <AboutHeading>
-                What do you want to know?
+                Designing? Developing? Pasta? 
               </AboutHeading>
               <AboutInfo>
                 Mark Lisanti is a lover of all things creative, with a knack for technology. 

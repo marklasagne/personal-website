@@ -5,6 +5,7 @@ import {
   } from './ProjectsGridStyles';
 import GridItem from './GridItem'
 import { createGlobalStyle } from 'styled-components';
+import projects from '../../assets/data/projects';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -12,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+console.log(projects);
 const ProjectGrid = () => {
     return (
       <>
@@ -19,16 +21,9 @@ const ProjectGrid = () => {
         <Container>
         <GridRow>
           <GridColumn>
-            <GridItem />
-            <GridItem />
+            <GridItem title={projects[0].name} image={projects[0].image} description={projects[0].description}/>
           </GridColumn>
           <GridColumn>
-            <GridItem />
-            <GridItem />
-          </GridColumn>
-          <GridColumn>
-            <GridItem />
-            <GridItem />
           </GridColumn>
         </GridRow> 
         </Container>

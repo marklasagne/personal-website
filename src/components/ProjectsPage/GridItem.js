@@ -4,10 +4,10 @@ import {
 
 import test from '../../assets/images/triangle_trail_status.gif';
 
-const GridItem = () => {
+const GridItem = ({title, image, description}) => {
     return (
         <>
-          <Item src={test} alt="place holder"  style={{width: '100%'}}/>
+          <Item src={image} alt="place holder"  style={{width: '100%'}}/>
         </>
     );
   };

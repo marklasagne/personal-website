@@ -17,11 +17,10 @@ export const GridRow = styled.div`
 `;
   
 export const GridColumn = styled.div`
-    -ms-flex: 33.33%; /* IE10 */
-    flex: 33.33%%;
-    max-width: 33.33%;
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%%;
+    max-width: 50%;
     padding: 0 4px;
-    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
     @media screen and (max-width: 960px) {
         -ms-flex: 100%;
         flex: 100%;
