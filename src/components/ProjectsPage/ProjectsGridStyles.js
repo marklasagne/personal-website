@@ -1,6 +1,12 @@
 //  https://styled-components.com/
 import styled from 'styled-components';
 
+export const Container = styled.div`
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+`;
+
 export const GridRow = styled.div`
     display: -ms-flexbox; /* IE10 */
     display: flex;
@@ -29,7 +35,7 @@ export const Overlay = styled.div`
     left: 100%;
     right: 0;
     background-color: #008CBA;
-    width: 0;
+    width: 100px;;
     height: 100%;
     transition: .5s ease;
 `;
@@ -37,15 +43,7 @@ export const Overlay = styled.div`
 export const Item = styled.img`
     margin-top: 8px;
     vertical-align: middle;
-    width: 100%;
-    opacity: 0.5;
-    &:hover {
-        opacity: 0;
-        ${Overlay} {
-            width: 100%;
-            left: 0;
-        }
-    }
+    width: 100%;    
 `;
 
 

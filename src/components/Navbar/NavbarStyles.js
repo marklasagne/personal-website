@@ -12,8 +12,10 @@ export const Nav = styled.nav`
   
 export const NavLink = styled(Link)`
   color: #808080;
+  font-family: helvetica;
   text-align: center;
   text-decoration: none;
+  font-size: 1.5rem;
   padding: 10px;
   height: 100%;
   cursor: pointer;

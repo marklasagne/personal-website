@@ -1,14 +1,13 @@
 import {
-    Item,
-    Overlay
+    Item
   } from './ProjectsGridStyles';
+
+import test from '../../assets/images/triangle_trail_status.gif';
 
 const GridItem = () => {
     return (
         <>
-        <Item src="https://picsum.photos/id/1/200/300" alt="place holder"  style={{width: '100%'}}/>
-            <Overlay>
-            </Overlay>
+          <Item src={test} alt="place holder"  style={{width: '100%'}}/>
         </>
     );
   };

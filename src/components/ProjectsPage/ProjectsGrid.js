@@ -1,6 +1,7 @@
 import {
     GridRow,
     GridColumn,
+    Container,
   } from './ProjectsGridStyles';
 import GridItem from './GridItem'
 import { createGlobalStyle } from 'styled-components';
@@ -9,12 +10,13 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
-`
+`;
 
 const ProjectGrid = () => {
     return (
       <>
-      <GlobalStyle />
+        <GlobalStyle /> 
+        <Container>
         <GridRow>
           <GridColumn>
             <GridItem />
@@ -28,7 +30,8 @@ const ProjectGrid = () => {
             <GridItem />
             <GridItem />
           </GridColumn>
-        </GridRow>   
+        </GridRow> 
+        </Container>
       </>
     );
   };

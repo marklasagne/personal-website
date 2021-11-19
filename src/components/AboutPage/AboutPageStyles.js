@@ -37,7 +37,9 @@ export const PortraitImage= styled.img`
 `; 
 
 export const Container = styled.div`
-
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
 `;
 
 export const TopSection = styled.div`
@@ -53,7 +55,7 @@ export const TopSection = styled.div`
 `;
 
 export const Left = styled.div`
-    flex: 3;
+    flex: 2;
 `;
 
 export const Right = styled.div`
@@ -61,11 +63,13 @@ export const Right = styled.div`
 `;
 
 export const AboutHeading = styled.p`
+    font-family: helvetica;
     font-size: 3.6rem;
     margin-bottom: 3rem;
 `;
 
 export const AboutInfo = styled.p`
+    font-family: helvetica;
     margin-bottom: 4rem;
     .para {
     max-width: 100%;
