@@ -3,8 +3,6 @@ import {
     Item
   } from './ProjectsGridStyles';
 
-import test from '../../assets/images/triangle_trail_status.gif';
-
 const GridItem = ({title, image, description}) => {
     return (
         <>
