@@ -10930,6 +10930,16 @@
   "resolved" "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz"
   "version" "0.2.0"
 
+"three-obj-mtl-loader@^1.0.3":
+  "integrity" "sha512-0z7BfyG6vYPY9RvxJvL4rq8PbNrF42Kn4zxeqTfeDzJN++2oKbtCQhxHs5vLULnDuCRTEyDFf5TYvO+1vnJ7KQ=="
+  "resolved" "https://registry.npmjs.org/three-obj-mtl-loader/-/three-obj-mtl-loader-1.0.3.tgz"
+  "version" "1.0.3"
+
+"three@^0.134.0", "three@>= 0.91":
+  "integrity" "sha512-LbBerg7GaSPjYtTOnu41AMp7tV6efUNR3p4Wk5NzkSsNTBuA5mDGOfwwZL1jhhVMLx9V20HolIUo0+U3AXehbg=="
+  "resolved" "https://registry.npmjs.org/three/-/three-0.134.0.tgz"
+  "version" "0.134.0"
+
 "throat@^5.0.0":
   "integrity" "sha512-fcwX4mndzpLQKBS1DVYhGAcYaYt7vsHNIvQV+WXMvnow5cgjPphq5CaayLaGsjRdSCKZFNGt7/GYAuXaNOiYCA=="
   "resolved" "https://registry.npmjs.org/throat/-/throat-5.0.0.tgz"

@@ -1,8 +1,11 @@
+import LandingPage from '../components/LandingPage/LandingPage'
+
+
 const Home = () => {
     return (
-     
-        <h1>Home / landing page</h1>
- 
+        <>
+            <LandingPage/>
+        </>
     );
   };
     
