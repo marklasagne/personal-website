@@ -2,7 +2,7 @@ import React from 'react';
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
 import { useLoader } from "@react-three/fiber";
-import { Environment, OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
 import { DDSLoader } from "three-stdlib";
@@ -14,8 +14,8 @@ import {
 THREE.DefaultLoadingManager.addHandler(/\.dds$/i, new DDSLoader());
 
 const Scene = () => {
-  const materials = useLoader(MTLLoader, "portrait_wip_2.mtl");
-  const obj = useLoader(OBJLoader, "portrait_wip_2.obj", (loader) => {
+  const materials = useLoader(MTLLoader, "./final.mtl");
+  const obj = useLoader(OBJLoader, "./final.obj", (loader) => {
     materials.preload();
     loader.setMaterials(materials);
   });
@@ -33,7 +33,6 @@ const LandingPage = () => {
         <Suspense fallback={null}>
           <Scene />
           <OrbitControls />
-          <Environment preset="sunset" background />
         </Suspense>
       </Canvas>
     </Test>

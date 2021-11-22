@@ -1,17 +1,28 @@
 import TriangleTrailStatus from '../images/triangle_trail_status.gif';
+import SmartPalette from '../images/color_palette.gif';
+
 
 const projects = [
     {
         id: 1,
         name: 'Triangle Trail Status',
         description: 'Check where to ride, add your favorites, and get notified.',
-        image: TriangleTrailStatus, 
+        image: TriangleTrailStatus,
+        tags: ['development', 'design', 'art']
     },
     {
         id: 2,
+        name: 'Smart Palette',
+        description: 'Web application to create and save color palettes from any image.',
+        image: SmartPalette, 
+        tags: ['development']
+    },
+    {
+        id: 3,
         name: 'Creative Code',
-        description: 'Collection of creative code exploration.',
-        image: TriangleTrailStatus, 
+        description: 'Collection of creative coding assigments and personal interests.',
+        image: SmartPalette, 
+        tags: ['development', 'art']
     },
 ];
 

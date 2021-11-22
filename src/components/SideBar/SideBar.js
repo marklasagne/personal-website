@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import behance from '../../assets/icons/behance.svg';
 import linkedin from '../../assets/icons/linkedin.svg';
 import twitter from '../../assets/icons/twitter.svg';
