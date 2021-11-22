@@ -12,15 +12,18 @@ export const GridRow = styled.div`
     display: flex;
     -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
-    padding: 0 35px;
+    padding: 0 100px;
     position: relative;
+    @media screen and (max-width: 700px) {
+        padding: 0 15px;
+  }  
 `;
   
 export const GridColumn = styled.div`
     -ms-flex: 50%; /* IE10 */
     flex: 50%%;
     max-width: 50%;
-    padding: 0 4px;
+    padding: 0 5px;
     @media screen and (max-width: 960px) {
         -ms-flex: 100%;
         flex: 100%;
