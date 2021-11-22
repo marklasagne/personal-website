@@ -1,44 +1,22 @@
-import React from 'react';
-import * as THREE from "three";
-import { Canvas } from "@react-three/fiber";
-import { useLoader } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
-import { DDSLoader } from "three-stdlib";
-import { Suspense } from "react";
-import {
-  Test,
-} from './LandingPageStyles';
-
-THREE.DefaultLoadingManager.addHandler(/\.dds$/i, new DDSLoader());
-
-const Scene = () => {
-  const materials = useLoader(MTLLoader, "./final.mtl");
-  const obj = useLoader(OBJLoader, "./final.obj", (loader) => {
-    materials.preload();
-    loader.setMaterials(materials);
-  });
-
-  console.log(obj);
-  return <primitive object={obj} scale={1} />;
-};
+import React, {Suspense} from "react";
+import { Canvas } from '@react-three/fiber';
+import { Environment, OrbitControls } from "@react-three/drei";
+//import { OrbitControls } from '@react-three/drei/OrbitControls';
+import Portrait from './Portrait.js'
 
 const LandingPage = () => {
-    return (
-      <>
-      <h1>hello world</h1>
-      <Test>
+  return (
+    <div className="App">
+      <Suspense fallback={<div>Loading... </div>}>
       <Canvas>
-        <Suspense fallback={null}>
-          <Scene />
-          <OrbitControls />
-        </Suspense>
+        <OrbitControls />
+        <directionalLight intensity={0.5} />
+        <ambientLight intensity ={0.2} />
+        <Portrait />
       </Canvas>
-    </Test>
-      </>
-    )
-    
-  }
+      </ Suspense>
+    </div>
+  );
+}
 
 export default LandingPage;
