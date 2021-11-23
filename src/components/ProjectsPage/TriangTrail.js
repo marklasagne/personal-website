@@ -4,11 +4,11 @@ import {
     Container,
     SingleColumnRow,
     TwoColumnRow,
-    ThreeColumnRow,
     Left,
     Right,
     Heading,
-    Text
+    Text,
+    BackgroundImage
   } from './TriangTrailStyles';
 
   
@@ -16,13 +16,16 @@ import TriangTrail_0 from '../../assets/images/TriangTrail_0.png';
 import TriangTrail_1 from '../../assets/images/TriangTrail_1.png';
 import TriangTrail_2 from '../../assets/images/TriangTrail_2.png';
 import TriangTrail_3 from '../../assets/images/TriangTrail_3.png';
+import TriangTrail_4 from '../../assets/images/TriangTrail_4.png';
+import TriangTrail_5 from '../../assets/images/TriangTrail_5.png';
+import TireGif from '../../assets/images/tire_animation.gif';
 
 const TriangTrail = () => {
     return (
         <>
         <Container>
           <SingleColumnRow>
-            <img src={TriangTrail_0} style={{width: '50%'}} />
+            <img src={TriangTrail_0} style={{width: '50%'}} alt="whoops! something did not load."/>
           </ SingleColumnRow>
 
           <TwoColumnRow>
@@ -46,7 +49,10 @@ const TriangTrail = () => {
           </TwoColumnRow>
 
           <SingleColumnRow>
+            
             <ReactPlayer url='https://www.youtube.com/watch?v=JDh9jO79lLc' />
+            <BackgroundImage src={TriangTrail_4} style={{transform: `translate(150px, -275px)`}} alt="whoops! there was an issue."/>
+            <BackgroundImage src={TriangTrail_5} style={{transform: `translate(-200px, 300px)`}} alt="this is a unique alt tag"/>
           </ SingleColumnRow>
 
           <TwoColumnRow>
@@ -55,9 +61,9 @@ const TriangTrail = () => {
                   Problem and Solution
               </Heading>
               <Text>
-                  Triangle MTB’s website is not very friendly to check on your mobile device.  
-                  As community members update the status’s up trails you may miss when your favorite trail opens, 
-                  missing the opportunity to ride that day.  
+                Triangle MTB’s website is not very friendly to check on your mobile device.  
+                As community members update the status’s up trails you may miss when your favorite trail opens, 
+                missing the opportunity to ride that day.  
               </Text>
               <Text>
                 Triangle Trail Status provides a lightweight two-page application that allows users to favorite trails of their choice.  
@@ -65,15 +71,12 @@ const TriangTrail = () => {
               </Text>
             </Left>
             <Right>
-              <img src={TriangTrail_1} />
+              <img src={TriangTrail_1} alt="are aliens real?"/>
             </Right>
           </TwoColumnRow>
 
           <TwoColumnRow>
             <Left>
-             <img src={TriangTrail_2} />
-            </Left>
-            <Right>
               <Heading>
                   Design and Style
               </Heading>
@@ -84,15 +87,21 @@ const TriangTrail = () => {
                   out the ideas and final design of the app.  Once I had deployed test versions of the app I used 
                   feedback from users to make tweaks and add features to quickly add updated releases.
               </Text>
+            </Left>
+            <Right>
+              <img src={TireGif} style={{position: 'absolute', transform: `translate(250px, 75px)`, zIndex: -1}} alt="hello world"/>
+              <img src={TriangTrail_2} alt="wow I used a lot of images." />
             </Right>
           </TwoColumnRow>
 
           <SingleColumnRow>
-          <img src={TriangTrail_3} style={{width: '100%'}} />
+            <img src={TriangTrail_3} style={{width: '100%'}} alt="okay, last one to make unique."/>
           </ SingleColumnRow>
 
+          <SingleColumnRow>
+            <Text> Now available in the Google Play store.</Text>
+          </ SingleColumnRow>
         </Container>
-          
         </>
     );
   };

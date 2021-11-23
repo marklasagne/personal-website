@@ -9,7 +9,7 @@ const GridItem = ({title, image, description, id}) => {
     
     const handleRoute = () =>{ 
       navigate("/projects/triangle-trail-status");
-    }
+    };
   
     return (
         <>

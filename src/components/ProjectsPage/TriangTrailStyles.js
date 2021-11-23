@@ -1,5 +1,5 @@
 //  https://styled-components.com/
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 
 export const Container = styled.div`
     max-width: 1000px;
@@ -24,6 +24,7 @@ export const TwoColumnRow = styled.div`
         padding: 10rem 0;
         flex-direction: column;
         gap: 5rem;
+        margin-top: 0px;
     }
 `;
 
@@ -46,9 +47,19 @@ export const Text = styled.p`
     font-size: 18px;
     margin-bottom: 2rem;
     .para {
-    max-width: 100%;
+        max-width: 100%;
     }
 `;
+
+export const BackgroundImage = styled.img`
+    position: absolute;
+    z-index: -1;
+    @media only screen and (max-width: 960px) {
+        display: none;
+    }
+`;
+
+
 
 
 
