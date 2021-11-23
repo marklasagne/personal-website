@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import SideBar from './components/SideBar/SideBar';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
+import TriangTrail from './components/ProjectsPage/TriangTrail'
 import About from './pages/About';
 import Blog from './pages/Blog';
 import GlobalFonts from './assets/fonts/fonts';
@@ -17,6 +18,7 @@ const App = () => {
         <Routes>
           <Route path='/' exact element={<Home/>} />
           <Route path='/projects' element={<Projects/>} />
+          <Route path='/projects/triangle-trail-status' element={<TriangTrail/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/blog' element={<Blog/>} />
         </Routes>

@@ -15,7 +15,6 @@ import {
 import portraitBackground from '../../assets/images/about_page_portrait_background.png';
 import portraitForeground from '../../assets/images/about_page_portrait.png';
 
-
 /// classed and styles FUN do the parallax thingy
 const MainSection = () => {
     return (

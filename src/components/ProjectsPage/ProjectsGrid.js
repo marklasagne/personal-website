@@ -22,7 +22,7 @@ const ProjectGrid = () => {
         <Container>
         <GridRow>
           <GridColumn>
-            <GridItem title={projects[0].name} image={projects[0].image} description={projects[0].description}/>
+            <GridItem title={projects[0].name} image={projects[0].image} description={projects[0].description} id={projects[0].id}/>
             <GridItem title={projects[1].name} image={projects[1].image} description={projects[1].description}/>
           </GridColumn>
           <GridColumn>
