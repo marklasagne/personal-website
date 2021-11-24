@@ -18,7 +18,6 @@ export const SingleColumnRow = styled.div`
 
 export const TwoColumnRow = styled.div`
     display: flex;
-    align-items: center;
     justify-content: center;
     margin-top: 2rem;
     gap: 2rem;
@@ -45,6 +44,7 @@ export const Heading = styled.p`
 `;
 
 export const Text = styled.p`
+    align-items: center;
     font-family: helvetica;
     font-size: 18px;
     padding-bottom: 2rem;
