@@ -55,7 +55,7 @@ export const BackgroundImage = styled.img`
     position: absolute;
     z-index: -1;
     @media only screen and (max-width: 960px) {
-        display: none;
+        width:  125px;
     }
 `;
 

@@ -71,7 +71,7 @@ const TriangTrail = () => {
               </Text>
             </Left>
             <Right>
-              <img src={TriangTrail_1} alt="are aliens real?"/>
+              <img src={TriangTrail_1} alt="are aliens real?" styles={{width: '100%'}} />
             </Right>
           </TwoColumnRow>
 
@@ -90,7 +90,7 @@ const TriangTrail = () => {
             </Left>
             <Right>
               <img src={TireGif} style={{position: 'absolute', transform: `translate(250px, 75px)`, zIndex: -1}} alt="hello world"/>
-              <img src={TriangTrail_2} alt="wow I used a lot of images." />
+              <img src={TriangTrail_2} alt="wow I used a lot of images." styles={{width: '100%'}} />
             </Right>
           </TwoColumnRow>
 

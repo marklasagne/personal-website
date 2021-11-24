@@ -8,7 +8,7 @@ const GridItem = ({title, image, description, id}) => {
     const navigate = useNavigate();
     
     const handleRoute = () =>{ 
-      navigate("/projects/triangle-trail-status");
+      navigate(`/projects/${id}`);
     };
   
     return (
