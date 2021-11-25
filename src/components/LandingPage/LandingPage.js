@@ -1,8 +1,9 @@
 import React, {Suspense} from "react";
 import { Canvas } from '@react-three/fiber';
-import { Environment, OrbitControls } from "@react-three/drei";
+import { OrbitControls } from '@react-three/drei';
+import ScriptTag from 'react-script-tag';
 //import { OrbitControls } from '@react-three/drei/OrbitControls';
-import Portrait from './Portrait.js'
+import Portrait from './Portrait.js';
 
 const LandingPage = () => {
   return (

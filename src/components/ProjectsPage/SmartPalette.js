@@ -103,7 +103,7 @@ const SmartPalette = () => {
                 ⦁	API: The API allows for various inputs that create functionality. The API utilizes a CRUD interface with regards to the five major resources of the project: color, user, palette, color-palette, and image<br />
                 ⦁	DB: The database interface is accessed via ORM (object relational mapping) pattern via the API. The end user is unable to interact with any input our output without utilizing the API as a form of middleware.<br />
 
-              </Text>
+              </Text>  
             </Left>
             <Right>
               <img src={SmartPalette_5} style={{width: '80%', }} alt="here we go again, jk."/>
