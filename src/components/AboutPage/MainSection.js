@@ -1,9 +1,6 @@
 import React from 'react'
 import Tilt from 'react-parallax-tilt';
 import {
-  PortraitContainer,
-  PortraitImageBackground,
-  PortraitImage,
   TopSection,
   AboutHeading,
   AboutInfo,
@@ -12,7 +9,6 @@ import {
   Left
 } from './AboutPageStyles';
 
-import portraitBackground from '../../assets/images/about_page_portrait_background.png';
 import portraitForeground from '../../assets/images/about_page_portrait.png';
 
 /// classed and styles FUN do the parallax thingy
@@ -23,32 +19,27 @@ const MainSection = () => {
           <TopSection>
             <Left>
               <AboutHeading>
-                Designing? Developing? Pasta? 
+                uhhhhhhh...
               </AboutHeading>
               <AboutInfo>
-                Mark Lisanti is a lover of all things creative, with a knack for technology. 
-                Since graduating from the University of North Carolina Wilmington in the fall of 2018 with a 
-                Bachelor of Science in computer science, he has worked at IBM as a cloud development support 
-                engineer. As a master’s student, he is excited to explore the world of UX design to aid in 
-                creating appealing, interactive and practical interfaces for web and software projects. 
-                When not found at a computer, Mark enjoys skateboarding, mountain biking and rock climbing.
+                Hello, my name is Mark Lisanti. I am currently a master’s student at the University of Colorado Boulder,  
+                pursuing a degree in Creative Technology and Design.  Being a lover of all things creative
+                I am interested in the intersections between art, design, and technology.  Previously
+                I worked on IBM Cloud as a software support engineer.  
               </AboutInfo>
             </Left>
             <Right>
             <Tilt
               className="parallax-effect-img"
-              tiltMaxAngleX={25}
-              tiltMaxAngleY={25}
+              tiltMaxAngleX={5}
+              tiltMaxAngleY={5}
               perspective={900}
               scale={1}
               transitionSpeed={5000}
               gyroscope={true}
               reset={false}
             >
-              <PortraitContainer>
-                <PortraitImageBackground src={portraitBackground} alt="image" />
-                <PortraitImage src={portraitForeground} alt="image" />
-              </PortraitContainer>
+              <img src={portraitForeground} alt="wow I used a lot of images." styles={{width: '100%'}} />
               </Tilt>
             </Right>
           </TopSection>

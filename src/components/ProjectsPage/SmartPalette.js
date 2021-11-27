@@ -1,34 +1,46 @@
+/*
+Mark Lisanti 2021
+
+Portfolio page for Smart Palette
+*/
+
 import React from 'react';
+import styled from 'styled-components';
 import {
-    Container,
     SingleColumnRow,
     TwoColumnRow,
     Left,
     Right,
     Heading,
     Text,
-    BackgroundImage
-} from './SmartPaletteStyles';
+} from '../Styles';
+import SmartPalette_0 from '../../assets/images/SmartPalette/SmartPalette_0.png';
+import SmartPalette_1 from '../../assets/images/SmartPalette/SmartPalette_1.png';
+import SmartPalette_2 from '../../assets/images/SmartPalette/SmartPalette_2.png';
+import SmartPalette_3 from '../../assets/images/SmartPalette/SmartPalette_3.png';
+import SmartPalette_4 from '../../assets/images/SmartPalette/SmartPalette_4.png';
+import SmartPalette_5 from '../../assets/images/SmartPalette/SmartPalette_5.png';
+import SmartPalette_6 from '../../assets/images/SmartPalette/SmartPalette_6.png';
+import SmartPalette_420 from '../../assets/images/SmartPalette/bart_palette.gif';
 
-import SmartPalette_0 from '../../assets/images/SmartPalette_0.png';
-import SmartPalette_1 from '../../assets/images/SmartPalette_1.png';
-import SmartPalette_2 from '../../assets/images/SmartPalette_2.png';
-import SmartPalette_3 from '../../assets/images/SmartPalette_3.png';
-import SmartPalette_4 from '../../assets/images/SmartPalette_4.png';
-import SmartPalette_5 from '../../assets/images/SmartPalette_5.png';
-import SmartPalette_6 from '../../assets/images/SmartPalette_6.png';
-import SmartPalette_420 from '../../assets/images/bart_palette.gif';
+const BackgroundImage = styled.img`
+    position: absolute;
+    z-index: -1;
+    width: 1000px;
+    @media only screen and (max-width: 1000px) {
+        width: 95%;
+    }
+`;
 
 const SmartPalette = () => {
     return (
         <>
-        <Container>
           <SingleColumnRow>
             <img src={SmartPalette_2} style={{width: '75%', marginTop: 60}} alt="here we go again."/>
             <BackgroundImage src={SmartPalette_1} style={{transform: `translate(0px, 15px)`}} alt="whoops! there was an issue."/>
           </ SingleColumnRow>
 
-          <SingleColumnRow style={{backgroundColor: '#6B4073',}}>
+          <SingleColumnRow style={{backgroundColor: '#6B4073'}}>
             <Text>
               <br />
               Smart Palette is a Web Application for users to generate color palettes by uploading an image.
@@ -78,7 +90,7 @@ const SmartPalette = () => {
               </Text>
             </Left>
             <Right>
-              <img src={SmartPalette_4} style={{width: '80%', }} alt="here we go again, jk."/>
+              <img src={SmartPalette_4} style={{width: '90%'}} alt="here we go again, jk."/>
               <img src={SmartPalette_3} style={{width: '90%'}} alt="here we go again again."/>
             </Right>
           </TwoColumnRow>
@@ -106,7 +118,7 @@ const SmartPalette = () => {
               </Text>  
             </Left>
             <Right>
-              <img src={SmartPalette_5} style={{width: '80%', }} alt="here we go again, jk."/>
+              <img src={SmartPalette_5} style={{width: '90%'}} alt="here we go again, jk."/>
               <img src={SmartPalette_6} style={{width: '90%'}} alt="here we go again again."/>
             </Right>
           </TwoColumnRow>
@@ -121,8 +133,6 @@ const SmartPalette = () => {
               I hope to redo the interface as a future project.
             </Text>
           </ SingleColumnRow>
-
-        </Container>
         </>
     );
   };

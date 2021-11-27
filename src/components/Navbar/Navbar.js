@@ -2,6 +2,7 @@ import React from 'react'
 import {
   Nav,
   NavLink,
+  ExternalLink
 } from './NavbarStyles';
 
 const Navbar = () => {
@@ -17,9 +18,9 @@ const Navbar = () => {
         <NavLink to="/about">
           About
         </NavLink>
-        <NavLink to="/blog">
+        <ExternalLink target="_blank" href="https://medium.com/@marklasagne">
           Blog
-        </NavLink>
+        </ExternalLink>
       </Nav>
     </>
   );

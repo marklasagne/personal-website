@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-console.log(projects);
 const ProjectGrid = () => {
     return (
       <>

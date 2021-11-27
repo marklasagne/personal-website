@@ -1,23 +1,21 @@
 import React from 'react';
 import {
     Container,
-    SingleColumnRow,
     TwoColumnRow,
     Left,
     Right,
+} from './CreativeCodeStyles';
+import {
     Heading,
     Text,
-    BackgroundImage
-} from './CreativeCodeStyles';
-import CreativeCode_0 from '../../assets/images/creative_code.gif';
-import CreativeCode_1 from '../../assets/images/CreativeCode_0.gif';
-
-
+  } from '../Styles';
+import CreativeCode_0 from '../../assets/images/CreativeCode/CreativeCode_0.gif';
+import CreativeCode_1 from '../../assets/images/CreativeCode/CreativeCode_1.gif';
+import CreativeCode_2 from '../../assets/images/CreativeCode/CreativeCode_2.gif';
 
 const CreativeCode = () => {
     return (
         <>
-          <Container>
             <TwoColumnRow style={{backgroundColor: '#830d4c'}}>
                 <Left>
                     <Heading>
@@ -30,7 +28,7 @@ const CreativeCode = () => {
                     </Text>
                 </Left>
                 <Right>
-                    <img src={CreativeCode_0} style={{width: '80%', }} alt="here we go again, jk."/>
+                    <img src={CreativeCode_2} style={{width: '100%'}} alt="here we go again, jk."/>
                 </Right>
             </TwoColumnRow>
             <TwoColumnRow style={{backgroundColor: '#2F2F2F'}}>
@@ -45,10 +43,23 @@ const CreativeCode = () => {
                     </Text>
                 </Left>
                 <Right>
-                    <img src={CreativeCode_1} style={{width: '80%', }} alt="alt tag."/>
+                    <img src={CreativeCode_0} style={{width: '100%'}} alt="alt tag."/>
                 </Right>
             </TwoColumnRow>
-          </Container>
+            <TwoColumnRow style={{backgroundColor: '#303030'}}>
+                <Left>
+                    <Heading>
+                    Spiral of Skulls
+                    </Heading>
+                    <Text>
+                    Exploration of trigonometry functions.  Using polar coordinates and webGL I create a spiral of 
+                    rotating skulls. 
+                    </Text>
+                </Left>
+                <Right>
+                    <img src={CreativeCode_1} style={{width: '100%', }} alt="alt tag."/>
+                </Right>
+            </TwoColumnRow>
         </>
     );
   };
