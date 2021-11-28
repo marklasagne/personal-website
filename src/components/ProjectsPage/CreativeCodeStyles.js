@@ -39,6 +39,16 @@ export const BackgroundImage = styled.img`
     }
 `;
 
+export const SketchIcon = styled.img`
+    color: black;
+    width: 32px;
+    text-decoration: none;
+    &:hover {
+        opacity: 75%;
+    }
+`;
+
+
 
 
 

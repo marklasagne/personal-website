@@ -8,11 +8,7 @@ const GridItem = ({image, id}) => {
     const navigate = useNavigate();
     
     const handleRoute = () =>{ 
-      if (id == 'cardinal-pride') {
-        navigate('https://www.google.com');
-      } else {
         navigate(`/projects/${id}`);
-      }
     };
   
     return (

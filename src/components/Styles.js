@@ -42,10 +42,3 @@ export const Text = styled.p`
 export const LinkText = styled.a`
     color: #000;
 `;
-
-export const SingleRowImage = styled.img`
-    width: 50%;
-    @media only screen and (max-width: 960px) {
-        width: 100%;
-    }
-`;
