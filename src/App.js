@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import Navbar from './components/Navbar/Navbar';
@@ -19,16 +19,15 @@ const Container = styled.div`
 `;
 
 const App = () => {
-
   return (
-    <AnimatePresence>
+    <AnimatePresence exitBeforeEnter={true}>
         <Router >
           <GlobalFonts />
           <SideBar />
           <Container>
             <Navbar />
             <Routes>
-              <Route path='/' exact element={<Home />} />
+              v<Route path='/' element={<Home />} />
               <Route path='/projects' element={<Projects />} />
               <Route path='/projects/triangle-trail-status' element={<TriangTrail />} />
               <Route path='/projects/smart-palette' element={<SmartPalette />} />

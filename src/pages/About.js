@@ -6,9 +6,9 @@ const About = () => {
     return (
       <>
       <motion.div 
-      initial={ {opacity: 0 }} 
-      animate={{ opacity: 1 }} 
-      exit={{ opacity: 0 }}>
+      initial={ {scaleX: 0 }} 
+      animate={{ scaleX: 1 }} 
+      exit={{ scaleX: 0 }}>
         <AboutPage/>
       </motion.div>
       </>

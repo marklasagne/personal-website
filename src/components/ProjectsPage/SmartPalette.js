@@ -4,16 +4,13 @@ Mark Lisanti 2021
 Portfolio page for Smart Palette
 */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import {
-  SingleColumnRow,
-  TwoColumnRow,
-  Left,
-  Right,
-  Heading,
-  Text,
-} from '../Styles';
+import { createGlobalStyle } from 'styled-components';
+import { motion } from 'framer-motion';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { SingleColumnRow, TwoColumnRow, Left, Right, Heading, Text } from '../Styles';
 import SmartPalette_0 from '../../assets/images/SmartPalette/SmartPalette_0.png';
 import SmartPalette_1 from '../../assets/images/SmartPalette/SmartPalette_1.png';
 import SmartPalette_2 from '../../assets/images/SmartPalette/SmartPalette_2.png';
@@ -22,7 +19,6 @@ import SmartPalette_4 from '../../assets/images/SmartPalette/SmartPalette_4.png'
 import SmartPalette_5 from '../../assets/images/SmartPalette/SmartPalette_5.png';
 import SmartPalette_6 from '../../assets/images/SmartPalette/SmartPalette_6.png';
 import SmartPalette_420 from '../../assets/images/SmartPalette/bart_palette.gif';
-import { motion } from 'framer-motion';
 
 const BackgroundImage = styled.img`
     position: absolute;
@@ -33,20 +29,31 @@ const BackgroundImage = styled.img`
     }
 `;
 
+const GlobalStyle = createGlobalStyle`
+  * {
+    font-family: Arial;
+  }
+`;
+
 const SmartPalette = () => {
+
+  useEffect(() => {
+    Aos.init({ duration: 500 });
+  }, []);
+
   return (
     <>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
-
+        <GlobalStyle />
         <SingleColumnRow>
           <img src={SmartPalette_2} style={{ width: '75%', marginTop: 60 }} alt="here we go again." />
-          <BackgroundImage src={SmartPalette_1} style={{ transform: `translate(0px, 15px)` }} alt="whoops! there was an issue." />
+          <BackgroundImage src={SmartPalette_1} style={{ transform: `translate(0px, 50px)` }} alt="whoops! there was an issue." />
         </ SingleColumnRow>
 
-        <SingleColumnRow style={{ backgroundColor: '#6B4073' }}>
+        <SingleColumnRow style={{ backgroundColor: '#6B4073', borderRadius: 50 }}>
           <Text>
             <br />
             Smart Palette is a Web Application for users to generate color palettes by uploading an image.
@@ -67,7 +74,7 @@ const SmartPalette = () => {
           <BackgroundImage src={SmartPalette_0} style={{ transform: `translate(0px, -26px)` }} alt="whoops! there was an issue." />
         </ SingleColumnRow>
 
-        <TwoColumnRow>
+        <TwoColumnRow data-aos='fade-up'>
           <Left>
             <Heading>
               But why?
@@ -101,7 +108,7 @@ const SmartPalette = () => {
           </Right>
         </TwoColumnRow>
 
-        <TwoColumnRow>
+        <TwoColumnRow data-aos='fade-up'>
           <Left>
             <Heading>
               Architectural Design
@@ -129,7 +136,7 @@ const SmartPalette = () => {
           </Right>
         </TwoColumnRow>
 
-        <SingleColumnRow>
+        <SingleColumnRow data-aos='fade-up'>
           <Text>
             Unfortuantely the submitted interface, while functional, has an unfinished look and does
             not do the well designed backend justice.  You can visit the site at:

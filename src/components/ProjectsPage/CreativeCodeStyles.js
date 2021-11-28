@@ -5,7 +5,7 @@ export const TwoColumnRow = styled.div`
     display: flex;
     padding: 1rem;
     margin-bottom: 1rem;
-    border-radius: 9px;
+    border-radius: 5px;
     align-items: center;
     justify-content: center;
     gap: 2rem;

@@ -27,7 +27,7 @@ const ProjectGrid = () => {
           </GridColumn>
           <GridColumn>
             <GridItem title={projects[2].name} image={projects[2].image} description={projects[2].description} id={projects[2].id}/>
-            <GridItem title={projects[4].name} image={projects[4].image} description={projects[4].description} id={projects[4].id}/>
+            <a href="https://www.google.com"><GridItem title={projects[4].name} image={projects[4].image} description={projects[4].description} id={projects[4].id}/></a>
           </GridColumn>
         </GridRow> 
         </Container>

@@ -44,7 +44,8 @@ export const Overlay = styled.div`
 export const Item = styled.img`
     margin-top: 8px;
     vertical-align: middle;
-    width: 100%;   
+    width: 100%;
+    border-radius: 5px;   
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),

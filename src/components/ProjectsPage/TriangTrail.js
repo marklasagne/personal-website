@@ -4,20 +4,14 @@ Mark Lisanti 2021
 Portfolio page for Triangle Trail Status
 */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import styled from 'styled-components';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
 import { createGlobalStyle } from 'styled-components';
-import {
-  SingleColumnRow,
-  TwoColumnRow,
-  Left,
-  Right,
-  Heading,
-  Text,
-  LinkText
-} from '../Styles';
+import { SingleColumnRow, TwoColumnRow, Left, Right, Heading, Text, LinkText } from '../Styles';
 import TriangTrail_0 from '../../assets/images/TriangleTrailStatus/TriangTrail_0.png';
 import TriangTrail_1 from '../../assets/images/TriangleTrailStatus/TriangTrail_1.png';
 import TriangTrail_2 from '../../assets/images/TriangleTrailStatus/TriangTrail_2.png';
@@ -41,18 +35,23 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const TriangTrail = () => {
+  
+  useEffect(() => {
+    Aos.init({ duration: 500 });
+  }, []);
+
   return (
     <>
-          <motion.div
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
-      <GlobalStyle />
-        <SingleColumnRow>
+        <GlobalStyle />
+        <SingleColumnRow data-aos='fade-up'>
           <img src={TriangTrail_0} style={{ width: '50%' }} alt="whoops! something did not load." />
         </ SingleColumnRow>
 
-        <TwoColumnRow>
+        <TwoColumnRow data-aos='fade-up'>
           <Left>
             <Text>
               Triangle Trail Status is a mobile application aimed to give users an easier experience
@@ -72,13 +71,13 @@ const TriangTrail = () => {
           </Right>
         </TwoColumnRow>
 
-        <SingleColumnRow>
+        <SingleColumnRow data-aos='fade-up'>
           <ReactPlayer url='https://www.youtube.com/watch?v=JDh9jO79lLc' />
           <BackgroundImage src={TriangTrail_4} style={{ transform: `translate(150px, -275px)` }} alt="whoops! there was an issue." />
           <BackgroundImage src={TriangTrail_5} style={{ transform: `translate(-200px, 300px)` }} alt="this is a unique alt tag" />
         </ SingleColumnRow>
 
-        <TwoColumnRow>
+        <TwoColumnRow data-aos='fade-up'>
           <Left>
             <Heading>
               Problem and Solution
@@ -98,7 +97,7 @@ const TriangTrail = () => {
           </Right>
         </TwoColumnRow>
 
-        <TwoColumnRow>
+        <TwoColumnRow data-aos='fade-up'>
           <Left>
             <Heading>
               Design and Style
@@ -114,19 +113,19 @@ const TriangTrail = () => {
             </Text>
           </Left>
           <Right>
-            <img src={TireGif} style={{ position: 'absolute', transform: `translate(250px, 75px)`, zIndex: -1 }} alt="hello world" />
+            <img src={TireGif} style={{ position: 'absolute', transform: `translate(175px, 50px)`, zIndex: -1 }} alt="hello world" />
             <img src={TriangTrail_2} alt="wow I used a lot of images." styles={{ width: '90%' }} />
           </Right>
         </TwoColumnRow>
 
-        <SingleColumnRow>
+        <SingleColumnRow data-aos='fade-up'>
           <img src={TriangTrail_3} style={{ width: '90%' }} alt="okay, last one to make unique." />
         </ SingleColumnRow>
 
-        <SingleColumnRow>
+        <SingleColumnRow data-aos='fade-up'>
           <Heading><LinkText href="https://play.google.com/store/apps/details?id=com.triangletrailstatus&hl=en_US&gl=US" target="_blank">Now available in the Google Play store.</LinkText></Heading>
         </ SingleColumnRow>
-        </motion.div>
+      </motion.div>
     </>
   );
 };

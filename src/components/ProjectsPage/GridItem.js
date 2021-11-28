@@ -4,11 +4,15 @@ import {
     Item
   } from './ProjectsGridStyles';
 
-const GridItem = ({title, image, description, id}) => {
+const GridItem = ({image, id}) => {
     const navigate = useNavigate();
     
     const handleRoute = () =>{ 
-      navigate(`/projects/${id}`);
+      if (id == 'cardinal-pride') {
+        navigate('https://www.google.com');
+      } else {
+        navigate(`/projects/${id}`);
+      }
     };
   
     return (

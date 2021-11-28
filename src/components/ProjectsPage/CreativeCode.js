@@ -1,25 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import {
-    TwoColumnRow,
-    Left,
-    Right,
-} from './CreativeCodeStyles';
-import {
-    Heading,
-    Text,
-} from '../Styles';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { TwoColumnRow, Left, Right } from './CreativeCodeStyles';
+import { Heading, Text } from '../Styles';
+import { createGlobalStyle } from 'styled-components';
 import CreativeCode_0 from '../../assets/images/CreativeCode/CreativeCode_0.gif';
 import CreativeCode_1 from '../../assets/images/CreativeCode/CreativeCode_1.gif';
 import CreativeCode_2 from '../../assets/images/CreativeCode/CreativeCode_2.gif';
 
+const GlobalStyle = createGlobalStyle`
+  * {
+    font-family: Arial;
+  }
+`;
+
 const CreativeCode = () => {
+    useEffect(() => {
+        Aos.init({ duration: 500 });
+      }, []);
+    
     return (
         <>
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}>
+                <GlobalStyle />
                 <TwoColumnRow style={{ backgroundColor: '#830d4c' }}>
                     <Left>
                         <Heading>
