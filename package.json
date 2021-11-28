@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "framer-motion": "4.1.17",
     "gltfjsx": "^4.5.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -16,17 +17,11 @@
     "react-parallax-tilt": "^1.5.75",
     "react-player": "^2.9.0",
     "react-router-dom": "^6.0.2",
-    "react-script-tag": "^1.1.2",
-    "react-scripts": "^3.4.4",
-    "source-map-explorer": "^2.5.2",
+    "react-scripts": "^4.0.3",
     "styled-components": "^5.3.3",
-    "three": "^0.134.0",
-    "three-obj-mtl-loader": "^1.0.3",
-    "three-object-mtl-loader": "^1.0.2",
-    "web-vitals": "^1.0.1"
+    "three": "^0.134.0"
   },
   "scripts": {
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

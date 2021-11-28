@@ -1,7 +1,6 @@
 import React, {Suspense} from "react";
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import ScriptTag from 'react-script-tag';
 //import { OrbitControls } from '@react-three/drei/OrbitControls';
 import Portrait from './Portrait.js';
 

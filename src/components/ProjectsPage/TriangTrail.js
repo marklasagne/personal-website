@@ -7,6 +7,7 @@ Portfolio page for Triangle Trail Status
 import React from 'react';
 import ReactPlayer from 'react-player';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { createGlobalStyle } from 'styled-components';
 import {
   SingleColumnRow,
@@ -42,6 +43,10 @@ const GlobalStyle = createGlobalStyle`
 const TriangTrail = () => {
   return (
     <>
+          <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}>
       <GlobalStyle />
         <SingleColumnRow>
           <img src={TriangTrail_0} style={{ width: '50%' }} alt="whoops! something did not load." />
@@ -121,6 +126,7 @@ const TriangTrail = () => {
         <SingleColumnRow>
           <Heading><LinkText href="https://play.google.com/store/apps/details?id=com.triangletrailstatus&hl=en_US&gl=US" target="_blank">Now available in the Google Play store.</LinkText></Heading>
         </ SingleColumnRow>
+        </motion.div>
     </>
   );
 };

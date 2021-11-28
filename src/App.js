@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import Navbar from './components/Navbar/Navbar';
 import SideBar from './components/SideBar/SideBar';
@@ -18,22 +19,25 @@ const Container = styled.div`
 `;
 
 const App = () => {
+
   return (
-      <Router>
-        <GlobalFonts />
-        <SideBar />
-        <Container>
-          <Navbar />
-          <Routes>
-            <Route path='/' exact element={<Home/>} />
-            <Route path='/projects' element={<Projects/>} />
-            <Route path='/projects/triangle-trail-status' element={<TriangTrail/>} />
-            <Route path='/projects/smart-palette' element={<SmartPalette/>} />
-            <Route path='/projects/creative-code' element={<CreativeCode/>} />
-            <Route path='/about' element={<About/>} />
-          </Routes>
-        </Container>
-      </Router>
+    <AnimatePresence>
+        <Router >
+          <GlobalFonts />
+          <SideBar />
+          <Container>
+            <Navbar />
+            <Routes>
+              <Route path='/' exact element={<Home />} />
+              <Route path='/projects' element={<Projects />} />
+              <Route path='/projects/triangle-trail-status' element={<TriangTrail />} />
+              <Route path='/projects/smart-palette' element={<SmartPalette />} />
+              <Route path='/projects/creative-code' element={<CreativeCode />} />
+              <Route path='/about' element={<About />} />
+            </Routes>
+          </Container>
+        </Router>
+    </AnimatePresence>
   );
 }
 
