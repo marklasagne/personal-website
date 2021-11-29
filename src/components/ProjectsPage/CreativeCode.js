@@ -19,8 +19,8 @@ const GlobalStyle = createGlobalStyle`
 const CreativeCode = () => {
     useEffect(() => {
         Aos.init({ duration: 500 });
-      }, []);
-    
+    }, []);
+
     return (
         <>
             <motion.div
