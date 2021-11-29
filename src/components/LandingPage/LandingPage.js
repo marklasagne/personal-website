@@ -6,7 +6,7 @@ import { KeyLight, RimLight, FillLight } from './Lights';
 const LandingPage = () => {
 
   return (
-    <>
+    <div>
       <Suspense fallback={<div>Loading... </div>}>
         <Canvas
         style={{
@@ -20,7 +20,7 @@ const LandingPage = () => {
           <Portrait scale={1} />
         </Canvas>
       </ Suspense>
-    </>
+    </div>
   );
 }
 
