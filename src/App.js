@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import Navbar from './components/Navbar/Navbar';
 import SideBar from './components/SideBar/SideBar';
-import Home from './pages/Home';
 import Projects from './pages/Projects';
 import TriangTrail from './components/ProjectsPage/TriangTrail';
 import SmartPalette from './components/ProjectsPage/SmartPalette';
@@ -27,7 +26,7 @@ const App = () => {
           <Container>
             <Navbar />
             <Routes>
-              v<Route path='/' element={<Home />} />
+              <Route path='/' element={<Projects />} />
               <Route path='/projects' element={<Projects />} />
               <Route path='/projects/triangle-trail-status' element={<TriangTrail />} />
               <Route path='/projects/smart-palette' element={<SmartPalette />} />

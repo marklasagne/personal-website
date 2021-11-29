@@ -2,16 +2,13 @@ import React from 'react'
 import {
   Nav,
   NavLink,
-  ExternalLink
+  ExternalLink,
 } from './NavbarStyles';
 
 const Navbar = () => {
   return (
     <>
       <Nav>
-        <NavLink to="/">
-          Home
-        </NavLink>
         <NavLink to="/projects">
           Projects
         </NavLink>
