@@ -41,7 +41,7 @@ const CardinalPride = () => {
                 <GlobalStyle />
                 <SingleColumnRow style={{ flexDirection: 'column' }}>
                     <Heading>Cardinal Pride Property Care is a small town handyman business in Wilmington North Carolina.
-                     I Designed and Developed a static website for local business.</Heading>
+                     I Designed and developed this static website for the local business.</Heading>
                      <Text>Key technologies include HTML, CSS, Javascript.  <a href="https://www.cardinalprideproperty.com/"  rel="noopener noreferrer" target="_blank"><LinkText>Check out the site today!</LinkText></a></Text>
                    
                 </SingleColumnRow>
