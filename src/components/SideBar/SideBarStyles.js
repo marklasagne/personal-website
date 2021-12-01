@@ -11,7 +11,7 @@ export const SideBarContainer = styled.div`
 export const SocialIcon = styled.img`           
     color: black;
     display: block;
-    width: 32px;
+    width: 40px;
     text-decoration: none;
     margin-bottom: 5px;
     &:hover {

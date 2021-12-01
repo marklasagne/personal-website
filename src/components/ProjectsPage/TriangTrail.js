@@ -4,7 +4,7 @@ Mark Lisanti 2021
 Portfolio page for Triangle Trail Status
 */
 
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 import Aos from 'aos';
@@ -42,6 +42,7 @@ const TriangTrail = () => {
 
   return (
     <>
+      <Suspense fallback={<div>Loading... </div>}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -126,6 +127,7 @@ const TriangTrail = () => {
           <Heading><LinkText href="https://play.google.com/store/apps/details?id=com.triangletrailstatus&hl=en_US&gl=US" target="_blank">Now available in the Google Play store.</LinkText></Heading>
         </ SingleColumnRow>
       </motion.div>
+      </Suspense>
     </>
   );
 };

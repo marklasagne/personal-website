@@ -13,11 +13,11 @@ const SideBar = () => {
     return (
       <>
         <SideBarContainer>
-          <SocialIcon src={linkedin}/>
-          <SocialIcon src={twitter}/>
-          <SocialIcon src={github}/>
-          <SocialIcon src={codepen}/>
-          <SocialIcon src={behance}/>
+          <a href="https://www.linkedin.com/in/marklisanti/" rel="noopener noreferrer" target="_blank"><SocialIcon src={linkedin}/></a>
+          <a href="https://twitter.com/marklasagne" rel="noopener noreferrer" target="_blank"><SocialIcon src={twitter}/></a>
+          <a href="https://github.com/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={github}/></a>
+          <a href="https://codepen.io/marklasagne" rel="noopener noreferrer" target="_blank"><SocialIcon src={codepen}/></a>
+          <a href="https://www.behance.net/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={behance}/></a>
         </SideBarContainer>
       </>
     );

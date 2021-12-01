@@ -24,7 +24,7 @@ const AmbioSense = () => {
                 exit={{ opacity: 0 }}>
                 <GlobalStyle />
                 <SingleColumnRow>
-                  <Heading>Project is currently in progress.... check back soon for full documentation</Heading>
+                  <Heading>Project is currently in progress... check back soon for full documentation</Heading>
                 </SingleColumnRow>
             </motion.div>
         </>

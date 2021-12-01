@@ -9,6 +9,7 @@ import TriangTrail from './components/ProjectsPage/TriangTrail';
 import SmartPalette from './components/ProjectsPage/SmartPalette';
 import CreativeCode from './components/ProjectsPage/CreativeCode';
 import AmbioSense from './components/ProjectsPage/Ambiosense';
+import CardinalPride from './components/ProjectsPage/CardinalPride';
 import About from './pages/About';
 import GlobalFonts from './assets/fonts/fonts';
 
@@ -36,6 +37,7 @@ const App = () => {
               <Route path='/projects/smart-palette' element={<SmartPalette />} />
               <Route path='/projects/creative-code' element={<CreativeCode />} />
               <Route path='/projects/ambio-sense' element={<AmbioSense />} />
+              <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
               <Route path='/about' element={<About />} />
             </Routes>
           </Container>

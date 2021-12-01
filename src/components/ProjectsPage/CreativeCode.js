@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -23,6 +23,7 @@ const CreativeCode = () => {
 
     return (
         <>
+        <Suspense fallback={<div>Loading... </div>}>
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -76,6 +77,7 @@ const CreativeCode = () => {
                     </Right>
                 </TwoColumnRow>
             </motion.div>
+            </Suspense>
         </>
     );
 };

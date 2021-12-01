@@ -4,7 +4,7 @@ Mark Lisanti 2021
 Portfolio page for Smart Palette
 */
 
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -43,6 +43,7 @@ const SmartPalette = () => {
 
   return (
     <>
+      <Suspense fallback={<div>Loading... </div>}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -147,6 +148,7 @@ const SmartPalette = () => {
           </Text>
         </ SingleColumnRow>
       </motion.div>
+      </Suspense>
     </>
   );
 };
