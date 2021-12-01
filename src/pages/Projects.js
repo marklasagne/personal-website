@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 const Projects = () => {
     return (
         <motion.div 
-        initial={ {scaleX: 0 }} 
-        animate={{ scaleX: 1 }} 
-        exit={{ scaleX: 0 }}>
+        initial={ {opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        exit={{ opacity: 0 }}>
             <ProjectsPage />
         </motion.div>
     );

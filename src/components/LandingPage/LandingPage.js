@@ -10,10 +10,16 @@ const LandingPage = () => {
       <Suspense fallback={<div>Loading... </div>}>
         <Canvas
         style={{
-          width: 312, 
-          height: 312,
+          width: '100%', 
+          height: 1000,
         }}
         >
+          {/*
+          <pointLight brightness={0.5} 
+            position={[2, 1, 4]}
+            castShadow
+          />
+           */}
           <KeyLight brightness={5.6} color={"#ffc9f9"} /> 
           <FillLight brightness={2.6} color={"#bdefff"} />
           <RimLight brightness={54} color={"#fff"} />

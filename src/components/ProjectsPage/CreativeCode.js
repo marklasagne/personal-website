@@ -38,7 +38,7 @@ const CreativeCode = () => {
                             waveform is passed as a uniform to a vertex shader to manipulate the shape of the 3d model.
                             The amplitude is used to change the rotation speed when reaching a certain level.
                         </Text>
-                        <a href="https://editor.p5js.org/lisantimark/sketches/4QeRjNe3a" target="_blank"><SketchIcon src={p5}></SketchIcon></a>
+                        <a href="https://editor.p5js.org/lisantimark/sketches/4QeRjNe3a" rel="noopener noreferrer" target="_blank"><SketchIcon src={p5}></SketchIcon></a>
                     </Left>
                     <Right>
                         <img src={CreativeCode_2} style={{ width: '100%' }} alt="here we go again, jk." />
@@ -54,7 +54,7 @@ const CreativeCode = () => {
                             The flashing and rotating cells represent alive cells.  The algorithm code is hosted
                             on IBM Cloud's serverless functions platform and called through an API Gateway endpoint.
                         </Text>
-                        <a href="https://editor.p5js.org/lisantimark/sketches/SPe3MlTnW" target="_blank"><SketchIcon src={p5}></SketchIcon></a>
+                        <a href="https://editor.p5js.org/lisantimark/sketches/SPe3MlTnW" rel="noopener noreferrer" target="_blank"><SketchIcon src={p5}></SketchIcon></a>
                     </Left>
                     <Right>
                         <img src={CreativeCode_0} style={{ width: '100%' }} alt="alt tag." />
@@ -69,7 +69,7 @@ const CreativeCode = () => {
                             Exploration of trigonometry functions.  Using polar coordinates and webGL I create a spiral of
                             rotating skulls.
                         </Text>
-                        <a href="https://editor.p5js.org/lisantimark/sketches/o2PLNIeM0" target="_blank"><SketchIcon src={p5}></SketchIcon></a>
+                        <a href="https://editor.p5js.org/lisantimark/sketches/o2PLNIeM0 "rel="noopener noreferrer"  target="_blank"><SketchIcon src={p5}></SketchIcon></a>
                     </Left>
                     <Right>
                         <img src={CreativeCode_1} style={{ width: '100%', }} alt="alt tag." />

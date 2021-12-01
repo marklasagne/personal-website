@@ -35,7 +35,7 @@ const projects = [
         tags: ['development', 'design']
     },
     {
-        id: 'ambiosense',
+        id: 'ambio-sense',
         name: 'Ambiosense',
         description: 'Stay at home interactive experience taylored to mental health.',
         image: Ambiosense, 
