@@ -4,7 +4,6 @@ import CardinalPride from '../images/cardinal_pride.gif';
 import Ambiosense from '../images/ambiosense.png';
 import CreativeCode from '../images/creative_code.gif';
 
-
 const projects = [
     {
         id: 'triangle-trail-status',

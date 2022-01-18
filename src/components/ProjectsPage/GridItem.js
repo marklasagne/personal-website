@@ -2,7 +2,7 @@ import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import {
     Item
-  } from './ProjectsGridStyles';
+} from './ProjectsGridStyles';
 
 const GridItem = ({image, id}) => {
     const navigate = useNavigate();

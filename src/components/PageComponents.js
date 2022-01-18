@@ -20,15 +20,15 @@ export const TwoColumnRow = styled.div`
     }
 `;
 
-export const Left = styled.div`
+export const LeftColumn = styled.div`
     flex: 2;
 `;
 
-export const Right = styled.div`
+export const RightColumn = styled.div`
     flex: 2;
 `;
 
-export const Heading = styled.p`
+export const Heading = styled.h1`
     font-size: 2rem;
 `;
 
