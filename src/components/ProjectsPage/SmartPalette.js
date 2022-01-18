@@ -10,7 +10,7 @@ import { createGlobalStyle } from 'styled-components';
 import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { SingleColumnRow, TwoColumnRow, Left, Right, Heading, Text } from '../Styles';
+import { SingleColumnRow, TwoColumnRow, Left, Right, Heading, Text } from '../PageComponents';
 import SmartPalette_0 from '../../assets/images/SmartPalette/SmartPalette_0.png';
 import SmartPalette_1 from '../../assets/images/SmartPalette/SmartPalette_1.png';
 import SmartPalette_2 from '../../assets/images/SmartPalette/SmartPalette_2.png';

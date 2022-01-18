@@ -20,11 +20,11 @@ export const TwoColumnRow = styled.div`
     }
 `;
 
-export const LeftColumn = styled.div`
+export const Left = styled.div`
     flex: 2;
 `;
 
-export const RightColumn = styled.div`
+export const Right = styled.div`
     flex: 2;
 `;
 

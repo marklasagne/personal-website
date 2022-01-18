@@ -11,7 +11,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
 import { createGlobalStyle } from 'styled-components';
-import { SingleColumnRow, TwoColumnRow, Left, Right, Heading, Text, LinkText } from '../Styles';
+import { SingleColumnRow, TwoColumnRow, Left, Right, Heading, Text, LinkText } from '../PageComponents';
 import TriangTrail_0 from '../../assets/images/TriangleTrailStatus/TriangTrail_0.png';
 import TriangTrail_1 from '../../assets/images/TriangleTrailStatus/TriangTrail_1.png';
 import TriangTrail_2 from '../../assets/images/TriangleTrailStatus/TriangTrail_2.png';

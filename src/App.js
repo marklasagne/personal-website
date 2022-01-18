@@ -29,7 +29,7 @@ const App = () => {
             <Navbar />
             <Routes>
               <Route path='/' element={<About />} />
-              <Route path='/projects' element={<Projects />} />
+              <Route path='/projects' element={<ProjectList />} />
               <Route path='/projects/triangle-trail-status' element={<TriangTrail />} />
               <Route path='/projects/smart-palette' element={<SmartPalette />} />
               <Route path='/projects/creative-code' element={<CreativeCode />} />

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { TwoColumnRow, Left, Right, SketchIcon } from './CreativeCodeStyles';
-import { Heading, Text } from '../Styles';
+import { Heading, Text } from '../PageComponents';
 import { createGlobalStyle } from 'styled-components';
 import CreativeCode_0 from '../../assets/images/CreativeCode/CreativeCode_0.gif';
 import CreativeCode_1 from '../../assets/images/CreativeCode/CreativeCode_1.gif';

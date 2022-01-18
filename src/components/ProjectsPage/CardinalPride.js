@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { SingleColumnRow, Heading, Text, LinkText } from '../Styles';
+import { SingleColumnRow, Heading, Text, LinkText } from '../PageComponents';
 import styled from 'styled-components';
 
 import { createGlobalStyle } from 'styled-components';
