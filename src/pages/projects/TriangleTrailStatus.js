@@ -11,7 +11,7 @@ import styled from 'styled-components';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
-import { Row, Column, } from '../../components/PageComponents.js';
+import { Row, Column, Image } from '../../components/PageComponents.js';
 
 import TriangTrail_0 from '../../assets/images/TriangleTrailStatus/TriangTrail_0.png';
 import TriangTrail_1 from '../../assets/images/TriangleTrailStatus/TriangTrail_1.png';
@@ -58,7 +58,7 @@ const TriangTrail = () => {
         </Row>
 
         <Row data-aos='fade-up'>
-          <ReactPlayer url='https://www.youtube.com/watch?v=JDh9jO79lLc' />
+          <StyledReactPlayer url='https://www.youtube.com/watch?v=JDh9jO79lLc' />
           <BackgroundImage src={TriangTrail_4} style={{ transform: `translate(150px, -275px)` }} alt='what broke...' />
           <BackgroundImage src={TriangTrail_5} style={{ transform: `translate(-200px, 300px)` }} alt='missing or not?' />
         </ Row>
@@ -79,7 +79,7 @@ const TriangTrail = () => {
             </p>
           </Column>
           <Column>
-            <img src={TriangTrail_1} alt='are aliens real?' styles={{ width: '100%' }} />
+            <Image src={TriangTrail_1} alt='are aliens real?' />
           </Column>
         </Row>
 
@@ -99,13 +99,13 @@ const TriangTrail = () => {
             </p>
           </Column>
           <Column>
-            <img src={TireGif} style={{ position: 'absolute', transform: `translate(175px, 50px)`, zIndex: -1 }} alt='boo hoo' />
-            <img src={TriangTrail_2} alt='wow I used a lot of images.' styles={{ width: '90%' }} />
+            <Image src={TireGif} style={{ position: 'absolute', transform: `translate(175px, 50px)`, zIndex: -1 }} alt='boo hoo' />
+            <Image src={TriangTrail_2} alt='wow I used a lot of images.' />
           </Column>
         </Row>
 
         <Row data-aos='fade-up'>
-          <img src={TriangTrail_3} style={{ width: '90%' }} alt="okay, last one to make unique." />
+          <Image src={TriangTrail_3} alt="okay, last one to make unique." />
         </ Row>
 
         <Row data-aos='fade-up'>
@@ -122,6 +122,16 @@ const BackgroundImage = styled.img`
     @media only screen and (max-width: 750px) {
         display: none;
     }
+`;
+
+const StyledReactPlayer = styled(ReactPlayer)`
+  box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
 `;
 
 export default TriangTrail;

@@ -4,6 +4,7 @@
 // https://github.com/marklasagne //
 
 // About page
+
 import React from 'react';
 import Portrait from '../components/Portrait/Composition.js';
 import { core, work, extra } from '../assets/data/about.js';

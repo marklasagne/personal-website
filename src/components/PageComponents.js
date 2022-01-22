@@ -7,6 +7,8 @@ export const Row = styled.div`
     -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
     position: relative;
+    justify-content: space-around;
+    margin-top: 6.25rem;
 `;
   
 export const Column = styled.div`
@@ -33,6 +35,7 @@ export const Overlay = styled.div`
 
 export const Image = styled.img`
     border-radius: 0.313rem;   
+    max-width: 100%;
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),
