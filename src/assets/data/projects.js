@@ -1,7 +1,7 @@
 import TriangleTrailStatus from '../images/triangle_trail_status.gif';
 import SmartPalette from '../images/color_palette.gif';
 import CardinalPride from '../images/cardinal_pride.gif';
-import Ambiosense from '../images/ambiosense.png';
+import AmbieSense from '../images/ambie_sense.gif';
 import AudioVisualizer from '../images/audio_visualization.gif';
 import GameOfLife_0 from '../images/GameOfLife/GameOfLife_0.gif';
 
@@ -43,9 +43,9 @@ const projects = [
     },
     {
         id: 'ambio-sense',
-        name: 'Ambiosense',
+        name: 'Ambie Sense',
         description: 'Stay at home interactive experience taylored to mental health.',
-        image: Ambiosense, 
+        image: AmbieSense, 
         tags: ['development', 'design']
     },
 ];
