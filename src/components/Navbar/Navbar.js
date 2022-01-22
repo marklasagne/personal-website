@@ -9,15 +9,15 @@ const Navbar = () => {
   return (
     <>
       <Nav>
-        <NavLink to="/projects">
-          Projects
-        </NavLink>
-        <NavLink to="/about">
+      <NavLink to="/">
           About
         </NavLink>
-        <ExternalLink target="_blank" href="https://medium.com/@marklasagne">
-          Blog
-        </ExternalLink>
+      <NavLink to="/projects">
+        Projects
+      </NavLink>
+      <ExternalLink target="_blank" href="https://medium.com/@marklasagne">
+        Blog
+      </ExternalLink>
       </Nav>
     </>
   );

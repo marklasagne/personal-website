@@ -69,7 +69,7 @@ const TriangTrail = () => {
               Problem and Solution
             </h1>
             <p>
-              <p href="https://www.trianglemtb.com/" target="_blank">Triangle MTB’s website</p> is not very friendly to check on your mobile device.
+              <a href="https://www.trianglemtb.com/" target="_blank">Triangle MTB’s website</a> is not very friendly to check on your mobile device.
               As community members update the status’s up trails you may miss when your favorite trail opens,
               missing the opportunity to ride that day.
             </p>
@@ -89,9 +89,7 @@ const TriangTrail = () => {
               Design and Style
             </h1>
             <p>
-              The project started because I wanted to make and
-              <p href="https://lottiefiles.com/49498-triangle-trail-status-landing-page" target="_blank"> animate a logo</p>,
-              specifically a triangle tire.
+              The project started because I wanted to make and animate a logo, specifically a triangle tire.
               After initially sketching and learning different tools to digitalize my drawings I decided to
               write some code to implement my animation on web or mobile applications. This led to me fleshing
               out the ideas and final design of the app.  Once I had deployed test versions of the app I used
