@@ -1,3 +1,8 @@
+// Personal website and portfolio //
+// 2022                           //
+// Built by Mark Lisanti          //
+// https://github.com/marklasagne //
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';

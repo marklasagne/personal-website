@@ -14,8 +14,11 @@ import { Row, Column, } from '../components/PageComponents.js';
 const About = () => {
   return (
     <>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-        <Portrait />
+      <motion.div 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}>
+       
         <Row>
           <Column>
             <h1>Hello</h1>
@@ -29,9 +32,10 @@ const About = () => {
         </Row> 
         <Row>
           <Column>
-          <p>{extra}</p>
+          <p2>{extra}</p2>
           </Column>
         </Row> 
+        <Portrait />
       </motion.div>
     </>
   );

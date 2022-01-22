@@ -14,7 +14,6 @@ import { Row, Column, Image } from '../../components/PageComponents.js';
 import GameOfLife_0 from '../../assets/images/GameOfLife/GameOfLife_0.gif';
 import p5js from '../../assets/icons/p5.svg';
 
-
 const GameOfLife = () => {
 
   useEffect(() => {
