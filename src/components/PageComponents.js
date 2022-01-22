@@ -1,44 +1,51 @@
 //  https://styled-components.com/
 import styled from 'styled-components';
 
-export const SingleColumnRow = styled.div`
+export const Row = styled.div`
+    display: -ms-flexbox; /* IE10 */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    position: relative;
 `;
-
-export const TwoColumnRow = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    gap: 1rem;
-    @media only screen and (max-width: 960px) {
-        flex-direction: column;
-        gap: 5rem;
-    }
-`;
-
-export const Left = styled.div`
-    flex: 2;
-`;
-
-export const Right = styled.div`
-    flex: 2;
-`;
-
-export const Heading = styled.h1`
-    font-size: 2rem;
-`;
-
-export const Text = styled.p`
-    font-size: 14px;
-    .para {
+  
+export const Column = styled.div`
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%%;
+    max-width: 50%;
+    @media screen and (max-width: 500px) {
+        -ms-flex: 100%;
+        flex: 100%;
         max-width: 100%;
-    }
+  }  
 `;
 
-export const LinkText = styled.a`
-    color: #000;
+export const Overlay = styled.div`
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color: #008CBA;
+    width: 100px;;
+    height: 100%;
+    transition: .5s ease;
 `;
+
+export const Image = styled.img`
+    border-radius: 0.313rem;   
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12)
+`;
+
+
+
+
+  
+
+  
+
