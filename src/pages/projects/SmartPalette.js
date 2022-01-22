@@ -6,7 +6,6 @@
 // Portfolio page for Smart Palette
 
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -38,22 +37,24 @@ const SmartPalette = () => {
         <Row>
           <Column>
             <p>
-              <br />
               Smart Palette is a Web Application for users to generate color palettes by uploading an image.
               The platform uses an unsupervised AI algorithm to choose the optimal diverse color
               series for the image. If you do not like what is generated, you can run it again and
               get a different result. You can view other color palettes created by different users.
-              <br />
-              <br />
-              Team:  Jacob Thomas, Kevin Conti, Thomas Taylor, Devan Corcoran, Mark Lisanti <br />
-              Role(s): Developer,  Designer <br />
-              Stack: PostgresSQL, Python, HTML/CSS/JS
             </p>
           </Column>
           <Column>
             <img src={SmartPalette_420} alt="what even is this" />
           </Column>
         </ Row>
+
+        <Row>
+          <p>
+              Team:  Jacob Thomas, Kevin Conti, Thomas Taylor, Devan Corcoran, Mark Lisanti <br />
+              Role(s): Developer,  Designer <br />
+              Stack: PostgresSQL, Python, HTML/CSS/JS
+          </p>
+        </Row>
 
         <Row data-aos='fade-up'>
           <Column>

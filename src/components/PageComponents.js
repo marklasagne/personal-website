@@ -8,6 +8,7 @@ export const Row = styled.div`
     flex-wrap: wrap;
     position: relative;
     justify-content: space-around;
+    align-items: center;
     margin-top: 6.25rem;
 `;
   
@@ -15,7 +16,8 @@ export const Column = styled.div`
     -ms-flex: 50%; /* IE10 */
     flex: 50%%;
     max-width: 50%;
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 547px) {
+        margin-bottom: 3.125rem;
         -ms-flex: 100%;
         flex: 100%;
         max-width: 100%;

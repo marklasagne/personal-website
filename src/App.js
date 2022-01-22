@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import styled from 'styled-components';
 import Navbar from './components/Navbar/Navbar.js';
 import SideBar from './components/SideBar/SideBar.js';
 import ProjectList from './pages/ProjectList.js';
 import TriangleTrailStatus from './pages/projects/TriangleTrailStatus.js';
 import SmartPalette from './pages/projects/SmartPalette.js';
 import AmbieSense from './pages/projects/AmbieSense.js';
+import AudioVisualizer from './pages/projects/AudioVisualizer.js';
+import GameOfLife from './pages/projects/GameOfLife.js';
 import About from './pages/About';
 import { createGlobalStyle } from 'styled-components';
 
@@ -26,6 +27,8 @@ const App = () => {
             <Route path='/projects/triangle-trail-status' element={<TriangleTrailStatus />} />
             <Route path='/projects/smart-palette' element={<SmartPalette />} />
             <Route path='/projects/ambio-sense' element={<AmbieSense />} />
+            <Route path='/projects/audio-visualizer' element={<AudioVisualizer />} />
+            <Route path='/projects/game-of-life-visualization' element={<GameOfLife />} />
           </Routes>
       </Router>
     </AnimatePresence>
