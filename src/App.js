@@ -17,17 +17,22 @@ import AudioVisualizer from './pages/projects/AudioVisualizer.js';
 import GameOfLife from './pages/projects/GameOfLife.js';
 import CardinalPride from './pages/projects/CardinalPride.js';
 import About from './pages/About';
+import ScrollToTop from './components/ScrollToTop.js';
 import { createGlobalStyle } from 'styled-components';
-
+import { PageContainer, ContentWrap } from './components/PageComponents';
 
 const App = () => {
+
   return (
     <>
     <AnimatePresence exitBeforeEnter={true}>
       <GlobalStyle />
-      <Router >
+      <PageContainer>
+      <Router>
+        <ScrollToTop>
         <SideBar />
-          <Navbar />
+        <Navbar />
+        <ContentWrap>
           <Routes>
             <Route path='/' element={<About />} />
             <Route path='/projects' element={<ProjectList />} />
@@ -38,8 +43,11 @@ const App = () => {
             <Route path='/projects/game-of-life-visualization' element={<GameOfLife />} />
             <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
           </Routes>
+          </ContentWrap>
           <Footer />
+          </ ScrollToTop>
       </Router>
+      </ PageContainer>
     </AnimatePresence>
     </>
   );
@@ -59,6 +67,7 @@ const GlobalStyle = createGlobalStyle`
     max-width: 1000px;
     width: 90%;
     margin: 0 auto;
+    padding-bottom: 2.5rem;
   }
 
   h1 {

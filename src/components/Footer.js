@@ -10,21 +10,21 @@ const Footer = () => {
   return (
     <>
       <StyledFooter>
-        <p2>When life ain't going right go left. 2022.</p2>
+        <p2>When life ain't going right go left</p2>
+        <br />
+        <p2>&copy; 2022</p2>
       </StyledFooter>
     </>
   );
 }
 
 const StyledFooter = styled.footer`
-  position:absolute;
-  width:100%;
-  bottom:0;
-  background: #fefefe;
-  align-text: center;
-  padding: 1rem;
-  margin-top: 5rem;
-  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.5;
+  height: 2.5rem; 
+  text-align: center;
 `;
 
 export default Footer;

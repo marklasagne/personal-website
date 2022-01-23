@@ -52,7 +52,7 @@ const CardinalPride = () => {
         </Row>
 
         <Row data-aos='fade-up'>
-          <p>View the page at cardinalprideproperty.com</p>
+          <h1><p href="https://www.cardinalprideproperty.com" target="_blank">View the page now!</p></h1>
         </Row>
       </motion.div>
     </>

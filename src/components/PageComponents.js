@@ -51,6 +51,14 @@ export const Image = styled.img`
         0 100px 80px rgba(0, 0, 0, 0.12)
 `;
 
+export const PageContainer = styled.div`
+    position: relative;
+    min-height: 100vh;
+`;
+
+export const ContentWrap = styled.div`
+    padding-bottom: 10rem;
+`;
 
 
 
