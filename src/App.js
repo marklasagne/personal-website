@@ -31,7 +31,7 @@ const App = () => {
             <Route path='/projects' element={<ProjectList />} />
             <Route path='/projects/triangle-trail-status' element={<TriangleTrailStatus />} />
             <Route path='/projects/smart-palette' element={<SmartPalette />} />
-            <Route path='/projects/ambio-sense' element={<AmbieSense />} />
+            <Route path='/projects/ambie-sense' element={<AmbieSense />} />
             <Route path='/projects/audio-visualizer' element={<AudioVisualizer />} />
             <Route path='/projects/game-of-life-visualization' element={<GameOfLife />} />
           </Routes>
