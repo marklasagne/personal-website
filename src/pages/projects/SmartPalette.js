@@ -50,9 +50,9 @@ const SmartPalette = () => {
 
         <Row>
           <p>
-              Team:  Jacob Thomas, Kevin Conti, Thomas Taylor, Devan Corcoran, Mark Lisanti <br />
-              Role(s): Developer,  Designer <br />
-              Stack: PostgresSQL, Python, HTML/CSS/JS
+            Team:  Jacob Thomas, Kevin Conti, Thomas Taylor, Devan Corcoran, Mark Lisanti <br />
+            Role(s): Developer,  Designer <br />
+            Stack: PostgresSQL, Python, HTML/CSS/JS
           </p>
         </Row>
 
@@ -132,15 +132,22 @@ const SmartPalette = () => {
         </Row>
 
         <Row data-aos='fade-up'>
-          <p>
-            Unfortuantely the submitted interface, while functional, has an unfinished look and does
-            not do the well designed backend justice.  You can visit the site at:
-            <TextLink href="https://smartpalette.herokuapp.com" target="_blank" rel="noopener noreferrer">smartpalette.herokuapp.com</ TextLink>
-            <br />
-            <br />
-            I hope to redo the interface as a future project.
-          </p>
-        </ Row>
+          <Column>
+            <h1>
+              Conclusion and Reflection
+            </h1>
+            <p>
+              Overall the team worked well together and I believe we designed an elegant piece of software.  I wish I spent more time understanding front end frameworks
+              at the time to polish the look of the project. 
+              Unfortuantely the submitted interface, while functional, has an unfinished look and does
+              not do the well designed backend justice.  You can visit the site at:
+              <TextLink href="https://smartpalette.herokuapp.com" target="_blank" rel="noopener noreferrer"> smartpalette.herokuapp.com</ TextLink>
+              <br />
+              <br />
+              I hope to redo the interface as a future project.
+            </p>
+          </Column>
+        </Row>
       </motion.div>
     </>
   );

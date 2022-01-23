@@ -54,6 +54,19 @@ const CardinalPride = () => {
         <Row data-aos='fade-up'>
           <h1><TextLink href="https://www.cardinalprideproperty.com" rel="noopener noreferrer" target="_blank">View the page now!</TextLink></h1>
         </Row>
+
+        <Row data-aos='fade-up'>
+          <Column>
+            <h1>
+              Conclusion and Reflection
+            </h1>
+            <p>
+              I learned a lot working on this project.  Initially the website was done with vanilla HTML, CSS and Javascript.  This year I chose to refactor
+              the code into a React project, which was challenging but resulted in a much cleaner outcome.  Even though this is a simple static website I value
+              it as a polished project with lots of code I can incorporate in future web based projects. 
+            </p>
+          </Column>
+        </Row>
       </motion.div>
     </>
   );

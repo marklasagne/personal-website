@@ -1,12 +1,6 @@
 //  https://styled-components.com/
 import styled from 'styled-components';
 
-export const Container = styled.div`
-    max-width: 1000px;
-    width: 90%;
-    margin: 0 auto;
-`;
-
 export const GridRow = styled.div`
     display: -ms-flexbox; /* IE10 */
     display: flex;

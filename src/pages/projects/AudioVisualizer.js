@@ -32,24 +32,36 @@ const AudioVisualizer = () => {
 
         <Row>
           <p>
-              Team: Mark Lisanti <br />
-              Role(s): Developer,  Artist <br />
-              Stack: p5js, GLSL 
+            Role(s): Developer,  Artist <br />
+            Stack: p5js, GLSL
           </p>
         </Row>
 
         <Row>
           <Column>
             <p>
-              This is a quick exploration of using FFT data from audio files to create visualization.  The waveform is passed as a 
-              uniform to a vertex shader to manipulate the shape of the 3D model.  The amplitude is used to change the 
-              rotational speed when the amplitude hits an upper threshold. 
+              This is a quick exploration of using FFT data from audio files to create visualization.  The waveform is passed as a
+              uniform to a vertex shader to manipulate the shape of the 3D model.  The amplitude is used to change the
+              rotational speed when the amplitude hits an upper threshold.
             </p>
           </Column>
           <Column>
             <Image src={AudioVisualizer_0} alt="what even is this" />
           </Column>
         </ Row>
+
+        <Row data-aos='fade-up'>
+          <Column>
+            <h1>
+              Conclusion and Reflection
+            </h1>
+            <p>
+              Exploring shaders and 3d objects was fun.  I like the direction that this exploration went and would love to expand on this 
+              project in the future.  I invision users being able to create their own visualization by uploading 3d models and music of their 
+              own tastes.
+            </p>
+          </Column>
+        </Row>
       </motion.div>
     </>
   );

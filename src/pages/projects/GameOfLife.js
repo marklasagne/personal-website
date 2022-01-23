@@ -51,6 +51,19 @@ const GameOfLife = () => {
             <Image src={GameOfLife_0} alt="what even is this" />
           </Column>
         </ Row>
+
+        <Row data-aos='fade-up'>
+          <Column>
+            <h1>
+              Conclusion and Reflection
+            </h1>
+            <p>
+              Initially I kept the grid small to show the effect of the cubes, however, I think that visually the algorithm
+              will look better if the number of children was increased.  Running the code externally was fun to explore, but practically
+              it is not the most efficient in this application.  
+            </p>
+          </Column>
+        </Row>
       </motion.div>
     </>
   );

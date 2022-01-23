@@ -107,6 +107,22 @@ const TriangTrail = () => {
         <Row data-aos='fade-up'>
           <h1><TextLink href="https://play.google.com/store/apps/details?id=com.triangletrailstatus&hl=en_US&gl=US" rel="noopener noreferrer" target="_blank">Now available in the Google Play store.</TextLink></h1>
         </ Row>
+
+        <Row data-aos='fade-up'>
+          <Column>
+            <h1>
+              Conclusion and Reflection
+            </h1>
+            <p>
+              Being my first publically published mobile app I was nervous.  Ultimately this was a success, and proved real value in the local mountain biking community.
+              I worked hard at learning react-native and feel the result is a clean,  and professional codebase.  I wish I spent more time designing the interface
+              and user testing the usability before publishing.  
+              <br />
+              <br />
+              Bonus skills I picked up were drawing and animating the logo which gave me exposure to Adobe products and using my artistic side. 
+            </p>
+          </Column>
+        </Row>
       </motion.div>
     </>
   );

@@ -105,7 +105,7 @@ const AmbioSense = () => {
         <Row data-aos='fade-up'>
           <Column>
             <h1>
-              Conclusion
+              Conclusion and Reflection
             </h1>
             <p>
               The goal of this project was to design something with the pandemic in mind and I think we achieved this.  We ambitiously designed both software and hardware and unfortunately did not have time to fabricate the hardware components.  

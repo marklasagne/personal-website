@@ -2,7 +2,6 @@ import React from 'react';
 import {
     GridRow,
     GridColumn,
-    Container,
   } from './ProjectsGridStyles';
 import GridItem from './GridItem'
 import { createGlobalStyle } from 'styled-components';
@@ -18,7 +17,6 @@ const ProjectGrid = () => {
     return (
       <>
         <GlobalStyle /> 
-        <Container>
         <GridRow>
           <GridColumn>
             <GridItem title={projects[5].name} image={projects[5].image} description={projects[5].description} id={projects[5].id}/>
@@ -31,7 +29,6 @@ const ProjectGrid = () => {
             <GridItem title={projects[1].name} image={projects[1].image} description={projects[1].description} id={projects[1].id}/>    
           </GridColumn>
         </GridRow> 
-        </Container>
       </>
     );
   };
