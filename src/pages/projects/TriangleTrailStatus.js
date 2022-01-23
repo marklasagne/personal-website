@@ -34,7 +34,7 @@ const TriangTrail = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
         <Row data-aos='fade-up'>
-          <img src={TriangTrail_0} style={{ width: '50%' }} alt='missing image 0?' />
+          <img src={TriangTrail_0} style={{ width: '50%' }} alt='im over this' />
         </ Row>
 
         <Row data-aos='fade-up'>
@@ -69,7 +69,7 @@ const TriangTrail = () => {
               Problem and Solution
             </h1>
             <p>
-              <a href="https://www.trianglemtb.com/" target="_blank">Triangle MTB’s website</a> is not very friendly to check on your mobile device.
+              <a href="https://www.trianglemtb.com/" target="_blank" rel="noopener noreferrer"> Triangle MTB’s website</a> is not very friendly to check on your mobile device.
               As community members update the status’s up trails you may miss when your favorite trail opens,
               missing the opportunity to ride that day.
             </p>

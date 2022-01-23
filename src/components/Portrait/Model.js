@@ -18,7 +18,6 @@ export default function Model({ ...props }) {
   let yMiddle = viewport.height / 2;
 
   useFrame(({ mouse }) => {
-    console.log(mouse);
     const x = (mouse.x * xMiddle) / 30;
     const y = (mouse.y * yMiddle) / 30;
     group.current.rotation.set(-y, x, 0);

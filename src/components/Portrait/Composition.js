@@ -5,13 +5,18 @@
 
 // 3d model composition
 
+// Personal website and portfolio //
+// 2022                           //
+// Built by Mark Lisanti          //
+// https://github.com/marklasagne //
+
 import React, { Suspense } from 'react';
 import { KeyLight, FillLight, RimLight } from './Lights.js';
 import Model from './Model.js';
 import { Canvas } from '@react-three/fiber';
 
 const Composition = () => {
-  const x = 300;
+
   return (
     <>
       <Suspense fallback={<div>Loading... </div>}>

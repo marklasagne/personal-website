@@ -29,7 +29,12 @@ const SideBarContainer = styled.div`
     width: 50px;
     position: fixed;
     top: 50%;
+    left: 0;
+    padding: 2rem;
     z-index: 69;
+    @media screen and (max-width: 547px) {
+      top: 0;
+  }  
 `;
   
 const SocialIcon = styled.img`           
@@ -40,7 +45,7 @@ const SocialIcon = styled.img`
     margin-bottom: 5px;
     &:hover {
         opacity: 75%;
-    }
+    } 
 `;
   
   export default SideBar;

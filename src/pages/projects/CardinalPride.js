@@ -28,7 +28,7 @@ const CardinalPride = () => {
         exit={{ opacity: 0 }}>
         <Row data-aos='fade-up'>
           <Column>
-            <img src={CardinalPride_0} style={{ width: '75%' }} alt='missing image 0?' />
+            <img src={CardinalPride_0} style={{ width: '75%' }} alt='whatever man' />
           </Column>
           <Column>
             <p>Cardinal Pride Property care is a local business located in Wilmington, NC.  I was able to design and build a website for the owner.  What started with tinkering with web development turned 
@@ -48,7 +48,7 @@ const CardinalPride = () => {
         </Row>
 
         <Row data-aos='fade-up'>
-          <Image src={CardinalPride_2} alt="who let the dogs out" />
+          <Image src={CardinalPride_2} alt="writing alts sucks" />
         </Row>
 
         <Row data-aos='fade-up'>

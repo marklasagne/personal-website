@@ -15,7 +15,6 @@ import { Row, Column, Image } from '../../components/PageComponents.js';
 import AmbieSense_0 from '../../assets/images/AmbieSense/AmbieSense_0.png';
 import AmbieSense_1 from '../../assets/images/AmbieSense/AmbieSense_1.png';
 import AmbieSense_3 from '../../assets/images/AmbieSense/AmbieSense_3.png';
-import AmbieSense_4 from '../../assets/images/AmbieSense/AmbieSense_4.png';
 import AmbieSense_5 from '../../assets/images/AmbieSense/AmbieSense_5.png';
 import AmbieSense_6 from '../../assets/images/AmbieSense/AmbieSense_6.png';
 

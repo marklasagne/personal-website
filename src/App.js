@@ -20,6 +20,7 @@ import About from './pages/About';
 import ScrollToTop from './components/ScrollToTop.js';
 import { createGlobalStyle } from 'styled-components';
 import { PageContainer, ContentWrap } from './components/PageComponents';
+import FontStyles from './assets/fonts/fonts.js';
 
 const App = () => {
 
@@ -27,10 +28,11 @@ const App = () => {
     <>
     <AnimatePresence exitBeforeEnter={true}>
       <GlobalStyle />
+      <FontStyles />
+      <SideBar />
       <PageContainer>
       <Router>
         <ScrollToTop>
-        <SideBar />
         <Navbar />
         <ContentWrap>
           <Routes>
@@ -55,7 +57,7 @@ const App = () => {
 
 const GlobalStyle = createGlobalStyle`
   * {
-    font-family: 'Roboto';
+    font-family: Roboto;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -67,7 +69,6 @@ const GlobalStyle = createGlobalStyle`
     max-width: 1000px;
     width: 90%;
     margin: 0 auto;
-    padding-bottom: 2.5rem;
   }
 
   h1 {
