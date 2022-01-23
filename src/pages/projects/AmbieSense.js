@@ -109,7 +109,7 @@ const AmbioSense = () => {
               Conclusion
             </h1>
             <p>
-              The goal of this project was to design something with the pandemic in mind and I think we achieved this.  We ambitiously designed both software and hardware and unfortunately did not have time to fabricated the hardware components.  
+              The goal of this project was to design something with the pandemic in mind and I think we achieved this.  We ambitiously designed both software and hardware and unfortunately did not have time to fabricate the hardware components.  
               Other stretch goals included projection mapping, or some sort of AR integration.  Personally I learned a lot and would be happy to revisit the project in the future. 
             </p>
           </Column>

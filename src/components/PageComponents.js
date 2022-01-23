@@ -10,6 +10,9 @@ export const Row = styled.div`
     justify-content: space-around;
     align-items: center;
     margin-top: 6.25rem;
+    @media screen and (max-width: 547px) {
+        text-align: center
+  }  
 `;
   
 export const Column = styled.div`
@@ -38,6 +41,7 @@ export const Overlay = styled.div`
 export const Image = styled.img`
     border-radius: 0.313rem;   
     max-width: 100%;
+    width: 90%;
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),

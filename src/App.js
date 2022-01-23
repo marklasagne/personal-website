@@ -6,14 +6,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import Navbar from './components/Navbar/Navbar.js';
-import SideBar from './components/SideBar/SideBar.js';
+import Navbar from './components/Navbar.js';
+import Footer from './components/Footer.js';
+import SideBar from './components/SideBar.js';
 import ProjectList from './pages/ProjectList.js';
 import TriangleTrailStatus from './pages/projects/TriangleTrailStatus.js';
 import SmartPalette from './pages/projects/SmartPalette.js';
 import AmbieSense from './pages/projects/AmbieSense.js';
 import AudioVisualizer from './pages/projects/AudioVisualizer.js';
 import GameOfLife from './pages/projects/GameOfLife.js';
+import CardinalPride from './pages/projects/CardinalPride.js';
 import About from './pages/About';
 import { createGlobalStyle } from 'styled-components';
 
@@ -34,7 +36,9 @@ const App = () => {
             <Route path='/projects/ambie-sense' element={<AmbieSense />} />
             <Route path='/projects/audio-visualizer' element={<AudioVisualizer />} />
             <Route path='/projects/game-of-life-visualization' element={<GameOfLife />} />
+            <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
           </Routes>
+          <Footer />
       </Router>
     </AnimatePresence>
     </>

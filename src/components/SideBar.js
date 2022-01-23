@@ -1,13 +1,15 @@
+// Personal website and portfolio //
+// 2022                           //
+// Built by Mark Lisanti          //
+// https://github.com/marklasagne //
+
 import React from 'react';
-import behance from '../../assets/icons/behance.svg';
-import linkedin from '../../assets/icons/linkedin.svg';
-import twitter from '../../assets/icons/twitter.svg';
-import github from '../../assets/icons/github.svg';
-import codepen from '../../assets/icons/codepen.svg';
-import {
-    SideBarContainer,
-    SocialIcon,
-  } from './SideBarStyles';
+import behance from '../assets/icons/behance.svg';
+import linkedin from '../assets/icons/linkedin.svg';
+import twitter from '../assets/icons/twitter.svg';
+import github from '../assets/icons/github.svg';
+import codepen from '../assets/icons/codepen.svg';
+import styled from 'styled-components';
 
 const SideBar = () => {
     return (
@@ -21,6 +23,24 @@ const SideBar = () => {
         </SideBarContainer>
       </>
     );
-  };
+  }
+
+const SideBarContainer = styled.div`
+    width: 50px;
+    position: fixed;
+    top: 50%;
+    z-index: 69;
+`;
+  
+const SocialIcon = styled.img`           
+    color: black;
+    display: block;
+    width: 40px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    &:hover {
+        opacity: 75%;
+    }
+`;
   
   export default SideBar;
