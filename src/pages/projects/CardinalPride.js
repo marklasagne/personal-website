@@ -9,7 +9,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { Row, Column, Image } from '../../components/PageComponents.js';
+import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
 
 import CardinalPride_0 from '../../assets/images/CardinalPride/CardinalPride_0.png';
 import CardinalPride_1 from '../../assets/images/CardinalPride/CardinalPride_1.png';
@@ -52,7 +52,7 @@ const CardinalPride = () => {
         </Row>
 
         <Row data-aos='fade-up'>
-          <h1><p href="https://www.cardinalprideproperty.com" target="_blank">View the page now!</p></h1>
+          <h1><TextLink href="https://www.cardinalprideproperty.com" rel="noopener noreferrer" target="_blank">View the page now!</TextLink></h1>
         </Row>
       </motion.div>
     </>

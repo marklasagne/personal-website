@@ -11,7 +11,7 @@ import styled from 'styled-components';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
-import { Row, Column, Image } from '../../components/PageComponents.js';
+import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
 
 import TriangTrail_0 from '../../assets/images/TriangleTrailStatus/TriangTrail_0.png';
 import TriangTrail_1 from '../../assets/images/TriangleTrailStatus/TriangTrail_1.png';
@@ -19,7 +19,6 @@ import TriangTrail_2 from '../../assets/images/TriangleTrailStatus/TriangTrail_2
 import TriangTrail_3 from '../../assets/images/TriangleTrailStatus/TriangTrail_3.png';
 import TriangTrail_4 from '../../assets/images/TriangleTrailStatus/TriangTrail_4.png';
 import TriangTrail_5 from '../../assets/images/TriangleTrailStatus/TriangTrail_5.png';
-import TireGif from '../../assets/images/TriangleTrailStatus/tire_animation.gif';
 
 const TriangTrail = () => {
   
@@ -69,7 +68,7 @@ const TriangTrail = () => {
               Problem and Solution
             </h1>
             <p>
-              <a href="https://www.trianglemtb.com/" target="_blank" rel="noopener noreferrer"> Triangle MTB’s website</a> is not very friendly to check on your mobile device.
+              <TextLink href="https://www.trianglemtb.com/" target="_blank" rel="noopener noreferrer"> Triangle MTB’s website</TextLink> is not very friendly to check on your mobile device.
               As community members update the status’s up trails you may miss when your favorite trail opens,
               missing the opportunity to ride that day.
             </p>
@@ -97,7 +96,6 @@ const TriangTrail = () => {
             </p>
           </Column>
           <Column>
-            <Image src={TireGif} style={{ position: 'absolute', transform: `translate(175px, 50px)`, zIndex: -1 }} alt='boo hoo' />
             <Image src={TriangTrail_2} alt='wow I used a lot of images.' />
           </Column>
         </Row>
@@ -107,7 +105,7 @@ const TriangTrail = () => {
         </ Row>
 
         <Row data-aos='fade-up'>
-          <h1><p href="https://play.google.com/store/apps/details?id=com.triangletrailstatus&hl=en_US&gl=US" target="_blank">Now available in the Google Play store.</p></h1>
+          <h1><TextLink href="https://play.google.com/store/apps/details?id=com.triangletrailstatus&hl=en_US&gl=US" rel="noopener noreferrer" target="_blank">Now available in the Google Play store.</TextLink></h1>
         </ Row>
       </motion.div>
     </>

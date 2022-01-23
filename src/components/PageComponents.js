@@ -14,7 +14,7 @@ export const Row = styled.div`
         text-align: center
   }  
 `;
-  
+
 export const Column = styled.div`
     -ms-flex: 50%; /* IE10 */
     flex: 50%%;
@@ -60,9 +60,13 @@ export const ContentWrap = styled.div`
     padding-bottom: 10rem;
 `;
 
+export const TextLink = styled.a`
+    color: #000000;
+`;
 
 
-  
 
-  
+
+
+
 

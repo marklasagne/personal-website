@@ -9,7 +9,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { Row, Column, Image } from '../../components/PageComponents.js';
+import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
 
 import SmartPalette_0 from '../../assets/images/SmartPalette/SmartPalette_0.png';
 import SmartPalette_3 from '../../assets/images/SmartPalette/SmartPalette_3.png';
@@ -135,7 +135,7 @@ const SmartPalette = () => {
           <p>
             Unfortuantely the submitted interface, while functional, has an unfinished look and does
             not do the well designed backend justice.  You can visit the site at:
-            https://smartpalette.herokuapp.com
+            <TextLink href="https://smartpalette.herokuapp.com" target="_blank" rel="noopener noreferrer">smartpalette.herokuapp.com</ TextLink>
             <br />
             <br />
             I hope to redo the interface as a future project.
