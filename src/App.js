@@ -18,6 +18,7 @@ import GameOfLife from './pages/projects/GameOfLife.js';
 import CardinalPride from './pages/projects/CardinalPride.js';
 import About from './pages/About';
 import ScrollToTop from './components/ScrollToTop.js';
+import TopArrow from './components/TopArrow.js';
 import { createGlobalStyle } from 'styled-components';
 import { PageContainer, ContentWrap } from './components/PageComponents';
 import FontStyles from './assets/fonts/fonts.js';
@@ -30,6 +31,7 @@ const App = () => {
       <GlobalStyle />
       <FontStyles />
       <SideBar />
+      <TopArrow />
       <PageContainer>
       <Router>
         <ScrollToTop>
@@ -65,10 +67,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    overflow-y: scroll; 
     overflow-x: hidden !important;
     max-width: 1000px;
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
+    @media screen and (max-width: 1000px) {
+      width: 80%;
+    } 
   }
 
   h1 {

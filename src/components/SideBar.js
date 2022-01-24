@@ -26,21 +26,22 @@ const SideBar = () => {
   }
 
 const SideBarContainer = styled.div`
-    width: 50px;
+    width: 3.125rem;
     position: fixed;
     top: 50%;
     left: 0;
     padding: 2rem;
     z-index: 69;
-    @media screen and (max-width: 547px) {
+    @media screen and (max-width: 1000px) {
       top: 0;
+      padding: 0.25rem;
   }  
 `;
   
 const SocialIcon = styled.img`           
     color: black;
     display: block;
-    width: 40px;
+    width: 2.5rem;
     text-decoration: none;
     margin-bottom: 5px;
     &:hover {

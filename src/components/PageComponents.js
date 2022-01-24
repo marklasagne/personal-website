@@ -39,7 +39,7 @@ export const Overlay = styled.div`
 `;
 
 export const Image = styled.img`
-    border-radius: 0.313rem;   
+    border-radius: 0.313rem; 
     max-width: 100%;
     width: 90%;
     box-shadow:
