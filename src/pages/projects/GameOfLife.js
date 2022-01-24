@@ -32,7 +32,6 @@ const GameOfLife = () => {
 
         <Row>
           <p>
-              Team: Mark Lisanti <br />
               Role(s): Developer,  Artist <br />
               Stack: p5js, WebGL, python, OpenWhisk 
           </p>

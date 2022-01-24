@@ -1,6 +1,10 @@
+// Personal website and portfolio //
+// 2022                           //
+// Built by Mark Lisanti          //
+// https://github.com/marklasagne //
+
 import React from 'react'
 import { NavLink as Link } from 'react-router-dom';
-//  https://styled-components.com/
 import styled from 'styled-components';
 
 const Navbar = () => {
@@ -19,7 +23,8 @@ const Navbar = () => {
       </Nav>
     </>
   );
-};
+}
+
 
 const Nav = styled.nav`
   display: flex;

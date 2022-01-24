@@ -14,12 +14,13 @@ import React, { Suspense } from 'react';
 import { KeyLight, FillLight, RimLight } from './Lights.js';
 import Model from './Model.js';
 import { Canvas } from '@react-three/fiber';
+import styled from 'styled-components';
 
 const Composition = () => {
 
   return (
     <>
-      <Suspense fallback={<div>Loading... </div>}>
+      <Suspense fallback={<LoadingDiv>Loading... </LoadingDiv>}>
         <Canvas
           style={{
             position: 'absolute', 
@@ -38,5 +39,19 @@ const Composition = () => {
     </>
   )
 }
+
+const LoadingDiv = styled.div`
+    position: absolute;
+    font-size: 1.5rem;
+    background: #ffffff;
+    top: 50%;  
+    left: 75%; 
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100%;
+    transform: translate(-50%, -50%);
+}
+`;
+
 
 export default Composition;
