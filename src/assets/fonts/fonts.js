@@ -6,6 +6,7 @@ import RobotoWoff2 from './roboto.woff2';
 const FontStyles = createGlobalStyle`
     @font-face {
         font-family: 'Roboto';
+        src: local('Roboto'), local('Roboto'),
         url(${RobotoWoff}) format('woff2'),
         url(${RobotoWoff2}) format('woff');
     }
