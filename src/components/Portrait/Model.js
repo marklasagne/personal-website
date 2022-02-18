@@ -16,17 +16,26 @@ export default function Model({ ...props }) {
   const eyes = useRef();
   let xMiddle = viewport.width / 2;
   let yMiddle = viewport.height / 2;
+  console.log(group.current.rotation.x.get);
+
+  console.log(viewport.height);
+  console.log(viewport.width);
 
   useFrame(({ mouse }) => {
-    const x = (mouse.x * xMiddle) / 30;
-    const y = (mouse.y * yMiddle) / 30;
-    group.current.rotation.set(-y, x, 0);
-    eyes.current.rotation.set(-y / 4, x / 4, 0);
+      if ((mouse.x > -0.75 && mouse.x) < 0.75 && mouse.y > -0.75 && mouse.y < 0.75 ) {
+        console.log('mouse enetered')
+        const x = (mouse.x * xMiddle) / 30;
+        const y = (mouse.y * yMiddle) / 30;
+        group.current.rotation.set(-y, x, 0);
+        eyes.current.rotation.set(-y / 4, x / 4, 0);
+      } else {
+        console.log('mouse exit')
+      }
   })
 
   return (
-    <group ref={group} {...props} dispose={null} position={[1.25, 0, 0]}>
-      <mesh receiveShadow
+    <group receiveShadow ref={group} {...props} dispose={null} position={[1.25, 0, 0]}>
+      <mesh 
         geometry={nodes.beanie_low_RetopoFlow017.geometry}
         material={materials['Material.002']}
         position={[0, 0.94, -0.15]}
@@ -34,14 +43,14 @@ export default function Model({ ...props }) {
         scale={[0.77, 0.74, 0.83]}
       />
       <group ref={eyes}>
-        <mesh receiveShadow
+        <mesh 
           geometry={nodes.uploads_files_172137_eye.geometry}
           material={materials['Default OBJ']}
           position={[0.3, 0.35, 0.89]}
           rotation={[1.68, 0.51, -0.23]}
           scale={[0.26, 0.3, 0.25]}
         />
-        <mesh receiveShadow
+        <mesh 
           geometry={nodes.uploads_files_172137_eye001.geometry}
           material={materials['Default OBJ.004']}
           position={[-0.28, 0.36, 0.89]}
@@ -49,9 +58,9 @@ export default function Model({ ...props }) {
           scale={[0.26, 0.3, 0.25]}
         />
       </group>
-      <mesh receiveShadow geometry={nodes.FaceBuilderHead.geometry} material={materials.FaceTexture} />
-      <mesh receiveShadow geometry={nodes.Mesh.geometry} material={materials.Mustache} />
-      <mesh receiveShadow
+      <mesh geometry={nodes.FaceBuilderHead.geometry} material={materials.FaceTexture} />
+      <mesh geometry={nodes.Mesh.geometry} material={materials.Mustache} />
+      <mesh 
         geometry={nodes.Torus.geometry}
         material={materials['Material.005']}
         position={[0, -0.07, 1.23]}

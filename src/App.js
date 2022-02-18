@@ -64,6 +64,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    -webkit-overflow-scrolling: touch;
   }
 
   body {

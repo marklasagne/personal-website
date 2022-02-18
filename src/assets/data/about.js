@@ -1,6 +1,6 @@
-export const core = "My name is Mark. I am currently a master’s student at the University of Colorado Boulder," +
-" pursuing a degree in Creative Technology and Design where I am tinkering with art, design and development." +
-" Lets work on something fun!"
+export const core = "I am a creative with a desire to tinker with all the things that make cool stuff." +
+" While I do feel sporadic with my interests, recent common themes involve 3d visualization and web based software solutions." +
+" Hit me up, lets work on something cool!" 
     
 export const work = " After graduating with a Bachelors in Computer Science in 2018 I spent some time within IBM Hybrid Cloud as a software support" +
 " engineer.  Filling gaps in my time I dabble with mobile and web development for personal and freelance projects,"  +

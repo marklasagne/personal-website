@@ -34,7 +34,9 @@ const About = () => {
             exit={{ opacity: 0 }}>
             <Row style={{ zIndex: -1 }} data-aos='fade-up'>
               <Column>
-                <h1>Howdy!</h1>
+                <h1>Howdy! I'm Mark...</h1>
+                <h1 style={{fontWeight: 'bold'}}>Creative Technologist / Coder</h1>
+                <br />
                 <p>{core}</p>
                 <br />
                 <p>contact@marklisanti.me</p>
