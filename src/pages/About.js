@@ -7,7 +7,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Portrait from '../components/Portrait/Composition.js';
-import { AboutPage } from '../assets/data/pages/about.js';
+import { AboutPageData } from '../assets/data/pages/about.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
@@ -33,7 +33,7 @@ const About = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}>
             <h1>Howdy! I'm mark <span style={{fontSize: 12}}>[creative technologist/coder]</span></h1>
-            {AboutPage.map((data, id) => {
+            {AboutPageData.map((data, id) => {
               return(
               <Row key={id} style={{ zIndex: -1 }} data-aos='fade-up'>
                 <Column>
@@ -52,7 +52,7 @@ const About = () => {
             exit={{ opacity: 0 }}>
             <Portrait />
             <h1>Howdy! I'm mark <span style={{fontSize: 12}}>[creative technologist/coder]</span></h1>
-            {AboutPage.map((data, id) => {
+            {AboutPageData.map((data, id) => {
               return(
               <Row key={id} style={{ zIndex: -1 }} data-aos='fade-up'>
                 <Column>
