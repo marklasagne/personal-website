@@ -10,8 +10,7 @@ import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
-
-import CardinalPride_0 from '../../assets/images/CardinalPride/CardinalPride_0.png';
+import { CardinalPrideData } from '../../assets/data/pages/cardinalpride.js'
 import CardinalPride_1 from '../../assets/images/CardinalPride/CardinalPride_1.png';
 import CardinalPride_2 from '../../assets/images/CardinalPride/CardinalPride_2.png';
 
@@ -28,27 +27,26 @@ const CardinalPride = () => {
         exit={{ opacity: 0 }}>
         <Row data-aos='fade-up'>
           <Column>
-            <img src={CardinalPride_0} style={{ width: '75%' }} alt='whatever man' />
+            <img src={CardinalPrideData[0].image} style={{ width: '75%' }} alt="save" />
           </Column>
           <Column>
-            <p>Cardinal Pride Property care is a local business located in Wilmington, NC.  I was able to design and build a website for the owner.  What started with tinkering with web development turned 
-                into a fully built react project.
-            </p>
+            <p>{CardinalPrideData[0].description}</p>
             <br/>
             <br/>
             <p>
-              Role(s): Developer,  Designer <br />
-              Stack: React, Firebase
+              Role(s): {CardinalPrideData[0].roles}
+              <br />
+              Stack: {CardinalPrideData[0].stack}
           </p>
           </Column>
         </Row>
 
         <Row data-aos='fade-up'>
-            <Image src={CardinalPride_1} alt="who let the dogs out" />
+            <Image src={CardinalPride_1} alt="yourself" />
         </Row>
 
         <Row data-aos='fade-up'>
-          <Image src={CardinalPride_2} alt="writing alts sucks" />
+          <Image src={CardinalPride_2} alt="please?" />
         </Row>
 
         <Row data-aos='fade-up'>
@@ -57,14 +55,8 @@ const CardinalPride = () => {
 
         <Row data-aos='fade-up'>
           <Column>
-            <h1>
-              Conclusion and Reflection
-            </h1>
-            <p>
-              I learned a lot working on this project.  Initially the website was done with vanilla HTML, CSS and Javascript.  This year I chose to refactor
-              the code into a React project, which was challenging but resulted in a much cleaner outcome.  Even though this is a simple static website I value
-              it as a polished project with lots of code I can incorporate in future web based projects. 
-            </p>
+            <h1>{CardinalPrideData[1].heading}</h1>
+            <p>{CardinalPrideData[1].text}</p>
           </Column>
         </Row>
       </motion.div>

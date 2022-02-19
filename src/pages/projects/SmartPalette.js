@@ -10,13 +10,8 @@ import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
-
+import { SmartPaletteData } from '../../assets/data/pages/smartpalette.js';
 import SmartPalette_0 from '../../assets/images/SmartPalette/SmartPalette_0.png';
-import SmartPalette_3 from '../../assets/images/SmartPalette/SmartPalette_3.png';
-import SmartPalette_4 from '../../assets/images/SmartPalette/SmartPalette_4.png';
-import SmartPalette_5 from '../../assets/images/SmartPalette/SmartPalette_5.png';
-import SmartPalette_6 from '../../assets/images/SmartPalette/SmartPalette_6.png';
-import SmartPalette_420 from '../../assets/images/SmartPalette/bart_palette.gif';
 
 const SmartPalette = () => {
 
@@ -31,120 +26,99 @@ const SmartPalette = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
         <Row>
-          <img src={SmartPalette_0} alt="here we go again." />
+          <img src={SmartPalette_0} alt="lets" />
         </ Row>
 
         <Row>
           <Column>
-            <p>
-              Smart Palette is a Web Application for users to generate color palettes by uploading an image.
-              The platform uses an unsupervised AI algorithm to choose the optimal diverse color
-              series for the image. If you do not like what is generated, you can run it again and
-              get a different result. You can view other color palettes created by different users.
-            </p>
+            <p>{SmartPaletteData[0].description}</p>
           </Column>
           <Column>
-            <img src={SmartPalette_420} alt="what even is this" />
+            <img src={SmartPaletteData[0].image} alt="go a" />
           </Column>
         </ Row>
 
         <Row>
           <p>
-            Team:  Jacob Thomas, Kevin Conti, Thomas Taylor, Devan Corcoran, Mark Lisanti <br />
-            Role(s): Developer,  Designer <br />
-            Stack: PostgresSQL, Python, HTML/CSS/JS
+            Team: {SmartPaletteData[0].team}
+            <br />
+            Role(s): {SmartPaletteData[0].roles}
+            <br />
+            Stack: {SmartPaletteData[0].stack}
           </p>
         </Row>
 
         <Row data-aos='fade-up'>
           <Column>
-            <h1>
-              But why?
-            </h1>
+            <h1>{SmartPaletteData[1].heading}</h1>
             <p>
-              For anyone from painters, to web designers, to interior designers, color palettes are useful.
-              If a user has a picture or a piece of art that they love the colors of, they can quickly
-              create a palette with it.
+              {SmartPaletteData[1].text1}
               <br />
               <br />
-              We performed requirements elicitation with five unique users in order to grasp a consistent
-              picture of the user’s requirements. Requirements were gathered from the users in a group
-              setting through an open-ended dialogue with a focus on user creativity in order to prevent
-              developer bias in the elicitation process. Afterwards, requirements analysis was used to
-              determine specific feature expectations, as well as to resolve ambiguity in requirements.
+              {SmartPaletteData[1].text2}
             </p>
           </Column>
           <Column>
-            <Image src={SmartPalette_4} alt="here we go again, jk." />
+            <Image src={SmartPaletteData[1].image} alt="few" />
           </Column>
         </Row>
 
         <Row data-aos='fade-up'>
           <Column>
-            <h1>
-              Requirements
-            </h1>
+            <h1>{SmartPaletteData[2].heading}</h1>
             <p>
-              ⦁    Able to create users and store usernames/passwords in database <br />
-              ⦁    Users able to upload photos and generate palettes until they get the one they like <br />
-              ⦁    Store photo file paths in database <br />
-              ⦁    Store palettes created in database <br />
-              ⦁    Palettes created by all users visible on website palette timeline
+              {SmartPaletteData[2].text[0]}
+              <br />
+              {SmartPaletteData[2].text[1]}
+              <br />
+              {SmartPaletteData[2].text[2]}
+              <br />
+              {SmartPaletteData[2].text[3]}
+              <br />
+              {SmartPaletteData[2].text[4]}
             </p>
           </Column>
           <Column>
-            <Image src={SmartPalette_3} alt="here we go again again." />
+            <Image src={SmartPaletteData[2].image} alt="drinks" />
           </Column>
         </Row>
 
         <Row data-aos='fade-up'>
           <Column>
-            <h1>
-              Architectural Design
-            </h1>
-            <p>
-              This application uses a PostgresSQL database
-              (relational database) which communicates via a web-based API,
-              which the user is able to interact with via an HTML/CSS/JS user interface.
-
-            </p>
+            <h1>{SmartPaletteData[3].heading}</h1>
+            <p>{SmartPaletteData[3].text}</p>
           </Column>
           <Column>
-            <Image src={SmartPalette_5} alt="im bored" />
+            <Image src={SmartPaletteData[3].image} alt="back" />
           </Column>
         </Row>
 
         <Row data-aos='fade-up'>
           <Column>
-            <h1>
-              Component Design
-            </h1>
+            <h1>{SmartPaletteData[4].heading}</h1>
             <p>
-              Our three modules are the User Interface (UI), API, and the database (DB)<br />
-              ⦁	UI:There are several interfaces for the UI. There is a login screen, user image upload screen, sample image screen , account registration screen<br />
-              ⦁	API: The API allows for various inputs that create functionality. The API utilizes a CRUD interface with regards to the five major resources of the project: color, user, palette, color-palette, and image<br />
-              ⦁	DB: The database interface is accessed via ORM (object relational mapping) pattern via the API. The end user is unable to interact with any input our output without utilizing the API as a form of middleware.<br />
+              {SmartPaletteData[4].text1}
+              <br />
+              {SmartPaletteData[4].text2[0]}
+              <br />
+              {SmartPaletteData[4].text2[1]}
+              <br />
+              {SmartPaletteData[4].text2[2]}
             </p>
           </Column>
           <Column>
-            <Image src={SmartPalette_6} alt="thanks for watching" />
+            <Image src={SmartPaletteData[4].image} alt="you swore" />
           </Column>
         </Row>
 
         <Row data-aos='fade-up'>
           <Column>
-            <h1>
-              Conclusion and Reflection
-            </h1>
+            <h1>{SmartPaletteData[5].heading}</h1>
             <p>
-              Overall the team worked well together and I believe we designed an elegant piece of software.  I wish I spent more time understanding front end frameworks
-              at the time to polish the look of the project. 
-              Unfortuantely the submitted interface, while functional, has an unfinished look and does
-              not do the well designed backend justice.  You can visit the site at:
+              {SmartPaletteData[5].text}
               <TextLink href="https://smartpalette.herokuapp.com" target="_blank" rel="noopener noreferrer"> smartpalette.herokuapp.com</ TextLink>
               <br />
               <br />
-              I hope to redo the interface as a future project.
             </p>
           </Column>
         </Row>

@@ -11,12 +11,8 @@ import ReactPlayer from 'react-player';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { Row, Column, Image } from '../../components/PageComponents.js';
-
-import AmbieSense_0 from '../../assets/images/AmbieSense/AmbieSense_0.png';
+import { AmbieSenseData } from '../../assets/data/pages/ambiesense.js';
 import AmbieSense_1 from '../../assets/images/AmbieSense/AmbieSense_1.png';
-import AmbieSense_3 from '../../assets/images/AmbieSense/AmbieSense_3.png';
-import AmbieSense_5 from '../../assets/images/AmbieSense/AmbieSense_5.png';
-import AmbieSense_6 from '../../assets/images/AmbieSense/AmbieSense_6.png';
 
 const AmbioSense = () => {
   useEffect(() => {
@@ -31,17 +27,19 @@ const AmbioSense = () => {
         exit={{ opacity: 0 }}>
         <Row data-aos='fade-up'>
           <Column>
-            <Image src={AmbieSense_6} alt="sleepy time" />
+            <Image src={AmbieSenseData[0].image} alt="have" />
           </Column>
           <Column>
-            <p>An in-home experience to help support mental health during a pandemic through AR/VR. Project a new environment into your home, while connecting with family and friends. Take a journey, find your meditative place, or simply revamp your space!</p>
+            <p>{AmbieSenseData[0].description}</p>
             <br/>
             <br/>
             <p>
-              Team:  Katherin Gilchrist, Jenny Lee, Mark Lisanti, Priyanka Makin<br />
-              Role(s): Developer,  Designer <br />
-              Stack: React Native, JavaScript
-          </p>
+              Team: {AmbieSenseData[0].team}
+              <br />
+              Role(s): {AmbieSenseData[0].roles}
+              <br />
+              Stack: {AmbieSenseData[0].stack}
+            </p>
           </Column>
         </Row>
 
@@ -50,51 +48,45 @@ const AmbioSense = () => {
         </Row>
 
         <Row data-aos='fade-up'>
-          <Image src={AmbieSense_1} alt="who let the dogs out" />
+          <Image src={AmbieSense_1} alt="you" />
         </Row>
 
         <Row data-aos='fade-up'>
           <Column>
-            <h1>Software design and development</h1>
-            <p> Topology: Mobile App - Websocket server - p5js sketch <br/>
+            <h1>{AmbieSenseData[1].header}</h1>
+            <p> 
+              {AmbieSenseData[1].text1}
               <br/>
-                The mobile application is currently built and tested for Android but using React Native for possible iOS support in the future.  
-                At this stage there is very limited functionality within the app but it is set up for integration with a backend to support user logins and personalized accounts. 
+              <br/>
+              {AmbieSenseData[1].text2}
             </p>
           </Column>
           <Column>
-            <Image src={AmbieSense_0} alt="I did" />
+            <Image src={AmbieSenseData[1].image} alt="ever" />
           </Column>
         </Row>
 
         <Row data-aos='fade-up'>
           <Column>
             <p>
-              The mobile application communicates through a local websocket server to change an image in a p5js sketch running on the second system.   
-              This sketch is then projected onto a wall or surface through an HDMI cable connected to the second system.  Currently the setup only allows communication between the app and projection if the devices are connected to the same network.  
-              As the server is very simple it will need to be expanded for better security and persistence.  
+              {AmbieSenseData[2].text1}
               <br />
               <br />
-              The p5js sketch is used to easily utilize HTML canvas to display videos.  It changes the video based on the data sent from the websocket server.  Depending on how the future environments are developed this p5js sketch may be expanded or scrapped for a more robust library.
+              {AmbieSenseData[2].text2}
             </p>
           </Column>
           <Column>
-            <Image src={AmbieSense_3}  alt="Thats what she said" />
+            <Image src={AmbieSenseData[2].image}  alt="had a" />
           </Column>
         </Row>
 
         <Row data-aos='fade-up'>
           <Column>
-            <h1>
-              Hardware design
-            </h1>
-            <p>
-            The housing for this product was drawn up in Sketchup, a web-based CAD software. It is designed to scale with the hardware we currently have (Auking projector and diffuser) and measures 15 inches in diameter. The projector and diffuser are kept separate from each other. 
-            The diffuser steam can escape through openings at the bottom of the sphere. Additionally, RGB LEDs can be added toward the bottom of the AmbieSense housing making it look glowy and modern and can add to the overall ambience. This design can be exported and 3D printed with white filament.
-            </p>
+            <h1>{AmbieSenseData[3].heading}</h1>
+            <p>{AmbieSenseData[3].text}</p>
           </Column>
           <Column>
-            <Image src={AmbieSense_5}  alt="fake image" />
+            <Image src={AmbieSenseData[3].image} alt="dream?" />
           </Column>
         </Row>
 
@@ -104,13 +96,8 @@ const AmbioSense = () => {
 
         <Row data-aos='fade-up'>
           <Column>
-            <h1>
-              Conclusion and Reflection
-            </h1>
-            <p>
-              The goal of this project was to design something with the pandemic in mind and I think we achieved this.  We ambitiously designed both software and hardware and unfortunately did not have time to fabricate the hardware components.  
-              Other stretch goals included projection mapping, or some sort of AR integration.  Personally I learned a lot and would be happy to revisit the project in the future. 
-            </p>
+            <h1>{AmbieSenseData[4].heading}</h1>
+            <p>{AmbieSenseData[4].text}</p>
           </Column>
         </Row>
       </motion.div>

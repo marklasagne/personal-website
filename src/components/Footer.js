@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <>
       <StyledFooter>
-        <p2>When life ain't going right go left</p2>
+        <p2>When life ain't going right go left.</p2>
         <br />
         <p2>&copy; 2022</p2>
       </StyledFooter>
