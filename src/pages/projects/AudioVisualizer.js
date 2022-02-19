@@ -10,9 +10,7 @@ import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { Row, Column, Image } from '../../components/PageComponents.js';
-
-import AudioVisualizer_0 from '../../assets/images/AudioVisualizer/AudioVisualizer.gif';
-import p5js from '../../assets/icons/p5.svg';
+import { AudioVisualizerData } from '../../assets/data/pages/audiovisualizer.js'
 
 const AudioVisualizer = () => {
 
@@ -27,39 +25,30 @@ const AudioVisualizer = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
         <Row>
-          <h1>3D Audio Visualization</h1>
+          <h1>{AudioVisualizerData[0].heading}</h1>
         </ Row>
 
         <Row>
           <p>
-            Role(s): Developer,  Artist <br />
-            Stack: p5js, GLSL
+            Role(s): {AudioVisualizerData[0].roles}
+            <br />
+            Stack: {AudioVisualizerData[0].stack}
           </p>
         </Row>
 
         <Row>
           <Column>
-            <p>
-              This is a quick exploration of using FFT data from audio files to create visualization.  The waveform is passed as a
-              uniform to a vertex shader to manipulate the shape of the 3D model.  The amplitude is used to change the
-              rotational speed when the amplitude hits an upper threshold.
-            </p>
+            <p>{AudioVisualizerData[1].text}</p>
           </Column>
           <Column>
-            <Image src={AudioVisualizer_0} alt="what even is this" />
+            <Image src={AudioVisualizerData[1].image} alt="fear?" />
           </Column>
         </ Row>
 
         <Row data-aos='fade-up'>
           <Column>
-            <h1>
-              Conclusion and Reflection
-            </h1>
-            <p>
-              Exploring shaders and 3d objects was fun.  I like the direction that this exploration went and would love to expand on this 
-              project in the future.  I invision users being able to create their own visualization by uploading 3d models and music of their 
-              own tastes.
-            </p>
+            <h1>{AudioVisualizerData[2].heading}</h1>
+            <p>{AudioVisualizerData[2].text}</p>
           </Column>
         </Row>
       </motion.div>
