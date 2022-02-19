@@ -1,11 +1,12 @@
 import React from 'react';
-import {
-    GridRow,
-    GridColumn,
-  } from './ProjectsGridStyles';
-import GridItem from './GridItem'
+import styled from 'styled-components';
+import GridItem from './GridItem';
 import { createGlobalStyle } from 'styled-components';
-import projects from '../../assets/data/projects';
+import { projects } from '../../assets/data/projects';
+
+let totalProjects = projects.length;
+let leftProjects = projects.slice(0, totalProjects/2)
+let rightProjects = projects.slice(totalProjects/2, totalProjects)
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -16,22 +17,49 @@ const GlobalStyle = createGlobalStyle`
 const ProjectGrid = () => {
     return (
       <>
-        <GlobalStyle /> 
         <GridRow>
+        <GlobalStyle />
+        <GridColumn>
+            {leftProjects.map((data, id) => {
+              return(
+                <GridItem title={data.name} image={data.image} description={data.description} id={data.id}/>
+              )
+            })}
+          </GridColumn> 
           <GridColumn>
-            <GridItem title={projects[5].name} image={projects[5].image} description={projects[5].description} id={projects[5].id}/>
-            <GridItem title={projects[0].name} image={projects[0].image} description={projects[0].description} id={projects[0].id}/>
-            <GridItem title={projects[3].name} image={projects[3].image} description={projects[3].description} id={projects[3].id}/>
+            {rightProjects.map((data, id) => {
+              return(
+                <GridItem title={data.name} image={data.image} description={data.description} id={data.id}/>
+              )
+            })}
           </GridColumn>
-          <GridColumn> 
-            <GridItem title={projects[2].name} image={projects[2].image} description={projects[2].description} id={projects[2].id}/>
-            <GridItem title={projects[4].name} image={projects[4].image} description={projects[4].description} id={projects[4].id}/>
-            <GridItem title={projects[1].name} image={projects[1].image} description={projects[1].description} id={projects[1].id}/>    
-          </GridColumn>
-        </GridRow> 
+        </GridRow>
       </>
     );
   };
+
+const GridRow = styled.div`
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    position: relative;
+    @media screen and (max-width: 700px) {
+        padding: 0 15px;
+  }  
+`;
+  
+const GridColumn = styled.div`
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%%;
+    max-width: 50%;
+    padding: 0 5px;
+    @media screen and (max-width: 850px) {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+  }  
+`;
   
   export default ProjectGrid;
 
