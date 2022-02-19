@@ -12,10 +12,8 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
 import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
-
+import { TriangleTrailStatusData } from '../../assets/data/pages/triangletrailstatus.js';
 import TriangTrail_0 from '../../assets/images/TriangleTrailStatus/TriangTrail_0.png';
-import TriangTrail_1 from '../../assets/images/TriangleTrailStatus/TriangTrail_1.png';
-import TriangTrail_2 from '../../assets/images/TriangleTrailStatus/TriangTrail_2.png';
 import TriangTrail_3 from '../../assets/images/TriangleTrailStatus/TriangTrail_3.png';
 import TriangTrail_4 from '../../assets/images/TriangleTrailStatus/TriangTrail_4.png';
 import TriangTrail_5 from '../../assets/images/TriangleTrailStatus/TriangTrail_5.png';
@@ -33,75 +31,50 @@ const TriangTrail = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
         <Row data-aos='fade-up'>
-          <img src={TriangTrail_0} style={{ width: '50%' }} alt='im over this' />
+          <img src={TriangTrail_0} style={{ width: '50%' }} alt="I will" />
         </ Row>
 
         <Row data-aos='fade-up'>
           <Column>
-            <p>
-              Triangle Trail Status is a mobile application aimed to give users an easier experience
-              checking for where to ride. In the application,
-              you can favorite trails which gives the option to receive post notifications if that trail either
-              opens or closes.
-            </p>
+            <p>{TriangleTrailStatusData[0].description}</p>
           </Column>
           <Column>
-            <p>
-              Role(s): Designer, Developer
-            </p>
-            <p>
-              Stack: React-native, Firestore and Cloud functions in Firebase, NodeJS - Cloud Foundry
-              on IBM Cloud
-            </p>
+            <p>Role(s): {TriangleTrailStatusData[0].roles}</p>
+            <p>Stack: {TriangleTrailStatusData[0].stack}</p>
           </Column>
         </Row>
 
         <Row data-aos='fade-up'>
           <StyledReactPlayer url='https://www.youtube.com/watch?v=JDh9jO79lLc' />
-          <BackgroundImage src={TriangTrail_4} style={{ transform: `translate(150px, -275px)` }} alt='what broke...' />
-          <BackgroundImage src={TriangTrail_5} style={{ transform: `translate(-200px, 300px)` }} alt='missing or not?' />
+          <BackgroundImage src={TriangTrail_4} style={{ transform: `translate(150px, -275px)` }} alt="never" />
+          <BackgroundImage src={TriangTrail_5} style={{ transform: `translate(-200px, 300px)` }} alt="leave" />
         </ Row>
 
         <Row data-aos='fade-up'>
           <Column>
-            <h1>
-              Problem and Solution
-            </h1>
+            <h1>{TriangleTrailStatusData[1].heading}</h1>
             <p>
-              <TextLink href="https://www.trianglemtb.com/" target="_blank" rel="noopener noreferrer"> Triangle MTB’s website</TextLink> is not very friendly to check on your mobile device.
-              As community members update the status’s up trails you may miss when your favorite trail opens,
-              missing the opportunity to ride that day.
+              <TextLink href="https://www.trianglemtb.com/" target="_blank" rel="noopener noreferrer"> Triangle MTB's website</TextLink> {TriangleTrailStatusData[1].text1}
             </p>
-            <p>
-              Triangle Trail Status provides a lightweight two-page application that allows users to favorite trails of their choice.
-              Once favorited the user may receive push notifications when the trail’s status is updated.
-            </p>
+            <p>{TriangleTrailStatusData[1].text2}</p>
           </Column>
           <Column>
-            <Image src={TriangTrail_1} alt='are aliens real?' />
+            <Image src={TriangleTrailStatusData[1].image} alt="my" />
           </Column>
         </Row>
 
         <Row data-aos='fade-up'>
           <Column>
-            <h1>
-              Design and Style
-            </h1>
-            <p>
-              The project started because I wanted to make and animate a logo, specifically a triangle tire.
-              After initially sketching and learning different tools to digitalize my drawings I decided to
-              write some code to implement my animation on web or mobile applications. This led to me fleshing
-              out the ideas and final design of the app.  Once I had deployed test versions of the app I used
-              feedback from users to make tweaks and add features to quickly add updated releases.
-            </p>
+            <h1>{TriangleTrailStatusData[2].heading}</h1>
+            <p>{TriangleTrailStatusData[2].text}</p>
           </Column>
           <Column>
-            <Image src={TriangTrail_2} alt='wow I used a lot of images.' />
+            <Image src={TriangleTrailStatusData[2].image} alt="house" />
           </Column>
         </Row>
 
         <Row data-aos='fade-up'>
-          <Image src={TriangTrail_3} alt="okay, last one to make unique." />
+          <Image src={TriangTrail_3} alt="I swear" />
         </ Row>
 
         <Row data-aos='fade-up'>
@@ -110,16 +83,12 @@ const TriangTrail = () => {
 
         <Row data-aos='fade-up'>
           <Column>
-            <h1>
-              Conclusion and Reflection
-            </h1>
+            <h1>{TriangleTrailStatusData[3].heading}</h1>
             <p>
-              Being my first publically published mobile app I was nervous.  Ultimately this was a success, and proved real value in the local mountain biking community.
-              I worked hard at learning react-native and feel the result is a clean,  and professional codebase.  I wish I spent more time designing the interface
-              and user testing the usability before publishing.  
+              {TriangleTrailStatusData[3].text1}
               <br />
               <br />
-              Bonus skills I picked up were drawing and animating the logo which gave me exposure to Adobe products and using my artistic side. 
+              {TriangleTrailStatusData[3].text2}
             </p>
           </Column>
         </Row>
