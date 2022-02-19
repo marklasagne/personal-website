@@ -10,7 +10,6 @@ const Projects = () => {
             animate={{ opacity: 1 }} 
             exit={{ opacity: 0 }}>
                 <ProjectsPage />
-            
             </motion.div>
         </Suspense>
     );

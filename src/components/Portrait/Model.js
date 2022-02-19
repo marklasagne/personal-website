@@ -16,7 +16,6 @@ export default function Model({ ...props }) {
   const eyes = useRef();
   let xMiddle = viewport.width / 2;
   let yMiddle = viewport.height / 2;
-  console.log(group.current.rotation.x.get);
 
   console.log(viewport.height);
   console.log(viewport.width);
