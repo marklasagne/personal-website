@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import GridItem from './GridItem';
 import { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components'; 
+import GridItem from './GridItem.js';
+import { Row } from '../PageComponents.js';
 import { projects } from '../../assets/data/projects';
 
 let totalProjects = projects.length;
@@ -17,6 +18,11 @@ const GlobalStyle = createGlobalStyle`
 const ProjectGrid = () => {
     return (
       <>
+        <Row>
+          <PillButton class="button">Pill Button 1</PillButton>
+          <PillButton class="button">Pill Button 2</PillButton>
+          <PillButton class="button">Pill Button 3</PillButton>
+        </Row>
         <GridRow>
         <GlobalStyle />
         <GridColumn>
@@ -39,26 +45,39 @@ const ProjectGrid = () => {
   };
 
 const GridRow = styled.div`
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;
-    position: relative;
-    @media screen and (max-width: 700px) {
-        padding: 0 15px;
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  position: relative;
+  @media screen and (max-width: 700px) {
+      padding: 0 15px;
   }  
 `;
   
 const GridColumn = styled.div`
-    -ms-flex: 50%; /* IE10 */
-    flex: 50%%;
-    max-width: 50%;
-    padding: 0 5px;
-    @media screen and (max-width: 850px) {
-        -ms-flex: 100%;
-        flex: 100%;
-        max-width: 100%;
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%%;
+  max-width: 50%;
+  padding: 0 5px;
+  @media screen and (max-width: 850px) {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
   }  
+`;
+
+const PillButton = styled.button`
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30px;
 `;
   
   export default ProjectGrid;
