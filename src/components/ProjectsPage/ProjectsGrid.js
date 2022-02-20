@@ -20,21 +20,16 @@ projects.forEach((project) => {
 });
 
 const ProjectGrid = () => {
-  const [filter, setFilter] = useState('All');
+  const [filterList, setFilterList] = useState([]);
+  
 
   return (
     <>
       <PillContainer>
-        {tagList.map((data, index) => {
-          if (index == 0) {
-            return (
-              <PillFilter tag={data} />
-            )
-          } else {
-            return (
-              <PillFilter tag={data} />
-            )
-          }   
+        {tagList.map((data) => {
+          return (
+            <PillFilter key={data} tag={data} onClick={() => { console.log("button clicked");}}/>
+          )
         })}
       </PillContainer>
       <GridRow>
@@ -42,14 +37,14 @@ const ProjectGrid = () => {
         <GridColumn>
           {leftColumn.map((data) => {
             return (
-              <GridItem title={data.name} image={data.image} description={data.description} id={data.id} />
+              <GridItem key={data.id} title={data.name} image={data.image} description={data.description} id={data.id} />
             )
           })}
         </GridColumn>
         <GridColumn>
           {rightColumn.map((data) => {
             return (
-              <GridItem title={data.name} image={data.image} description={data.description} id={data.id} />
+              <GridItem key={data.id} title={data.name} image={data.image} description={data.description} id={data.id} />
             )
           })}
         </GridColumn>

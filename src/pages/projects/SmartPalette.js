@@ -22,6 +22,7 @@ const SmartPalette = () => {
   return (
     <>
       <motion.div
+        key='smartpalette'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>

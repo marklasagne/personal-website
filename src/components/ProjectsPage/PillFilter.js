@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const PillFilter = ({tag}) => {
+const PillFilter = ({ tag, onClick }) => {
   const [isActive, setActive] = useState(false);
 
   const toggleClass = () => {
@@ -15,7 +15,7 @@ const PillFilter = ({tag}) => {
 
   return (
     <>
-      <PillButton className={isActive ? 'active': null} onClick={toggleClass}>{tag}</PillButton>
+      <PillButton className={isActive ? 'active': null} onClick={() => {toggleClass(); onClick();}}>{tag}</PillButton>
     </>
   );
 }
