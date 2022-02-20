@@ -11,42 +11,42 @@ export const projects = [
     name: 'Ambie Sense',
     description: 'Stay at home interactive experience taylored to mental health.',
     image: AmbieSense, 
-    tags: ['development', 'design']
+    tags: ['Development', 'Design']
   },
   {
     id: 'triangle-trail-status',
     name: 'Triangle Trail Status',
     description: 'Check where to ride, add your favorites, and get notified.',
     image: TriangleTrailStatus,
-    tags: ['development', 'design']
+    tags: ['Development', 'Design']
   },
   {
     id: 'game-of-life-visualization',
     name: 'Game of Life Visualization',
     description: 'Integrating p5js and WebGL with Cloud Technology',
     image: GameOfLife_0, 
-    tags: ['development', 'art']
+    tags: ['Development', 'Art']
   },
   {
     id: 'audio-visualizer',
     name: '3D Audio Visualizer',
     description: 'Short exploration of FTT data and GLSL',
     image: AudioVisualizer, 
-    tags: ['development', 'art']
+    tags: ['Development', 'Art']
   },
   {
     id: 'cardinal-pride',
     name: 'Cardinal Pride Property Care',
     description: 'Website for local handyman',
     image: CardinalPride, 
-    tags: ['development', 'design']
+    tags: ['Development', 'Design']
   },
   {
     id: 'smart-palette',
     name: 'Smart Palette',
     description: 'Web application to create and save color palettes from any image.',
     image: SmartPalette, 
-    tags: ['development', 'design']
+    tags: ['Development', 'Design']
   }
 ];
 

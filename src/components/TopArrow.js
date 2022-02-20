@@ -24,18 +24,19 @@ const TopArrow = () => {
   );
 }
 
-const UpArrow = styled.img`           
-    color: black;
-    z-index: 69;
-    bottom: 0;
-    right: 0;
-    position: fixed;
-    width: 5rem;
-    margin: 3rem;
-    text-decoration: none;
-    &:hover {
-        opacity: 75%;
-    } 
+const UpArrow = styled.img`
+  cursor: pointer;
+  color: black;
+  z-index: 69;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  width: 5rem;
+  margin: 3rem;
+  text-decoration: none;
+  &:hover {
+      opacity: 75%;
+  } 
 `;
 
 export default TopArrow;
