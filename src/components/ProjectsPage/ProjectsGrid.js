@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
 import GridItem from './GridItem.js';
+import PillFilter from './PillFilter.js';
 import { projects } from '../../assets/data/projects';
 
 // split the projects into two columns
@@ -9,7 +10,7 @@ let leftColumn = projects.slice(0, projects.length / 2);
 let rightColumn = projects.slice(projects.length / 2, projects.length);
 
 // get the tags to render pill filters
-let tagList = ['All']; 
+let tagList = []; 
 projects.forEach((project) => {
   project.tags.forEach((tag) => {
     if (!tagList.includes(tag)) {
@@ -18,20 +19,20 @@ projects.forEach((project) => {
   })
 });
 
-
-
 const ProjectGrid = () => {
+  const [filter, setFilter] = useState('All');
+
   return (
     <>
       <PillContainer>
         {tagList.map((data, index) => {
           if (index == 0) {
             return (
-              <PillButton className="active">{data}</PillButton>
+              <PillFilter tag={data} />
             )
           } else {
             return (
-              <PillButton>{data}</PillButton>
+              <PillFilter tag={data} />
             )
           }   
         })}
@@ -89,23 +90,6 @@ const GridColumn = styled.div`
 const PillContainer = styled.div`
   align-items: left;
   padding: 0.875rem;
-`;
-
-const PillButton = styled.div`
-  color: #808080;
-  border: 2px solid;
-  padding: 0.625rem 1.25rem;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 0.25rem 0.125rem;
-  cursor: pointer;
-  border-radius: 30px;
-  &.active {
-    color: #ffffff;
-    background: #000000;
-    border: 2px solid #000000;
-  }
 `;
 
 export default ProjectGrid;
