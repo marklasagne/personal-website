@@ -6,7 +6,7 @@ import PillFilter from './PillFilter.js';
 import { projects } from '../../assets/data/projects';
 
 // get the tags to render pill filters
-let tagList = []; 
+let tagList = [];
 projects.forEach((project) => {
   project.tags.forEach((tag) => {
     if (!tagList.includes(tag)) {
@@ -18,53 +18,40 @@ projects.forEach((project) => {
 const ProjectGrid = () => {
   const [filterList, setFilterList] = useState([]);
   const [projectList, setProjectList] = useState(projects);
-  const [leftColumn, setLeftColumn] = useState([]);
-  const [rightColumn, setRightColumn] = useState([]);
-
-  const updateLists = () => {
-    setLeftColumn(projects.slice(0, projects.length / 2));
-    setRightColumn(projects.slice(projects.length / 2, projects.length));
-  };
-  
 
   // on load set all of the projects
-  useEffect(() =>{
-    updateLists();
-  }, []);
-  
-  console.log(filterList)
-const [test, setTest] = useState(['a', 'b', 'c', 'd', 'e']);
-const [test2, setTest2] = useState(['b', 'd', 'f']);
-test.filter((item) => {
-  if (test2.includes(item)) {
-    setTest(test.filter((e) => (e !== item)));
-  } 
-})
+  // pasta pasta pasta
+  useEffect(() => {
+    if (!filterList === undefined || !filterList.length < 1) {
+      let filtered = []
+      projects.forEach((item) => {
+        item.tags.forEach((tag) => {
+          if (filterList.includes(tag)) {
+            if (!filtered.includes(item)) {
+              filtered.push(item);
+            }
+          }
+        })
+      })
+      setProjectList(filtered);
+    } else {
+      setProjectList(projects);
+    }
+  }, [filterList]);
 
-return (
+
+  return (
     <>
       <PillContainer>
         {tagList.map((data) => {
           return (
             <PillFilter key={data} tag={data} onClick={() => {
-              if(!filterList.includes(data)) {
+              if (!filterList.includes(data)) {
                 setFilterList(filterList => [...filterList, data]);
-
-                projects.forEach((project) => {
-                  project.tags.forEach((tag) => {
-                    if (filterList.includes(tag)) {
-                      console.log('INCLUDED')
-                    } else { 
-                    }
-                  })
-                });
-                
               } else {
                 setFilterList(filterList.filter((e) => (e !== data)));
-                
               }
-              }
-            }
+            }}
             />
           )
         })}
@@ -72,14 +59,14 @@ return (
       <GridRow>
         <GlobalStyle />
         <GridColumn>
-          {leftColumn.map((data) => {
+          {projectList.map((data) => {
             return (
               <GridItem key={data.id} title={data.name} image={data.image} description={data.description} id={data.id} />
             )
           })}
         </GridColumn>
         <GridColumn>
-          {rightColumn.map((data) => {
+          {projectList.map((data) => {
             return (
               <GridItem key={data.id} title={data.name} image={data.image} description={data.description} id={data.id} />
             )
