@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
 import GridItem from './GridItem.js';
 import PillFilter from './PillFilter.js';
 import { projects } from '../../assets/data/projects';
-
-// split the projects into two columns
-let leftColumn = projects.slice(0, projects.length / 2);
-let rightColumn = projects.slice(projects.length / 2, projects.length);
 
 // get the tags to render pill filters
 let tagList = []; 
@@ -21,14 +17,55 @@ projects.forEach((project) => {
 
 const ProjectGrid = () => {
   const [filterList, setFilterList] = useState([]);
+  const [projectList, setProjectList] = useState(projects);
+  const [leftColumn, setLeftColumn] = useState([]);
+  const [rightColumn, setRightColumn] = useState([]);
+
+  const updateLists = () => {
+    setLeftColumn(projects.slice(0, projects.length / 2));
+    setRightColumn(projects.slice(projects.length / 2, projects.length));
+  };
   
 
-  return (
+  // on load set all of the projects
+  useEffect(() =>{
+    updateLists();
+  }, []);
+  
+  console.log(filterList)
+const [test, setTest] = useState(['a', 'b', 'c', 'd', 'e']);
+const [test2, setTest2] = useState(['b', 'd', 'f']);
+test.filter((item) => {
+  if (test2.includes(item)) {
+    setTest(test.filter((e) => (e !== item)));
+  } 
+})
+
+return (
     <>
       <PillContainer>
         {tagList.map((data) => {
           return (
-            <PillFilter key={data} tag={data} onClick={() => { console.log("button clicked");}}/>
+            <PillFilter key={data} tag={data} onClick={() => {
+              if(!filterList.includes(data)) {
+                setFilterList(filterList => [...filterList, data]);
+
+                projects.forEach((project) => {
+                  project.tags.forEach((tag) => {
+                    if (filterList.includes(tag)) {
+                      console.log('INCLUDED')
+                    } else { 
+                    }
+                  })
+                });
+                
+              } else {
+                setFilterList(filterList.filter((e) => (e !== data)));
+                
+              }
+              }
+            }
+            />
           )
         })}
       </PillContainer>
