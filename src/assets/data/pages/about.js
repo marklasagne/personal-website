@@ -15,7 +15,7 @@ export const AboutPageData = [
   },
   {
     main: " After graduating with a Bachelors of Science in Computer Science in 2018 I spent some time within IBM Hybrid Cloud as a software support" +
-      " engineer.  It was here where I was exposed to the fast moving world of cloud technologies and notably the opportunity to research and explore brand new technology." +
+      " engineer.  This gave me valuable exposure to the fast moving world of cloud technologies and the opportunity to research and explore brand new technology." +
       " Filling gaps between growing my software engineering skills I enjoy dabbling with 2D/3D modeling and animation, VFX, and illustration.",
     hidden: "Some say the concept originated in ancient Greece where layered dough sheets (called laganon) " +
           " were cut into strips and baked. Others claim it resembles a Roman dish recorded in a cookbook in the 1st century AD." +
