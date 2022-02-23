@@ -23,6 +23,8 @@ import { createGlobalStyle } from 'styled-components';
 import { PageContainer, ContentWrap } from './components/PageComponents';
 import FontStyles from './assets/fonts/fonts.js';
 
+import FilterTest from './pages/FilterTest.js';
+
 const App = () => {
 
   return (
@@ -46,6 +48,7 @@ const App = () => {
             <Route path='/projects/audio-visualizer' element={<AudioVisualizer />} />
             <Route path='/projects/game-of-life-visualization' element={<GameOfLife />} />
             <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
+            <Route path='/filter-test' element={<FilterTest />} />
           </Routes>
           </ContentWrap>
           <Footer />

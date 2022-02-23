@@ -26,6 +26,7 @@ const GridItem = ({image, id}) => {
     vertical-align: middle;
     border-radius: 5px;   
     width: 100%;
+    cursor: pointer;
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),

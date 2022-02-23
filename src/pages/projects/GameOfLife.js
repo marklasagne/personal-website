@@ -21,6 +21,7 @@ const GameOfLife = () => {
   return (
     <>
       <motion.div
+        key='gameoflife'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
