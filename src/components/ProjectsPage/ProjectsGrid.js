@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import styled from 'styled-components';
 import GridItem from './GridItem.js';
 import PillFilter from './PillFilter.js';
 import { projects } from '../../assets/data/projects';
 
 // get the tags to render pill filters
-let tagList = [];
+let tagList = []; 
 projects.forEach((project) => {
   project.tags.forEach((tag) => {
     if (!tagList.includes(tag)) {
@@ -20,8 +21,7 @@ const ProjectGrid = () => {
   const [projectList, setProjectList] = useState(projects);
 
   // on load set all of the projects
-  // pasta pasta pasta
-  useEffect(() => {
+  useEffect(() =>{
     if (!filterList === undefined || !filterList.length < 1) {
       let filtered = []
       projects.forEach((item) => {
@@ -30,24 +30,24 @@ const ProjectGrid = () => {
             if (!filtered.includes(item)) {
               filtered.push(item);
             }
-          }
-        })
+          } 
+        }) 
       })
       setProjectList(filtered);
     } else {
       setProjectList(projects);
     }
   }, [filterList]);
-
-
-  return (
+  
+return (
     <>
       <PillContainer>
         {tagList.map((data) => {
           return (
             <PillFilter key={data} tag={data} onClick={() => {
-              if (!filterList.includes(data)) {
+              if(!filterList.includes(data)) {
                 setFilterList(filterList => [...filterList, data]);
+                
               } else {
                 setFilterList(filterList.filter((e) => (e !== data)));
               }
@@ -56,23 +56,20 @@ const ProjectGrid = () => {
           )
         })}
       </PillContainer>
-      <GridRow>
+  
         <GlobalStyle />
-        <GridColumn>
+        <ResponsiveMasonry
+                columnsCountBreakPoints={{750: 1, 900: 2}}
+            >
+        <Masonry gutter={8}>
           {projectList.map((data) => {
             return (
               <GridItem key={data.id} title={data.name} image={data.image} description={data.description} id={data.id} />
             )
           })}
-        </GridColumn>
-        <GridColumn>
-          {projectList.map((data) => {
-            return (
-              <GridItem key={data.id} title={data.name} image={data.image} description={data.description} id={data.id} />
-            )
-          })}
-        </GridColumn>
-      </GridRow>
+       </Masonry>
+       </ResponsiveMasonry>
+      
     </>
   );
 };
