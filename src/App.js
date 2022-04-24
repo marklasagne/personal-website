@@ -16,6 +16,7 @@ import AmbieSense from './pages/projects/AmbieSense.js';
 import AudioVisualizer from './pages/projects/AudioVisualizer.js';
 import GameOfLife from './pages/projects/GameOfLife.js';
 import CardinalPride from './pages/projects/CardinalPride.js';
+import Jobzen from './pages/projects/Jobzen.js';
 import About from './pages/About';
 import ScrollToTop from './components/ScrollToTop.js';
 import TopArrow from './components/TopArrow.js';
@@ -48,6 +49,7 @@ const App = () => {
             <Route path='/projects/audio-visualizer' element={<AudioVisualizer />} />
             <Route path='/projects/game-of-life-visualization' element={<GameOfLife />} />
             <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
+            <Route path='/projects/jobzen' element={<Jobzen />} />
             <Route path='/filter-test' element={<FilterTest />} />
           </Routes>
           </ContentWrap>

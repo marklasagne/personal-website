@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
-import { CardinalPrideData } from '../../assets/data/pages/cardinalpride.js'
+import { CardinalPrideData } from '../../assets/data/pages/cardinalpride.js';
 import CardinalPride_1 from '../../assets/images/CardinalPride/CardinalPride_1.png';
 import CardinalPride_2 from '../../assets/images/CardinalPride/CardinalPride_2.png';
 
