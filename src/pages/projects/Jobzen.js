@@ -11,7 +11,9 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
 import Jobzen_4 from '../../assets/images/Jobzen/jobzen_4.png';
+import Jobzen_5 from '../../assets/images/Jobzen/jobzen_5.png';
 import { JobzenData } from '../../assets/data/pages/jobzen.js';
+import { SRLWrapper } from "simple-react-lightbox";
 
 const SmartPalette = () => {
 
@@ -67,7 +69,9 @@ const SmartPalette = () => {
             <p>{JobzenData[2].text8}</p>
           </Column>
           <Column>
-            <Image src={JobzenData[2].image} alt="alt" />
+            <SRLWrapper>
+              <Image src={JobzenData[2].image} alt="alt" />
+            </SRLWrapper>
           </Column>
         </Row>
 
@@ -77,7 +81,9 @@ const SmartPalette = () => {
             <p>{JobzenData[3].text}</p>
           </Column>
           <Column>
-            <Image src={JobzenData[3].image} alt="what" />
+            <SRLWrapper>
+              <Image src={JobzenData[3].image} alt="what" />
+            </SRLWrapper>
           </Column>
         </Row>
 
@@ -86,12 +92,16 @@ const SmartPalette = () => {
             <p>{JobzenData[4].text}</p>
           </Column>
           <Column>
-            <Image src={JobzenData[4].image} alt="dope" />
+            <SRLWrapper>
+              <Image src={JobzenData[4].image} alt="dope" />
+            </SRLWrapper>
           </Column>
         </Row>
 
         <Row data-aos='fade-up'>
-          <Image src={Jobzen_4} alt="full" />
+          <SRLWrapper>
+            <Image src={Jobzen_4} alt="full" />
+          </SRLWrapper>
         </Row>
 
         <Row data-aos='fade-up'>
@@ -105,7 +115,9 @@ const SmartPalette = () => {
             <p>{JobzenData[5].text5}</p><br />
           </Column>
           <Column>
-            
+            <SRLWrapper>
+              <Image src={Jobzen_5} alt="dope" />
+            </SRLWrapper>
           </Column>
         </Row>
       </motion.div>
