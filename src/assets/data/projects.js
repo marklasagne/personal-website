@@ -4,14 +4,15 @@ import CardinalPride from '../images/cardinal_pride.gif';
 import AmbieSense from '../images/ambie_sense.gif';
 import AudioVisualizer from '../images/audio_visualization.gif';
 import GameOfLife_0 from '../images/GameOfLife/GameOfLife_0.gif';
+import Jobzen from '../images/job_zen.png';
 
 export const projects = [
   {
-    id: 'ambie-sense',
-    name: 'Ambie Sense',
-    description: 'Stay at home interactive experience taylored to mental health.',
-    image: AmbieSense, 
-    tags: ['Development', 'Design']
+    id: 'jobzen',
+    name: 'Job Zen',
+    description: 'Mobile application promoting easier and productive job searching.',
+    image: Jobzen, 
+    tags: ['UX Research', 'Design']
   },
   {
     id: 'triangle-trail-status',
@@ -47,7 +48,14 @@ export const projects = [
     description: 'Web application to create and save color palettes from any image.',
     image: SmartPalette, 
     tags: ['Development', 'Design']
-  }
+  },
+  {
+    id: 'ambie-sense',
+    name: 'Ambie Sense',
+    description: 'Stay at home interactive experience taylored to mental health.',
+    image: AmbieSense, 
+    tags: ['Development', 'Design']
+  },
 ];
 
 

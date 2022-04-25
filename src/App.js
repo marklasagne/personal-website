@@ -16,12 +16,14 @@ import AmbieSense from './pages/projects/AmbieSense.js';
 import AudioVisualizer from './pages/projects/AudioVisualizer.js';
 import GameOfLife from './pages/projects/GameOfLife.js';
 import CardinalPride from './pages/projects/CardinalPride.js';
+import Jobzen from './pages/projects/Jobzen.js';
 import About from './pages/About';
 import ScrollToTop from './components/ScrollToTop.js';
 import TopArrow from './components/TopArrow.js';
 import { createGlobalStyle } from 'styled-components';
 import { PageContainer, ContentWrap } from './components/PageComponents';
 import FontStyles from './assets/fonts/fonts.js';
+import SimpleReactLightbox from 'simple-react-lightbox'
 
 import FilterTest from './pages/FilterTest.js';
 
@@ -30,31 +32,34 @@ const App = () => {
   return (
     <>
     <AnimatePresence exitBeforeEnter={true}>
+      <SimpleReactLightbox>    
       <GlobalStyle />
       <FontStyles />
       <SideBar />
       <TopArrow />
-      <PageContainer>
-      <Router>
-        <ScrollToTop>
-        <Navbar />
-        <ContentWrap>
-          <Routes>
-            <Route path='/' element={<About />} />
-            <Route path='/projects' element={<ProjectList />} />
-            <Route path='/projects/triangle-trail-status' element={<TriangleTrailStatus />} />
-            <Route path='/projects/smart-palette' element={<SmartPalette />} />
-            <Route path='/projects/ambie-sense' element={<AmbieSense />} />
-            <Route path='/projects/audio-visualizer' element={<AudioVisualizer />} />
-            <Route path='/projects/game-of-life-visualization' element={<GameOfLife />} />
-            <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
-            <Route path='/filter-test' element={<FilterTest />} />
-          </Routes>
-          </ContentWrap>
-          <Footer />
-          </ ScrollToTop>
-      </Router>
-      </ PageContainer>
+        <PageContainer>
+          <Router>
+            <ScrollToTop>
+              <Navbar />
+              <ContentWrap>
+                <Routes>
+                  <Route path='/' element={<About />} />
+                  <Route path='/projects' element={<ProjectList />} />
+                  <Route path='/projects/triangle-trail-status' element={<TriangleTrailStatus />} />
+                  <Route path='/projects/smart-palette' element={<SmartPalette />} />
+                  <Route path='/projects/ambie-sense' element={<AmbieSense />} />
+                  <Route path='/projects/audio-visualizer' element={<AudioVisualizer />} />
+                  <Route path='/projects/game-of-life-visualization' element={<GameOfLife />} />
+                  <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
+                  <Route path='/projects/jobzen' element={<Jobzen />} />
+                  <Route path='/filter-test' element={<FilterTest />} />
+                </Routes>
+                </ContentWrap>
+                <Footer />
+              </ ScrollToTop>
+          </Router>
+        </ PageContainer>
+      </SimpleReactLightbox>
     </AnimatePresence>
     </>
   );
