@@ -62,6 +62,11 @@ export const AffinityData = [
     "Housing for the electronics was 3d printed and then integrated into a glove design.  The data collected could be sent wirelessly to Unity for animations:",
     image6: Affinity_6,
     image7: Affinity_7,
+  },
+  {
+    id: 7,
+    heading: "Conclusion",
+    text: "Prospectively, the areas explored by this installation remain interesting. The visualization of biometrics, fostering a higher degree of physical awareness in digital spaces, and the dynamics between the physical and virtual may offer more opportunities for creating novel, playful, and cooperative human-computer interactions."
   }
 ];
 

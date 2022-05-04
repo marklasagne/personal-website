@@ -116,7 +116,8 @@ const AmbioSense = () => {
         </Row>
 
         <Row data-aos='fade-up'>
-          <h1>Probabably should wrap this up somehow</h1>
+          <h1>{AffinityData[7].heading}</h1>
+          <p>{AffinityData[7].text}</p>
         </Row>
 
     
