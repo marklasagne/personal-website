@@ -14,13 +14,13 @@ export const AboutPageData = [
     "Just remember, there is no spoon. "
   },
   {
-    main: " After graduating with a Bachelor's of Science in Computer Science in 2018 I spent some time within IBM Hybrid Cloud as a software support" +
-      " engineer.  This gave me valuable exposure to the fast moving world of cloud technologies and the opportunity to research and explore brand new technology." +
-      " Aside from growing my software engineering skills I enjoy dabbling with VFX, illustration, 2D/3D modeling and animation",
-    hidden: "Some say the concept originated in ancient Greece where layered dough sheets (called laganon) " +
-          " were cut into strips and baked. Others claim it resembles a Roman dish recorded in a cookbook in the 1st century AD." +
-          " And still others place its origin in England or Italy in the 14th century, where cookbooks describe the concept of" +
-          "layering cheese and pasta in a dish and baking it. "
+  main: " After graduating with a Bachelor's of Science in Computer Science in 2018 I spent some time within IBM Hybrid Cloud as a software support" +
+    " engineer.  This gave me valuable exposure to the fast moving world of cloud technologies and the opportunity to research and explore brand new technology." +
+    " Aside from growing my software engineering skills I enjoy dabbling with VFX, illustration, 2D/3D modeling and animation",
+  hidden: "Some say the concept originated in ancient Greece where layered dough sheets (called laganon) " +
+        " were cut into strips and baked. Others claim it resembles a Roman dish recorded in a cookbook in the 1st century AD." +
+        " And still others place its origin in England or Italy in the 14th century, where cookbooks describe the concept of" +
+        "layering cheese and pasta in a dish and baking it. "
   },
   {
   main: "What else? Well, i'm pretty into mountain biking, climbing, all the board sports and live music." +
