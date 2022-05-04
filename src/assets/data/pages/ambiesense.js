@@ -15,7 +15,7 @@ export const AmbieSenseData = [
     id: 0,
     description: "An in-home experience to help support mental health during a pandemic through AR/VR. Project a new environment into your home, while connecting with family and friends. " + 
       " Take a journey, find your meditative place, or simply revamp your space!",
-    team: "Katherin Gilchrist, Jenny Lee, Mark Lisanti, Priyanka Makin",
+    team: "Katherine Gilchrist, Jenny Lee, Mark Lisanti, Priyanka Makin",
     roles: "Developer, Designer",
     stack: "React Native, JavaScript",
     image: AmbieSense_6

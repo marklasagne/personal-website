@@ -33,17 +33,20 @@ const AmbioSense = () => {
 
         <Row data-aos='fade-up'>
           <Column>
+            <h1>{AffinityData[0].heading}</h1>
+            <br /> 
             <p>{AffinityData[0].description}</p>
           </Column>
           <Column>
-            <p>Team: {AffinityData[0].team}</p>
-            <p>My Role(s): {AffinityData[0].roles}</p>
-            <p>Stack: {AffinityData[0].stack}</p>
+            <p><u>Team:</u> {AffinityData[0].team}</p>
+            <p><u>My Role(s):</u> {AffinityData[0].roles}</p>
+            <p><u>Stack:</u> {AffinityData[0].stack}</p>
+            <p><u>Hardware:</u> {AffinityData[0].hardware}</p>
           </Column>
         </Row>
 
         <Row data-aos='fade-up'>
-          <ReactPlayer url='https://youtu.be/-2GlO4wlVD4' /> 
+          <ReactPlayer url='https://youtu.be/fXRbemHgRYE' /> 
           <p style={{ fontSize: '12px',  }}>HUGE thanks to Ryan Policky for helping capture photos and videos of our project at EXPO</p>
         </Row>
 
@@ -96,9 +99,9 @@ const AmbioSense = () => {
         </Row>
 
         <Row data-aos='fade-up'>
-          <h1>VIDEO OF DANCERS GOES HERE?!</h1>
+          <ReactPlayer url='https://youtu.be/KM0frAl_rXk' />
+          <p style={{ fontSize: '12px',  }}>A MASSIVE thanks to our testers, Anna Lowrimore, Shae Nance, Maddie Grove and Chelsae Magyar</p>
         </Row>
-
         <Row data-aos='fade-up'>
           <p>{AffinityData[6].text}</p>
         </Row>
