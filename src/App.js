@@ -17,6 +17,7 @@ import AudioVisualizer from './pages/projects/AudioVisualizer.js';
 import GameOfLife from './pages/projects/GameOfLife.js';
 import CardinalPride from './pages/projects/CardinalPride.js';
 import Jobzen from './pages/projects/Jobzen.js';
+import Affinity from './pages/projects/Affinity.js';
 import About from './pages/About';
 import ScrollToTop from './components/ScrollToTop.js';
 import TopArrow from './components/TopArrow.js';
@@ -32,7 +33,7 @@ const App = () => {
   return (
     <>
     <AnimatePresence exitBeforeEnter={true}>
-      <SimpleReactLightbox>    
+        
       <GlobalStyle />
       <FontStyles />
       <SideBar />
@@ -42,6 +43,7 @@ const App = () => {
             <ScrollToTop>
               <Navbar />
               <ContentWrap>
+              <SimpleReactLightbox>  
                 <Routes>
                   <Route path='/' element={<About />} />
                   <Route path='/projects' element={<ProjectList />} />
@@ -52,14 +54,16 @@ const App = () => {
                   <Route path='/projects/game-of-life-visualization' element={<GameOfLife />} />
                   <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
                   <Route path='/projects/jobzen' element={<Jobzen />} />
+                  <Route path='/projects/affinity' element={<Affinity />} />
                   <Route path='/filter-test' element={<FilterTest />} />
                 </Routes>
+                </SimpleReactLightbox>
                 </ContentWrap>
                 <Footer />
               </ ScrollToTop>
           </Router>
         </ PageContainer>
-      </SimpleReactLightbox>
+   
     </AnimatePresence>
     </>
   );

@@ -13,9 +13,8 @@ import { Row, Column, Image, TextLink } from '../../components/PageComponents.js
 import Jobzen_4 from '../../assets/images/Jobzen/jobzen_4.png';
 import Jobzen_5 from '../../assets/images/Jobzen/jobzen_5.png';
 import { JobzenData } from '../../assets/data/pages/jobzen.js';
-import { SRLWrapper } from "simple-react-lightbox";
 
-const SmartPalette = () => {
+const Jobzen = () => {
 
   useEffect(() => {
     Aos.init({ duration: 500 });
@@ -24,7 +23,7 @@ const SmartPalette = () => {
   return (
     <>
       <motion.div
-        key='smartpalette'
+        key='jobzen'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
@@ -34,13 +33,13 @@ const SmartPalette = () => {
           </Column>
           <Column>
             <p>{JobzenData[0].description}</p>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <p>
               Role(s): {JobzenData[0].roles}
               <br />
               Tools: {JobzenData[0].tools}
-          </p>
+            </p>
           </Column>
         </Row>
 
@@ -71,9 +70,7 @@ const SmartPalette = () => {
             <p>{JobzenData[2].text8}</p>
           </Column>
           <Column>
-            <SRLWrapper>
-              <Image src={JobzenData[2].image} alt="Affinity map" />
-            </SRLWrapper>
+            <Image src={JobzenData[2].image} alt="Affinity map" />
           </Column>
         </Row>
 
@@ -95,9 +92,9 @@ const SmartPalette = () => {
             <p>{JobzenData[3].text}</p>
           </Column>
           <Column>
-            <SRLWrapper>
-              <Image src={JobzenData[3].image} alt="Job seeker user flow" />
-            </SRLWrapper>
+
+            <Image src={JobzenData[3].image} alt="Job seeker user flow" />
+
           </Column>
         </Row>
 
@@ -106,9 +103,9 @@ const SmartPalette = () => {
             <p>{JobzenData[4].text}</p>
           </Column>
           <Column>
-            <SRLWrapper>
-              <Image src={JobzenData[4].image} alt="Company user flow example" />
-            </SRLWrapper>
+
+            <Image src={JobzenData[4].image} alt="Company user flow example" />
+
           </Column>
         </Row>
 
@@ -123,23 +120,23 @@ const SmartPalette = () => {
             <p>{JobzenData[5].text6}</p><br />
           </Column>
           <Column>
-            <SRLWrapper>
-              <Image src={Jobzen_4} alt="Mid Fidelity prototype" />
-            </SRLWrapper>
+
+            <Image src={Jobzen_4} alt="Mid Fidelity prototype" />
+
           </Column>
         </Row>
       </motion.div>
 
       <Row data-aos='fade-up'>
-          <SRLWrapper>
-            <h1>Final Prototype - <TextLink href="https://www.figma.com/proto/mVHY121NuVW9FyGCxCb4lc/Final-Fidelity?page-id=0%3A1&node-id=2%3A1410&viewport=241%2C48%2C0.26&scaling=min-zoom&starting-point-node-id=2%3A1410" rel="noopener noreferrer" target="_blank">View in Figma</TextLink></h1>
-            <br />
-            <Image src={Jobzen_5} alt="Final prototype" />
-          </SRLWrapper>
-        </Row>
+
+        <h1>Final Prototype - <TextLink href="https://www.figma.com/proto/mVHY121NuVW9FyGCxCb4lc/Final-Fidelity?page-id=0%3A1&node-id=2%3A1410&viewport=241%2C48%2C0.26&scaling=min-zoom&starting-point-node-id=2%3A1410" rel="noopener noreferrer" target="_blank">View in Figma</TextLink></h1>
+        <br />
+        <Image src={Jobzen_5} alt="Final prototype" />
+
+      </Row>
     </>
   );
 }
 
-export default SmartPalette;
+export default Jobzen;
 
