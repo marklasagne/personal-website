@@ -25,7 +25,7 @@ export const AudioVisualizerData = [
   {
     id: 2,
     heading: "Conclusion and Reflection",
-    text: "Exploring shaders and 3d objects was fun.  I like the direction that this exploration went and would love " +
+    text: "I like the direction that this exploration went and would love " +
     "to expand on this project in the future.  I invision users being able to create their own visualization by uploading " +
     "3d models and music of their own tastes."
   }

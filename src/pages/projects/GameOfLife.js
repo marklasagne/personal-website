@@ -9,7 +9,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { Row, Column, Image } from '../../components/PageComponents.js';
+import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
 import { GameOfLifeData } from '../../assets/data/pages/gameoflife.js'
 
 const GameOfLife = () => {
@@ -46,10 +46,21 @@ const GameOfLife = () => {
           </Column>
         </ Row>
 
+        <Row>
+          <Column>
+            <p>{GameOfLifeData[2].text}</p>
+            <br></br>
+            <p><TextLink href="https://editor.p5js.org/lisantimark/sketches/SPe3MlTnW" rel="noopener noreferrer" target="_blank">Try it yourself here.</TextLink></p>
+          </Column>
+          <Column>
+            <Image src={GameOfLifeData[2].image} alt="real?" />
+          </Column>
+        </ Row>
+
         <Row data-aos='fade-up'>
           <Column>
-            <h1>{GameOfLifeData[2].heading}</h1>
-            <p>{GameOfLifeData[2].text}</p>
+            <h1>{GameOfLifeData[3].heading}</h1>
+            <p>{GameOfLifeData[3].text}</p>
           </Column>
         </Row>
       </motion.div>
