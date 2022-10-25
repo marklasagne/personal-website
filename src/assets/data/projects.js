@@ -5,6 +5,7 @@ import AmbieSense from '../images/ambie_sense.gif';
 import AudioVisualizer from '../images/audio_visualization.gif';
 import GameOfLife_0 from '../images/GameOfLife/GameOfLife_1.gif';
 import Jobzen from '../images/job_zen.png';
+import Affinity from '../images/affinity.gif';
 
 const projects_temp = [
   {
@@ -64,28 +65,35 @@ export const projects = [
     name: 'Triangle Trail Status',
     description: 'Check where to ride, add your favorites, and get notified.',
     image: TriangleTrailStatus,
-    tags: ['Development', 'Design']
+    tags: ['Mobile', 'Design']
+  },
+  {
+    id: 'affinity',
+    name: 'Affinity',
+    description: 'Interactive art installment. ',
+    image: Affinity, 
+    tags: ['Installment']
   },
   {
     id: 'game-of-life-visualization',
     name: 'Game of Life Visualization',
     description: 'Integrating p5js and WebGL with Cloud Technology',
     image: GameOfLife_0, 
-    tags: ['Development', 'Art']
+    tags: ['Art']
   },
   {
     id: 'audio-visualizer',
     name: '3D Audio Visualizer',
     description: 'Short exploration of FTT data and GLSL',
     image: AudioVisualizer, 
-    tags: ['Development', 'Art']
+    tags: ['Web', 'Art']
   },
   {
-    id: 'jobzen',
-    name: 'Job Zen',
-    description: 'Mobile application promoting easier and productive job searching.',
-    image: Jobzen, 
-    tags: ['UX Research', 'Design']
+    id: 'cardinal-pride',
+    name: 'Cardinal Pride Property Care',
+    description: 'Website for local handyman',
+    image: CardinalPride, 
+    tags: ['Web', 'Design']
   }
 ];
 

@@ -23,8 +23,8 @@ export const AboutPageData = [
           "layering cheese and pasta in a dish and baking it. "
   },
   {
-  main: "What else? Well, I'm pretty into mountain biking, climbing, all of the board sports and live music." +
-    " It is important to me to balance my life with these interests " +
+  main: "What else? Well, I'm pretty into mountain biking, climbing, ''all of the board sports'' and live music." +
+    " It is important to me to balance my life with these interests. " +
     " The faster and heavier the music, the better.",
   hidden: "Memento mori literally means 'Remember you must die'. " +
     "In earlier centuries, an educated European might place an actual skull on his desk to keep the idea of death always" +
