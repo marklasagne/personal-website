@@ -51,6 +51,9 @@ const AudioVisualizer = () => {
             <h1>{AudioVisualizerData[2].heading}</h1>
             <p>{AudioVisualizerData[2].text}</p>
           </Column>
+          <Column>
+            <Image src={AudioVisualizerData[2].image} alt="fear2?" />
+          </Column>
         </Row>
       </motion.div>
     </>

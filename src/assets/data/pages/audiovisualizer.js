@@ -6,6 +6,8 @@
 // Audio viz project page data
 
 import AudioVisualizer_0 from '../../images/AudioVisualizer/AudioVisualizer.gif';
+import AudioVisualizer_1 from '../../images/AudioVisualizer/AudioVisualizer_1.gif';
+
 
 export const AudioVisualizerData = [
   {
@@ -27,7 +29,8 @@ export const AudioVisualizerData = [
     heading: "Conclusion and Reflection",
     text: "I like the direction that this exploration went and would love " +
     "to expand on this project in the future.  I invision users being able to create their own visualization by uploading " +
-    "3d models and music of their own tastes."
+    "3d models and music of their own tastes.",
+    image: AudioVisualizer_1
   }
 ];
 
