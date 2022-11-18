@@ -16,7 +16,6 @@ const SideBar = () => {
       <>
         <SideBarContainer>
           <a href="https://www.linkedin.com/in/marklisanti/" rel="noopener noreferrer" target="_blank"><SocialIcon src={linkedin}/></a>
-          <a href="https://twitter.com/marklasagne" rel="noopener noreferrer" target="_blank"><SocialIcon src={twitter}/></a>
           <a href="https://github.com/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={github}/></a>
           <a href="https://codepen.io/marklasagne" rel="noopener noreferrer" target="_blank"><SocialIcon src={codepen}/></a>
           <a href="https://www.behance.net/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={behance}/></a>
@@ -33,7 +32,6 @@ const SideBarContainer = styled.div`
     padding: 2rem;
     z-index: 69;
     @media screen and (max-width: 1000px) {
-      top: 0;
       padding: 0.25rem;
   }  
 `;

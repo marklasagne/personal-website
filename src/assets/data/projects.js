@@ -67,34 +67,6 @@ export const projects = [
     image: TriangleTrailStatus,
     tags: ['Mobile', 'Design']
   },
-  {
-    id: 'affinity',
-    name: 'Affinity',
-    description: 'Interactive art installment. ',
-    image: Affinity, 
-    tags: ['Installment']
-  },
-  {
-    id: 'game-of-life-visualization',
-    name: 'Game of Life Visualization',
-    description: 'Integrating p5js and WebGL with Cloud Technology',
-    image: GameOfLife_0, 
-    tags: ['Art']
-  },
-  {
-    id: 'audio-visualizer',
-    name: '3D Audio Visualizer',
-    description: 'Short exploration of FTT data and GLSL',
-    image: AudioVisualizer, 
-    tags: ['Web', 'Art']
-  },
-  {
-    id: 'cardinal-pride',
-    name: 'Cardinal Pride Property Care',
-    description: 'Website for local handyman',
-    image: CardinalPride, 
-    tags: ['Web', 'Design']
-  }
 ];
 
 
