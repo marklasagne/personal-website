@@ -58,7 +58,9 @@ return (
       </PillContainer>
   
       <GlobalStyle />
-      <h2>I'm currently in the process of organizing and adding more projects <>&#10084;</></h2>
+      <h2>I'm currently in the process documenting and adding more projects <>&#10084;</></h2>
+      <p>Please come back soon
+      </p>
         <ResponsiveMasonry
                 columnsCountBreakPoints={{750: 1, 900: 2}}
             >

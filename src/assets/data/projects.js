@@ -60,13 +60,7 @@ const projects_temp = [
 ];
 
 export const projects = [
-  {
-    id: 'triangle-trail-status',
-    name: 'Triangle Trail Status',
-    description: 'Check where to ride, add your favorites, and get notified.',
-    image: TriangleTrailStatus,
-    tags: ['Mobile', 'Design']
-  },
+
 ];
 
 
