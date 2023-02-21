@@ -24,16 +24,12 @@ import TopArrow from './components/TopArrow.js';
 import { createGlobalStyle } from 'styled-components';
 import { PageContainer, ContentWrap } from './components/PageComponents';
 import FontStyles from './assets/fonts/fonts.js';
-import SimpleReactLightbox from 'simple-react-lightbox'
-
-import FilterTest from './pages/FilterTest.js';
 
 const App = () => {
-
   return (
     <>
     <AnimatePresence exitBeforeEnter={true}>
-        
+
       <GlobalStyle />
       <FontStyles />
       <SideBar />
@@ -43,7 +39,6 @@ const App = () => {
             <ScrollToTop>
               <Navbar />
               <ContentWrap>
-              <SimpleReactLightbox>  
                 <Routes>
                   <Route path='/' element={<About />} />
                   <Route path='/projects' element={<ProjectList />} />
@@ -55,15 +50,12 @@ const App = () => {
                   <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
                   <Route path='/projects/jobzen' element={<Jobzen />} />
                   <Route path='/projects/affinity' element={<Affinity />} />
-                  <Route path='/filter-test' element={<FilterTest />} />
                 </Routes>
-                </SimpleReactLightbox>
                 </ContentWrap>
                 <Footer />
               </ ScrollToTop>
           </Router>
         </ PageContainer>
-   
     </AnimatePresence>
     </>
   );

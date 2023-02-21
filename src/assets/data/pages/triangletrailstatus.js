@@ -30,19 +30,17 @@ export const TriangleTrailStatusData = [
   {
     id: 2,
     heading: "Design and Style",
-    text: "The project started because I wanted to make and animate a logo, specifically a triangle tire. " +
-      "After initially sketching and learning different tools to digitalize my drawings I decided to " +
-      "write some code to implement my animation on web or mobile applications. This led to me fleshing " +
-      "out the ideas and final design of the app.  Once I had deployed test versions of the app I used " +
-      "feedback from users to make tweaks and add features to quickly add updated releases.",
+    text: "Layout and color remained simple with a 'natural' palette and single column list. " +
+      "Animation and illustration was built with Adobe software and implemented using CSS and Lottie JS. " +
+      " Once I had deployed test versions of the app I used " +
+      "feedback from users to make tweaks to the color and layout to increase usability and accessibility.",
     image: TriangTrail_2
   },
   {
     id: 3,
     heading: "Conclusion and Reflection",
-    text1: "Being my first publically published mobile app I was nervous.  Ultimately this was a success, and proved real value in the local " +
-      "mountain biking community. I worked hard at learning react-native and feel the result is a clean,  " +
-      "and professional codebase.  I wish I spent more time designing the interface and user testing the usability before publishing. ",
-    text2: "Bonus skills I picked up were drawing and animating the logo which gave me exposure to Adobe products and using my artistic side."
+    text1: "Ultimately this was a success, and proved real value in the local mountain biking community. " +
+      "At the time of publishing the application I did not have access to MacOS so I was unable to build and publish the app for iPhone, despite being built with React Native. I hope to revist this project and release an iOS version. " +
+      "The design, development and releasing of this app was a valuable experience. ",
   },
 ];

@@ -7,7 +7,7 @@ import GameOfLife_0 from '../images/GameOfLife/GameOfLife_1.gif';
 import Jobzen from '../images/job_zen.png';
 import Affinity from '../images/affinity.gif';
 
-const projects_temp = [
+export const projects = [
   {
     id: 'jobzen',
     name: 'Job Zen',
@@ -57,9 +57,16 @@ const projects_temp = [
     image: AmbieSense, 
     tags: ['Development', 'Design']
   },
+  {
+    id: 'affinity',
+    name: 'Affinity',
+    description: 'Stay at home interactive experience taylored to mental health.',
+    image: Affinity, 
+    tags: ['Development', 'Design']
+  }
 ];
 
-export const projects = [
+export const projects_temp = [
 
 ];
 
