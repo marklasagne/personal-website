@@ -7,7 +7,7 @@ import GameOfLife_0 from '../images/GameOfLife/GameOfLife_1.gif';
 import Jobzen from '../images/job_zen.png';
 import Affinity from '../images/affinity.gif';
 
-export const projects = [
+export const projects_temp = [
   {
     id: 'jobzen',
     name: 'Job Zen',
@@ -66,8 +66,14 @@ export const projects = [
   }
 ];
 
-export const projects_temp = [
-
+export const projects = [
+    {
+    id: 'triangle-trail-status',
+    name: 'Triangle Trail Status',
+    description: 'Check where to ride, add your favorites, and get notified.',
+    image: TriangleTrailStatus,
+    tags: ['Development', 'Design']
+  },
 ];
 
 

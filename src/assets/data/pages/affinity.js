@@ -66,7 +66,8 @@ export const AffinityData = [
   {
     id: 7,
     heading: "Conclusion",
-    text: "Prospectively, the areas explored by this installation remain interesting. The visualization of biometrics, fostering a higher degree of physical awareness in digital spaces, and the dynamics between the physical and virtual may offer more opportunities for creating novel, playful, and cooperative human-computer interactions."
+    text: "Prospectively, the areas explored by this installation remain interesting. " + 
+    " The visualization of biometrics, fostering a higher degree of physical awareness in digital spaces, and the dynamics between the physical and virtual may offer more opportunities for creating novel, playful, and cooperative human-computer interactions."
   }
 ];
 

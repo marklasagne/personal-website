@@ -7,13 +7,13 @@
 
 export const AboutPageData = [
   {
-  main: "Me? Artist and tinkerer using technology to express who I am, solve problems and make cool shit. I am currently attending the University of Colorado Boulder, pursuing a Master's of Science degree in Creative Technology and Design, where I am exploring these intersections between art, design, and technology.  ",
+  main: "Me? Artist and tinkerer using technology to solve problems and make cool shit. I am currently attending the University of Colorado Boulder, pursuing a Master's of Science degree in Creative Technology and Design, where I am exploring these intersections between art, design, and technology.  ",
   hidden: "Not sure why you're looking at this text. " +
     "Really this is here for reasons I will not say, but I guess its cool you found it. " +
     "Just remember, there is no spoon. "
   },
   {
-    main: "From software engineering to interaction and experience design to art, I can help.  Let's chat about what you want to make, I want to be a part of it, probably. ",
+    main: "From software engineering to interaction/experience design to art, I can help.  Let's chat about what you want to make, I want to be a part of it, probably. ",
     hidden: "Some say the concept originated in ancient Greece where layered dough sheets (called laganon) " +
           " were cut into strips and baked. Others claim it resembles a Roman dish recorded in a cookbook in the 1st century AD." +
           " And still others place its origin in England or Italy in the 14th century, where cookbooks describe the concept of" +
