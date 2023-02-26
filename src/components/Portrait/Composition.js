@@ -20,7 +20,7 @@ const Composition = () => {
           style={{
             position: 'absolute', 
             height: '75%', 
-            width: 1000,
+            width: 1250,
           }}
           camera={{ position: [1.1, 0, 4], fov: 60 }}
           shadowMap
