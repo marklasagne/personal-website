@@ -32,7 +32,8 @@ const About = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}>
-            <h1>Howdy! I'm Mark <span style={{fontSize: 12}}>[software / art / fabrication / anxiety]</span></h1>
+            <h1>Howdy! I'm Mark</h1>
+            <h1 style={{fontSize: 12}}>[ software<span style={{fontStyle:'italic'}}>-icator</span> / art<span style={{fontStyle:'italic'}}>-gineer</span> / fabrication<span style={{fontStyle:'italic'}}>-ist</span> / anxiety ]</h1>
             {AboutPageData.map((data, id) => {
               return(
               <Row key={id} style={{ zIndex: -1 }} data-aos='fade-up'>
@@ -52,7 +53,7 @@ const About = () => {
             exit={{ opacity: 0 }}>
             <Portrait />
             <h1>Howdy! I'm Mark</h1>
-            <h1 style={{fontSize: 12}}>[software<span style={{fontStyle:'italic'}}>-icator</span> / art<span style={{fontStyle:'italic'}}>-gineer</span> / fabrication<span style={{fontStyle:'italic'}}>-ist</span> / anxiety-connoisseur?]</h1>
+            <h1 style={{fontSize: 12}}>[ software<span style={{fontStyle:'italic'}}>-icator</span> / art<span style={{fontStyle:'italic'}}>-gineer</span> / fabrication<span style={{fontStyle:'italic'}}>-ist</span> / anxiety ]</h1>
             {AboutPageData.map((data, id) => {
               return(
               <Row key={id} style={{ zIndex: -1 }} data-aos='fade-up'>
