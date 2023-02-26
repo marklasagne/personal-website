@@ -22,25 +22,24 @@ export default function Model({ ...props }) {
   let x_middle = viewport.width / 2;
   let y_middle = viewport.height / 2;
 
+  /*
+0.009111083391207324 2 Model.js:32
+0.009522883770470928 Model.js:32
+0.009934684149734535 Model.js:32
+0.011993686046052578 Model.js:32
+0.014876288700897832 Model.js:32
+0.0185824921142703 Model.js:32
+0.021876895148379174 Model.js:32
+0.02640669932027885 Model.js:32
+0.030524703112914938
+
+  */
+
 
   useFrame(({ mouse }) => {
    
       let group_rotation_x = group.current.rotation.x;
       let group_rotation_y = group.current.rotation.y;
-      let group_rotation_z = group.current.rotation.z;
-
-      let eye_rotation_x = group.current.rotation.x;
-      let eye_rotation_y = group.current.rotation.y;
-      let eye_rotation_z = group.current.rotation.z;
-  
-      group_rotation_x = Math.round(group_rotation_x * 100000) / 100000
-      group_rotation_y = Math.round(group_rotation_y * 100000) / 100000
-      group_rotation_z = Math.round(group_rotation_z * 100000) / 100000
-
-      eye_rotation_x = Math.round(eye_rotation_x * 100000) / 100000
-      eye_rotation_y = Math.round(eye_rotation_y * 100000) / 100000
-      eye_rotation_z = Math.round(eye_rotation_z * 100000) / 100000
-
 
       if (mouse.x > -0.75 && mouse.x < 0.75 && mouse.y > -0.75 && mouse.y < 0.75 ) {
         //console.log('mouse entered')
@@ -50,40 +49,38 @@ export default function Model({ ...props }) {
         group.current.rotation.set(-y, x, 0);
         eyes.current.rotation.set(-y / 4, x / 4, 0);
       } else {
-  
+        
+        // x
         if (group_rotation_x != 0) {
-
-          if (Math.abs(group_rotation_x) <= 0.005) {
+          if ((Math.abs(group_rotation_x)/10) < 0.001) {
             group.current.rotation.x = 0;
+            eyes.current.rotation.x = 0;
           }
-
-          if (group_rotation_x > 0) {
-            group.current.rotation.x -= 0.00001 * 500
-            eyes.current.rotation.x = 0
+          if (group.current.rotation.x > 0) {
+            group.current.rotation.x -= 0.00001 * 500; 
+            eyes.current.rotation.x -= 0.00001 * 100; 
           } else {
-            group.current.rotation.x += 0.00001 * 500
-            eyes.current.rotation.x = 0
+            group.current.rotation.x += 0.00001 * 500; 
+            eyes.current.rotation.x += 0.00001 * 100; 
           }
         }
 
+        // y
         if (group_rotation_y != 0) {
-      
-          if (Math.abs(group_rotation_y) == 0.005) {
+          if ((Math.abs(group_rotation_y)/10) < 0.001) {
             group.current.rotation.y = 0;
+            eyes.current.rotation.y = 0;
           }
-
-          if (group_rotation_y > 0) {
-            group.current.rotation.y -= 0.00001 * 500
-            eyes.current.rotation.y = 0
+          if (group.current.rotation.y > 0) {
+            group.current.rotation.y -= 0.00001 * 500;
+            eyes.current.rotation.y -= 0.00001 * 100;
           } else {
-            group.current.rotation.y += 0.00001 * 500
-            eyes.current.rotation.y = 0
+            group.current.rotation.y += 0.00001 * 500; 
+            eyes.current.rotation.y += 0.00001 * 100; 
           }
-          console.log(group_rotation_y)
         }
-
-    }
-  })
+  }
+})
   
 
 
