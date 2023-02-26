@@ -46,6 +46,7 @@ export default function Model({ ...props }) {
         const x = (mouse.x * x_middle) / 30;
         const y = (mouse.y * y_middle) / 30;
 
+    
         group.current.rotation.set(-y, x, 0);
         eyes.current.rotation.set(-y / 4, x / 4, 0);
       } else {
