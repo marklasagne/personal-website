@@ -24,50 +24,67 @@ export default function Model({ ...props }) {
 
 
   useFrame(({ mouse }) => {
+   
+      let group_rotation_x = group.current.rotation.x;
+      let group_rotation_y = group.current.rotation.y;
+      let group_rotation_z = group.current.rotation.z;
+
+      let eye_rotation_x = group.current.rotation.x;
+      let eye_rotation_y = group.current.rotation.y;
+      let eye_rotation_z = group.current.rotation.z;
+  
+      group_rotation_x = Math.round(group_rotation_x * 100000) / 100000
+      group_rotation_y = Math.round(group_rotation_y * 100000) / 100000
+      group_rotation_z = Math.round(group_rotation_z * 100000) / 100000
+
+      eye_rotation_x = Math.round(eye_rotation_x * 100000) / 100000
+      eye_rotation_y = Math.round(eye_rotation_y * 100000) / 100000
+      eye_rotation_z = Math.round(eye_rotation_z * 100000) / 100000
+
+
       if (mouse.x > -0.75 && mouse.x < 0.75 && mouse.y > -0.75 && mouse.y < 0.75 ) {
         //console.log('mouse entered')
         const x = (mouse.x * x_middle) / 30;
         const y = (mouse.y * y_middle) / 30;
+
         group.current.rotation.set(-y, x, 0);
         eyes.current.rotation.set(-y / 4, x / 4, 0);
       } else {
-        //console.log('mouse exit')
-    
-        let rotation = eyes.current.rotation;
-        let rotation_x = eyes.current.rotation.x;
-   
-        let test = Math.round((rotation_x * 10000) / 10000)
+  
+        if (group_rotation_x != 0) {
 
-        if (rotation_x != 0) {
-          if (test > 0) {
-            eyes.current.rotation.set(rotation_x - 0.0001)
-            console.log(eyes.current.rotation.x);
+          if (Math.abs(group_rotation_x) <= 0.005) {
+            group.current.rotation.x = 0;
+          }
+
+          if (group_rotation_x > 0) {
+            group.current.rotation.x -= 0.00001 * 500
+            eyes.current.rotation.x = 0
           } else {
-            eyes.current.rotation.set(rotation_x + 0.0001)
-            console.log(eyes.current.rotation.x);
+            group.current.rotation.x += 0.00001 * 500
+            eyes.current.rotation.x = 0
           }
         }
 
-  
-
+        if (group_rotation_y != 0) {
       
-        // const sliced = Object.keys(rotation).slice(0, 3).reduce((result, key) => {
-        //  result[key] = rotation[key];
-        //  return result;
-        // }, {});
+          if (Math.abs(group_rotation_y) == 0.005) {
+            group.current.rotation.y = 0;
+          }
 
-        // console.log(sum)
-        // console.log(Math.round(sum * 10000) / 10000)
-        
-        //-0.016462903711422838 
-      
-        //-0.0165
-        //group.current.rotation.set.x(0, 0, 0);
-        //eyes.current.rotation.set(0, 0, 0);
-      
+          if (group_rotation_y > 0) {
+            group.current.rotation.y -= 0.00001 * 500
+            eyes.current.rotation.y = 0
+          } else {
+            group.current.rotation.y += 0.00001 * 500
+            eyes.current.rotation.y = 0
+          }
+          console.log(group_rotation_y)
+        }
 
-      }
+    }
   })
+  
 
 
 
