@@ -18,6 +18,7 @@ import GameOfLife from './pages/projects/GameOfLife.js';
 import CardinalPride from './pages/projects/CardinalPride.js';
 import Jobzen from './pages/projects/Jobzen.js';
 import Affinity from './pages/projects/Affinity.js';
+import FuckYou from './pages/projects/FuckYou.js';
 import About from './pages/About';
 import ScrollToTop from './components/ScrollToTop.js';
 import TopArrow from './components/TopArrow.js';
@@ -50,6 +51,7 @@ const App = () => {
                   <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
                   <Route path='/projects/jobzen' element={<Jobzen />} />
                   <Route path='/projects/affinity' element={<Affinity />} />
+                  <Route path='/projects/fuck-you-sign' element={<FuckYou />} />
                 </Routes>
                 </ContentWrap>
                 <Footer />
