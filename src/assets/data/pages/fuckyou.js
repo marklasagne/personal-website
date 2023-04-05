@@ -8,7 +8,7 @@
 
 
 
-export const SmartPaletteData = [
+export const FuckYouData = [
   {
     id: 0,
     description: "Animated edge lit sign to let you know how I really feel." 

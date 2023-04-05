@@ -10,9 +10,9 @@ import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
-import { GameOfLifeData } from '../../assets/data/pages/gameoflife.js'
+import { GameOfLifeData } from '../../assets/data/pages/lifesagame.js'
 
-const GameOfLife = () => {
+const LifesAGame = () => {
 
   useEffect(() => {
     Aos.init({ duration: 500 });
@@ -68,5 +68,5 @@ const GameOfLife = () => {
   );
 }
 
-export default GameOfLife;
+export default LifesAGame;
 

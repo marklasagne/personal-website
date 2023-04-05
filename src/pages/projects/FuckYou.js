@@ -12,8 +12,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
 import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
-// import { TriangleTrailStatusData } from '../../assets/data/pages/triangletrailstatus.js';
-// import TriangTrail_0 from '../../assets/images/TriangleTrailStatus/TriangTrail_0.png';
+import { FuckYouData } from '../../assets/data/pages/fuckyou.js';
 
 const FuckYou = () => {
   
@@ -29,51 +28,18 @@ const FuckYou = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
         <Row data-aos='fade-up'>
-          <img src={TriangTrail_0} style={{ width: '50%' }} alt="I will" />
-        </ Row>
-
-        <Row data-aos='fade-up'>
-          <Column>
-            <p>{TriangleTrailStatusData[0].description}</p>
-          </Column>
-          <Column>
-            <p>Role(s): {TriangleTrailStatusData[0].roles}</p>
-            <p>Stack: {TriangleTrailStatusData[0].stack}</p>
-          </Column>
-        </Row>
-
-        <Row data-aos='fade-up'>
- 
-        </ Row>
-
-        <Row data-aos='fade-up'>
-          <Column>
-            
-          </Column>
-          <Column>
-          </Column>
-        </Row>
-
-        <Row data-aos='fade-up'>
-          <Column>
     
-          </Column>
-          <Column>
-            
-          </Column>
-        </Row>
-
-        <Row data-aos='fade-up'>
-        </ Row>
-
-        <Row data-aos='fade-up'>
         </ Row>
 
         <Row data-aos='fade-up'>
           <Column>
-    
+            <p>{FuckYouData[0].description}</p>
+          </Column>
+          <Column>
+
           </Column>
         </Row>
+
       </motion.div>
     </>
   );

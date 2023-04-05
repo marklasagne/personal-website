@@ -14,7 +14,7 @@ import TriangleTrailStatus from './pages/projects/TriangleTrailStatus.js';
 import SmartPalette from './pages/projects/SmartPalette.js';
 import AmbieSense from './pages/projects/AmbieSense.js';
 import AudioVisualizer from './pages/projects/AudioVisualizer.js';
-import GameOfLife from './pages/projects/GameOfLife.js';
+import LifesAGame from './pages/projects/LifesAGame.js';
 import CardinalPride from './pages/projects/CardinalPride.js';
 import Jobzen from './pages/projects/Jobzen.js';
 import Affinity from './pages/projects/Affinity.js';
@@ -47,7 +47,7 @@ const App = () => {
                   <Route path='/projects/smart-palette' element={<SmartPalette />} />
                   <Route path='/projects/ambie-sense' element={<AmbieSense />} />
                   <Route path='/projects/audio-visualizer' element={<AudioVisualizer />} />
-                  <Route path='/projects/game-of-life-visualization' element={<GameOfLife />} />
+                  <Route path='/projects/game-of-life-visualization' element={<LifesAGame />} />
                   <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
                   <Route path='/projects/jobzen' element={<Jobzen />} />
                   <Route path='/projects/affinity' element={<Affinity />} />
