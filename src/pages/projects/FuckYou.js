@@ -36,7 +36,24 @@ const FuckYou = () => {
             <p>{FuckYouData[0].description}</p>
           </Column>
           <Column>
+            <p>My Role(s): {FuckYouData[0].roles}</p>
+            <p>Stack: {FuckYouData[0].stack}</p>
+            <p>Hardware: {FuckYouData[0].hardware}</p>
+          </Column>
+        </Row>
 
+        <Row data-aos='fade-up'>
+            <ReactPlayer url='https://www.youtube.com/watch?v=T_4N4yJ2iH0' />
+        </Row>
+
+        <Row data-aos='fade-up'>
+          <Column>
+            <h1>{FuckYouData[1].heading}</h1>
+            <p>{FuckYouData[1].text1}</p>
+          </Column>
+          <Column>
+            <h1>{FuckYouData[2].heading}</h1>
+            <p>{FuckYouData[2].text1}</p>
           </Column>
         </Row>
 

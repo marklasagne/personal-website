@@ -5,10 +5,7 @@
 
 // Game of life project page data
 
-import GameOfLife_0 from '../../images/GameOfLife/GameOfLife_1.gif';
-import GameOfLife_1 from '../../images/GameOfLife/GameOfLife_1.png';
-
-export const GameOfLifeData = [
+export const LifesAGameData = [
   {
     id: 0,
     heading: "Game of Life Generative Art",
@@ -21,15 +18,14 @@ export const GameOfLifeData = [
     text: "This generative art piece uses my implementation of Conway's game of life and visualizes a grid of randomized elements. " +
       "Using p5js and WebGL flashing and rotating cells represent alive cells.  Dead cells become static and are resized depending on the number of life cycles that include them.  The algorithm is implemented " +
       "with Python and is running on IBM Cloud's serverless functions platform with OpenWhisk and called through " +
-      "an API Gateway endpoint.",
-    image: GameOfLife_0
+      "an API Gateway endpoint."
   },
   {
     id: 2,
     heading: "none",
     text: "Users may control the dimensions of the grid, randomize colors at any time and save their generated images. " +
-    " Images are output as 800x800 PNG. ", 
-    image: GameOfLife_1
+    " Images are output as 800x800 PNG. "
+
   },
   {
     id: 3,

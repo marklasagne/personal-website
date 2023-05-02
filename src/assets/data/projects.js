@@ -3,9 +3,9 @@ import SmartPalette from '../images/color_palette.gif';
 import CardinalPride from '../images/cardinal_pride.gif';
 import AmbieSense from '../images/ambie_sense.gif';
 import AudioVisualizer from '../images/audio_visualization.gif';
-import GameOfLife_0 from '../images/GameOfLife/GameOfLife_1.gif';
 import Jobzen from '../images/job_zen.png';
 import Affinity from '../images/affinity.gif';
+import FuckYou from '../images/fuck_you_sign.gif'
 
 export const projects_temp = [
   {
@@ -26,7 +26,6 @@ export const projects_temp = [
     id: 'game-of-life-visualization',
     name: 'Game of Life Visualization',
     description: 'Integrating p5js and WebGL with Cloud Technology',
-    image: GameOfLife_0, 
     tags: ['Development', 'Art']
   },
   {
@@ -63,16 +62,37 @@ export const projects_temp = [
     description: 'Stay at home interactive experience taylored to mental health.',
     image: Affinity, 
     tags: ['Development', 'Design']
-  }
+  },
+  {
+    id: 'cardinal-pride',
+    name: 'Cardinal Pride Property Care',
+    description: 'Website for local handyman',
+    image: CardinalPride, 
+    tags: ['Web', 'Design']
+  },
+  {
+    id: 'fuck-you-sign',
+    name: 'Fuck You Sign',
+    description: 'Fun sign that may or may not give you the finger.',
+    image: FuckYou,
+    tags: ['Fabrication']
+  },
+  {
+    id: 'boulder-parks',
+    name: 'Boulder Parks',
+    description: 'Interactive map outlining the importance of going outside',
+    image: FuckYou,
+    tags: ['Fabrication']
+  },
 ];
 
 export const projects = [
-    {
+  {
     id: 'triangle-trail-status',
     name: 'Triangle Trail Status',
     description: 'Check where to ride, add your favorites, and get notified.',
     image: TriangleTrailStatus,
-    tags: ['Development', 'Design']
+    tags: ['Mobile', 'Design']
   },
 ];
 

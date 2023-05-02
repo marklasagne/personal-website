@@ -19,6 +19,7 @@ import CardinalPride from './pages/projects/CardinalPride.js';
 import Jobzen from './pages/projects/Jobzen.js';
 import Affinity from './pages/projects/Affinity.js';
 import FuckYou from './pages/projects/FuckYou.js';
+import BoulderParks from './pages/projects/BoulderParks.js';
 import About from './pages/About';
 import ScrollToTop from './components/ScrollToTop.js';
 import TopArrow from './components/TopArrow.js';
@@ -30,7 +31,6 @@ const App = () => {
   return (
     <>
     <AnimatePresence exitBeforeEnter={true}>
-
       <GlobalStyle />
       <FontStyles />
       <SideBar />
@@ -47,11 +47,12 @@ const App = () => {
                   <Route path='/projects/smart-palette' element={<SmartPalette />} />
                   <Route path='/projects/ambie-sense' element={<AmbieSense />} />
                   <Route path='/projects/audio-visualizer' element={<AudioVisualizer />} />
-                  <Route path='/projects/game-of-life-visualization' element={<LifesAGame />} />
+                  <Route path='/projects/lifes-a-game' element={<LifesAGame />} />
                   <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
                   <Route path='/projects/jobzen' element={<Jobzen />} />
                   <Route path='/projects/affinity' element={<Affinity />} />
                   <Route path='/projects/fuck-you-sign' element={<FuckYou />} />
+                  <Route path='/projects/boulder-parks' element={<BoulderParks />} />
                 </Routes>
                 </ContentWrap>
                 <Footer />
