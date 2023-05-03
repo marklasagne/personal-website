@@ -20,6 +20,7 @@ import Jobzen from './pages/projects/Jobzen.js';
 import Affinity from './pages/projects/Affinity.js';
 import FuckYou from './pages/projects/FuckYou.js';
 import BoulderParks from './pages/projects/BoulderParks.js';
+import Nihilism from './pages/projects/Nihilism.js';
 import About from './pages/About';
 import ScrollToTop from './components/ScrollToTop.js';
 import TopArrow from './components/TopArrow.js';
@@ -53,6 +54,7 @@ const App = () => {
                   <Route path='/projects/affinity' element={<Affinity />} />
                   <Route path='/projects/fuck-you-sign' element={<FuckYou />} />
                   <Route path='/projects/boulder-parks' element={<BoulderParks />} />
+                  <Route path='/projects/nihilism' element={<Nihilism />} />
                 </Routes>
                 </ContentWrap>
                 <Footer />

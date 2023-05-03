@@ -3,7 +3,7 @@
 // Built by Mark Lisanti          //
 // https://github.com/marklasagne //
 
-// Boulder Parks Sign Page
+// Nihilism page
 
 import React, { useEffect } from 'react';
 import ReactPlayer from 'react-player';
@@ -12,9 +12,9 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
 import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
-import { BoulderParksData } from '../../assets/data/pages/boulderparks.js';
+import { NihilismData } from '../../assets/data/pages/nihilism.js';
 
-const BoulderParks = () => {
+const Nihilism = () => {
   
   useEffect(() => {
     Aos.init({ duration: 500 });
@@ -27,28 +27,14 @@ const BoulderParks = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
-        <Row data-aos='fade-up'>
-    
-        </ Row>
 
         <Row data-aos='fade-up'>
-          <Column>
-            <p>{BoulderParksData[0].description}</p>
-          </Column>
-          <Column>
-            <p>My Role(s): {BoulderParksData[0].roles}</p>
-            <p>Stack: {BoulderParksData[0].stack}</p>
-            <p>Hardware: {BoulderParksData[0].hardware}</p>
-          </Column>
+            <h1>{NihilismData[0].heading}</h1>
+            <p>{NihilismData[0].text1}</p>
         </Row>
-
         <Row data-aos='fade-up'>
-            
-        </Row>
-
-        <Row data-aos='fade-up'>
-            <h1>{BoulderParksData[1].heading}</h1>
-            <p>{BoulderParksData[1].text1}</p>
+            <h1>{NihilismData[1].heading}</h1>
+            <p>{NihilismData[1].text1}</p>
         </Row>
 
       </motion.div>
@@ -74,5 +60,5 @@ const StyledReactPlayer = styled(ReactPlayer)`
     0 100px 80px rgba(0, 0, 0, 0.12)
 `;
 
-export default BoulderParks;
+export default Nihilism;
 
