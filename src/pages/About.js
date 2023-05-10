@@ -38,7 +38,20 @@ const About = () => {
               return(
               <Row key={id} style={{ zIndex: -1 }} data-aos='fade-up'>
                 <Column>
+                <p>{data.main}</p>
+                  <br/>
                   <p>{data.main}</p>
+                  <br/>
+                  <p>{data.main}</p>
+                  <br/>
+                  <p>{data.main}</p>
+                  <br/>
+                  <p>{data.main}</p>
+                  <br/>
+                  <p>{data.main}</p>
+                  <br/>
+                  <p>Hello Mom</p>
+                  <br/>
                 </Column>
               </Row>
               )
@@ -59,6 +72,19 @@ const About = () => {
               <Row key={id} style={{ zIndex: -1 }} data-aos='fade-up'>
                 <Column>
                   <p>{data.main}</p>
+                  <br/>
+                  <p>{data.main}</p>
+                  <br/>
+                  <p>{data.main}</p>
+                  <br/>
+                  <p>{data.main}</p>
+                  <br/>
+                  <p>{data.main}</p>
+                  <br/>
+                  <p>{data.main}</p>
+                  <br/>
+                  <p>Hello Mom</p>
+                  <br/>
                 </Column>
                 <Column>
                   <p style={{ opacity: 0 }}>{data.hidden}</p>
