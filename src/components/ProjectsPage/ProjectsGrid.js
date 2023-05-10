@@ -58,7 +58,7 @@ return (
       </PillContainer>
   
       <GlobalStyle />
-      <h2>I'm currently in the process documenting and adding more projects <>&#10084;... Please come back soon!</></h2>
+      <h2>Beep boop beep boop <>&#10084;... please come back soon!</></h2>
         <ResponsiveMasonry
                 columnsCountBreakPoints={{750: 1, 900: 2}}
             >
