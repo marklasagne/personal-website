@@ -24,7 +24,6 @@ const GridItem = ({image, id}) => {
   export const Item = styled.img`
     margin-top: 8px;
     vertical-align: middle;
-    border-radius: 5px;   
     width: 100%;
     cursor: pointer;
     box-shadow:

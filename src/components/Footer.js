@@ -11,7 +11,7 @@ const Footer = () => {
     <>
       <StyledFooter>
         <p>When life ain't going right go left.</p>
-        <p>&copy; 2022</p>
+        <p>&copy; 2023</p>
       </StyledFooter>
     </>
   );

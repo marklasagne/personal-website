@@ -28,15 +28,14 @@ const Nihilism = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
         <Row data-aos='fade-up'> 
-          <Image src={NihilismData[0].image} style={{ width: '75%' }} alt="save" />
+          <Image src={NihilismData[0].image} style={{ width: '80%' }} alt="save" />
         </Row>
         <Row data-aos='fade-up'>
-            
-            <h1>{NihilismData[0].heading}</h1>
             <p>{NihilismData[0].text1}</p>
+          
         </Row>
         <Row data-aos='fade-up'>
-            <p>{NihilismData[0].text2}</p>
+          <p>{NihilismData[0].text2}</p>
         </Row>
         <Row data-aos='fade-up'>
           <StyledReactPlayer url='https://www.youtube.com/watch?v=IGaKpsVkoLo' />

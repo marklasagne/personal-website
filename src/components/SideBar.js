@@ -6,7 +6,6 @@
 import React from 'react';
 import behance from '../assets/icons/behance.svg';
 import linkedin from '../assets/icons/linkedin.svg';
-import twitter from '../assets/icons/twitter.svg';
 import github from '../assets/icons/github.svg';
 import codepen from '../assets/icons/codepen.svg';
 import styled from 'styled-components';

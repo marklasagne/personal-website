@@ -81,29 +81,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const GridRow = styled.div`
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  position: relative;
-  @media screen and (max-width: 700px) {
-      padding: 0 15px;
-  }  
-`;
-
-const GridColumn = styled.div`
-  -ms-flex: 50%; /* IE10 */
-  flex: 50%%;
-  max-width: 50%;
-  padding: 0 5px;
-  @media screen and (max-width: 850px) {
-      -ms-flex: 100%;
-      flex: 100%;
-      max-width: 100%;
-  }  
-`;
-
 const PillContainer = styled.div`
   align-items: left;
   padding: 0.875rem;
