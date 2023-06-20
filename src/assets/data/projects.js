@@ -6,6 +6,7 @@ import AudioVisualizer from '../images/audio_visualization.gif';
 import Jobzen from '../images/job_zen.png';
 import Affinity from '../images/affinity.gif';
 import FuckYou from '../images/fuck_you_sign.gif'
+import Nihilism from '../images/nihilism.gif'
 
 export const projects_temp = [
   {
@@ -87,6 +88,13 @@ export const projects_temp = [
 ];
 
 export const projects = [
+  {
+    id: 'nihilism',
+    name: 'Nihilism',
+    description: 'Interactive and reflective art installation.',
+    image: Nihilism,
+    tags: ['Installation']
+  },
   {
     id: 'triangle-trail-status',
     name: 'Triangle Trail Status',
