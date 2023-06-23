@@ -32,7 +32,6 @@ const Nihilism = () => {
         </Row>
         <Row data-aos='fade-up'>
             <p>{NihilismData[0].text1}</p>
-          
         </Row>
         <Row data-aos='fade-up'>
           <p>{NihilismData[0].text2}</p>

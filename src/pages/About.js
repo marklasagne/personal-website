@@ -64,34 +64,8 @@ const About = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}>
-            <h1>Howdy! I'm Mark</h1>
-            <h1 style={{fontSize: 12}}>[ software / art / fabrication / anxiety ]</h1>
+
             <Portrait />
-            {AboutPageData.map((data, id) => {
-              return(
-              <Row key={id} style={{ zIndex: -1 }} data-aos='fade-up'>
-                <Column>
-                  <p>{data.main}</p>
-                  <br/>
-                  <p>{data.main}</p>
-                  <br/>
-                  <p>{data.main}</p>
-                  <br/>
-                  <p>{data.main}</p>
-                  <br/>
-                  <p>{data.main}</p>
-                  <br/>
-                  <p>{data.main}</p>
-                  <br/>
-                  <p>Hello Mom</p>
-                  <br/>
-                </Column>
-                <Column>
-                  <p style={{ opacity: 0 }}>{data.hidden}</p>
-                </Column>
-              </Row>
-              )
-            })}
           </motion.div>
         </>
       )}

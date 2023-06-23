@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <>
       <StyledFooter>
-        <p>When life ain't going right go left.</p>
+        <p>Would you be upset if I told you we were dying?</p>
         <p>&copy; 2023</p>
       </StyledFooter>
     </>

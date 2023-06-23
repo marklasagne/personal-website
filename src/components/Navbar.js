@@ -13,7 +13,7 @@ const Navbar = () => {
       <Nav>
       <NavLink to="/">
           About
-        </NavLink>
+      </NavLink>
       <NavLink to="/projects">
         Projects
       </NavLink>
@@ -28,8 +28,7 @@ const Navbar = () => {
 
 const Nav = styled.nav`
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: left;
   padding: 1rem;
   margin-bottom: 5rem;
   z-index: 1;

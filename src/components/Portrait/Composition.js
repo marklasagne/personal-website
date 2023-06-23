@@ -12,15 +12,15 @@ import { Canvas } from '@react-three/fiber';
 import styled from 'styled-components';
 
 const Composition = () => {
-
   return (
     <>
       <Suspense fallback={<LoadingDiv>Loading... </LoadingDiv>}>
         <Canvas
           style={{
             position: 'absolute', 
-            height: '75%', 
-            width: 1250,
+            top: '50%',
+            bottom: '50%',
+            transform: `translate(-50%, -50%)` 
           }}
           camera={{ position: [1.1, 0, 4], fov: 60 }}
           shadowMap
@@ -36,7 +36,6 @@ const Composition = () => {
 }
 
 const LoadingDiv = styled.div`
-    position: absolute;
     font-size: 1.5rem;
     background: #ffffff;
     top: 50%;  
@@ -44,7 +43,6 @@ const LoadingDiv = styled.div`
     text-align: center;
     vertical-align: middle;
     line-height: 100%;
-    transform: translate(-50%, -50%);
 }
 `;
 
