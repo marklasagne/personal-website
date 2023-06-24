@@ -11,7 +11,8 @@ import { AboutPageData } from '../assets/data/pages/about.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
-import { Row, Column } from '../components/PageComponents.js';
+import { Row, Column, MainFont } from '../components/PageComponents.js';
+import styled from 'styled-components';
 
 const About = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
@@ -25,7 +26,7 @@ const About = () => {
   }, [isMobile]);
 
   return (
-    <>
+    <MainFont>
       {isMobile ? (
         <>
           <motion.div
@@ -64,12 +65,11 @@ const About = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}>
-
             <Portrait />
           </motion.div>
         </>
       )}
-    </>
+    </MainFont>
   );
 }
 

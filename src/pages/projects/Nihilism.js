@@ -11,8 +11,9 @@ import styled from 'styled-components';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
-import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
+import { Row, Image } from '../../components/PageComponents.js';
 import { NihilismData } from '../../assets/data/pages/nihilism.js';
+import FontStyles from '../../../src/assets/fonts/fonts.js';
 
 const Nihilism = () => {
   
@@ -21,7 +22,8 @@ const Nihilism = () => {
   }, []);
 
   return (
-    <>
+    <PageContainer>
+      <FontStyles />
       <motion.div
         key='fuckyou'
         initial={{ opacity: 0 }}
@@ -48,16 +50,12 @@ const Nihilism = () => {
         </Row>
 
       </motion.div>
-    </>
+    </PageContainer>
   );
 }
 
-const BackgroundImage = styled.img`
-    position: absolute;
-    z-index: -1;
-    @media only screen and (max-width: 750px) {
-        display: none;
-    }
+const PageContainer = styled.div`
+  font-family: mainframeregular; 
 `;
 
 const StyledReactPlayer = styled(ReactPlayer)`

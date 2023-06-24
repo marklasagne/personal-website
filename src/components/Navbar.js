@@ -6,10 +6,12 @@
 import React from 'react'
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { MainFont } from './PageComponents.js';
+
 
 const Navbar = () => {
   return (
-    <>
+    <MainFont>
       <Nav>
       <NavLink to="/">
           About
@@ -21,7 +23,7 @@ const Navbar = () => {
         Blog
       </ExternalLink>
       </Nav>
-    </>
+    </MainFont>
   );
 }
 

@@ -63,6 +63,10 @@ export const TextLink = styled.a`
     color: #000000;
 `;
 
+export const MainFont = styled.div`
+    font-family: Verdana; 
+`;
+
 
 
 

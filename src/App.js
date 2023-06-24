@@ -26,14 +26,12 @@ import ScrollToTop from './components/ScrollToTop.js';
 import TopArrow from './components/TopArrow.js';
 import { createGlobalStyle } from 'styled-components';
 import { PageContainer, ContentWrap } from './components/PageComponents';
-import FontStyles from './assets/fonts/fonts.js';
 
 const App = () => {
   return (
     <>
     <AnimatePresence exitBeforeEnter={true}>
       <GlobalStyle />
-      <FontStyles />
       <SideBar />
       <TopArrow />
         <PageContainer>
@@ -68,7 +66,6 @@ const App = () => {
 
 const GlobalStyle = createGlobalStyle`
   * {
-    font-family: Roboto;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
