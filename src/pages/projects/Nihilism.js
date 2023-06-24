@@ -22,7 +22,7 @@ const Nihilism = () => {
   }, []);
 
   return (
-    <PageContainer>
+    <MainFont>
       <FontStyles />
       <motion.div
         key='fuckyou'
@@ -50,11 +50,11 @@ const Nihilism = () => {
         </Row>
 
       </motion.div>
-    </PageContainer>
+    </MainFont>
   );
 }
 
-const PageContainer = styled.div`
+const MainFont = styled.div`
   font-family: mainframeregular; 
 `;
 

@@ -17,6 +17,7 @@ import TriangTrail_0 from '../../assets/images/TriangleTrailStatus/TriangTrail_0
 import TriangTrail_3 from '../../assets/images/TriangleTrailStatus/TriangTrail_3.png';
 import TriangTrail_4 from '../../assets/images/TriangleTrailStatus/TriangTrail_4.png';
 import TriangTrail_5 from '../../assets/images/TriangleTrailStatus/TriangTrail_5.png';
+import FontStyles from '../../../src/assets/fonts/fonts.js';
 
 const TriangTrail = () => {
   
@@ -25,7 +26,8 @@ const TriangTrail = () => {
   }, []);
 
   return (
-    <>
+    <MainFont>
+      <FontStyles />
       <motion.div
         key='triangletrail'
         initial={{ opacity: 0 }}
@@ -94,9 +96,13 @@ const TriangTrail = () => {
           </Column>
         </Row>
       </motion.div>
-    </>
+    </MainFont>
   );
 }
+
+const MainFont = styled.div`
+  font-family: roboto; 
+`;
 
 const BackgroundImage = styled.img`
     position: absolute;
