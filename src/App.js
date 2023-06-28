@@ -22,44 +22,40 @@ import FuckYou from './pages/projects/FuckYou.js';
 import BoulderParks from './pages/projects/BoulderParks.js';
 import Nihilism from './pages/projects/Nihilism.js';
 import About from './pages/About';
-import ScrollTo from './components/ScrollTo.js';
-import HorizontalControl from './components/HorizontalControl.js';
+// import ScrollTo from './components/ScrollTo.js';
 import { createGlobalStyle } from 'styled-components';
 import { PageContainer, ContentWrap } from './components/PageComponents';
 
 const App = () => {
   return (
     <>
-    <AnimatePresence exitBeforeEnter={true}>
-      <GlobalStyle />
-      <SideBar />
-      <HorizontalControl />
+      <AnimatePresence exitBeforeEnter={true}>
+        <GlobalStyle />
+        <SideBar />
         <PageContainer>
           <Router>
-            <ScrollTo>
-              <Navbar />
-              <ContentWrap>
-                <Routes>
-                  <Route path='/' element={<About />} />
-                  <Route path='/projects' element={<ProjectList />} />
-                  <Route path='/projects/triangle-trail-status' element={<TriangleTrailStatus />} />
-                  <Route path='/projects/smart-palette' element={<SmartPalette />} />
-                  <Route path='/projects/ambie-sense' element={<AmbieSense />} />
-                  <Route path='/projects/audio-visualizer' element={<AudioVisualizer />} />
-                  <Route path='/projects/lifes-a-game' element={<LifesAGame />} />
-                  <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
-                  <Route path='/projects/jobzen' element={<Jobzen />} />
-                  <Route path='/projects/affinity' element={<Affinity />} />
-                  <Route path='/projects/fuck-you-sign' element={<FuckYou />} />
-                  <Route path='/projects/boulder-parks' element={<BoulderParks />} />
-                  <Route path='/projects/nihilism' element={<Nihilism />} />
-                </Routes>
-                </ContentWrap>
-                <Footer />
-              </ ScrollTo>
+            <Navbar />
+            <ContentWrap>
+              <Routes>
+                <Route path='/' element={<About />} />
+                <Route path='/projects' element={<ProjectList />} />
+                <Route path='/projects/triangle-trail-status' element={<TriangleTrailStatus />} />
+                <Route path='/projects/smart-palette' element={<SmartPalette />} />
+                <Route path='/projects/ambie-sense' element={<AmbieSense />} />
+                <Route path='/projects/audio-visualizer' element={<AudioVisualizer />} />
+                <Route path='/projects/lifes-a-game' element={<LifesAGame />} />
+                <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
+                <Route path='/projects/jobzen' element={<Jobzen />} />
+                <Route path='/projects/affinity' element={<Affinity />} />
+                <Route path='/projects/fuck-you-sign' element={<FuckYou />} />
+                <Route path='/projects/boulder-parks' element={<BoulderParks />} />
+                <Route path='/projects/nihilism' element={<Nihilism />} />
+              </Routes>
+            </ContentWrap>
+            <Footer />
           </Router>
         </PageContainer>
-    </AnimatePresence>
+      </AnimatePresence>
     </>
   );
 }

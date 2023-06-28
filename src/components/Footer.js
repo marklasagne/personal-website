@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <MainFont>
       <StyledFooter>
-        <p>Would you be upset if I told you we were dying?</p>
+        <p>scream into the void</p>
         <p>&copy; 2023</p>
       </StyledFooter>
     </MainFont>
