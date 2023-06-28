@@ -65,12 +65,21 @@ const About = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}>
-            <Portrait />
+           <ModifiedRow>
+           <Portrait />
+            </ModifiedRow>   
           </motion.div>
         </>
       )}
     </MainFont>
   );
 }
+
+const ModifiedRow = styled.div`
+  }
+    height: 100vh;
+    width: 100vw;
+  }
+`;
 
 export default About;

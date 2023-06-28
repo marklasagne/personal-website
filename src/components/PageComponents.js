@@ -10,9 +10,6 @@ export const Row = styled.div`
     justify-content: space-around;
     align-items: center;
     margin-top: 6.25rem;
-    @media screen and (max-width: 547px) {
-        text-align: center
-  }  
 `;
 
 export const Column = styled.div`

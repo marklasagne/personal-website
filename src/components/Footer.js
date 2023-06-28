@@ -5,15 +5,17 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { MainFont } from './PageComponents.js';
+
 
 const Footer = () => {
   return (
-    <>
+    <MainFont>
       <StyledFooter>
         <p>Would you be upset if I told you we were dying?</p>
         <p>&copy; 2023</p>
       </StyledFooter>
-    </>
+    </MainFont>
   );
 }
 
