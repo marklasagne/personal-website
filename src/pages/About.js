@@ -37,11 +37,17 @@ const About = () => {
   };
 
   useScrollPosition(({ prevPos, currPos }) => {
+    console.log()
     if (currPos.y < prevPos.y) {
-      scrollToAbout();
+      if (!isScrolled) {
+        scrollToAbout();
+      } 
+ 
     }
     if (currPos.y > prevPos.y) {
-      scrollToTop();
+      if (isScrolled) {
+        scrollToTop();
+      } 
     }
   })
 
@@ -55,7 +61,10 @@ const About = () => {
 
   return (
     <MainFont>
-      <UpArrow src={arrow} onClick={!isScrolled ? scrollToAbout : scrollToTop} isScrolled={isScrolled} />
+      <ArrowContainer>
+        <HorizontalArrow src={arrow} onClick={!isScrolled ? scrollToAbout : scrollToTop} isScrolled={isScrolled} />
+        <VerticalArrow src={arrow} onClick={!isScrolled ? scrollToAbout : scrollToTop} isScrolled={isScrolled} />
+      </ArrowContainer>
       {isMobile ? (
         <>
           <motion.div
@@ -112,20 +121,36 @@ const ModifiedRow = styled.div`
   }
 `;
 
-const UpArrow = styled.img`
+const HorizontalArrow = styled.img`
   cursor: pointer;
   color: black;
-  z-index: 69;
-  bottom: 0;
-  right: 0;
-  position: fixed;
   width: 5rem;
-  margin: 3rem;
   text-decoration: none;
   &:hover {
       opacity: 75%;
   } 
   transform: ${props => props.isScrolled == false ? `rotate(180deg)` : `rotate(0deg)`};
+`;
+
+const VerticalArrow = styled.img`
+  cursor: pointer;
+  color: black;
+  width: 5rem;
+  text-decoration: none;
+  &:hover {
+      opacity: 75%;
+  } 
+  transform: ${props => props.isScrolled == false ? `rotate(90deg)` : `rotate(-90deg)`};
+`;
+
+const ArrowContainer = styled.div`
+  bottom: 0;
+  right: 0;
+  z-index: 69;
+  position: fixed;
+  margin: 3rem;
+  text-decoration: none;
+  display: block;
 `;
 
 export default About;
