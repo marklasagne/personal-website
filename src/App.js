@@ -22,8 +22,8 @@ import FuckYou from './pages/projects/FuckYou.js';
 import BoulderParks from './pages/projects/BoulderParks.js';
 import Nihilism from './pages/projects/Nihilism.js';
 import About from './pages/About';
-import ScrollToTop from './components/ScrollToTop.js';
-import TopArrow from './components/TopArrow.js';
+import ScrollTo from './components/ScrollTo.js';
+import HorizontalControl from './components/HorizontalControl.js';
 import { createGlobalStyle } from 'styled-components';
 import { PageContainer, ContentWrap } from './components/PageComponents';
 
@@ -33,10 +33,10 @@ const App = () => {
     <AnimatePresence exitBeforeEnter={true}>
       <GlobalStyle />
       <SideBar />
-      <TopArrow />
+      <HorizontalControl />
         <PageContainer>
           <Router>
-            <ScrollToTop>
+            <ScrollTo>
               <Navbar />
               <ContentWrap>
                 <Routes>
@@ -56,9 +56,9 @@ const App = () => {
                 </Routes>
                 </ContentWrap>
                 <Footer />
-              </ ScrollToTop>
+              </ ScrollTo>
           </Router>
-        </ PageContainer>
+        </PageContainer>
     </AnimatePresence>
     </>
   );

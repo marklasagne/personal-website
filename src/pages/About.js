@@ -21,7 +21,7 @@ const About = () => {
     Aos.init({ duration: 500 });
     window.addEventListener('resize', () => {
       const ismobile = window.innerWidth < 1000;
-      if (ismobile !== isMobile) setIsMobile(ismobile);
+      if ( isMobile !== isMobile) setIsMobile(ismobile);
     }, false);
   }, [isMobile]);
 
@@ -61,14 +61,30 @@ const About = () => {
         </>
       ) : (
         <>
+    
+        <ModifiedRow>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}>
-           <ModifiedRow>
            <Portrait />
-            </ModifiedRow>   
+             
           </motion.div>
+        </ModifiedRow>
+        <ModifiedRow>
+          <Column>
+          <p>Hello Mom</p>
+            <br/>
+            <p>Hello Mom</p>
+            <br/>
+            <p>Hello Mom</p>
+            <br/>
+            <p>Hello Mom</p>
+            <br/>
+          </Column>
+            
+   
+        </ModifiedRow>
         </>
       )}
     </MainFont>
@@ -77,8 +93,9 @@ const About = () => {
 
 const ModifiedRow = styled.div`
   }
-    height: 100vh;
-    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

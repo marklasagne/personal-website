@@ -13,14 +13,10 @@ import styled from 'styled-components';
 
 const Composition = () => {
   return (
-    <>
+    <ContainerDiv>
       <Suspense fallback={<LoadingDiv>Loading... </LoadingDiv>}>
         <Canvas
           style={{
-            position: 'absolute', 
-            top: '50%',
-            bottom: '50%',
-            transform: `translate(-50%, -50%)` 
           }}
           camera={{ position: [1.1, 0, 4], fov: 60 }}
           shadowMap
@@ -31,15 +27,20 @@ const Composition = () => {
           <Model />
         </Canvas>
       </Suspense>
-    </>
+    </ContainerDiv>
   )
 }
+
+const ContainerDiv = styled.div`
+    width: 100vw;
+    height: 100vh;
+ 
+}
+`;
 
 const LoadingDiv = styled.div`
     font-size: 1.5rem;
     background: #ffffff;
-    top: 50%;  
-    left: 75%; 
     text-align: center;
     vertical-align: middle;
     line-height: 100%;

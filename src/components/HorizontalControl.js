@@ -7,7 +7,7 @@ import React from 'react';
 import arrow from '../assets/icons/arrow.svg';
 import styled from 'styled-components';
 
-const TopArrow = () => {
+const HorizontalControl = () => {
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -16,10 +16,17 @@ const TopArrow = () => {
     });
   };
 
+  const scrollToAbout = () => {
+    window.scrollTo({
+      top: 2000,
+      behavior: 'smooth'
+    });
+  };
+
 
   return (
     <>
-      <UpArrow src={arrow} onClick={scrollToTop} />
+      <UpArrow src={arrow} onClick={scrollToAbout} />
     </>
   );
 }
@@ -39,4 +46,4 @@ const UpArrow = styled.img`
   } 
 `;
 
-export default TopArrow;
+export default HorizontalControl;
