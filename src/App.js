@@ -27,9 +27,10 @@ import { createGlobalStyle } from 'styled-components';
 import { PageContainer, ContentWrap } from './components/PageComponents';
 
 const App = () => {
+  
   return (
     <>
-      <AnimatePresence exitBeforeEnter={true}>
+      <AnimatePresence exitBeforeEnter >
         <GlobalStyle />
         <SideBar />
         <PageContainer>

@@ -68,9 +68,12 @@ const About = () => {
       {isMobile ? (
         <>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}>
+            key="about"
+            initial={{ x: 300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -300, opacity: 0 }}
+            
+            >
             <h1>Howdy! I'm Mark</h1>
             <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
             {AboutPageData.map((data, id) => {
@@ -89,9 +92,10 @@ const About = () => {
         <>
           <ModifiedRow>
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}>
+                 initial={{ x: 300, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: -300, opacity: 0 }}
+      >
               <Portrait />
             </motion.div>
           </ModifiedRow>
