@@ -78,7 +78,7 @@ const About = () => {
       ) : (
         <>
           <HorizontalScreen id="container">
-    
+            <Column>
               <div id="about-section">
                 <p>Hello Mom</p>
                 <br />
@@ -89,11 +89,13 @@ const About = () => {
                 <p>Hello Mom</p>
                 <br />
               </div>
-              
-             
+              </Column>
+              <Column>
               <Portrait />
+              </Column>
+              <Column>
               <ProjectsPage />
-          
+              </Column>
           </HorizontalScreen>
         </>
       )}
@@ -106,11 +108,6 @@ const HorizontalScreen = styled.div`
   flex-direction: row;
   overflow-x: visible;
   width: 300%;
-`;
-
-const PageColumn = styled.div`
-  display: flex;
-  flex-direction: row;
 `;
 
 const Arrow = styled.img`
