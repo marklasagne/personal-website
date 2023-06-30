@@ -71,14 +71,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    overflow-y: scroll; 
-    overflow-x: hidden !important;
-    max-width: 1000px;
-    width: 85%;
     margin: 0 auto;
-    @media screen and (max-width: 1000px) {
-      width: 80%;
-    } 
+    width: 85%;
   }
 
   h1 {

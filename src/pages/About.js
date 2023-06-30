@@ -14,42 +14,30 @@ import { motion } from 'framer-motion';
 import { Row, Column, MainFont } from '../components/PageComponents.js';
 import styled from 'styled-components';
 import arrow from '../assets/icons/arrow.svg';
-import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import ProjectsPage from '../components/ProjectsPage/ProjectsGrid';
+
 
 const About = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const scrollToTop = () => {
+  let leftAmount = window.innerWidth
+  const scrollRight = () => {
     setIsScrolled(!isScrolled)
     window.scrollTo({
-      top: 0,
+      left: leftAmount,
       behavior: 'smooth'
     });
   };
 
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about-section')
+  const scrollLeft = () => {
     setIsScrolled(!isScrolled)
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.scrollTo({
+      left: 0,
+      behavior: 'smooth'
+    });
   };
-
-  useScrollPosition(({ prevPos, currPos }) => {
-    console.log()
-    if (currPos.y < prevPos.y) {
-      if (!isScrolled) {
-        scrollToAbout();
-      } 
- 
-    }
-    if (currPos.y > prevPos.y) {
-      if (isScrolled) {
-        scrollToTop();
-      } 
-    }
-  })
 
   useEffect(() => {
     Aos.init({ duration: 500 });
@@ -62,18 +50,17 @@ const About = () => {
   return (
     <MainFont>
       <ArrowContainer>
-        <HorizontalArrow src={arrow} onClick={!isScrolled ? scrollToAbout : scrollToTop} isScrolled={isScrolled} />
-        <VerticalArrow src={arrow} onClick={!isScrolled ? scrollToAbout : scrollToTop} isScrolled={isScrolled} />
+        <Arrow src={arrow} onClick={!isScrolled ? scrollRight : scrollLeft} isScrolled={isScrolled} />
       </ArrowContainer>
       {isMobile ? (
-        <>
+        <div id="container">
           <motion.div
             key="about"
             initial={{ x: 300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -300, opacity: 0 }}
-            
-            >
+
+          >
             <h1>Howdy! I'm Mark</h1>
             <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
             {AboutPageData.map((data, id) => {
@@ -87,56 +74,46 @@ const About = () => {
               )
             })}
           </motion.div>
-        </>
+        </div>
       ) : (
         <>
-          <ModifiedRow>
-            <motion.div
-                 initial={{ x: 300, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: -300, opacity: 0 }}
-      >
+          <HorizontalScreen id="container">
+    
+              <div id="about-section">
+                <p>Hello Mom</p>
+                <br />
+                <p>Hello Mom</p>
+                <br />
+                <p>Hello Mom</p>
+                <br />
+                <p>Hello Mom</p>
+                <br />
+              </div>
+              
+             
               <Portrait />
-            </motion.div>
-          </ModifiedRow>
-          <ModifiedRow id="about-section">
-            <Column>
-              <p>Hello Mom</p>
-              <br />
-              <p>Hello Mom</p>
-              <br />
-              <p>Hello Mom</p>
-              <br />
-              <p>Hello Mom</p>
-              <br />
-            </Column>
-          </ModifiedRow>
+              <ProjectsPage />
+          
+          </HorizontalScreen>
         </>
       )}
     </MainFont>
   );
 }
 
-const ModifiedRow = styled.div`
-  }
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+const HorizontalScreen = styled.div`
+  display: flex;
+  flex-direction: row;
+  overflow-x: visible;
+  width: 300%;
 `;
 
-const HorizontalArrow = styled.img`
-  cursor: pointer;
-  color: black;
-  width: 5rem;
-  text-decoration: none;
-  &:hover {
-      opacity: 75%;
-  } 
-  transform: ${props => props.isScrolled == false ? `rotate(180deg)` : `rotate(0deg)`};
+const PageColumn = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
-const VerticalArrow = styled.img`
+const Arrow = styled.img`
   cursor: pointer;
   color: black;
   width: 5rem;
