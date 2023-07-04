@@ -33,6 +33,7 @@ const Nav = styled.nav`
   justify-content: left;
   padding: 1rem;
   margin-bottom: 5rem;
+  position: fixed;
   z-index: 1;
 `;
   

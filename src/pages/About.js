@@ -11,10 +11,10 @@ import { AboutPageData } from '../assets/data/pages/about.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
-import { Row, Column, MainFont } from '../components/PageComponents.js';
+import { Row, MainFont } from '../components/PageComponents.js';
 import styled from 'styled-components';
 import arrow from '../assets/icons/arrow.svg';
-import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import ProjectsPage from '../components/ProjectsPage/ProjectsGrid';
 
 
@@ -77,26 +77,31 @@ const About = () => {
         </div>
       ) : (
         <>
-          <HorizontalScreen id="container">
-            <Column>
-              <div id="about-section">
-                <p>Hello Mom</p>
-                <br />
-                <p>Hello Mom</p>
-                <br />
-                <p>Hello Mom</p>
-                <br />
-                <p>Hello Mom</p>
-                <br />
-              </div>
+          <ReactScrollWheelHandler
+            upHandler={() => {if(isScrolled) { scrollLeft() }}}
+            downHandler={() => {if(!isScrolled) { scrollRight() }}}
+          >
+            <HorizontalScreen id="container">
+              <Column>
+                <div id="about-section">
+                  <p>Hello Mom</p>
+                  <br />
+                  <p>Hello Mom</p>
+                  <br />
+                  <p>Hello Mom</p>
+                  <br />
+                  <p>Hello Mom</p>
+                  <br />
+                </div>
               </Column>
               <Column>
-              <Portrait />
+                <Portrait />
               </Column>
               <Column>
-              <ProjectsPage />
+                <ProjectsPage />
               </Column>
-          </HorizontalScreen>
+            </HorizontalScreen>
+          </ReactScrollWheelHandler>
         </>
       )}
     </MainFont>
@@ -107,7 +112,20 @@ const HorizontalScreen = styled.div`
   display: flex;
   flex-direction: row;
   overflow-x: visible;
+  height: 100vh;
   width: 300%;
+`;
+
+export const Column = styled.div`
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%%;
+    max-width: 50%;
+    @media screen and (max-width: 547px) {
+        margin-bottom: 3.125rem;
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+  }  
 `;
 
 const Arrow = styled.img`
