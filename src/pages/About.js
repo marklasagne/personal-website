@@ -21,12 +21,12 @@ import ProjectsPage from '../components/ProjectsPage/ProjectsGrid';
 const About = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
   const [isScrolled, setIsScrolled] = useState(false);
-
-  let leftAmount = window.innerWidth
+  const [leftAmmount, setLeftAmmount] = useState();
+  
   const scrollRight = () => {
     setIsScrolled(!isScrolled)
     window.scrollTo({
-      left: leftAmount,
+      left: leftAmmount,
       behavior: 'smooth'
     });
   };
@@ -41,7 +41,9 @@ const About = () => {
 
   useEffect(() => {
     Aos.init({ duration: 500 });
+    setLeftAmmount(window.innerWidth)
     window.addEventListener('resize', () => {
+      setLeftAmmount(window.innerWidth)
       const ismobile = window.innerWidth < 1000;
       if (isMobile !== isMobile) setIsMobile(ismobile);
     }, false);
@@ -56,10 +58,6 @@ const About = () => {
         <div id="container">
           <motion.div
             key="about"
-            initial={{ x: 300, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -300, opacity: 0 }}
-
           >
             <h1>Howdy! I'm Mark</h1>
             <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
@@ -94,9 +92,7 @@ const About = () => {
                   <br />
                 </div>
               </Column>
-              <Column>
-                <Portrait />
-              </Column>
+              <Portrait />
               <Column>
                 <ProjectsPage />
               </Column>
@@ -113,19 +109,13 @@ const HorizontalScreen = styled.div`
   flex-direction: row;
   overflow-x: visible;
   height: 100vh;
-  width: 300%;
+  widtH: 200%;
 `;
 
 export const Column = styled.div`
     -ms-flex: 50%; /* IE10 */
     flex: 50%%;
     max-width: 50%;
-    @media screen and (max-width: 547px) {
-        margin-bottom: 3.125rem;
-        -ms-flex: 100%;
-        flex: 100%;
-        max-width: 100%;
-  }  
 `;
 
 const Arrow = styled.img`
