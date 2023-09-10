@@ -18,7 +18,7 @@ const Composition = () => {
         <Canvas
           style={{
           }}
-          camera={{ position: [1.1, 0, 4], fov: 60 }}
+          camera={{ position: [0, 0, 4], fov: 32 }}
           shadowMap
         >
           <KeyLight brightness={5.6} color={"#ffc9f9"} />

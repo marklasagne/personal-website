@@ -50,6 +50,10 @@ const BoulderParks = () => {
             <h1>{BoulderParksData[1].heading}</h1>
             <p>{BoulderParksData[1].text1}</p>
         </Row>
+        <Row data-aos='fade-up'>
+            <h1>IMAGES COMING... EVENTUALLY...</h1>
+        </Row>
+
 
       </motion.div>
     </>
