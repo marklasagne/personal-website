@@ -75,29 +75,10 @@ const About = () => {
         </div>
       ) : (
         <>
-          <ReactScrollWheelHandler
-            upHandler={() => {if(isScrolled) { scrollLeft() }}}
-            downHandler={() => {if(!isScrolled) { scrollRight() }}}
-          >
-            <HorizontalScreen id="container">
-              <Column>
-                <div id="about-section">
-                  <p>Hello Mom</p>
-                  <br />
-                  <p>Hello Mom</p>
-                  <br />
-                  <p>Hello Mom</p>
-                  <br />
-                  <p>Hello Mom</p>
-                  <br />
-                </div>
-              </Column>
+          
               <Portrait />
-              <Column>
-                <ProjectsPage />
-              </Column>
-            </HorizontalScreen>
-          </ReactScrollWheelHandler>
+           
+   
         </>
       )}
     </MainFont>
@@ -144,3 +125,31 @@ export default About;
 
 
 
+/***
+ * 
+ *  <>
+          <ReactScrollWheelHandler
+            upHandler={() => {if(isScrolled) { scrollLeft() }}}
+            downHandler={() => {if(!isScrolled) { scrollRight() }}}
+          >
+            <HorizontalScreen id="container">
+              <Column>
+                <div id="about-section">
+                  <p>Hello Mom</p>
+                  <br />
+                  <p>Hello Mom</p>
+                  <br />
+                  <p>Hello Mom</p>
+                  <br />
+                  <p>Hello Mom</p>
+                  <br />
+                </div>
+              </Column>
+              <Portrait />
+              <Column>
+                <ProjectsPage />
+              </Column>
+            </HorizontalScreen>
+          </ReactScrollWheelHandler>
+        </>
+ */
