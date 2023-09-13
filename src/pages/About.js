@@ -22,7 +22,7 @@ const About = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
   const [isScrolled, setIsScrolled] = useState(false);
   const [leftAmmount, setLeftAmmount] = useState();
-  
+
   const scrollRight = () => {
     setIsScrolled(!isScrolled)
     window.scrollTo({
@@ -48,6 +48,27 @@ const About = () => {
       if (isMobile !== isMobile) setIsMobile(ismobile);
     }, false);
   }, [isMobile]);
+
+  useEffect(() => {
+    // Add a scroll event listener to track the scroll position
+    const handleScroll = () => {
+      const scrollPosition = window.scrollX;
+      let endpoint = '';
+      if (isScrolled) {
+        endpoint = 'about';
+      } else if (scrollPosition > 1000) {
+        endpoint = 'projects';
+      }
+      // Update the URL endpoint without triggering a page reload
+      window.history.pushState(null, null, `/${endpoint}`);
+    };
+    // Attach the scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <MainFont>
@@ -75,10 +96,21 @@ const About = () => {
         </div>
       ) : (
         <>
-          
-              <Portrait />
-           
-   
+          <ReactScrollWheelHandler
+            upHandler={() => { if (isScrolled) { scrollLeft() } }}
+            downHandler={() => { if (!isScrolled) { scrollRight() } }}
+          >
+            <HorizontalScreen id="container">
+              <Column>1
+                <h1>Howdy! I'm Mark</h1>
+                <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1></Column>
+              <Column>2
+                <Portrait /></Column>
+              <Column>3
+                <ProjectsPage />
+              </Column>
+            </HorizontalScreen>
+          </ReactScrollWheelHandler>
         </>
       )}
     </MainFont>
@@ -90,13 +122,13 @@ const HorizontalScreen = styled.div`
   flex-direction: row;
   overflow-x: visible;
   height: 100vh;
-  widtH: 200%;
+  width: 150%;
 `;
 
-export const Column = styled.div`
-    -ms-flex: 50%; /* IE10 */
-    flex: 50%%;
-    max-width: 50%;
+const Column = styled.div`
+    flex: 1;
+    min-heigh: 100vh;
+    border: 1px solid #ccc;
 `;
 
 const Arrow = styled.img`
@@ -124,15 +156,8 @@ export default About;
 
 
 
-
-/***
- * 
- *  <>
-          <ReactScrollWheelHandler
-            upHandler={() => {if(isScrolled) { scrollLeft() }}}
-            downHandler={() => {if(!isScrolled) { scrollRight() }}}
-          >
-            <HorizontalScreen id="container">
+/*** 
+<HorizontalScreen id="container">
               <Column>
                 <div id="about-section">
                   <p>Hello Mom</p>
@@ -152,4 +177,14 @@ export default About;
             </HorizontalScreen>
           </ReactScrollWheelHandler>
         </>
+
+        */
+
+
+/***
+ * const Column = styled.div`
+-ms-flex: 50%; 
+flex: 50%%;
+max-width: 50%;
+`;
  */

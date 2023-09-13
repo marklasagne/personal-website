@@ -24,7 +24,6 @@ import Nihilism from './pages/projects/Nihilism.js';
 import About from './pages/About';
 // import ScrollTo from './components/ScrollTo.js';
 import { createGlobalStyle } from 'styled-components';
-import { PageContainer, ContentWrap } from './components/PageComponents';
 
 const App = () => {
   
@@ -33,10 +32,8 @@ const App = () => {
       <AnimatePresence exitBeforeEnter >
         <GlobalStyle />
         <SideBar />
-        <PageContainer>
           <Router>
             <Navbar />
-            <ContentWrap>
               <Routes>
                 <Route path='/' element={<About />} />
                 <Route path='/projects' element={<ProjectList />} />
@@ -52,10 +49,9 @@ const App = () => {
                 <Route path='/projects/boulder-parks' element={<BoulderParks />} />
                 <Route path='/projects/nihilism' element={<Nihilism />} />
               </Routes>
-            </ContentWrap>
+       
             <Footer />
           </Router>
-        </PageContainer>
       </AnimatePresence>
     </>
   );
@@ -68,11 +64,6 @@ const GlobalStyle = createGlobalStyle`
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     -webkit-overflow-scrolling: touch;
-  }
-
-  body {
-    margin: 0 auto;
-    width: 85%;
   }
 
   h1 {

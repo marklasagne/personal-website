@@ -9,17 +9,18 @@ import React, { Suspense, useRef, useEffect, useState } from 'react';
 import Model from './Model.js';
 import { Canvas, useFrame } from '@react-three/fiber';
 import styled from 'styled-components';
+import LoadingImage from '../../assets/images/portrait_loading.png';
 
 const KeyLight = ({ brightness, color, scrollX }) => {
   const keyLightRef = useRef();
 
   useEffect(() => {
-    keyLightRef.current.position.set(-2, 0, 5);
+    keyLightRef.current.position.set(-3, 0, 5);
   }, []);
 
   useFrame(() => {
     // Update the X position of the light based on the scrollX value
-    keyLightRef.current.position.x = -2 + scrollX * 0.01; // Adjust the factor as needed
+    keyLightRef.current.position.x = -3 + scrollX * 0.005; // Adjust the factor as needed
   });
 
   return (
@@ -38,7 +39,6 @@ const KeyLight = ({ brightness, color, scrollX }) => {
 
 const Composition = () => {
   const [scrollX, setScrollX] = useState(0);
-
   // Attach scroll event listener to track horizontal scroll position
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +53,7 @@ const Composition = () => {
   return (
     <>
       <ContainerDiv>
-        <Suspense fallback={<LoadingDiv>Loading... </LoadingDiv>}>
+        <Suspense fallback={<LoadingDiv src={LoadingImage} />}>
           <Canvas camera={{ position: [0, 0, 4], fov: 60 }} shadowMap>
             <KeyLight brightness={5.6} color={"#fbede2"} scrollX={scrollX} />
             <Model />
@@ -65,19 +65,15 @@ const Composition = () => {
 }
 
 const ContainerDiv = styled.div`
-    width: 100vw;
-    height: 100vh;
- 
-}
+  display: flex;
+  width: 50vw;
+  height: 100vh;
 `;
 
-const LoadingDiv = styled.div`
-    font-size: 1.5rem;
-    background: #ffffff;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 100%;
-}
+const LoadingDiv = styled.img`
+  
+  justify-content: center; 
+  align-items: center; 
 `;
 
 
