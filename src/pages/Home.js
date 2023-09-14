@@ -5,7 +5,7 @@
 
 // About page
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useLayoutEffect } from 'react';
 import Portrait from '../components/Portrait/Composition.js';
 import { AboutPageData } from '../assets/data/pages/about.js';
 import Aos from 'aos';
@@ -14,14 +14,17 @@ import { motion } from 'framer-motion';
 import { Row, MainFont } from '../components/PageComponents.js';
 import styled from 'styled-components';
 import arrow from '../assets/icons/arrow.svg';
-import ReactScrollWheelHandler from "react-scroll-wheel-handler";
-import ProjectsPage from '../components/ProjectsPage/ProjectsGrid';
+import ReactScrollWheelHandler from 'react-scroll-wheel-handler';
+import ProjectsPage from '../components/ProjectsPage/ProjectsGrid.js';
+import behance from '../assets/icons/behance.svg';
+import linkedin from '../assets/icons/linkedin.svg';
+import github from '../assets/icons/github.svg';
+import codepen from '../assets/icons/codepen.svg';
 
-
-const About = () => {
+const Home = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [leftAmmount, setLeftAmmount] = useState();
+  const [leftAmmount, setLeftAmmount] = useState(window.innerWidth);
 
   const scrollRight = () => {
     setIsScrolled(!isScrolled)
@@ -39,6 +42,16 @@ const About = () => {
     });
   };
 
+  useLayoutEffect(() => {
+    console.log(window.location.pathname.includes('/projects'));
+    // Check if the URL contains '/projects' when the component initializes
+    if (window.location.pathname.includes('/projects')) {
+      // Scroll to the 'leftAmount' when '/projects' is in the URL
+      scrollRight();
+      setLeftAmmount(true)
+    }
+  }, []);
+
   useEffect(() => {
     Aos.init({ duration: 500 });
     setLeftAmmount(window.innerWidth)
@@ -47,24 +60,22 @@ const About = () => {
       const ismobile = window.innerWidth < 1000;
       if (isMobile !== isMobile) setIsMobile(ismobile);
     }, false);
+
+    if (window.location.pathname.includes('/projects')) {
+      scrollRight();
+    }
   }, [isMobile]);
 
   useEffect(() => {
-    // Add a scroll event listener to track the scroll position
     const handleScroll = () => {
       const scrollPosition = window.scrollX;
       let endpoint = '';
-      if (isScrolled) {
-        endpoint = 'about';
-      } else if (scrollPosition > 1000) {
+      if (scrollPosition > (window.innerWidth / 3)) {
         endpoint = 'projects';
       }
-      // Update the URL endpoint without triggering a page reload
       window.history.pushState(null, null, `/${endpoint}`);
     };
-    // Attach the scroll event listener
     window.addEventListener('scroll', handleScroll);
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -75,6 +86,17 @@ const About = () => {
       <ArrowContainer>
         <Arrow src={arrow} onClick={!isScrolled ? scrollRight : scrollLeft} isScrolled={isScrolled} />
       </ArrowContainer>
+      <Nav>
+        <NavLink onClick={!isScrolled ? scrollRight : scrollLeft} className={isScrolled ? '' : 'active'} to="/">
+          About
+        </NavLink>
+        <NavLink onClick={!isScrolled ? scrollRight : scrollLeft} className={isScrolled ? 'active' : ''} to="/projects">
+          Projects
+        </NavLink>
+        <NavLink target="_blank" href="https://medium.com/@marklasagne">
+          Blog
+        </NavLink>
+      </Nav>
       {isMobile ? (
         <div id="container">
           <motion.div
@@ -101,12 +123,24 @@ const About = () => {
             downHandler={() => { if (!isScrolled) { scrollRight() } }}
           >
             <HorizontalScreen id="container">
-              <Column>1
+              <Column>
                 <h1>Howdy! I'm Mark</h1>
-                <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1></Column>
-              <Column>2
-                <Portrait /></Column>
-              <Column>3
+                <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
+                <p>
+                  {AboutPageData[0].main}
+                </p>
+                <SocialsContainer>
+                  <a href="https://www.linkedin.com/in/marklisanti/" rel="noopener noreferrer" target="_blank"><SocialIcon src={linkedin} /></a>
+                  <a href="https://github.com/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={github} /></a>
+                  <a href="https://codepen.io/marklasagne" rel="noopener noreferrer" target="_blank"><SocialIcon src={codepen} /></a>
+                  <a href="https://www.behance.net/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={behance} /></a>
+                </SocialsContainer>
+
+              </Column>
+              <Column>
+                <Portrait />
+              </Column>
+              <Column>
                 <ProjectsPage />
               </Column>
             </HorizontalScreen>
@@ -120,7 +154,9 @@ const About = () => {
 const HorizontalScreen = styled.div`
   display: flex;
   flex-direction: row;
-  overflow-x: visible;
+  overflow-x: scroll; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrolling */
+  justify-content: center; /* Center horizontally */
   height: 100vh;
   width: 150%;
 `;
@@ -129,6 +165,8 @@ const Column = styled.div`
     flex: 1;
     min-heigh: 100vh;
     border: 1px solid #ccc;
+    margin-top: 5rem;
+    padding: 5rem;
 `;
 
 const Arrow = styled.img`
@@ -152,39 +190,43 @@ const ArrowContainer = styled.div`
   display: block;
 `;
 
-export default About;
-
-
-
-/*** 
-<HorizontalScreen id="container">
-              <Column>
-                <div id="about-section">
-                  <p>Hello Mom</p>
-                  <br />
-                  <p>Hello Mom</p>
-                  <br />
-                  <p>Hello Mom</p>
-                  <br />
-                  <p>Hello Mom</p>
-                  <br />
-                </div>
-              </Column>
-              <Portrait />
-              <Column>
-                <ProjectsPage />
-              </Column>
-            </HorizontalScreen>
-          </ReactScrollWheelHandler>
-        </>
-
-        */
-
-
-/***
- * const Column = styled.div`
--ms-flex: 50%; 
-flex: 50%%;
-max-width: 50%;
+const Nav = styled.nav`
+  display: flex;
+  justify-content: left;
+  padding: 1rem;
+  margin-bottom: 5rem;
+  position: fixed;
+  z-index: 1;
 `;
- */
+
+const NavLink = styled.a`
+  color: #808080;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 10px;
+  height: 100%;
+  cursor: pointer;
+  &.active {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+  }
+`;
+
+const SocialsContainer = styled.div`
+
+`;
+
+const SocialIcon = styled.img`           
+    color: black;
+    display: block;
+    width: 2.5rem;
+    text-decoration: none;
+    margin-bottom: 5px;
+    &:hover {
+        opacity: 75%;
+    } 
+`;
+
+export default Home;
+

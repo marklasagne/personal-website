@@ -6,10 +6,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import Navbar from './components/Navbar.js';
 import Footer from './components/Footer.js';
-import SideBar from './components/SideBar.js';
-import ProjectList from './pages/ProjectList.js';
 import TriangleTrailStatus from './pages/projects/TriangleTrailStatus.js';
 import SmartPalette from './pages/projects/SmartPalette.js';
 import AmbieSense from './pages/projects/AmbieSense.js';
@@ -21,37 +18,32 @@ import Affinity from './pages/projects/Affinity.js';
 import FuckYou from './pages/projects/FuckYou.js';
 import BoulderParks from './pages/projects/BoulderParks.js';
 import Nihilism from './pages/projects/Nihilism.js';
-import About from './pages/About';
-// import ScrollTo from './components/ScrollTo.js';
+import Home from './pages/Home';
 import { createGlobalStyle } from 'styled-components';
 
 const App = () => {
-  
   return (
     <>
       <AnimatePresence exitBeforeEnter >
         <GlobalStyle />
-        <SideBar />
-          <Router>
-            <Navbar />
-              <Routes>
-                <Route path='/' element={<About />} />
-                <Route path='/projects' element={<ProjectList />} />
-                <Route path='/projects/triangle-trail-status' element={<TriangleTrailStatus />} />
-                <Route path='/projects/smart-palette' element={<SmartPalette />} />
-                <Route path='/projects/ambie-sense' element={<AmbieSense />} />
-                <Route path='/projects/audio-visualizer' element={<AudioVisualizer />} />
-                <Route path='/projects/lifes-a-game' element={<LifesAGame />} />
-                <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
-                <Route path='/projects/jobzen' element={<Jobzen />} />
-                <Route path='/projects/affinity' element={<Affinity />} />
-                <Route path='/projects/fuck-you-sign' element={<FuckYou />} />
-                <Route path='/projects/boulder-parks' element={<BoulderParks />} />
-                <Route path='/projects/nihilism' element={<Nihilism />} />
-              </Routes>
-       
-            <Footer />
-          </Router>
+        <Router>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/projects' element={<Home />} />
+            <Route path='/projects/triangle-trail-status' element={<TriangleTrailStatus />} />
+            <Route path='/projects/smart-palette' element={<SmartPalette />} />
+            <Route path='/projects/ambie-sense' element={<AmbieSense />} />
+            <Route path='/projects/audio-visualizer' element={<AudioVisualizer />} />
+            <Route path='/projects/lifes-a-game' element={<LifesAGame />} />
+            <Route path='/projects/cardinal-pride' element={<CardinalPride />} />
+            <Route path='/projects/jobzen' element={<Jobzen />} />
+            <Route path='/projects/affinity' element={<Affinity />} />
+            <Route path='/projects/fuck-you-sign' element={<FuckYou />} />
+            <Route path='/projects/boulder-parks' element={<BoulderParks />} />
+            <Route path='/projects/nihilism' element={<Nihilism />} />
+          </Routes>
+          <Footer />
+        </Router>
       </AnimatePresence>
     </>
   );

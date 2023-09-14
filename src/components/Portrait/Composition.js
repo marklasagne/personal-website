@@ -55,7 +55,7 @@ const Composition = () => {
       <ContainerDiv>
         <Suspense fallback={<LoadingDiv src={LoadingImage} />}>
           <Canvas camera={{ position: [0, 0, 4], fov: 60 }} shadowMap>
-            <KeyLight brightness={5.6} color={"#fbede2"} scrollX={scrollX} />
+            <KeyLight brightness={8} color={"#fbede2"} scrollX={scrollX} />
             <Model />
           </Canvas>
         </Suspense>
@@ -75,6 +75,5 @@ const LoadingDiv = styled.img`
   justify-content: center; 
   align-items: center; 
 `;
-
 
 export default Composition;
