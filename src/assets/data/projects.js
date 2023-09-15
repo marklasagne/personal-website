@@ -102,6 +102,28 @@ export const projects = [
     image: TriangleTrailStatus,
     tags: ['Mobile', 'Design']
   },
+  {
+    id: 'cardinal-pride',
+    name: 'Cardinal Pride Property Care',
+    description: 'Website for local handyman',
+    image: CardinalPride, 
+    tags: ['Web', 'Design']
+  },
+  {
+    id: 'boulder-parks',
+    name: 'Boulder Parks',
+    description: 'Interactive map outlining the importance of going outside',
+    image: FuckYou,
+    tags: ['Fabrication']
+  },
+  {
+    id: 'jobzen',
+    name: 'Job Zen',
+    description: 'Mobile application promoting easier and productive job searching.',
+    image: Jobzen, 
+    tags: ['UX Research', 'Design']
+  },
+
 ];
 
 

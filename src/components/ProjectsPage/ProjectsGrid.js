@@ -57,7 +57,6 @@ return (
         })}
       </PillContainer>
   
-      <GlobalStyle />
       <h2>Beep boop beep boop <>&#10084;... please come back soon!</></h2>
         <ResponsiveMasonry
                 columnsCountBreakPoints={{750: 1, 900: 2}}
@@ -74,12 +73,6 @@ return (
     </>
   );
 };
-
-const GlobalStyle = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-  }
-`;
 
 const PillContainer = styled.div`
   align-items: left;

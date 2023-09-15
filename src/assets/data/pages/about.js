@@ -7,8 +7,7 @@
 
 export const AboutPageData = [
   {
-  main: "Me? Creator and tinkerer with a desire to grow both my software and hardware skills." +
-    " I am currently attending the University of Colorado Boulder, pursuing a Master's of Science degree in Creative Technology and Design, where I am having fun with intersections between art, design and technology. ",
+  main: "I am a creative developer mixing interests of programming, design and art. Formally educated in computer science and creative technology and design I enjoy creating experiences with technology with a wholistic understanding of user experience research, design, and engineering. "
   }
 ]
     

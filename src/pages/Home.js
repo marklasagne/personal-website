@@ -12,7 +12,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
 import { Row, MainFont } from '../components/PageComponents.js';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import arrow from '../assets/icons/arrow.svg';
 import ReactScrollWheelHandler from 'react-scroll-wheel-handler';
 import ProjectsPage from '../components/ProjectsPage/ProjectsGrid.js';
@@ -107,10 +107,10 @@ const Home = () => {
             {AboutPageData.map((data, id) => {
               return (
                 <Row key={id} style={{ zIndex: -1 }} data-aos='fade-up'>
-                  <Column>
+                  <AboutColumn>
                     <p>Mobile View</p>
                     <br />
-                  </Column>
+                  </AboutColumn>
                 </Row>
               )
             })}
@@ -122,8 +122,8 @@ const Home = () => {
             upHandler={() => { if (isScrolled) { scrollLeft() } }}
             downHandler={() => { if (!isScrolled) { scrollRight() } }}
           >
-            <HorizontalScreen id="container">
-              <Column>
+            <HorizontalScreen id="container" isProjectsEndpoint={window.location.pathname.includes('/projects')}>
+              <AboutColumn>
                 <h1>Howdy! I'm Mark</h1>
                 <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
                 <p>
@@ -135,14 +135,13 @@ const Home = () => {
                   <a href="https://codepen.io/marklasagne" rel="noopener noreferrer" target="_blank"><SocialIcon src={codepen} /></a>
                   <a href="https://www.behance.net/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={behance} /></a>
                 </SocialsContainer>
-
-              </Column>
-              <Column>
+              </AboutColumn>
+              <AboutColumn>
                 <Portrait />
-              </Column>
-              <Column>
+              </AboutColumn>
+              <ProjectColumn>
                 <ProjectsPage />
-              </Column>
+              </ProjectColumn>
             </HorizontalScreen>
           </ReactScrollWheelHandler>
         </>
@@ -155,19 +154,25 @@ const HorizontalScreen = styled.div`
   display: flex;
   flex-direction: row;
   overflow-x: scroll; /* Enable horizontal scrolling */
-  overflow-y: hidden; /* Hide vertical scrolling */
-  justify-content: center; /* Center horizontally */
-  height: 100vh;
+  justify-content: center; 
   width: 150%;
+  ${({ isProjectsEndpoint }) => isProjectsEndpoint && css`
+    height: 100vh;
+  `}
 `;
 
-const Column = styled.div`
+const AboutColumn = styled.div`
     flex: 1;
-    min-heigh: 100vh;
-    border: 1px solid #ccc;
     margin-top: 5rem;
     padding: 5rem;
+    align-items: center;
 `;
+
+const ProjectColumn = styled.div`
+    flex: 1;
+    margin-top: 5rem;
+    padding: 5rem;
+`
 
 const Arrow = styled.img`
   cursor: pointer;
@@ -214,15 +219,15 @@ const NavLink = styled.a`
 `;
 
 const SocialsContainer = styled.div`
-
+  flex-direction: horizontal;
+  margin-top: 1rem 1rem;
 `;
 
 const SocialIcon = styled.img`           
     color: black;
-    display: block;
     width: 2.5rem;
     text-decoration: none;
-    margin-bottom: 5px;
+    margin: 1rem;
     &:hover {
         opacity: 75%;
     } 
