@@ -76,6 +76,7 @@ const Home = () => {
       window.history.pushState(null, null, `/${endpoint}`);
     };
     window.addEventListener('scroll', handleScroll);
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
