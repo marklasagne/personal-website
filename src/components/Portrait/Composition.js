@@ -8,13 +8,13 @@
 import React, { Suspense, useRef } from 'react';
 import Model from './Model.js';
 import KeyLight from './KeyLight.js';
-import { Canvas, useFrame} from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import styled from 'styled-components';
 import LoadingImage from '../../assets/images/portrait_loading.png';
 
 const Composition = () => {
   const keyLightRef = useRef(); 
-  
+
   return (
     <>
       <ContainerDiv>

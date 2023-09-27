@@ -7,17 +7,22 @@
 
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
-import { useGLTF,  } from '@react-three/drei';
+import { useGLTF, } from '@react-three/drei';
+import * as THREE from 'three';
 import vertexShader from './vertexShader';
 import fragmentShader from './fragmentShader';
 
 export default function Model({ lightData, ...props }) {
+
   const [scrollY, setScrollY] = useState(0);
   const { viewport } = useThree();
+
   const { nodes, materials } = useGLTF('/portrait.glb');
+
   const mesh = useRef();
   const group = useRef();
   const eyes = useRef();
+
   let x_middle = viewport.width / 2;
   let y_middle = viewport.height / 2;
 
@@ -34,6 +39,7 @@ export default function Model({ lightData, ...props }) {
     };
   }, []);
 
+  
   useFrame(({ mouse }) => {
     const group_rotation_x = group.current.rotation.x;
     const group_rotation_y = group.current.rotation.y;
@@ -50,15 +56,31 @@ export default function Model({ lightData, ...props }) {
       group.current.rotation.y = Math.abs(group_rotation_y) / 10 < 0.001 ? 0 : group.current.rotation.y > 0 ? group.current.rotation.y - step : group.current.rotation.y + step;
       eyes.current.rotation.y = Math.abs(group_rotation_y) / 10 < 0.001 ? 0 : eyes.current.rotation.y > 0 ? eyes.current.rotation.y - stepEyes : eyes.current.rotation.y + stepEyes;
     }
+    
   });
-
-  const uniforms = useMemo(
-    () => ({
+  
+  const uniforms = useMemo(() => {
+    let keyLight = lightData.current;
+ 
+    return {
+      scrollY : {
+        value: scrollY
+      },
       headTexture: {
         value: materials.Head_texture.map,
       },
-    }), []
-  );
+      keyLightBrightness: {
+        value: keyLight ? keyLight.intensity : 99.0, 
+      },
+      keyLightColor: {
+        value: keyLight ? keyLight.color : new THREE.Color(1, 0, 0), 
+      },
+      keyLightPosition: {
+        value: keyLight ? keyLight.position : new THREE.Vector3(0, 0, 0), 
+      },
+    };
+  }, [lightData.current]);
+
 
   return (
     <>
@@ -71,28 +93,23 @@ export default function Model({ lightData, ...props }) {
         <mesh geometry={nodes.Nose_ring.geometry} position={[-0.004, -0.071, 1.227]} rotation={[1.564, 0, 0.019]} scale={0.056}>
           <meshStandardMaterial attach="material" color='silver'></meshStandardMaterial>
         </mesh>
+        <mesh geometry={nodes.Eyebrow_lashes.geometry} material={materials['Material.001']} />
+        <mesh geometry={nodes.Mustache.geometry} material={materials.Material} />
         <mesh ref={mesh} geometry={nodes.Head.geometry}>
           <shaderMaterial
             fragmentShader={fragmentShader}
             vertexShader={vertexShader}
             uniforms={uniforms}
           />
-          <mesh geometry={nodes.Eyebrow_lashes.geometry} material={materials['Material.001']} />
-          <mesh geometry={nodes.Mustache.geometry} material={materials.Material} />
         </mesh>
       </group>
     </>
   )
 };
 
-
-
-
 useGLTF.preload('/portrait.glb');
 
 
 
-
-// <mesh geometry={nodes.Head.geometry} material={materials.Head_texture}>
 
 
