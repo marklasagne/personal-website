@@ -13,8 +13,9 @@ import vertexShader from './vertexShader';
 import fragmentShader from './fragmentShader';
 
 export default function Model({ lightData, ...props }) {
-
   const [scrollY, setScrollY] = useState(0);
+  const [scrollX, setScrollX] = useState(0);
+
   const { viewport } = useThree();
 
   const { nodes, materials } = useGLTF('/portrait.glb');
@@ -32,6 +33,7 @@ export default function Model({ lightData, ...props }) {
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
+      setScrollX(window.scrollX);
     };
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -39,7 +41,7 @@ export default function Model({ lightData, ...props }) {
     };
   }, []);
 
-  
+
   useFrame(({ mouse }) => {
     const group_rotation_x = group.current.rotation.x;
     const group_rotation_y = group.current.rotation.y;
@@ -56,35 +58,54 @@ export default function Model({ lightData, ...props }) {
       group.current.rotation.y = Math.abs(group_rotation_y) / 10 < 0.001 ? 0 : group.current.rotation.y > 0 ? group.current.rotation.y - step : group.current.rotation.y + step;
       eyes.current.rotation.y = Math.abs(group_rotation_y) / 10 < 0.001 ? 0 : eyes.current.rotation.y > 0 ? eyes.current.rotation.y - stepEyes : eyes.current.rotation.y + stepEyes;
     }
-    
+
   });
-  
+
+  let lastLogTime = 0;
+  const logInterval = 1000; // Log once per second (1000 milliseconds)
+
+  useFrame(() => {
+    const currentTime = performance.now(); // Get the current time in milliseconds
+
+    // Check if it's been at least one second since the last log
+    if (currentTime - lastLogTime >= logInterval) {
+    //console.log(lightData.current.position);
+
+      // Update the last log time to the current time
+      lastLogTime = currentTime;
+    }
+  });
+
+
   const uniforms = useMemo(() => {
- 
+    if (mesh.current) {
+      mesh.current.material.needsUpdate = true;
+      console.log(lightData.current.position)
+    }
     return {
-      scrollY : {
+      scrollY: {
         value: scrollY
       },
       headTexture: {
         value: materials.Head_texture.map,
       },
       keyLightBrightness: {
-        value: lightData.current ? lightData.current.intensity : 0.0, 
+        value: lightData.current ? lightData.current.intensity : 5.0,
       },
       keyLightColor: {
-        value: lightData.current ? lightData.current.color : new THREE.Color(1, 0, 0), 
+        value: lightData.current ? lightData.current.color : new THREE.Color(0, 0, 0),
       },
       keyLightPosition: {
-        value: lightData.current ? lightData.current.position : new THREE.Vector3(0, 0, 0), 
+        value: lightData.current ? lightData.current.position : new THREE.Vector3(0, 0, 0),
       },
       keyLightWidth: {
-        value: lightData.current ? lightData.current.width : 0.0, 
+        value: lightData.current ? lightData.current.width : 0.0,
       },
       keyLightHeight: {
-        value: lightData.current ? lightData.current.height : 0.0, 
+        value: lightData.current ? lightData.current.height : 0.0,
       },
     };
-  }, [lightData.current]);
+  }, [lightData.current, scrollX]);
 
 
   return (
@@ -98,14 +119,15 @@ export default function Model({ lightData, ...props }) {
         <mesh geometry={nodes.Nose_ring.geometry} position={[-0.004, -0.071, 1.227]} rotation={[1.564, 0, 0.019]} scale={0.056}>
           <meshStandardMaterial attach="material" color='silver'></meshStandardMaterial>
         </mesh>
-        <mesh geometry={nodes.Eyebrow_lashes.geometry} material={materials['Material.001']} />
-        <mesh geometry={nodes.Mustache.geometry} material={materials.Material} />
+
         <mesh ref={mesh} geometry={nodes.Head.geometry}>
           <shaderMaterial
             fragmentShader={fragmentShader}
             vertexShader={vertexShader}
             uniforms={uniforms}
           />
+          <mesh geometry={nodes.Eyebrow_lashes.geometry} material={materials['Material.001']} />
+          <mesh geometry={nodes.Mustache.geometry} material={materials.Material} />
         </mesh>
       </group>
     </>
