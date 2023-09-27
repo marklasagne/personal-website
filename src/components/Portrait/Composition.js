@@ -5,22 +5,23 @@
 
 // 3d model composition
 
-import React, { Suspense } from 'react';
+import React, { Suspense, useRef } from 'react';
 import Model from './Model.js';
 import KeyLight from './KeyLight.js';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useFrame} from '@react-three/fiber';
 import styled from 'styled-components';
 import LoadingImage from '../../assets/images/portrait_loading.png';
 
 const Composition = () => {
+  const keyLightRef = useRef(); 
+  
   return (
     <>
       <ContainerDiv>
         <Suspense fallback={<LoadingDiv src={LoadingImage} />}>
           <Canvas camera={{ position: [0, 0, 4], fov: 60 }} shadowMap>
-            <KeyLight brightness={8} color={"#fbede2"} />
-            <Model 
-            />
+            <KeyLight brightness={8} color={"#fbede2"} ref={keyLightRef} />
+            <Model lightData={keyLightRef}/>
           </Canvas>
         </Suspense>
       </ContainerDiv>

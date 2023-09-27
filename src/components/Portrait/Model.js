@@ -11,7 +11,7 @@ import { useGLTF,  } from '@react-three/drei';
 import vertexShader from './vertexShader';
 import fragmentShader from './fragmentShader';
 
-export default function Model({ ...props }) {
+export default function Model({ lightData, ...props }) {
   const [scrollY, setScrollY] = useState(0);
   const { viewport } = useThree();
   const { nodes, materials } = useGLTF('/portrait.glb');
