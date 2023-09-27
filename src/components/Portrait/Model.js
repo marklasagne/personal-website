@@ -60,7 +60,6 @@ export default function Model({ lightData, ...props }) {
   });
   
   const uniforms = useMemo(() => {
-    let keyLight = lightData.current;
  
     return {
       scrollY : {
@@ -70,13 +69,19 @@ export default function Model({ lightData, ...props }) {
         value: materials.Head_texture.map,
       },
       keyLightBrightness: {
-        value: keyLight ? keyLight.intensity : 99.0, 
+        value: lightData.current ? lightData.current.intensity : 0.0, 
       },
       keyLightColor: {
-        value: keyLight ? keyLight.color : new THREE.Color(1, 0, 0), 
+        value: lightData.current ? lightData.current.color : new THREE.Color(1, 0, 0), 
       },
       keyLightPosition: {
-        value: keyLight ? keyLight.position : new THREE.Vector3(0, 0, 0), 
+        value: lightData.current ? lightData.current.position : new THREE.Vector3(0, 0, 0), 
+      },
+      keyLightWidth: {
+        value: lightData.current ? lightData.current.width : 0.0, 
+      },
+      keyLightHeight: {
+        value: lightData.current ? lightData.current.height : 0.0, 
       },
     };
   }, [lightData.current]);
