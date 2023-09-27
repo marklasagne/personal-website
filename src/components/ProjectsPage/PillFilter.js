@@ -18,7 +18,7 @@ const PillFilter = ({ tag, onClick }) => {
       <PillButton className={isActive ? 'active': null} onClick={() => {toggleClass(); onClick();}}>{tag}</PillButton>
     </>
   );
-}
+};
 
 const PillButton = styled.div`
   color: #808080;
