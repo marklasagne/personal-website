@@ -1,6 +1,8 @@
 const vertexShader = `
     varying vec2 vUv;
     varying vec3 vNormal; 
+    varying vec3 vView; // View vector
+
 
     void main() {
         vUv = uv;
@@ -11,11 +13,3 @@ const vertexShader = `
 
 export default vertexShader
 
-const old = `
-  varying vec2 vUv;
-
-  void main() {
-    vUv = uv;
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-  }
-`

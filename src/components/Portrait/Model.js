@@ -20,7 +20,7 @@ export default function Model({ lightData, ...props }) {
 
   const { nodes, materials } = useGLTF('/portrait.glb');
 
-  const mesh = useRef();
+  const head = useRef();
   const group = useRef();
   const eyes = useRef();
 
@@ -61,50 +61,36 @@ export default function Model({ lightData, ...props }) {
 
   });
 
-  let lastLogTime = 0;
-  const logInterval = 1000; // Log once per second (1000 milliseconds)
-
-  useFrame(() => {
-    const currentTime = performance.now(); // Get the current time in milliseconds
-
-    // Check if it's been at least one second since the last log
-    if (currentTime - lastLogTime >= logInterval) {
-    //console.log(lightData.current.position);
-
-      // Update the last log time to the current time
-      lastLogTime = currentTime;
-    }
-  });
-
-
   const uniforms = useMemo(() => {
-    if (mesh.current) {
-      mesh.current.material.needsUpdate = true;
-      console.log(lightData.current.position)
+    if (lightData.current) {
+      console.log(lightData.current.intensity);
+      console.log(lightData.current.color);
+      console.log(lightData.current.position);
+      head.current.material.needsUpdate = true;
+      return {
+        scrollY: {
+          value: scrollY
+        },
+        headTexture: {
+          value: materials.Head_texture.map,
+        },
+        keyLightBrightness: {
+          value: lightData.current.intensity,
+        },
+        keyLightColor: {
+          value: lightData.current.color,
+        },
+        keyLightPosition: {
+          value: lightData.current.position,
+        },
+        keyLightWidth: {
+          value: lightData.current.width,
+        },
+        keyLightHeight: {
+          value: lightData.current.height,
+        },
+      };
     }
-    return {
-      scrollY: {
-        value: scrollY
-      },
-      headTexture: {
-        value: materials.Head_texture.map,
-      },
-      keyLightBrightness: {
-        value: lightData.current ? lightData.current.intensity : 5.0,
-      },
-      keyLightColor: {
-        value: lightData.current ? lightData.current.color : new THREE.Color(0, 0, 0),
-      },
-      keyLightPosition: {
-        value: lightData.current ? lightData.current.position : new THREE.Vector3(0, 0, 0),
-      },
-      keyLightWidth: {
-        value: lightData.current ? lightData.current.width : 0.0,
-      },
-      keyLightHeight: {
-        value: lightData.current ? lightData.current.height : 0.0,
-      },
-    };
   }, [lightData.current, scrollX]);
 
 
@@ -120,7 +106,7 @@ export default function Model({ lightData, ...props }) {
           <meshStandardMaterial attach="material" color='silver'></meshStandardMaterial>
         </mesh>
 
-        <mesh ref={mesh} geometry={nodes.Head.geometry}>
+        <mesh ref={head} geometry={nodes.Head.geometry}>
           <shaderMaterial
             fragmentShader={fragmentShader}
             vertexShader={vertexShader}

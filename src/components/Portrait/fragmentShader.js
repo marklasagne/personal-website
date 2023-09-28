@@ -6,18 +6,15 @@ const fragmentShader = `
   uniform vec3 keyLightColor;
   uniform float keyLightBrightness;
   uniform vec3 keyLightPosition;
-  uniform float keyLightWidth;    
-  uniform float keyLightHeight;   
-
+ 
   void main() {
       vec3 originalColor = texture2D(headTexture, vUv).xyz;
       vec3 normal = normalize(vNormal);
       
       vec3 lightDirection = normalize(keyLightPosition - vec3(gl_FragCoord.xy, 0.5));
-      lightDirection.x *= keyLightWidth;
-      lightDirection.y *= keyLightHeight;
+      lightDirection.x *= -keyLightPosition.x;
 
-      float lambertian = max(dot(normal, lightDirection), 0.2);
+      float lambertian = max(dot(normal, lightDirection), 0.3);
       vec3 finalColor = originalColor * (keyLightColor/5.0 * lambertian * keyLightBrightness);
 
       gl_FragColor = vec4(finalColor, 1.0);
