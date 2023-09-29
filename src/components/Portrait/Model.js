@@ -8,7 +8,6 @@
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useGLTF, } from '@react-three/drei';
-import * as THREE from 'three';
 import vertexShader from './vertexShader';
 import fragmentShader from './fragmentShader';
 
@@ -63,10 +62,6 @@ export default function Model({ lightData, ...props }) {
 
   const uniforms = useMemo(() => {
     if (lightData.current) {
-      console.log(lightData.current.intensity);
-      console.log(lightData.current.color);
-      console.log(lightData.current.position);
-      head.current.material.needsUpdate = true;
       return {
         scrollY: {
           value: scrollY
@@ -82,12 +77,6 @@ export default function Model({ lightData, ...props }) {
         },
         keyLightPosition: {
           value: lightData.current.position,
-        },
-        keyLightWidth: {
-          value: lightData.current.width,
-        },
-        keyLightHeight: {
-          value: lightData.current.height,
         },
       };
     }

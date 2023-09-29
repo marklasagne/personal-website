@@ -20,7 +20,7 @@ const Composition = () => {
       <ContainerDiv>
         <Suspense fallback={<LoadingDiv src={LoadingImage} />}>
           <Canvas camera={{ position: [0, 0, 4], fov: 60 }} shadowMap>
-            <KeyLight brightness={12} color={"#fbede2"} ref={keyLightRef} />
+            <KeyLight brightness={12} color={"#bfd8de"} ref={keyLightRef} />
             <Model lightData={keyLightRef}/>
           </Canvas>
         </Suspense>

@@ -37,9 +37,7 @@ const KeyLight = forwardRef(({ brightness, color }, ref) => {
             ref.current = light; 
         }
       }}
-      lookAt={[0, 0, 0]}
-      penumbra={1}
-      castShadow
+
     />
   );
 });
