@@ -4,68 +4,53 @@ const vertexShader = `
   varying vec3 vViewPosition;
   varying vec3 vColor;
 
+  uniform float scrollY;
+
   void main() {
     vUv = uv;
     vNormal = normalize(normalMatrix * normal);
-    vViewPosition = (modelViewMatrix * vec4(position, 1.0)).xyz;  
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    
+    vec4 modelPosition = modelMatrix * vec4(position, 1.0);
+    modelPosition.y += sin(modelPosition.x * scrollY + scrollY * 2.0) * 0.2;
+    
+    // Uncomment the code and hit the refresh button below for a more complex effect 🪄
+    // modelPosition.y += sin(modelPosition.z * 6.0 + u_time * 2.0) * 0.1;
+  
+    vec4 viewPosition = viewMatrix * modelPosition;
+    vec4 projectedPosition = projectionMatrix * viewPosition;
+  
+    gl_Position = projectedPosition;
   }
 `
 
-export default vertexShader
+export default vertexShader;
 
-const old = `  varying vec2 vUv;
-varying vec3 vNormal;
-varying vec3 vViewPosition;
-varying vec3 vColor;
-varying vec3 vView;
+const old = `
+  varying vec2 vUv;
+  varying vec3 vNormal; 
+  varying vec3 vViewPosition;
+  varying vec3 vColor;
 
-void main() {
-  vNormal = normalize(normalMatrix * normal);
-  vViewPosition = (modelViewMatrix * vec4(position, 1.0)).xyz;  // Update this line
-  
-  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-}`
+  uniform float scrollY;
 
-const fragmentShader = `
-uniform float scrollY;
-uniform float keyLightBrightness;
-uniform vec3 keyLightColor;
-uniform vec3 keyLightPosition;
-uniform sampler2D headTexture; // Texture passed as uniform
+  void main() {
+    vUv = uv;
 
-varying vec2 vUv;
-varying vec3 vNormal;
-varying vec3 vViewPosition;
-
-void main() {
-  // Define material properties (you can adjust these)
-  vec3 materialColor = vec3(0.8, 0.8, 0.8);
-  float shininess = 24.0;
-
-  // Calculate lighting
-  vec3 lightDirection = normalize(keyLightPosition - vViewPosition);
-  float diffuse = max(dot(vNormal, lightDirection), 0.0);
-  
-  // Apply Phong shading
-  vec3 ambient = 0.1 * materialColor;
-  vec3 diffuseColor = keyLightColor * (keyLightBrightness / 6.0) * materialColor * diffuse;
-  vec3 specularColor = keyLightColor * (keyLightBrightness / 6.0) * vec3(1.0) * pow(max(dot(reflect(-lightDirection, vNormal), normalize(vViewPosition)), 0.0), shininess);
-
-  // Combine lighting components
-  vec3 finalColor = ambient + diffuseColor + specularColor;
+    vNormal = normalize(normalMatrix * normal);
+    vViewPosition = (modelViewMatrix * vec4(position, 1.0)).xyz; 
     
-  // Apply scrollY-based camera animation
-  float cameraOffset = scrollY * 0.005; // Adjust the factor as needed
-  vec3 cameraPosition = cameraPosition + vec3(0.0, cameraOffset, 0.0);
+    vec3 pos = position;
+    float noiseFreq = 10.0;
+    float noiseAmp = scrollY * 0.05;
     
-  // Sample the head texture using UV coordinates
-  vec3 textureColor = texture2D(headTexture, vUv).xyz;
+    float distortionFactor = 1.0 - smoothstep(0.0, 1.0, pos.y);
 
-  // Use the original material's color and the calculated lighting
-  vec3 materialFinalColor = mix(materialColor, textureColor, 0.8); // Adjust the mix factor as needed
+    pos.y += snoise(vec3(pos.x * noiseFreq, pos.y, pos.z)) * noiseAmp * distortionFactor;
 
-  // Output final color
-  gl_FragColor = vec4(materialFinalColor * finalColor, 1.0);
-}
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+  }
 `
+
+
+
+

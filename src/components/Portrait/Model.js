@@ -13,10 +13,7 @@ import fragmentShader from './fragmentShader';
 
 export default function Model({ lightData, ...props }) {
   const [scrollY, setScrollY] = useState(0);
-  const [scrollX, setScrollX] = useState(0);
-
   const { viewport } = useThree();
-
   const { nodes, materials } = useGLTF('/portrait.glb');
 
   const head = useRef();
@@ -31,8 +28,7 @@ export default function Model({ lightData, ...props }) {
   // listen and capture scroll y value
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
-      setScrollX(window.scrollX);
+      setScrollY((window.scrollY/window.innerHeight)*100);
     };
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -57,15 +53,11 @@ export default function Model({ lightData, ...props }) {
       group.current.rotation.y = Math.abs(group_rotation_y) / 10 < 0.001 ? 0 : group.current.rotation.y > 0 ? group.current.rotation.y - step : group.current.rotation.y + step;
       eyes.current.rotation.y = Math.abs(group_rotation_y) / 10 < 0.001 ? 0 : eyes.current.rotation.y > 0 ? eyes.current.rotation.y - stepEyes : eyes.current.rotation.y + stepEyes;
     }
-
   });
 
   const uniforms = useMemo(() => {
     if (lightData.current) {
       return {
-        scrollY: {
-          value: scrollY
-        },
         headTexture: {
           value: materials.Head_texture.map,
         },
@@ -78,10 +70,25 @@ export default function Model({ lightData, ...props }) {
         keyLightPosition: {
           value: lightData.current.position,
         },
+        scrollY: {
+          value: 0.0,
+        },
       };
     }
-  }, [lightData.current, scrollX]);
+  }, [lightData.current]);
 
+  const uniforms1 = useMemo(
+() => ({
+      scrollY: {
+        value: 0.0,
+      },
+    }), []
+  );
+
+  useFrame(() => {
+  
+    head.current.material.uniforms.scrollY.value = scrollY;
+  });
 
   return (
     <>
@@ -94,7 +101,6 @@ export default function Model({ lightData, ...props }) {
         <mesh geometry={nodes.Nose_ring.geometry} position={[-0.004, -0.071, 1.227]} rotation={[1.564, 0, 0.019]} scale={0.056}>
           <meshStandardMaterial attach="material" color='silver'></meshStandardMaterial>
         </mesh>
-
         <mesh ref={head} geometry={nodes.Head.geometry}>
           <shaderMaterial
             fragmentShader={fragmentShader}
