@@ -55,6 +55,12 @@ export default function Model({ lightData, ...props }) {
     }
   });
 
+  useFrame((state) => {
+    const { clock } = state;
+    head.current.material.uniforms.uTime.value = clock.getElapsedTime();
+    head.current.material.uniforms.scrollY.value = scrollY;
+  });
+
   const uniforms = useMemo(() => {
     if (lightData.current) {
       return {
@@ -73,22 +79,12 @@ export default function Model({ lightData, ...props }) {
         scrollY: {
           value: 0.0,
         },
+        uTime: {
+          value: 0.0,
+        },
       };
     }
   }, [lightData.current]);
-
-  const uniforms1 = useMemo(
-() => ({
-      scrollY: {
-        value: 0.0,
-      },
-    }), []
-  );
-
-  useFrame(() => {
-  
-    head.current.material.uniforms.scrollY.value = scrollY;
-  });
 
   return (
     <>

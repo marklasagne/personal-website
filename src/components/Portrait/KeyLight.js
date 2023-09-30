@@ -21,10 +21,9 @@ const KeyLight = forwardRef(({ brightness, color }, ref) => {
 
   useFrame(() => {
     // Update the X position of the light based on the scrollX value
-    keyLightRef.current.position.x = -3 + scrollX * 0.005; // Adjust the factor as needed
+    keyLightRef.current.position.x = -3 + scrollX * 0.005; 
   });
   
-  // use conditional in ref to make sure the ref can be managed between here, and parent components
   return (
     <rectAreaLight
       width={3}

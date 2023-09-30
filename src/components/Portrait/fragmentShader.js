@@ -4,7 +4,6 @@ const fragmentShader = `
   varying vec3 vColor;
   varying vec3 vViewPosition;
 
-  uniform float uScrollY;
   uniform sampler2D headTexture;
   uniform vec3 keyLightColor;
   uniform float keyLightBrightness;
