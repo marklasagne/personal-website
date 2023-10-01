@@ -21,7 +21,7 @@ const fragmentShader = `
     // Apply Phong shading
     vec3 ambient = 0.1 * originalColor;
     vec3 diffuseColor = keyLightColor * (keyLightBrightness / 6.0) * originalColor * diffuse;
-    vec3 specularColor = keyLightColor * (keyLightBrightness / 6.0) * vec3(1.0) * pow(max(dot(reflect(-lightDirection, vNormal), normalize(vViewPosition)), 0.0), shininess);
+    vec3 specularColor = vec3(0.172, 0.068, 0.068) * (vec3(0.172, 0.068, 0.068) / 6.0) * vec3(1.0) * pow(max(dot(reflect(-lightDirection, vNormal), normalize(vViewPosition)), 0.0), shininess);
 
     vec3 finalColor = ambient + diffuseColor + specularColor;
 

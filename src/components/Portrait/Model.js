@@ -36,7 +36,6 @@ export default function Model({ lightData, ...props }) {
     };
   }, []);
 
-
   useFrame(({ mouse }) => {
     const group_rotation_x = group.current.rotation.x;
     const group_rotation_y = group.current.rotation.y;

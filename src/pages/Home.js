@@ -55,15 +55,14 @@ const Home = () => {
   useEffect(() => {
     Aos.init({ duration: 500 });
     setLeftAmmount(window.innerWidth)
+    if (window.location.pathname.includes('/projects')) {
+      scrollRight();
+    }
     window.addEventListener('resize', () => {
       setLeftAmmount(window.innerWidth)
       const ismobile = window.innerWidth < 1000;
       if (isMobile !== isMobile) setIsMobile(ismobile);
     }, false);
-
-    if (window.location.pathname.includes('/projects')) {
-      scrollRight();
-    }
   }, [isMobile]);
 
   useEffect(() => {

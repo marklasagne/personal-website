@@ -14,7 +14,7 @@ const vertexShader = `
   vec4 permute(vec4 x) {
     return mod(((x * 34.0) + 1.0) * x, 289.0);
   }
-
+  
   // Simplex noise function (you can replace this with your own noise function)
   float snoise(vec3 v) {
     const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
@@ -83,12 +83,12 @@ const vertexShader = `
     
     if (position.y < 0.1) {
 
-      float meltingFactor = max(0.0, scrollY) * 0.01;
-      float complexityFactor = snoise(position * 3.0);
+      float meltingFactor = max(0.0, scrollY) * 0.014;
+      float complexityFactor = snoise(position * 1.0);
       
       if (scrollY > 0.0){
         float animationFactor = sin(uTime) * 0.01;
-        float wiggleFactorX = snoise(position.yzx + uTime) * 0.001; 
+        float wiggleFactorX = snoise(position.yzx + uTime) * 0.005; 
         float wiggleFactorY = snoise(position.zxy + uTime) * 0.005; 
       
         modelPosition.y += (meltingFactor * complexityFactor + animationFactor) * blendFactor;
@@ -111,31 +111,6 @@ const vertexShader = `
 
 export default vertexShader;
 
-const old = `
-  varying vec2 vUv;
-  varying vec3 vNormal; 
-  varying vec3 vViewPosition;
-  varying vec3 vColor;
-
-  uniform float scrollY;
-
-  void main() {
-    vUv = uv;
-
-    vNormal = normalize(normalMatrix * normal);
-    vViewPosition = (modelViewMatrix * vec4(position, 1.0)).xyz; 
-    
-    vec3 pos = position;
-    float noiseFreq = 10.0;
-    float noiseAmp = scrollY * 0.05;
-    
-    float distortionFactor = 1.0 - smoothstep(0.0, 1.0, pos.y);
-
-    pos.y += snoise(vec3(pos.x * noiseFreq, pos.y, pos.z)) * noiseAmp * distortionFactor;
-
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-  }
-`
 
 
 

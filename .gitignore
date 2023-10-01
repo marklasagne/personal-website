@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/Portrait_model
 /.pnp
 .pnp.js
 

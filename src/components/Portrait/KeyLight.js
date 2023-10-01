@@ -36,7 +36,6 @@ const KeyLight = forwardRef(({ brightness, color }, ref) => {
             ref.current = light; 
         }
       }}
-
     />
   );
 });
