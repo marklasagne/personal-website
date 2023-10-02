@@ -7,7 +7,8 @@
 
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
-import { useGLTF, } from '@react-three/drei';
+import { useGLTF } from '@react-three/drei';
+import { Color } from 'three';
 import vertexShader from './vertexShader';
 import fragmentShader from './fragmentShader';
 
@@ -60,7 +61,7 @@ export default function Model({ lightData, ...props }) {
     head.current.material.uniforms.scrollY.value = scrollY;
   });
 
-  const uniforms = useMemo(() => {
+  const headUniforms = useMemo(() => {
     if (lightData.current) {
       return {
         headTexture: {
@@ -71,6 +72,31 @@ export default function Model({ lightData, ...props }) {
         },
         keyLightColor: {
           value: lightData.current.color,
+        },
+        keyLightPosition: {
+          value: lightData.current.position,
+        },
+        scrollY: {
+          value: 0.0,
+        },
+        uTime: {
+          value: 0.0,
+        },
+      };
+    }
+  }, [lightData.current]);
+
+  const backgroundUniforms = useMemo(() => {
+    if (lightData.current) {
+      return {
+        headTexture: {
+          value: new Color(0x333333),
+        },
+        keyLightBrightness: {
+          value: lightData.current.intensity,
+        },
+        keyLightColor: {
+          value: new Color(0x2B1111),
         },
         keyLightPosition: {
           value: lightData.current.position,
@@ -100,11 +126,19 @@ export default function Model({ lightData, ...props }) {
           <shaderMaterial
             fragmentShader={fragmentShader}
             vertexShader={vertexShader}
-            uniforms={uniforms}
+            uniforms={headUniforms}
           />
           <mesh geometry={nodes.Eyebrow_lashes.geometry} material={materials['Material.001']} />
           <mesh geometry={nodes.Mustache.geometry} material={materials.Material} />
         </mesh>
+        <mesh receiveShadow position={[0, 0, -1]}>
+          <planeBufferGeometry attach="geometry" args={[100, 100]} />
+          <shaderMaterial
+            fragmentShader={fragmentShader}
+            vertexShader={vertexShader}
+            uniforms={backgroundUniforms}
+          />
+      </mesh>
       </group>
     </>
   )

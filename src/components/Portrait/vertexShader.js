@@ -79,12 +79,12 @@ const vertexShader = `
 
     float distanceFromCenter = length(position.xy);
     vec4 modelPosition = modelMatrix * vec4(position, 1.0);
-    float blendFactor = smoothstep(0.2, 1.0, distanceFromCenter);
+    float blendFactor = smoothstep(0.4, 1.0, distanceFromCenter);
     
     if (position.y < 0.1) {
 
-      float meltingFactor = max(0.0, scrollY/ 2.5) * 0.014;
-      float complexityFactor = snoise(position * 4.0);
+      float meltingFactor = max(0.0, scrollY) * 0.014;
+      float complexityFactor = snoise(position * 1.0);
       
       if (scrollY > 0.0){
         float animationFactor = sin(uTime) * 0.01;
@@ -97,14 +97,9 @@ const vertexShader = `
       } else {
         modelPosition.y += meltingFactor * complexityFactor * blendFactor;
       }
-      
-   
-    
     }
-
     vec4 viewPosition = viewMatrix * modelPosition;
     vec4 projectedPosition = projectionMatrix * viewPosition;
-
     gl_Position = projectedPosition;
   }
 `

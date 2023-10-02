@@ -23,7 +23,6 @@ const Composition = () => {
           <Canvas camera={{ position: [0, 0, 4], fov: 60 }} shadowMap>
             <KeyLight brightness={12} color={"#fff"} ref={keyLightRef} />
             <Model lightData={keyLightRef} receiveShadow castShadow/>
-            <BackgroundPlane  receiveShadow/>
           </Canvas>
         </Suspense>
       </ContainerDiv>
