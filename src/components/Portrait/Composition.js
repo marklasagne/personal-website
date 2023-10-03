@@ -21,15 +21,17 @@ const Composition = () => {
       <ContainerDiv>
         <Suspense fallback={<LoadingDiv src={LoadingImage} />}>
           <Canvas camera={{ position: [0, 0, 4], fov: 60 }} shadowMap>
-            <KeyLight brightness={12} color={"#fff"} ref={keyLightRef} />
-            <Model lightData={keyLightRef} receiveShadow castShadow/>
+            <KeyLight brightness={12} color={"#42646C"} ref={keyLightRef} />
+        
+            <Model lightData={keyLightRef} receiveShadow castShadow />
+            
           </Canvas>
         </Suspense>
       </ContainerDiv>
     </>
   );
 }
-
+//<BackgroundPlane lightData={keyLightRef} receiveShadow />
 const ContainerDiv = styled.div`
   display: flex;
   width: 50vw;
