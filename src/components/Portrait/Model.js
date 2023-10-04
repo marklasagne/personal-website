@@ -9,8 +9,9 @@ import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import vertexShader from './vertexShader';
-import fragmentShader from './fragmentShader';
-import hairShader from './hairShader';
+import headShader from './headShader';
+import hairShader from './hairFragShader';
+import ringShader from './ringShader';
 
 const Model = ({ keyLightData, ...props }) => {
   const [scrollY, setScrollY] = useState(0);
@@ -96,11 +97,15 @@ const Model = ({ keyLightData, ...props }) => {
           <mesh geometry={nodes.Right_eye.geometry} material={materials.Right_eye_texture} position={[-0.287, 0.353, 0.892]} rotation={[1.603, 0.5, 0.159]} scale={[0.255, 0.301, 0.249]} />
         </group>
         <mesh geometry={nodes.Nose_ring.geometry} position={[-0.004, -0.071, 1.227]} rotation={[1.564, 0, 0.019]} scale={0.056}>
-          <meshStandardMaterial attach="material" color='silver'></meshStandardMaterial>
+          <shaderMaterial
+            fragmentShader={ringShader}
+            vertexShader={vertexShader}
+            uniforms={uniforms}
+          /> 
         </mesh>
         <mesh ref={head} geometry={nodes.Head.geometry}>
           <shaderMaterial
-            fragmentShader={fragmentShader}
+            fragmentShader={headShader}
             vertexShader={vertexShader}
             uniforms={uniforms}
           />

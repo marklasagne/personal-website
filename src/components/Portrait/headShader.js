@@ -1,4 +1,4 @@
-const fragmentShader = `
+const headShader = `
   varying vec2 vUv;
   varying vec3 vNormal;
   varying vec3 vColor;
@@ -30,6 +30,6 @@ const fragmentShader = `
   }
 `
 
-export default fragmentShader;
+export default headShader;
 
 
