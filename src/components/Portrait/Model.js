@@ -11,7 +11,7 @@ import { useGLTF } from '@react-three/drei';
 import vertexShader from './vertexShader';
 import fragmentShader from './fragmentShader';
 
-const Model = ({ lightData, ...props }) => {
+const Model = ({ keyLightData, ...props }) => {
   const [scrollY, setScrollY] = useState(0);
   const { viewport } = useThree();
   const { nodes, materials } = useGLTF('/portrait.glb');
@@ -28,7 +28,7 @@ const Model = ({ lightData, ...props }) => {
   // listen and capture scroll y value
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY((window.scrollY/window.innerHeight)*100);
+      setScrollY((window.scrollY / window.innerHeight) * 100);
     };
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -61,19 +61,19 @@ const Model = ({ lightData, ...props }) => {
   });
 
   const uniforms = useMemo(() => {
-    if (lightData.current) {
+    if (keyLightData.current) {
       return {
         headTexture: {
           value: materials.Head_texture.map,
         },
         keyLightBrightness: {
-          value: lightData.current.intensity,
+          value: keyLightData.current.intensity,
         },
         keyLightColor: {
-          value: lightData.current.color,
+          value: keyLightData.current.color,
         },
         keyLightPosition: {
-          value: lightData.current.position,
+          value: keyLightData.current.position,
         },
         scrollY: {
           value: 0.0,
@@ -83,7 +83,7 @@ const Model = ({ lightData, ...props }) => {
         },
       };
     }
-  }, [lightData.current]);
+  }, [keyLightData.current]);
 
 
   return (

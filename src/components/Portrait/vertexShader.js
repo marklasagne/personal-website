@@ -1,4 +1,27 @@
 const vertexShader = `
+varying vec2 vUv;
+varying vec3 vNormal;
+varying vec3 vColor;
+varying vec3 vViewPosition;
+
+uniform float uTime; // Time variable for animation
+
+void main() {
+  vUv = uv;
+  vNormal = normalize(normalMatrix * normal);
+  vViewPosition = (modelViewMatrix * vec4(position, 1.0)).xyz;
+
+  // Apply sine wave distortion to the Y-coordinate
+  float sineWave = 0.05 * sin(position.x * 20.0 + uTime);
+  vec4 distortedPosition = modelViewMatrix * vec4(position.x, position.y + sineWave, position.z, 1.0);
+
+  gl_Position = projectionMatrix * distortedPosition;
+}
+`
+
+export default vertexShader;
+
+const test = `
   varying vec2 vUv;
   varying vec3 vNormal; 
   varying vec3 vViewPosition;
@@ -104,7 +127,6 @@ const vertexShader = `
   }
 `
 
-export default vertexShader;
 
 
 

@@ -26,8 +26,8 @@ const KeyLight = forwardRef(({ brightness, color }, ref) => {
   
   return (
     <rectAreaLight
-      width={3}
-      height={3}
+      width={5}
+      height={5}
       color={color}
       intensity={brightness}
       ref={(light) => {

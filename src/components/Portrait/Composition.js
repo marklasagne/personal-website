@@ -8,7 +8,7 @@
 import React, { Suspense, useRef } from 'react';
 import Model from './Model.js';
 import KeyLight from './KeyLight.js';
-import BackgroundPlane from './BackgroundPlane.js';
+import GroundPlane from './GroundPlane';
 import { Canvas } from '@react-three/fiber';
 import styled from 'styled-components';
 import LoadingImage from '../../assets/images/portrait_loading.png';
@@ -21,17 +21,16 @@ const Composition = () => {
       <ContainerDiv>
         <Suspense fallback={<LoadingDiv src={LoadingImage} />}>
           <Canvas camera={{ position: [0, 0, 4], fov: 60 }} shadowMap>
-            <KeyLight brightness={12} color={"#42646C"} ref={keyLightRef} />
-        
-            <Model lightData={keyLightRef} receiveShadow castShadow />
-            
+            <KeyLight brightness={4} color={"#ffffff"} ref={keyLightRef} />
+            <Model keyLightData={keyLightRef} receiveShadow castShadow/>
+            <GroundPlane position={[0, 0, -1]} receiveShadow /> 
           </Canvas>
         </Suspense>
       </ContainerDiv>
     </>
   );
 }
-//<BackgroundPlane lightData={keyLightRef} receiveShadow />
+
 const ContainerDiv = styled.div`
   display: flex;
   width: 50vw;
