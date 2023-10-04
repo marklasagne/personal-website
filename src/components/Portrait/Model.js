@@ -10,6 +10,7 @@ import { useFrame, useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import vertexShader from './vertexShader';
 import fragmentShader from './fragmentShader';
+import hairShader from './hairShader';
 
 const Model = ({ keyLightData, ...props }) => {
   const [scrollY, setScrollY] = useState(0);
@@ -103,8 +104,20 @@ const Model = ({ keyLightData, ...props }) => {
             vertexShader={vertexShader}
             uniforms={uniforms}
           />
-          <mesh geometry={nodes.Eyebrow_lashes.geometry} material={materials['Material.001']} />
-          <mesh geometry={nodes.Mustache.geometry} material={materials.Material} />
+          <mesh geometry={nodes.Eyebrow_lashes.geometry}>
+            <shaderMaterial
+              fragmentShader={hairShader}
+              vertexShader={vertexShader}
+              uniforms={uniforms}
+            />
+          </mesh>
+          <mesh geometry={nodes.Mustache.geometry}>
+            <shaderMaterial
+              fragmentShader={hairShader}
+              vertexShader={vertexShader}
+              uniforms={uniforms}
+            />
+          </mesh>
         </mesh>
       </group>
     </>

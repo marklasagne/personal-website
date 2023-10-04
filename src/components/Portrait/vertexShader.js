@@ -1,22 +1,27 @@
 const vertexShader = `
-varying vec2 vUv;
-varying vec3 vNormal;
-varying vec3 vColor;
-varying vec3 vViewPosition;
+  varying vec2 vUv;
+  varying vec3 vNormal;
+  varying vec3 vColor;
+  varying vec3 vViewPosition;
 
-uniform float uTime; // Time variable for animation
+  uniform float scrollY;
+  uniform float uTime;
 
-void main() {
-  vUv = uv;
-  vNormal = normalize(normalMatrix * normal);
-  vViewPosition = (modelViewMatrix * vec4(position, 1.0)).xyz;
+  void main() {
+    vUv = uv;
+    vNormal = normalize(normalMatrix * normal);
+    vViewPosition = (modelViewMatrix * vec4(position, 1.0)).xyz; 
 
-  // Apply sine wave distortion to the Y-coordinate
-  float sineWave = 0.05 * sin(position.x * 20.0 + uTime);
-  vec4 distortedPosition = modelViewMatrix * vec4(position.x, position.y + sineWave, position.z, 1.0);
+    float distanceFromCenter = length(position.xy);
+    vec4 modelPosition = modelMatrix * vec4(position, 1.0);
+    float blendFactor = smoothstep(0.4, 1.0, distanceFromCenter);
 
-  gl_Position = projectionMatrix * distortedPosition;
-}
+    float sineWave = (max(0.0, scrollY) * 0.014) * sin(position.x * 30.0 + uTime);
+    vec4 distortedPosition = modelViewMatrix * vec4(position.x, position.y + sineWave, position.z, 1.0);
+
+
+    gl_Position = projectionMatrix * distortedPosition;
+  }
 `
 
 export default vertexShader;
