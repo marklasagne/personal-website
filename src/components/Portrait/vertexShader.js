@@ -1,30 +1,37 @@
 const vertexShader = `
   varying vec2 vUv;
   varying vec3 vNormal;
-  varying vec3 vColor;
   varying vec3 vViewPosition;
 
   uniform float scrollY;
   uniform float uTime;
+
+  // Function to generate a random value based on position
+  float random(vec2 st) {
+    return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+  }
 
   void main() {
     vUv = uv;
     vNormal = normalize(normalMatrix * normal);
     vViewPosition = (modelViewMatrix * vec4(position, 1.0)).xyz; 
 
-    float distanceFromCenter = length(position.xy);
-    vec4 modelPosition = modelMatrix * vec4(position, 1.0);
-    float blendFactor = smoothstep(0.4, 1.0, distanceFromCenter);
+    // Check if the vertex is in the bottom half
+    if (scrollY > 0.0 && position.y < -0.5) {
+      float meltStrength = smoothstep(0.0, 0.5, scrollY / 250.0); // Adjust the strength of the melting effect
+      float sineWave = sin(((position.x + uTime * 0.5) * 10.0) * 0.2) - (scrollY); // Sine wave distortion
+      float noise = random(position.xy);
 
-    float sineWave = (max(0.0, scrollY) * 0.014) * sin(position.x * 30.0 + uTime);
-    vec4 distortedPosition = modelViewMatrix * vec4(position.x, position.y + sineWave, position.z, 1.0);
+      // Combine edge detection, sine wave, and random distortion
+      float distortedY = position.y + (noise - 0.5) * meltStrength  + sineWave;
 
-
-    gl_Position = projectionMatrix * distortedPosition;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position.x, distortedY, position.z, 1.0);
+    } else {
+      // Keep the original position for the top half
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
   }
 `
-
-export default vertexShader;
 
 const test = `
   varying vec2 vUv;
@@ -107,19 +114,22 @@ const test = `
 
     float distanceFromCenter = length(position.xy);
     vec4 modelPosition = modelMatrix * vec4(position, 1.0);
-    float blendFactor = smoothstep(0.4, 1.0, distanceFromCenter);
+    float transition = smoothstep(-0.4, -0.7, position.y);
+    float blendFactor = smoothstep(0.0, 0.7, distanceFromCenter);
+    modelPosition.y -= 0.01 * blendFactor;
     
-    if (position.y < 0.1) {
+    if (blendFactor > 0.0) {
 
-      float meltingFactor = max(0.0, scrollY) * 0.014;
-      float complexityFactor = snoise(position * 1.0);
+      float meltingFactor = max(0.0, scrollY) * 0.005;
+      float complexityFactor = snoise(position * 4.0);
       
       if (scrollY > 0.0){
         float animationFactor = sin(uTime) * 0.01;
-        float wiggleFactorX = snoise(position.yzx + uTime) * 0.005; 
-        float wiggleFactorY = snoise(position.zxy + uTime) * 0.005; 
+        float wiggleFactorX = snoise(position.yzx + uTime) * 0.009; 
+        float wiggleFactorY = snoise(position.zxy + uTime) * 0.009; 
       
         modelPosition.y += (meltingFactor * complexityFactor + animationFactor) * blendFactor;
+        modelPosition.y -= (meltingFactor + animationFactor) * blendFactor;
         modelPosition.x += wiggleFactorX * blendFactor;
         modelPosition.z += wiggleFactorY * blendFactor;
       } else {
@@ -131,6 +141,10 @@ const test = `
     gl_Position = projectedPosition;
   }
 `
+
+export default test;
+
+
 
 
 
