@@ -8,7 +8,8 @@
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
-import vertexShader from './vertexShader';
+import meltingVertexShader from './meltingVertexShader';
+import staticVertexShader from './staticVertexShader';
 import headShader from './headShader';
 import hairShader from './hairFragShader';
 import ringShader from './ringShader';
@@ -60,6 +61,7 @@ const Model = ({ keyLightData, ...props }) => {
     const { clock } = state;
     head.current.material.uniforms.uTime.value = clock.getElapsedTime();
     head.current.material.uniforms.scrollY.value = scrollY;
+    console.log(scrollY);
   });
 
   const uniforms = useMemo(() => {
@@ -99,27 +101,27 @@ const Model = ({ keyLightData, ...props }) => {
         <mesh geometry={nodes.Nose_ring.geometry} position={[-0.004, -0.071, 1.227]} rotation={[1.564, 0, 0.019]} scale={0.056}>
           <shaderMaterial
             fragmentShader={ringShader}
-            vertexShader={vertexShader}
+            vertexShader={staticVertexShader}
             uniforms={uniforms}
           /> 
         </mesh>
         <mesh ref={head} geometry={nodes.Head.geometry}>
           <shaderMaterial
             fragmentShader={headShader}
-            vertexShader={vertexShader}
+            vertexShader={meltingVertexShader}
             uniforms={uniforms}
           />
           <mesh geometry={nodes.Eyebrow_lashes.geometry}>
             <shaderMaterial
               fragmentShader={hairShader}
-              vertexShader={vertexShader}
+              vertexShader={meltingVertexShader}
               uniforms={uniforms}
             />
           </mesh>
           <mesh geometry={nodes.Mustache.geometry}>
             <shaderMaterial
               fragmentShader={hairShader}
-              vertexShader={vertexShader}
+              vertexShader={meltingVertexShader}
               uniforms={uniforms}
             />
           </mesh>

@@ -38,7 +38,6 @@ const ContainerDiv = styled.div`
 `;
 
 const LoadingDiv = styled.img`
-  
   justify-content: center; 
   align-items: center; 
 `;
