@@ -1,5 +1,5 @@
 // Personal website and portfolio //
-// 2022                           //
+// 2023                           //
 // Built by Mark Lisanti          //
 // https://github.com/marklasagne //
 
@@ -26,6 +26,8 @@ const Home = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [leftAmmount, setLeftAmmount] = useState(window.innerWidth);
 
+  const isProjectsPath = () => window.location.pathname.includes('/projects');
+
   const scrollRight = () => {
     setIsScrolled(!isScrolled)
     window.scrollTo({
@@ -43,9 +45,8 @@ const Home = () => {
   };
 
   useLayoutEffect(() => {
-    console.log(window.location.pathname.includes('/projects'));
     // Check if the URL contains '/projects' when the component initializes
-    if (window.location.pathname.includes('/projects')) {
+    if (isProjectsPath) {
       // Scroll to the 'leftAmount' when '/projects' is in the URL
       scrollRight();
       setLeftAmmount(true)
@@ -55,7 +56,7 @@ const Home = () => {
   useEffect(() => {
     Aos.init({ duration: 500 });
     setLeftAmmount(window.innerWidth)
-    if (window.location.pathname.includes('/projects')) {
+    if (isProjectsPath) {
       scrollRight();
     }
     window.addEventListener('resize', () => {

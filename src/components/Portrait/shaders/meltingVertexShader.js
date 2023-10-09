@@ -1,3 +1,8 @@
+// Personal website and portfolio //
+// 2023                           //
+// Built by Mark Lisanti          //
+// https://github.com/marklasagne //
+
 const meltingVertexShader = `
   varying vec2 vUv;
   varying vec3 vNormal; 
