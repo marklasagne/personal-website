@@ -8,11 +8,11 @@
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
-import meltingVertexShader from './meltingVertexShader';
-import staticVertexShader from './staticVertexShader';
-import headShader from './headShader';
-import hairShader from './hairFragShader';
-import ringShader from './ringShader';
+import meltingVertexShader from './shaders/meltingVertexShader';
+import staticVertexShader from './shaders/staticVertexShader';
+import headShader from './shaders/headShader';
+import hairShader from './shaders/hairShader';
+import ringShader from './shaders/ringShader';
 
 const Model = ({ keyLightData, ...props }) => {
   const [scrollY, setScrollY] = useState(0);
@@ -125,6 +125,7 @@ const Model = ({ keyLightData, ...props }) => {
               uniforms={uniforms}
             />
           </mesh>
+  
         </mesh>
       </group>
     </>

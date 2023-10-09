@@ -1,38 +1,3 @@
-const vertexShader = `
-  varying vec2 vUv;
-  varying vec3 vNormal;
-  varying vec3 vViewPosition;
-
-  uniform float scrollY;
-  uniform float uTime;
-
-  // Function to generate a random value based on position
-  float random(vec2 st) {
-    return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
-  }
-
-  void main() {
-    vUv = uv;
-    vNormal = normalize(normalMatrix * normal);
-    vViewPosition = (modelViewMatrix * vec4(position, 1.0)).xyz; 
-
-    // Check if the vertex is in the bottom half
-    if (scrollY > 0.0 && position.y < -0.5) {
-      float meltStrength = smoothstep(0.0, 0.5, scrollY / 250.0); // Adjust the strength of the melting effect
-      float sineWave = sin(((position.x + uTime * 0.5) * 10.0) * 0.2) - (scrollY); // Sine wave distortion
-      float noise = random(position.xy);
-
-      // Combine edge detection, sine wave, and random distortion
-      float distortedY = position.y + (noise - 0.5) * meltStrength  + sineWave;
-
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(position.x, distortedY, position.z, 1.0);
-    } else {
-      // Keep the original position for the top half
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-    }
-  }
-`
-
 const meltingVertexShader = `
   varying vec2 vUv;
   varying vec3 vNormal; 

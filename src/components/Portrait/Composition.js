@@ -23,13 +23,14 @@ const Composition = () => {
           <Canvas camera={{ position: [0, 0, 4], fov: 60 }} shadowMap>
             <KeyLight brightness={4} color={"#ffffff"} ref={keyLightRef} />
             <Model keyLightData={keyLightRef} receiveShadow castShadow/>
-            <GroundPlane position={[0, 0, -1]} receiveShadow /> 
           </Canvas>
         </Suspense>
       </ContainerDiv>
     </>
   );
 }
+//            <GroundPlane position={[0, 0, -1]} receiveShadow />  <meshStandardMaterial attach="material" color="#421e1e" />
+
 
 const ContainerDiv = styled.div`
   display: flex;
