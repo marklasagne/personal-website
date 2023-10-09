@@ -7,7 +7,12 @@
 
 export const AboutPageData = [
   {
-  main: "I am a creative developer mixing interests of programming, design and art. Formally educated in computer science and creative technology and design I enjoy creating experiences with technology with a wholistic understanding of user experience research, design, and engineering. "
+  main:
+  `
+  I'm a creative developer, merging the interests of programming, design, and art. With a formal education in computer science and creative technology and design, 
+  I enjoy crafting interactive and immersive experiences using technology. My approach is holistic, covering user experience from research and design to engineering.
+  `
   }
 ]
     
+

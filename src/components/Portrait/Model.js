@@ -107,40 +107,32 @@ const Model = ({ keyLightData, ...props }) => {
 
   return (
     <>
-      <group receiveShadow ref={group} {...props} dispose={null}>
+      <group {...props} dispose={null} ref={group}>
         <mesh geometry={nodes.Beanie.geometry} material={materials.Beanie_texture} position={[0, 1.013, -0.113]} rotation={[1.565, 0, 0]} scale={[0.795, 0.739, 0.741]} />
         <group ref={eyes}>
           <mesh geometry={nodes.Left_eye.geometry} material={materials.Left_eye_texture} position={[0.302, 0.355, 0.89]} rotation={[1.666, 0.513, -0.189]} scale={[0.255, 0.301, 0.249]} />
-          <mesh geometry={nodes.Right_eye.geometry} material={materials.Right_eye_texture} position={[-0.287, 0.353, 0.892]} rotation={[1.603, 0.5, 0.159]} scale={[0.255, 0.301, 0.249]} />
+          <mesh geometry={nodes.Right_eye.geometry} material={materials.Right_eye_texture} position={[-0.285, 0.353, 0.888]} rotation={[1.474, 0.513, 0.197]} scale={[0.255, 0.301, 0.249]} />
         </group>
-        <mesh geometry={nodes.Nose_ring.geometry} position={[-0.004, -0.071, 1.227]} rotation={[1.564, 0, 0.019]} scale={0.056}>
+        <mesh geometry={nodes.Nose_ring.geometry} material={nodes.Nose_ring.material} position={[-0.004, -0.071, 1.227]} rotation={[1.564, 0, 0.019]} scale={0.056}>
           <shaderMaterial
             fragmentShader={ringShader}
             vertexShader={staticVertexShader}
             uniforms={uniforms}
           />
         </mesh>
-        <mesh ref={head} geometry={nodes.Head.geometry}>
+        <mesh geometry={nodes.Head.geometry} material={materials.Head_texture} ref={head}>
           <shaderMaterial
             fragmentShader={headShader}
             vertexShader={meltingVertexShader}
             uniforms={uniforms}
           />
-          <mesh geometry={nodes.Eyebrow_lashes.geometry}>
+          <mesh geometry={nodes.Curves.geometry} material={nodes.Curves.material}>
             <shaderMaterial
               fragmentShader={hairShader}
               vertexShader={meltingVertexShader}
               uniforms={uniforms}
             />
           </mesh>
-          <mesh geometry={nodes.Mustache.geometry}>
-            <shaderMaterial
-              fragmentShader={hairShader}
-              vertexShader={meltingVertexShader}
-              uniforms={uniforms}
-            />
-          </mesh>
-
         </mesh>
       </group>
     </>
@@ -150,7 +142,6 @@ const Model = ({ keyLightData, ...props }) => {
 useGLTF.preload('/portrait.glb');
 
 export default Model;
-
 
 
 
