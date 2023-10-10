@@ -7,6 +7,7 @@
 
 import React, { useEffect, useState, useLayoutEffect } from 'react';
 import Portrait from '../components/Portrait/Composition.js';
+import ContactForm from '../components/ContactForm.js';
 import { AboutPageData } from '../assets/data/pages/about.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -130,6 +131,7 @@ const Home = () => {
                 <p>
                   {AboutPageData[0].main}
                 </p>
+                <ContactForm />
                 <SocialsContainer>
                   <a href="https://www.linkedin.com/in/marklisanti/" rel="noopener noreferrer" target="_blank"><SocialIcon src={linkedin} /></a>
                   <a href="https://github.com/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={github} /></a>
