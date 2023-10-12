@@ -131,7 +131,6 @@ const Home = () => {
                 <p>
                   {AboutPageData[0].main}
                 </p>
-                <ContactForm />
                 <SocialsContainer>
                   <a href="https://www.linkedin.com/in/marklisanti/" rel="noopener noreferrer" target="_blank"><SocialIcon src={linkedin} /></a>
                   <a href="https://github.com/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={github} /></a>

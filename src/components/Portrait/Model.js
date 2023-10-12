@@ -36,7 +36,9 @@ const Model = ({ keyLightData, ...props }) => {
       setMousePosition({ x: event.clientX, y: event.clientY });
     };
     const handleScroll = () => {
-      setScrollY((window.scrollY / window.innerHeight) * 100);
+      const scrollPercentage = (window.scrollY / window.innerHeight) * 100;
+      const limitedScrollY = Math.min(scrollPercentage, 23);
+      setScrollY(limitedScrollY);
     };
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousemove', handleMouseMove);
@@ -56,13 +58,11 @@ const Model = ({ keyLightData, ...props }) => {
     const normalizedMouseX = (mousePosition.x / window.outerWidth) * 2 - 1;
     const normalizedMouseY = -(mousePosition.y / window.outerHeight) * 2 + 1;
 
-    console.log(normalizedMouseX)
-
     // animate model
-    const group_rotation_x = group.current.rotation.x;
-    const group_rotation_y = group.current.rotation.y;
-    const step = 0.00001 * 500;
-    const stepEyes = 0.00001 * 100;
+    //const group_rotation_x = group.current.rotation.x;
+    //const group_rotation_y = group.current.rotation.y;
+    //const step = 0.00001 * 500;
+    //const stepEyes = 0.00001 * 100;
 
     if (normalizedMouseX > -1 && normalizedMouseX < 1 && normalizedMouseY > -1 && normalizedMouseY < 1) {
       const targetX = (normalizedMouseX * x_middle) / 30;
@@ -78,8 +78,9 @@ const Model = ({ keyLightData, ...props }) => {
       eyes.current.rotation.y += (0 - eyes.current.rotation.y) * 0.1;
     }
   });
-
+  console.log(scrollY)
   const uniforms = useMemo(() => {
+  
     if (keyLightData.current) {
       return {
         headTexture: {
