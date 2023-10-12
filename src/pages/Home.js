@@ -7,7 +7,6 @@
 
 import React, { useEffect, useState, useLayoutEffect } from 'react';
 import Portrait from '../components/Portrait/Composition.js';
-import ContactForm from '../components/ContactForm.js';
 import { AboutPageData } from '../assets/data/pages/about.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -101,9 +100,7 @@ const Home = () => {
       </Nav>
       {isMobile ? (
         <div id="container">
-          <motion.div
-            key="about"
-          >
+          <motion.div key="about">
             <h1>Howdy! I'm Mark</h1>
             <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
             {AboutPageData.map((data, id) => {
@@ -120,10 +117,7 @@ const Home = () => {
         </div>
       ) : (
         <>
-          <ReactScrollWheelHandler
-            upHandler={() => { if (isScrolled) { scrollLeft() } }}
-            downHandler={() => { if (!isScrolled) { scrollRight() } }}
-          >
+          <ReactScrollWheelHandler upHandler={() => { if (isScrolled) { scrollLeft() } }} downHandler={() => { if (!isScrolled) { scrollRight() } }}>
             <HorizontalScreen id="container" isProjectsEndpoint={window.location.pathname.includes('/projects')}>
               <AboutColumn>
                 <h1>Howdy! I'm Mark</h1>
@@ -164,16 +158,19 @@ const HorizontalScreen = styled.div`
 `;
 
 const AboutColumn = styled.div`
-    flex: 1;
-    margin-top: 5rem;
-    padding: 5rem;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  height: 100vh; /* Take up 100% of the viewport height */
+  overflow-y: hidden; /* Hide y overflow */
 `;
 
 const ProjectColumn = styled.div`
     flex: 1;
-    margin-top: 5rem;
-    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `
 
 const Arrow = styled.img`
@@ -227,7 +224,7 @@ const SocialsContainer = styled.div`
 
 const SocialIcon = styled.img`           
     color: black;
-    width: 2.5rem;
+    width: 3.5rem;
     text-decoration: none;
     margin: 1rem;
     &:hover {

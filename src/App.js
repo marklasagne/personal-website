@@ -42,7 +42,7 @@ const App = () => {
             <Route path='/projects/boulder-parks' element={<BoulderParks />} />
             <Route path='/projects/nihilism' element={<Nihilism />} />
           </Routes>
-          <Footer />
+      
         </Router>
       </AnimatePresence>
     </>
@@ -56,6 +56,7 @@ const GlobalStyle = createGlobalStyle`
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     -webkit-overflow-scrolling: touch;
+    margin: 0;
   }
 
   h1 {

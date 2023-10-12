@@ -22,6 +22,7 @@ const PillFilter = ({ tag, onClick }) => {
 
 const PillButton = styled.div`
   color: #808080;
+  font-size: 0.8rem;
   border: 2px solid;
   padding: 0.625rem 1.25rem;
   text-align: center;
