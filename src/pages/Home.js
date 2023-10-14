@@ -116,7 +116,7 @@ const Home = () => {
             }}
             downHandler={() => {
               if (!isScrolledX) {
-                setScrollInProgress(false); 
+                setScrollInProgress(false);
                 scrollRight();
               }
             }}

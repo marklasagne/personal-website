@@ -21,7 +21,7 @@ const hairShader = `
     vec3 lightDirection = normalize(keyLightPosition - vViewPosition);
     float diffuse = max(dot(vNormal, lightDirection), 0.0);
 
-    float shading = dot(normal, vec3(0.0, 0.15, 0.0)); 
+    float shading = dot(normal, vec3(0.0, 0.18, .6)); 
 
     vec3 randomOffset = vec3(sin(vUv.x * 10.0), cos(vUv.y * 10.0), 0.0) * 0.02;
     vec3 diffuseColor = keyLightColor * (keyLightBrightness / 8.0) * brownColor * smoothstep(0.6, 1.0, diffuse);
@@ -55,6 +55,6 @@ void main() {
 
   vec3 finalColor = greyBrownColor * (brownIntensity + shading) + randomOffset;
   
-  gl_FragColor = vec4(finalColor, 1.0);
+  gl_FragColor = vec4(finalColor, 0.5);
 }
 `

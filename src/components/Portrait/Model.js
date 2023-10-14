@@ -128,10 +128,11 @@ const Model = ({ keyLightData, ...props }) => {
             uniforms={uniforms}
           />
           <mesh geometry={nodes.Curves.geometry} material={nodes.Curves.material}>
-            <shaderMaterial
+            <shaderMaterial transparent opacity={0.5}
               fragmentShader={hairShader}
               vertexShader={meltingVertexShader}
               uniforms={uniforms}
+              
             />
           </mesh>
         </mesh>
