@@ -55,7 +55,7 @@ const Nihilism = () => {
             <p>{NihilismData[1].text1}</p>
           </Column>
         </Row>
-        <Row data-aos='fade-up'>
+        <Row data-aos='fade-up' style={{ marginBottom: `6.25rem` }}>
           <Column>
             <p>{NihilismData[1].text2}</p>
           </Column>
