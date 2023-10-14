@@ -56,8 +56,6 @@ return (
           )
         })}
       </PillContainer>
-  
-      <h2>Beep boop beep boop <>&#10084;... please come back soon!</></h2>
         <ResponsiveMasonry columnsCountBreakPoints={{750: 1, 900: 2}}>
         <Masonry gutter={8}>
           {projectList.map((data) => {

@@ -42,7 +42,7 @@ const App = () => {
             <Route path='/projects/boulder-parks' element={<BoulderParks />} />
             <Route path='/projects/nihilism' element={<Nihilism />} />
           </Routes>
-      
+          <Footer />
         </Router>
       </AnimatePresence>
     </>

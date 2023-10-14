@@ -20,7 +20,6 @@ const Footer = () => {
 }
 
 const StyledFooter = styled.footer`
-  position: fixed;
   bottom: 0;
   width: 100%;
   opacity: 0.5;

@@ -5,13 +5,13 @@
 
 // About page
 
-import React, { useEffect, useState, useLayoutEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Portrait from '../components/Portrait/Composition.js';
 import { AboutPageData } from '../assets/data/pages/about.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
-import { Row, MainFont } from '../components/PageComponents.js';
+import { Row, MainFont, Column } from '../components/PageComponents.js';
 import styled, { css } from 'styled-components';
 import arrow from '../assets/icons/arrow.svg';
 import ReactScrollWheelHandler from 'react-scroll-wheel-handler';
@@ -50,11 +50,18 @@ const Home = () => {
     Aos.init({ duration: 500 });
     setLeftAmmount(window.innerWidth);
     document.body.style.overflowX = 'hidden';
-    window.addEventListener('resize', () => {
-      setLeftAmmount(window.innerWidth)
-      const ismobile = window.innerWidth < 1000;
-      if (isMobile !== isMobile) setIsMobile(ismobile);
-    }, false);
+
+    const handleResize = () => {
+      setLeftAmmount(window.innerWidth);
+      const isMobileNow = window.innerWidth < 1000;
+      if (isMobile !== isMobileNow) {
+        setIsMobile(isMobileNow);
+      }
+    };
+    window.addEventListener('resize', handleResize, false);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, [isMobile]);
 
   useEffect(() => {
@@ -74,7 +81,7 @@ const Home = () => {
   console.log(isScrolledX)
   return (
     <MainFont>
-      <Nav>
+      <Nav isMobile={isMobile}>
         <NavLink onClick={!isScrolledX ? scrollRight : scrollLeft} className={isScrolledX ? '' : 'active'} to="/">
           About
         </NavLink>
@@ -85,9 +92,6 @@ const Home = () => {
           Blog
         </NavLink>
       </Nav>
-      <ArrowContainer>
-        <Arrow src={arrow} onClick={!isScrolledX ? scrollRight : scrollLeft} isScrolledX={isScrolledX} />
-      </ArrowContainer>
       {isMobile ? (
         <div id="container">
           <motion.div key="about">
@@ -95,12 +99,29 @@ const Home = () => {
             <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
             {AboutPageData.map((data, id) => {
               return (
-                <Row key={id} style={{ zIndex: -1 }} data-aos='fade-up'>
-                  <AboutColumn>
-                    <p>Mobile View</p>
-                    <br />
-                  </AboutColumn>
-                </Row>
+                <>
+                  <Row>
+                    <Column>
+                      <h1>Howdy! I'm Mark</h1>
+                      <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
+                      <p>
+                        {AboutPageData[0].main}
+                      </p>
+                      <SocialsContainer>
+                        <a href="https://www.linkedin.com/in/marklisanti/" rel="noopener noreferrer" target="_blank"><SocialIcon src={linkedin} /></a>
+                        <a href="https://github.com/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={github} /></a>
+                        <a href="https://codepen.io/marklasagne" rel="noopener noreferrer" target="_blank"><SocialIcon src={codepen} /></a>
+                        <a href="https://www.behance.net/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={behance} /></a>
+                      </SocialsContainer>
+                    </Column>
+                  </Row>
+
+                  <Row>
+                    <Column>
+                      <ProjectsPage />
+                    </Column>
+                  </Row>
+                </>
               )
             })}
           </motion.div>
@@ -143,6 +164,9 @@ const Home = () => {
               </ProjectColumn>
             </HorizontalScreen>
           </ReactScrollWheelHandler>
+          <ArrowContainer>
+            <Arrow src={arrow} onClick={!isScrolledX ? scrollRight : scrollLeft} isScrolledX={isScrolledX} />
+          </ArrowContainer>
         </>
       )}
     </MainFont>
@@ -172,7 +196,7 @@ const PortraitColumn = styled.div`
 
 const ProjectColumn = styled.div`
   flex: 1;
-  overflow-x: ${props => props.isScrolledX == false ? `rotate(90deg)` : `rotate(-90deg)`};
+  overflow-x: ${props => props.isScrolledX === false ? `rotate(90deg)` : `rotate(-90deg)`};
   margin-top: 5rem;
   padding: 10rem;
 `
@@ -185,7 +209,7 @@ const Arrow = styled.img`
   &:hover {
       opacity: 75%;
   } 
-  transform: ${props => props.isScrolledX == false ? `rotate(90deg)` : `rotate(-90deg)`};
+  transform: ${props => props.isScrolledX === false ? `rotate(90deg)` : `rotate(-90deg)`};
 `;
 
 const ArrowContainer = styled.div`
@@ -205,6 +229,7 @@ const Nav = styled.nav`
   padding: 1rem;
   position: fixed;
   z-index: 1;
+  width: ${props => props.isMobile === true ? `100%` : `auto`};
 `;
 
 const NavLink = styled.a`

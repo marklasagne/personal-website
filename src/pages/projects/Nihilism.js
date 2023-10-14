@@ -11,12 +11,12 @@ import styled from 'styled-components';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
-import { Row, Image } from '../../components/PageComponents.js';
+import { Row, Column, Image } from '../../components/PageComponents.js';
 import { NihilismData } from '../../assets/data/pages/nihilism.js';
 import FontStyles from '../../../src/assets/fonts/fonts.js';
 
 const Nihilism = () => {
-  
+
   useEffect(() => {
     Aos.init({ duration: 500 });
   }, []);
@@ -29,26 +29,37 @@ const Nihilism = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
-        <Row data-aos='fade-up'> 
-          <Image src={NihilismData[0].image} style={{ width: '80%' }} alt="save" />
+        <Row data-aos='fade-up'>
+          <Column>
+            <Image src={NihilismData[0].image} style={{ width: '100%' }} alt="save" />
+          </Column>
         </Row>
         <Row data-aos='fade-up'>
+          <Column>
             <p>{NihilismData[0].text1}</p>
+          </Column>
         </Row>
         <Row data-aos='fade-up'>
-          <p>{NihilismData[0].text2}</p>
+          <Column>
+            <p>{NihilismData[0].text2}</p>
+          </Column>
         </Row>
         <Row data-aos='fade-up'>
-          <StyledReactPlayer url='https://www.youtube.com/watch?v=IGaKpsVkoLo' />
+       
+            <StyledReactPlayer url='https://www.youtube.com/watch?v=IGaKpsVkoLo' />
+         
         </Row>
         <Row data-aos='fade-up'>
+          <Column>
             <h1>{NihilismData[1].heading}</h1>
             <p>{NihilismData[1].text1}</p>
+          </Column>
         </Row>
         <Row data-aos='fade-up'>
+          <Column>
             <p>{NihilismData[1].text2}</p>
+          </Column>
         </Row>
-
       </motion.div>
     </MainFont>
   );

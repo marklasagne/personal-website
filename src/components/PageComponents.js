@@ -6,7 +6,6 @@ export const Row = styled.div`
     display: flex;
     -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
-    position: relative;
     justify-content: space-around;
     align-items: center;
     margin-top: 6.25rem;
