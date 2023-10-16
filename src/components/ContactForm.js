@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState } from "react";
+import { Row, MainFont, Column } from '../components/PageComponents.js';
+import styled from 'styled-components';
 
 const ContactForm = () => {
   const formInitialDetails = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
+    name: "",
+    info: "",
     message: "",
   };
   const [formDetails, setFormDetails] = useState(formInitialDetails);
@@ -21,46 +21,32 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="form-container">
-      <h1>Contact Us</h1>
-      <p>We're here to help if you have any questions</p>
-      <form className="form-inner">
-        <div className="row">
+    <div>
+      <h1>Reach out!</h1>
+      <p>I am always looking to collab or talk about feelings... </p>
+      <form>
+        <Row>
           <input
             type="text"
             value={formDetails.firstName}
-            placeholder="First Name"
-            onChange={(e) => onFormUpdate("firstName", e.target.value)}
+            placeholder="Name"
+            onChange={(e) => onFormUpdate("name", e.target.value)}
           />
           <input
             type="text"
             value={formDetails.lastName}
-            placeholder="Last Name"
-            onChange={(e) => onFormUpdate("lastName", e.target.value)}
+            placeholder="Email/ social media"
+            onChange={(e) => onFormUpdate("info", e.target.value)}
           />
-        </div>
-        <div className="row">
-          <input
-            type="email"
-            value={formDetails.email}
-            placeholder="Email Address"
-            onChange={(e) => onFormUpdate("email", e.target.value)}
-          />
-          <input
-            type="tel"
-            value={formDetails.phone}
-            placeholder="Phone No."
-            onChange={(e) => onFormUpdate("phone", e.target.value)}
-          />
-        </div>
-        <div className="row">
+        </Row>
+        <Row>
           <textarea
             rows="6"
             value={formDetails.message}
             placeholder="Message"
             onChange={(e) => onFormUpdate("message", e.target.value)}
           ></textarea>
-        </div>
+        </Row>
         <button type="submit">{buttonText}</button>
         {status.message && (
           <div className="row">

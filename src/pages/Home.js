@@ -12,6 +12,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
 import { Row, MainFont, Column } from '../components/PageComponents.js';
+import ContactForm from '../components/ContactForm.js';
 import styled, { css } from 'styled-components';
 import arrow from '../assets/icons/arrow.svg';
 import ReactScrollWheelHandler from 'react-scroll-wheel-handler';
@@ -107,6 +108,7 @@ const Home = () => {
                       <p>
                         {AboutPageData[0].main}
                       </p>
+                      <ContactForm />
                       <SocialsContainer>
                         <a href="https://www.linkedin.com/in/marklisanti/" rel="noopener noreferrer" target="_blank"><SocialIcon src={linkedin} /></a>
                         <a href="https://github.com/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={github} /></a>
@@ -149,6 +151,7 @@ const Home = () => {
                 <p>
                   {AboutPageData[0].main}
                 </p>
+                <ContactForm />
                 <SocialsContainer>
                   <a href="https://www.linkedin.com/in/marklisanti/" rel="noopener noreferrer" target="_blank"><SocialIcon src={linkedin} /></a>
                   <a href="https://github.com/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={github} /></a>
