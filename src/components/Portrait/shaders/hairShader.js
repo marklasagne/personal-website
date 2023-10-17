@@ -3,6 +3,8 @@
 // Built by Mark Lisanti          //
 // https://github.com/marklasagne //
 
+// vec3(233.0/255.0, 255.0, 255.0)
+
 const hairShader = `
   varying vec2 vUv;
   varying vec3 vNormal;

@@ -1,16 +1,14 @@
-import React from 'react';
-import { useState } from "react";
-import { Row, MainFont, Column } from '../components/PageComponents.js';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const ContactForm = () => {
   const formInitialDetails = {
-    name: "",
-    info: "",
-    message: "",
+    name: '',
+    info: '',
+    message: '',
   };
   const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState("Send");
+  const [buttonText, setButtonText] = useState('Send');
   const [status, setStatus] = useState({});
 
   const onFormUpdate = (category, value) => {
@@ -21,43 +19,65 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
-      <h1>Reach out!</h1>
-      <p>I am always looking to collab or talk about feelings... </p>
-      <form>
-        <Row>
-          <input
-            type="text"
-            value={formDetails.firstName}
-            placeholder="Name"
-            onChange={(e) => onFormUpdate("name", e.target.value)}
-          />
-          <input
-            type="text"
-            value={formDetails.lastName}
-            placeholder="Email/ social media"
-            onChange={(e) => onFormUpdate("info", e.target.value)}
-          />
-        </Row>
-        <Row>
-          <textarea
-            rows="6"
-            value={formDetails.message}
-            placeholder="Message"
-            onChange={(e) => onFormUpdate("message", e.target.value)}
-          ></textarea>
-        </Row>
-        <button type="submit">{buttonText}</button>
+    <>
+      <FormContainer>
+      <p>Reach out!</p>
+        <StyledInput
+          type="text"
+          value={formDetails.name}
+          placeholder="Name"
+          onChange={(e) => onFormUpdate('name', e.target.value)}
+        />
+        <StyledInput
+          type="text"
+          value={formDetails.info}
+          placeholder="Email/ social media"
+          onChange={(e) => onFormUpdate('info', e.target.value)}
+        />
+        <StyledTextarea
+          rows="6"
+          value={formDetails.message}
+          placeholder="Message"
+          onChange={(e) => onFormUpdate('message', e.target.value)}
+        ></StyledTextarea>
+        <StyledButton type="submit">{buttonText}</StyledButton>
         {status.message && (
           <div className="row">
-            <p className={status.success === false ? "danger" : "success"}>
+            <p className={status.success === false ? 'danger' : 'success'}>
               {status.message}
             </p>
           </div>
         )}
-      </form>
-    </div>
+      </FormContainer>
+
+
+    </>
   );
 };
+
+const FormContainer = styled.div`
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+`;
+
+const StyledInput = styled.input`
+  width: 300px;
+  height: 2.5rem;
+  margin: 1rem 1rem 1rem 1rem;
+`;
+
+const StyledTextarea = styled.textarea`
+  width: 300px;
+  height: 7.5rem;
+  margin: 1rem 1rem 1rem 1rem;
+`;
+
+const StyledButton = styled.button`
+  width: 300px;
+  height: 2.5rem;
+  margin: 1rem 1rem 1rem 1rem;
+`;
 
 export default ContactForm;
