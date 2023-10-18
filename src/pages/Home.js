@@ -11,7 +11,7 @@ import { AboutPageData } from '../assets/data/pages/about.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
-import { Row, MainFont, Column } from '../components/PageComponents.js';
+import { Row, MainFont } from '../components/PageComponents.js';
 import ContactForm from '../components/ContactForm.js';
 import styled, { css } from 'styled-components';
 import arrow from '../assets/icons/arrow.svg';
@@ -102,7 +102,6 @@ const Home = () => {
               return (
                 <>
                   <Row>
-                    <Column>
                       <h1>Howdy! I'm Mark</h1>
                       <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
                       <p>
@@ -115,13 +114,10 @@ const Home = () => {
                         <a href="https://codepen.io/marklasagne" rel="noopener noreferrer" target="_blank"><SocialIcon src={codepen} /></a>
                         <a href="https://www.behance.net/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={behance} /></a>
                       </SocialsContainer>
-                    </Column>
                   </Row>
 
                   <Row>
-                    <Column>
                       <ProjectsPage />
-                    </Column>
                   </Row>
                 </>
               )

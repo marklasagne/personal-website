@@ -11,11 +11,11 @@ import styled from 'styled-components';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
-import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
+import { Row, Image, TextLink } from '../../components/PageComponents.js';
 import { BoulderParksData } from '../../assets/data/pages/boulderparks.js';
 
 const BoulderParks = () => {
-  
+
   useEffect(() => {
     Aos.init({ duration: 500 });
   }, []);
@@ -28,30 +28,30 @@ const BoulderParks = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
         <Row data-aos='fade-up'>
-    
+
         </ Row>
 
         <Row data-aos='fade-up'>
-          <Column>
-            <p>{BoulderParksData[0].description}</p>
-          </Column>
-          <Column>
-            <p>My Role(s): {BoulderParksData[0].roles}</p>
-            <p>Stack: {BoulderParksData[0].stack}</p>
-            <p>Hardware: {BoulderParksData[0].hardware}</p>
-          </Column>
+
+          <p>{BoulderParksData[0].description}</p>
+        </Row>
+        <Row data-aos='fade-up'>
+          <p>My Role(s): {BoulderParksData[0].roles}</p>
+          <p>Stack: {BoulderParksData[0].stack}</p>
+          <p>Hardware: {BoulderParksData[0].hardware}</p>
+
         </Row>
 
         <Row data-aos='fade-up'>
-            
+
         </Row>
 
         <Row data-aos='fade-up'>
-            <h1>{BoulderParksData[1].heading}</h1>
-            <p>{BoulderParksData[1].text1}</p>
+          <h1>{BoulderParksData[1].heading}</h1>
+          <p>{BoulderParksData[1].text1}</p>
         </Row>
         <Row data-aos='fade-up'>
-            <h1>IMAGES COMING... EVENTUALLY...</h1>
+          <h1>IMAGES COMING... EVENTUALLY...</h1>
         </Row>
 
 

@@ -27,10 +27,10 @@ const CardinalPride = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
         <Row data-aos='fade-up'>
-          <Column>
+      
             <img src={CardinalPrideData[0].image} style={{ width: '75%' }} alt="save" />
-          </Column>
-          <Column>
+        </Row>
+        <Row data-aos='fade-up'>
             <p>{CardinalPrideData[0].description}</p>
             <br/>
             <br/>
@@ -39,7 +39,7 @@ const CardinalPride = () => {
               <br />
               Stack: {CardinalPrideData[0].stack}
           </p>
-          </Column>
+       
         </Row>
 
         <Row data-aos='fade-up'>
@@ -55,10 +55,10 @@ const CardinalPride = () => {
         </Row>
 
         <Row data-aos='fade-up'>
-          <Column>
+  
             <h1>{CardinalPrideData[1].heading}</h1>
             <p>{CardinalPrideData[1].text}</p>
-          </Column>
+      
         </Row>
       </motion.div>
     </>

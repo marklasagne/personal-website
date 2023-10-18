@@ -11,7 +11,7 @@ import styled from 'styled-components';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
-import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
+import { Row, Image, TextLink } from '../../components/PageComponents.js';
 import { TriangleTrailStatusData } from '../../assets/data/pages/triangletrailstatus.js';
 import TriangTrail_0 from '../../assets/images/TriangleTrailStatus/TriangTrail_0.png';
 import TriangTrail_3 from '../../assets/images/TriangleTrailStatus/TriangTrail_3.png';
@@ -38,13 +38,11 @@ const TriangTrail = () => {
         </ Row>
 
         <Row data-aos='fade-up'>
-          <Column>
             <p>{TriangleTrailStatusData[0].description}</p>
-          </Column>
-          <Column>
+          </Row>
+          <Row data-aos='fade-up'>
             <p>Role(s): {TriangleTrailStatusData[0].roles}</p>
             <p>Stack: {TriangleTrailStatusData[0].stack}</p>
-          </Column>
         </Row>
 
         <Row data-aos='fade-up'>
@@ -54,26 +52,22 @@ const TriangTrail = () => {
         </ Row>
 
         <Row data-aos='fade-up'>
-          <Column>
             <h1>{TriangleTrailStatusData[1].heading}</h1>
             <p>
               <TextLink href="https://www.trianglemtb.com/" target="_blank" rel="noopener noreferrer"> Triangle MTB's website</TextLink> {TriangleTrailStatusData[1].text1}
             </p>
             <p>{TriangleTrailStatusData[1].text2}</p>
-          </Column>
-          <Column>
+          </Row>
+          <Row data-aos='fade-up'>
             <Image src={TriangleTrailStatusData[1].image} alt="my" />
-          </Column>
         </Row>
 
         <Row data-aos='fade-up'>
-          <Column>
             <h1>{TriangleTrailStatusData[2].heading}</h1>
             <p>{TriangleTrailStatusData[2].text}</p>
-          </Column>
-          <Column>
+        </Row>
+        <Row data-aos='fade-up'>
             <Image src={TriangleTrailStatusData[2].image} alt="house" />
-          </Column>
         </Row>
 
         <Row data-aos='fade-up'>
@@ -85,7 +79,6 @@ const TriangTrail = () => {
         </ Row>
 
         <Row data-aos='fade-up'>
-          <Column>
             <h1>{TriangleTrailStatusData[3].heading}</h1>
             <p>
               {TriangleTrailStatusData[3].text1}
@@ -93,7 +86,6 @@ const TriangTrail = () => {
               <br />
               {TriangleTrailStatusData[3].text2}
             </p>
-          </Column>
         </Row>
       </motion.div>
     </MainFont>

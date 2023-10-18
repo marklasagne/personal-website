@@ -29,39 +29,34 @@ const LifesAGame = () => {
           <h1>{LifesAGameData[0].heading}</h1>
         </Row>
 
-        <Row>
+        <Row data-aos='fade-up'>
           <p>
-              Role(s): {LifesAGameData[0].roles}
-              <br />
-              Stack: {LifesAGameData[0].stack}
+            Role(s): {LifesAGameData[0].roles}
+            <br />
+            Stack: {LifesAGameData[0].stack}
           </p>
         </Row>
 
-        <Row>
-          <Column>
-            <p>{LifesAGameData[1].text}</p>
-          </Column>
-          <Column>
-            <Image src={LifesAGameData[1].image} alt="real?" />
-          </Column>
-        </ Row>
-
-        <Row>
-          <Column>
-            <p>{LifesAGameData[2].text}</p>
-            <br></br>
-            <p><TextLink href="https://editor.p5js.org/lisantimark/sketches/SPe3MlTnW" rel="noopener noreferrer" target="_blank">Try it yourself here.</TextLink></p>
-          </Column>
-          <Column>
-            <Image src={LifesAGameData[2].image} alt="real?" />
-          </Column>
+        <Row data-aos='fade-up'>
+          <p>{LifesAGameData[1].text}</p>
+        </Row>
+        <Row data-aos='fade-up'>
+          <Image src={LifesAGameData[1].image} alt="real?" />
         </ Row>
 
         <Row data-aos='fade-up'>
-          <Column>
-            <h1>{LifesAGameData[3].heading}</h1>
-            <p>{LifesAGameData[3].text}</p>
-          </Column>
+          <p>{LifesAGameData[2].text}</p>
+          <br></br>
+          <p><TextLink href="https://editor.p5js.org/lisantimark/sketches/SPe3MlTnW" rel="noopener noreferrer" target="_blank">Try it yourself here.</TextLink></p>
+        </Row>
+        <Row data-aos='fade-up'>
+          <Image src={LifesAGameData[2].image} alt="real?" />
+
+        </ Row>
+
+        <Row data-aos='fade-up'>
+          <h1>{LifesAGameData[3].heading}</h1>
+          <p>{LifesAGameData[3].text}</p>
         </Row>
       </motion.div>
     </>

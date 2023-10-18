@@ -11,11 +11,11 @@ import styled from 'styled-components';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
-import { Row, Column, Image, TextLink } from '../../components/PageComponents.js';
+import { Row, Image, TextLink } from '../../components/PageComponents.js';
 import { FuckYouData } from '../../assets/data/pages/fuckyou.js';
 
 const FuckYou = () => {
-  
+
   useEffect(() => {
     Aos.init({ duration: 500 });
   }, []);
@@ -28,33 +28,32 @@ const FuckYou = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
         <Row data-aos='fade-up'>
-    
+
         </ Row>
 
         <Row data-aos='fade-up'>
-          <Column>
-            <p>{FuckYouData[0].description}</p>
-          </Column>
-          <Column>
-            <p>My Role(s): {FuckYouData[0].roles}</p>
-            <p>Stack: {FuckYouData[0].stack}</p>
-            <p>Hardware: {FuckYouData[0].hardware}</p>
-          </Column>
+
+          <p>{FuckYouData[0].description}</p>
+        </Row>
+        <Row data-aos='fade-up'>
+          <p>My Role(s): {FuckYouData[0].roles}</p>
+          <p>Stack: {FuckYouData[0].stack}</p>
+          <p>Hardware: {FuckYouData[0].hardware}</p>
+
         </Row>
 
         <Row data-aos='fade-up'>
-            <ReactPlayer url='https://www.youtube.com/watch?v=T_4N4yJ2iH0' />
+          <ReactPlayer url='https://www.youtube.com/watch?v=T_4N4yJ2iH0' />
         </Row>
 
         <Row data-aos='fade-up'>
-          <Column>
-            <h1>{FuckYouData[1].heading}</h1>
-            <p>{FuckYouData[1].text1}</p>
-          </Column>
-          <Column>
-            <h1>{FuckYouData[2].heading}</h1>
-            <p>{FuckYouData[2].text1}</p>
-          </Column>
+
+          <h1>{FuckYouData[1].heading}</h1>
+          <p>{FuckYouData[1].text1}</p>
+        </Row>
+        <Row data-aos='fade-up'>
+          <h1>{FuckYouData[2].heading}</h1>
+          <p>{FuckYouData[2].text1}</p>
         </Row>
 
       </motion.div>

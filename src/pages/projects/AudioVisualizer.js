@@ -9,7 +9,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { Row, Column, Image } from '../../components/PageComponents.js';
+import { Row, Image } from '../../components/PageComponents.js';
 import { AudioVisualizerData } from '../../assets/data/pages/audiovisualizer.js'
 
 const AudioVisualizer = () => {
@@ -29,7 +29,7 @@ const AudioVisualizer = () => {
           <h1>{AudioVisualizerData[0].heading}</h1>
         </ Row>
 
-        <Row>
+        <Row data-aos='fade-up'>
           <p>
             Role(s): {AudioVisualizerData[0].roles}
             <br />
@@ -37,23 +37,24 @@ const AudioVisualizer = () => {
           </p>
         </Row>
 
+        <Row data-aos='fade-up'>
+
+          <p>{AudioVisualizerData[1].text}</p>
+        </ Row>
         <Row>
-          <Column>
-            <p>{AudioVisualizerData[1].text}</p>
-          </Column>
-          <Column>
-            <Image src={AudioVisualizerData[1].image} alt="fear?" />
-          </Column>
+
+          <Image src={AudioVisualizerData[1].image} alt="fear?" />
+
         </ Row>
 
         <Row data-aos='fade-up'>
-          <Column>
-            <h1>{AudioVisualizerData[2].heading}</h1>
-            <p>{AudioVisualizerData[2].text}</p>
-          </Column>
-          <Column>
-            <Image src={AudioVisualizerData[2].image} alt="fear2?" />
-          </Column>
+
+          <h1>{AudioVisualizerData[2].heading}</h1>
+          <p>{AudioVisualizerData[2].text}</p>
+        </Row>
+        <Row data-aos='fade-up'>
+          <Image src={AudioVisualizerData[2].image} alt="fear2?" />
+
         </Row>
       </motion.div>
     </>
