@@ -22,7 +22,6 @@ const FontStyles = createGlobalStyle`
     }
 `;
 
-
 export default FontStyles;
 
 

@@ -1,14 +1,18 @@
 //  https://styled-components.com/
 import styled from 'styled-components';
 
+export const PageContainer = styled.div`
+    max-width: 1300px;
+    margin: 0 auto;
+`;
+
 export const Row = styled.div`
-    display: -ms-flexbox; /* IE10 */
+    margin-top: 6rem;
     display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    margin-top: 6.25rem;
+    justify-content: center; 
+}
 `;
 
 export const Column = styled.div`
@@ -46,10 +50,7 @@ export const Image = styled.img`
         0 100px 80px rgba(0, 0, 0, 0.12)
 `;
 
-export const PageContainer = styled.div`
-    position: relative;
-    min-height: 100vh;
-`;
+
 
 export const ContentWrap = styled.div`
     padding-bottom: 10rem;

@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { Row, Column, Image } from '../../components/PageComponents.js';
+import { Row, Column, Image, PageContainer } from '../../components/PageComponents.js';
 import { AffinityData } from '../../assets/data/pages/affinity';
 
 const AmbioSense = () => {
@@ -20,6 +20,7 @@ const AmbioSense = () => {
 
   return (
     <>
+    <PageContainer>
       <motion.div
         key='affinity'
         initial={{ opacity: 0 }}
@@ -120,8 +121,8 @@ const AmbioSense = () => {
           <p>{AffinityData[7].text}</p>
         </Row>
 
-    
       </motion.div>
+      </PageContainer>
     </>
   );
 }
