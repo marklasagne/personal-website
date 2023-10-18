@@ -4,21 +4,27 @@ import styled from 'styled-components';
 
 const ContactForm = () => {
   const form = useRef();
+  const [buttonText, setButtonText] = useState('Send Message');
+  const [buttonStyle, setButtonStyle] = useState({});
 
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs.sendForm('service_xtktt7b','template_jwu0pys', form.current, 'paGw-b_4m1vD028Ql')
       .then((result) => {
         console.log(result.text);
+        setButtonText('Message Sent \u2714');
+        setButtonStyle({ color: 'green' });
       }, (error) => {
         console.log(error.text);
+        setButtonText('Try again \u2718');
+        setButtonStyle({ color: 'red' }); 
       });
   };
 
   return (
     <>
       <FormContainer onSubmit={sendEmail} ref={form}>
-        <p>Let's talk about feelings...</p>
+        <StyledTitle>Let's talk about feelings...</StyledTitle>
         <StyledInput
           type="text"
           name="from_name"
@@ -35,13 +41,19 @@ const ContactForm = () => {
           name="message"
           placeholder="Message"
         ></StyledTextarea>
-        <StyledButton type="submit">Send Message</StyledButton>
+        <StyledButton style={buttonStyle} type="submit">{buttonText}</StyledButton>
       </FormContainer>
 
 
     </>
   );
 };
+
+const StyledTitle = styled.p`
+  font-size: 12px;
+  font-weight: bold;
+  font-style: italic;
+`;
 
 const FormContainer = styled.form`
   margin-top: 2.5rem;
@@ -58,7 +70,7 @@ const StyledInput = styled.input`
   padding-left: 0;
   padding-right: 0;
   border-radius: 0; 
-  margin: 1rem 1rem 1rem 1rem;
+  margin: 2rem 1rem 1rem 1rem;
   &:focus, &:active {
     outline: none;
     -webkit-box-shadow: none;
@@ -75,7 +87,7 @@ const StyledTextarea = styled.textarea`
   padding-left: 0;
   padding-right: 0;
   border-radius: 0; 
-  margin: 1rem 1rem 1rem 1rem;
+  margin: 2rem 1rem 1rem 1rem;
   &:focus, &:active {
     outline: none;
     -webkit-box-shadow: none;
@@ -85,6 +97,7 @@ const StyledTextarea = styled.textarea`
 `;
 
 const StyledButton = styled.button`
+  overflow-x: ${props => props.isScrolledX === false ? `rotate(90deg)` : `rotate(-90deg)`};
   margin: 1rem 1rem 1rem 1rem;
   color: #808080;
   background: none;
