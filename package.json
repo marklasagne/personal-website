@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "@react-spring/web": "^9.7.3",
     "@react-three/drei": "^7.22.4",
@@ -13,7 +14,7 @@
     "aos": "^3.0.0-beta.6",
     "babel-plugin-glsl": "^1.0.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
+    "emailjs": "^4.0.3",
     "framer-motion": "4.1.17",
     "gltfjsx": "^6.2.13",
     "nodemailer": "^6.9.6",
@@ -55,5 +56,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1"
   }
 }

@@ -1,54 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import styled from 'styled-components';
 
 const ContactForm = () => {
-  const formInitialDetails = {
-    name: '',
-    info: '',
-    message: '',
-  };
-  const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState('Send Message');
-  const [status, setStatus] = useState({});
+  const form = useRef();
 
-  const onFormUpdate = (category, value) => {
-    setFormDetails({
-      ...formDetails,
-      [category]: value,
-    });
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_xtktt7b','template_jwu0pys', form.current, 'paGw-b_4m1vD028Ql')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
   };
 
   return (
     <>
-      <FormContainer>
-      <p>Let's talk about feelings...</p>
+      <FormContainer onSubmit={sendEmail} ref={form}>
+        <p>Let's talk about feelings...</p>
         <StyledInput
           type="text"
-          value={formDetails.name}
+          name="from_name"
           placeholder="Name"
-          onChange={(e) => onFormUpdate('name', e.target.value)}
         />
         <StyledInput
           type="text"
-          value={formDetails.info}
+          name="from_info"
           placeholder="Email/ social media"
-          onChange={(e) => onFormUpdate('info', e.target.value)}
         />
         <StyledTextarea
           rows="7"
           col="30"
-          value={formDetails.message}
+          name="message"
           placeholder="Message"
-          onChange={(e) => onFormUpdate('message', e.target.value)}
         ></StyledTextarea>
-        <StyledButton type="submit">{buttonText}</StyledButton>
-        {status.message && (
-          <div className="row">
-            <p className={status.success === false ? 'danger' : 'success'}>
-              {status.message}
-            </p>
-          </div>
-        )}
+        <StyledButton type="submit">Send Message</StyledButton>
       </FormContainer>
 
 
@@ -56,7 +43,7 @@ const ContactForm = () => {
   );
 };
 
-const FormContainer = styled.div`
+const FormContainer = styled.form`
   margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
