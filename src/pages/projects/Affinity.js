@@ -107,7 +107,7 @@ const AmbioSense = () => {
             <SlideShow images={slideshow_2}/>
           </Row>
 
-          <Row data-aos='fade-up'>
+          <Row style={{ marginBottom: '12rem' }} data-aos='fade-up'>
             <h1>{AffinityData[7].heading}</h1>
             <p>{AffinityData[7].text}</p>
           </Row>

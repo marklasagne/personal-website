@@ -1,16 +1,17 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import styled from 'styled-components';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const Slideshow = ({ images }) => {
   return (
     <>
-      <StyledSwiper navigation={true} modules={[Navigation]}  className="mySwiper">
+      <StyledSwiper pagination={{ type: 'fraction', }} navigation={true} modules={[Pagination, Navigation]}  className="mySwiper">
         {images.map((image, index) => (
           <StyledSwiperSlide key={index}>
             <Image src={image} alt={`Slide ${index + 1}`} />
@@ -50,6 +51,7 @@ const Image = styled.img`
     max-width: 100%;
     width: auto;
     max-height: 350px;
+    padding: 3rem;
 `;
 
 
