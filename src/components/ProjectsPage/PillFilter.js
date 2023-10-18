@@ -31,7 +31,7 @@ const PillButton = styled.div`
   margin: 0.25rem 0.125rem;
   cursor: pointer;
   border-radius: 30px;
-  &.active {
+  &.active, &:hover {
     color: #ffffff;
     background: #000000;
     border: 2px solid #000000;

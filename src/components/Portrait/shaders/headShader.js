@@ -27,8 +27,8 @@ const headShader = `
     vec3 ambientColor = vec3(122.0/255.0, 120.0/255.0, 122.0/255.0); 
     vec3 ambient = ambientColor * 0.25;
     vec3 diffuseColor = keyLightColor * (keyLightBrightness / 3.5) * originalColor * smoothstep(0.3, 1.0, diffuse);
-    vec3 specularColor = keyLightBrightness * vec3(10.0/255.0, 10.0/255.0, 10.0/255.0)  * pow(max(dot(reflect(-lightDirection, vNormal), normalize(vViewPosition)), 0.0), 5.0);
-    vec3 specularColor2 = keyLightBrightness / 5.0 * vec3(59.0/255.0, 59.0/255.0, 59.0/255.0) * pow(max(dot(reflect(lightDirection, vNormal), normalize(vViewPosition)), 0.0), 5.0);
+    vec3 specularColor = keyLightBrightness * vec3(10.0/255.0, 10.0/255.0, 10.0/255.0)  * pow(max(dot(reflect(-lightDirection, vNormal), normalize(vViewPosition)), -0.85), 5.0);
+    vec3 specularColor2 = keyLightBrightness / 5.0 * vec3(59.0/255.0, 59.0/255.0, 59.0/255.0) * pow(max(dot(reflect(lightDirection, vNormal), normalize(vViewPosition)), -0.85), 5.0);
 
     vec3 finalColor =  ambient + diffuseColor + specularColor + specularColor2 ;
 

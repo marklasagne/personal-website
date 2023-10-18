@@ -251,11 +251,11 @@ const NavLink = styled.a`
 
 const SocialsContainer = styled.div`
   flex-direction: horizontal;
-  margin-top: 1rem 1rem;
+  margin: 2rem 1rem 1rem 0;
 `;
 
 const SocialIcon = styled.img`           
-    color: black;
+    color: #000000;
     width: 3.5rem;
     text-decoration: none;
     margin: 1rem;

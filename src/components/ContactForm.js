@@ -8,7 +8,7 @@ const ContactForm = () => {
     message: '',
   };
   const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState('Send');
+  const [buttonText, setButtonText] = useState('Send Message');
   const [status, setStatus] = useState({});
 
   const onFormUpdate = (category, value) => {
@@ -21,7 +21,7 @@ const ContactForm = () => {
   return (
     <>
       <FormContainer>
-      <p>Reach out!</p>
+      <p>Let's talk about feelings...</p>
         <StyledInput
           type="text"
           value={formDetails.name}
@@ -35,7 +35,8 @@ const ContactForm = () => {
           onChange={(e) => onFormUpdate('info', e.target.value)}
         />
         <StyledTextarea
-          rows="6"
+          rows="7"
+          col="30"
           value={formDetails.message}
           placeholder="Message"
           onChange={(e) => onFormUpdate('message', e.target.value)}
@@ -63,21 +64,58 @@ const FormContainer = styled.div`
 `;
 
 const StyledInput = styled.input`
-  width: 300px;
-  height: 2.5rem;
+  border: none;
+  border-bottom: 1px solid #d9d9d9;
+  font-family: Verdana; 
+  font-size: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0; 
   margin: 1rem 1rem 1rem 1rem;
+  &:focus, &:active {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #000; }
+  }
 `;
 
 const StyledTextarea = styled.textarea`
-  width: 300px;
-  height: 7.5rem;
+  border: none;
+  border-bottom: 1px solid #d9d9d9;
+  font-family: Verdana; 
+  font-size: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0; 
   margin: 1rem 1rem 1rem 1rem;
+  &:focus, &:active {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #000; }
+  }
 `;
 
 const StyledButton = styled.button`
-  width: 300px;
-  height: 2.5rem;
   margin: 1rem 1rem 1rem 1rem;
+  color: #808080;
+  background: none;
+  border: 2px solid #808080;
+  font-size: 0.8rem;
+  width: 25%;
+  padding: 15px;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  &:hover {
+    color: #ffffff;
+    background: #000000;
+    border: 2px solid #000000;
+  }
 `;
+
+
 
 export default ContactForm;
