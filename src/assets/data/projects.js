@@ -1,13 +1,15 @@
-import TriangleTrailStatus from '../images/triangle_trail_status.gif';
-import SmartPalette from '../images/color_palette.gif';
-import CardinalPride from '../images/cardinal_pride.gif';
-import AmbieSense from '../images/ambie_sense.gif';
-import AudioVisualizer from '../images/audio_visualization.gif';
-import Jobzen from '../images/job_zen.png';
-import Affinity from '../images/affinity.gif';
-import FuckYou from '../images/fuck_you_sign.gif'
-import Nihilism from '../images/nihilism.gif'
+import TriangleTrailStatus from '../images/triangle_trail_status.png';
+//import SmartPalette from '../images/color_palette.gif';
+import CardinalPride from '../images/cardinal_pride.png';
+//import AmbieSense from '../images/ambie_sense.gif';
+//import AudioVisualizer from '../images/audio_visualization.gif';
+//import Jobzen from '../images/job_zen.png';
+import Affinity from '../images/affinity.png';
+import FuckYou from '../images/fuck_you_sign.png'
+import Nihilism from '../images/nihilism.png'
+import BoulderParks from '../images/boulder_parks.png'
 
+{/* 
 export const projects_temp = [
   {
     id: 'jobzen',
@@ -86,21 +88,28 @@ export const projects_temp = [
     tags: ['Fabrication']
   },
 ];
-
+*/}
 export const projects = [
   {
     id: 'nihilism',
     name: 'Nihilism',
-    description: 'Interactive and reflective art installation.',
+    description: 'Interactive sound and visual - reflective art installation.',
     image: Nihilism,
-    tags: ['Installation']
+    tags: ['Featured', 'Art', 'Interactive']
   },
   {
-    id: 'triangle-trail-status',
-    name: 'Triangle Trail Status',
-    description: 'Check where to ride, add your favorites, and get notified.',
-    image: TriangleTrailStatus,
-    tags: ['Mobile', 'Design']
+    id: 'boulder-parks',
+    name: 'Boulder Parks',
+    description: 'Interactive map outlining the importance of going outside',
+    image: BoulderParks,
+    tags: ['Featured', 'Fabrication', 'Web',]
+  },
+  {
+    id: 'fuck-you-sign',
+    name: 'Fuck You Sign',
+    description: 'Fun sign that may or may not give you the finger.',
+    image: FuckYou,
+    tags: ['Featured', 'Fabrication', 'Interactive']
   },
   {
     id: 'cardinal-pride',
@@ -110,20 +119,19 @@ export const projects = [
     tags: ['Web', 'Design']
   },
   {
-    id: 'boulder-parks',
-    name: 'Boulder Parks',
-    description: 'Interactive map outlining the importance of going outside',
-    image: FuckYou,
-    tags: ['Fabrication']
+    id: 'affinity',
+    name: 'Affinity',
+    description: 'Stay at home interactive experience taylored to mental health.',
+    image: Affinity, 
+    tags: ['Development', 'Design']
   },
   {
-    id: 'jobzen',
-    name: 'Job Zen',
-    description: 'Mobile application promoting easier and productive job searching.',
-    image: Jobzen, 
-    tags: ['UX Research', 'Design']
+    id: 'triangle-trail-status',
+    name: 'Triangle Trail Status',
+    description: 'Check where to ride, add your favorites, and get notified.',
+    image: TriangleTrailStatus,
+    tags: ['Mobile', 'Design']
   },
-
 ];
 
 
