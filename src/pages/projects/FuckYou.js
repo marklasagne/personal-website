@@ -39,7 +39,6 @@ const FuckYou = () => {
           <p>My Role(s): {FuckYouData[0].roles}</p>
           <p>Stack: {FuckYouData[0].stack}</p>
           <p>Hardware: {FuckYouData[0].hardware}</p>
-
         </Row>
 
         <Row data-aos='fade-up'>

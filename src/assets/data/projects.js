@@ -5,9 +5,9 @@ import CardinalPride from '../images/cardinal_pride.png';
 //import AudioVisualizer from '../images/audio_visualization.gif';
 //import Jobzen from '../images/job_zen.png';
 import Affinity from '../images/affinity.png';
-import FuckYou from '../images/fuck_you_sign.png'
-import Nihilism from '../images/nihilism.png'
-import BoulderParks from '../images/boulder_parks.png'
+import FuckYou from '../images/fuck_you_sign.png';
+import Nihilism from '../images/nihilism.png';
+import BoulderParks from '../images/boulder_parks.png';
 
 {/* 
 export const projects_temp = [
@@ -132,6 +132,7 @@ export const projects = [
     image: TriangleTrailStatus,
     tags: ['Mobile', 'Design']
   },
+
 ];
 
 

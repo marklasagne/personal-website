@@ -7,7 +7,6 @@
 
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import ReactPlayer from 'react-player';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { Row, PageContainer, VideoPlayer, Image } from '../../components/PageComponents.js';
