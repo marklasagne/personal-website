@@ -39,7 +39,7 @@ const TextContainer = styled.div`
   position: absolute;
   bottom: 0px;
   background-image: linear-gradient(to bottom, rgba(0,0,0,0),  rgba(0,0,0,0.75) 75%);
-  &:hover {
+  ${ContainerDiv}:hover & {
     height: 300px;
   }
 `;
@@ -58,12 +58,14 @@ const DescriptionText = styled.p`
   position: absolute;
   bottom: 40px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 75%);
   opacity: 0;
-  transition: opacity 0.35s ease;
   font-size: .75rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
   ${TextContainer}:hover & {
     opacity: 1;
+    transform: translate(-50%, -50%);
   }
 `;
 
