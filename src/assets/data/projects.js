@@ -8,6 +8,7 @@ import Affinity from '../images/affinity.png';
 import FuckYou from '../images/fuck_you_sign.png';
 import Nihilism from '../images/nihilism.png';
 import BoulderParks from '../images/boulder_parks.png';
+import SpotifyRewards from '../images/spotify_account_rewards.png';
 
 {/* 
 export const projects_temp = [
@@ -110,6 +111,13 @@ export const projects = [
     description: 'Fun sign that may or may not give you the finger.',
     image: FuckYou,
     tags: ['Featured', 'Fabrication', 'Interactive']
+  },
+  {
+    id: 'spotify-account-rewards',
+    name: 'Spotify Account Rewards',
+    description: 'Rework Spotify adding features and naviation improvements',
+    image: SpotifyRewards, 
+    tags: ['UX/UI', 'Design']
   },
   {
     id: 'cardinal-pride',

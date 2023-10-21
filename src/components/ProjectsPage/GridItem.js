@@ -16,11 +16,11 @@ const GridItem = ({ image, id, title, description}) => {
 
   return (
     <>
-      <ContainerDiv>
-          <Item src={image} alt="whoops" onClick={handleRoute} />
+      <ContainerDiv onClick={handleRoute}>
+          <Item src={image} alt="whoops" />
           <TextContainer>
             <CenterText class="centered">{title}</CenterText>
-            <DescriptionText>{description}</DescriptionText>
+            <DescriptionText class="centered">{description}</DescriptionText>
           </TextContainer>
         </ContainerDiv>
     </>
@@ -31,6 +31,8 @@ const ContainerDiv = styled.div`
   position: relative;
   text-align: center;
   color: white;
+  cursor: pointer;
+  margin:0;
 `;
 
 const TextContainer = styled.div`
@@ -54,7 +56,7 @@ const CenterText = styled.div`
   font-size: 1rem;
 `;
 
-const DescriptionText = styled.p`
+const DescriptionText = styled.div`
   position: absolute;
   bottom: 40px;
   left: 50%;
@@ -62,7 +64,6 @@ const DescriptionText = styled.p`
   opacity: 0;
   font-size: .75rem;
   transition: opacity 0.3s ease, transform 0.3s ease;
-
   ${TextContainer}:hover & {
     opacity: 1;
     transform: translate(-50%, -50%);
@@ -73,7 +74,6 @@ const Item = styled.img`
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
-    cursor: pointer;
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),

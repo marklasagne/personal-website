@@ -18,6 +18,7 @@ import Affinity from './pages/projects/Affinity.js';
 import FuckYou from './pages/projects/FuckYou.js';
 import BoulderParks from './pages/projects/BoulderParks.js';
 import Nihilism from './pages/projects/Nihilism.js';
+import SpotifyRewards from './pages/projects/SpotifyRewards.js';
 import Home from './pages/Home';
 import { createGlobalStyle } from 'styled-components';
 
@@ -41,6 +42,7 @@ const App = () => {
             <Route path='/projects/fuck-you-sign' element={<FuckYou />} />
             <Route path='/projects/boulder-parks' element={<BoulderParks />} />
             <Route path='/projects/nihilism' element={<Nihilism />} />
+            <Route path='/projects/spotify-account-rewards' element={<SpotifyRewards />} />
           </Routes>
           <Footer />
         </Router>
