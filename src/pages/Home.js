@@ -25,8 +25,16 @@ import codepen from '../assets/icons/codepen.svg';
 const Home = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
   const [isScrolledX, setIsScrolledX] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
   const [leftAmmount, setLeftAmmount] = useState(window.innerWidth);
   const [scrollInProgress, setScrollInProgress] = useState(false);
+
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   const scrollRight = () => {
     setIsScrolledX(!isScrolledX)
@@ -68,6 +76,7 @@ const Home = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollX;
+      setScrollY(window.scrollY);
       let endpoint = '';
       if (scrollPosition > (window.innerWidth / 3)) {
         endpoint = 'projects';
@@ -79,7 +88,7 @@ const Home = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  console.log(isScrolledX)
+
   return (
     <MainFont>
       <Nav isMobile={isMobile}>
@@ -102,22 +111,21 @@ const Home = () => {
               return (
                 <>
                   <Row>
-                      <h1>Howdy! I'm Mark</h1>
-                      <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
-                      <p>
-                        {AboutPageData[0].main}
-                      </p>
-                      <ContactForm />
-                      <SocialsContainer>
-                        <a href="https://www.linkedin.com/in/marklisanti/" rel="noopener noreferrer" target="_blank"><SocialIcon src={linkedin} /></a>
-                        <a href="https://github.com/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={github} /></a>
-                        <a href="https://codepen.io/marklasagne" rel="noopener noreferrer" target="_blank"><SocialIcon src={codepen} /></a>
-                        <a href="https://www.behance.net/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={behance} /></a>
-                      </SocialsContainer>
+                    <h1>Howdy! I'm Mark</h1>
+                    <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
+                    <p>
+                      {AboutPageData[0].main}
+                    </p>
+                    <ContactForm />
+                    <SocialsContainer>
+                      <a href="https://www.linkedin.com/in/marklisanti/" rel="noopener noreferrer" target="_blank"><SocialIcon src={linkedin} /></a>
+                      <a href="https://github.com/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={github} /></a>
+                      <a href="https://codepen.io/marklasagne" rel="noopener noreferrer" target="_blank"><SocialIcon src={codepen} /></a>
+                      <a href="https://www.behance.net/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={behance} /></a>
+                    </SocialsContainer>
                   </Row>
-
                   <Row>
-                      <ProjectsPage />
+                    <ProjectsPage />
                   </Row>
                 </>
               )
@@ -164,7 +172,7 @@ const Home = () => {
             </HorizontalScreen>
           </ReactScrollWheelHandler>
           <ArrowContainer>
-            <Arrow src={arrow} onClick={!isScrolledX ? scrollRight : scrollLeft} isScrolledX={isScrolledX} />
+            <Arrow src={arrow} onClick={!isScrolledX ? scrollRight : isScrolledX && scrollY > 0 ? scrollUp : scrollLeft} isScrolledX={isScrolledX} scrollY={scrollY}/>
           </ArrowContainer>
         </>
       )}
@@ -208,7 +216,7 @@ const Arrow = styled.img`
   &:hover {
       opacity: 75%;
   } 
-  transform: ${props => props.isScrolledX === false ? `rotate(90deg)` : `rotate(-90deg)`};
+  transform: ${props => props.isScrolledX === false ? `rotate(90deg)` : props.isScrolledX === true && props.scrollY > 0 ? `rotate(0deg)` : `rotate(-90deg)`};
 `;
 
 const ArrowContainer = styled.div`
