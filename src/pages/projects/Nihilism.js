@@ -11,6 +11,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
 import { Row, PageContainer, VideoPlayer, Image } from '../../components/PageComponents.js';
+import NavigationArrow from '../../components/NavigationArrow.js';
 import { NihilismData } from '../../assets/data/pages/nihilism.js';
 import FontStyles from '../../../src/assets/fonts/fonts.js';
 
@@ -25,6 +26,7 @@ const Nihilism = () => {
       <PageContainer>
         <MainFont>
         <FontStyles />
+        <NavigationArrow />
           <motion.div
             key='fuckyou'
             initial={{ opacity: 0 }}

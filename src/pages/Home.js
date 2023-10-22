@@ -21,6 +21,7 @@ import behance from '../assets/icons/behance.svg';
 import linkedin from '../assets/icons/linkedin.svg';
 import github from '../assets/icons/github.svg';
 import codepen from '../assets/icons/codepen.svg';
+import Navbar from '../components/Navbar.js'; 
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
@@ -28,6 +29,17 @@ const Home = () => {
   const [scrollY, setScrollY] = useState(0);
   const [leftAmmount, setLeftAmmount] = useState(window.innerWidth);
   const [scrollInProgress, setScrollInProgress] = useState(false);
+
+  const handleScrollButtonClick = () => {
+    if (isScrolledX && scrollY > 0) {
+      scrollUp();
+    } else if (!isScrolledX) {
+      scrollRight();
+
+    } else {
+      scrollLeft();
+    }
+  };
 
   const scrollUp = () => {
     window.scrollTo({
@@ -91,17 +103,7 @@ const Home = () => {
 
   return (
     <MainFont>
-      <Nav isMobile={isMobile}>
-        <NavLink onClick={!isScrolledX ? scrollRight : scrollLeft} className={isScrolledX ? '' : 'active'} to="/">
-          About
-        </NavLink>
-        <NavLink onClick={!isScrolledX ? scrollRight : scrollLeft} className={isScrolledX ? 'active' : ''} to="/projects">
-          Projects
-        </NavLink>
-        <NavLink target="_blank" href="https://medium.com/@marklasagne">
-          Blog
-        </NavLink>
-      </Nav>
+      <Navbar isMobile={isMobile} onNavLinkClick={setIsScrolledX} isScrolledX={isScrolledX} onScrollButtonClick={handleScrollButtonClick}/>
       {isMobile ? (
         <div id="container">
           <motion.div key="about">
@@ -227,30 +229,6 @@ const ArrowContainer = styled.div`
   margin: 3rem;
   text-decoration: none;
   display: block;
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  justify-content: left;
-  background: #fff;
-  padding: 1rem;
-  position: fixed;
-  z-index: 1;
-  width: ${props => props.isMobile === true ? `100%` : `auto`};
-`;
-
-const NavLink = styled.a`
-  color: #808080;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1.5rem;
-  padding: 10px;
-  height: 100%;
-  cursor: pointer;
-  &.active {
-    color: #000000;
-    border-bottom: 2px solid #000000;
-  }
 `;
 
 const SocialsContainer = styled.div`
