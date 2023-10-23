@@ -14,6 +14,7 @@ import { Row, PageContainer, VideoPlayer, Image } from '../../components/PageCom
 import NavigationArrow from '../../components/NavigationArrow.js';
 import { NihilismData } from '../../assets/data/pages/nihilism.js';
 import FontStyles from '../../../src/assets/fonts/fonts.js';
+import Navbar from '../../components/Navbar.js'; 
 
 const Nihilism = () => {
 
@@ -23,6 +24,7 @@ const Nihilism = () => {
 
   return (
     <>
+      <Navbar />
       <PageContainer>
         <MainFont>
         <FontStyles />

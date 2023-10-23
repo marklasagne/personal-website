@@ -31,11 +31,11 @@ const Home = () => {
   const [scrollInProgress, setScrollInProgress] = useState(false);
 
   const handleScrollButtonClick = () => {
+    setIsScrolledX(!isScrolledX);
     if (isScrolledX && scrollY > 0) {
       scrollUp();
     } else if (!isScrolledX) {
       scrollRight();
-
     } else {
       scrollLeft();
     }
@@ -103,7 +103,7 @@ const Home = () => {
 
   return (
     <MainFont>
-      <Navbar isMobile={isMobile} onNavLinkClick={setIsScrolledX} isScrolledX={isScrolledX} onScrollButtonClick={handleScrollButtonClick}/>
+      <Navbar isMobile={isMobile} onNavLinkClick={setIsScrolledX} isScrolledX={isScrolledX} homeNavClick={handleScrollButtonClick}/>
       {isMobile ? (
         <div id="container">
           <motion.div key="about">

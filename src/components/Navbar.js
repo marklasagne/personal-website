@@ -1,19 +1,28 @@
 // Navbar.js
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate  } from 'react-router-dom';
 
 const Navbar = ({ isMobile, onNavLinkClick, isScrolledX, onScrollButtonClick }) => {
-  const handleNavLinkClick = () => {
-    onNavLinkClick(!isScrolledX);
-    onScrollButtonClick(); // Invoke the provided callback for scroll button click
+  const navigate = useNavigate();
+  const handleNavLinkClick = (route) => {
+    const currentUrl = window.location.pathname;
+    if (currentUrl.endsWith("projects/") || currentUrl.endsWith("projects")) {
+      onNavLinkClick();
+    } else if (route === '/projects') {
+      navigate('/projects');
+    } else { 
+      navigate('/');
+    }
+
   };
 
   return (
     <Nav isMobile={isMobile}>
-      <NavLink onClick={handleNavLinkClick} className={!isScrolledX ? 'active' : ''} to="/">
+      <NavLink onClick={() => handleNavLinkClick('/')} className={!isScrolledX ? 'active' : ''} to="/">
         About
       </NavLink>
-      <NavLink onClick={handleNavLinkClick} className={isScrolledX ? 'active' : ''} to="/projects">
+      <NavLink onClick={() => handleNavLinkClick('/projects')} className={isScrolledX ? 'active' : ''} to="/projects">
         Projects
       </NavLink>
       <NavLink target="_blank" href="https://medium.com/@marklasagne">
