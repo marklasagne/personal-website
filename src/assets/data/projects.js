@@ -103,42 +103,42 @@ export const projects = [
     name: 'Boulder Parks',
     description: 'Interactive map outlining the importance of going outside',
     image: BoulderParks,
-    tags: ['Featured', 'Fabrication', 'Web',]
+    tags: ['Featured', 'Fabrication', 'Web Development',]
   },
   {
     id: 'fuck-you-sign',
     name: 'Fuck You Sign',
     description: 'Fun sign that may or may not give you the finger.',
     image: FuckYou,
-    tags: ['Featured', 'Fabrication', 'Interactive']
+    tags: ['Featured', 'Fabrication', 'Interactive', 'Art']
   },
   {
     id: 'spotify-account-rewards',
     name: 'Spotify Account Rewards',
     description: 'Rework Spotify adding features and naviation improvements',
     image: SpotifyRewards, 
-    tags: ['UX/UI', 'Design']
+    tags: ['UX/UI']
   },
   {
     id: 'cardinal-pride',
     name: 'Cardinal Pride Property Care',
     description: 'Website for local handyman',
     image: CardinalPride, 
-    tags: ['Web', 'Design']
+    tags: ['Web Development']
   },
   {
     id: 'affinity',
     name: 'Affinity',
     description: 'Stay at home interactive experience taylored to mental health.',
     image: Affinity, 
-    tags: ['Development', 'Design']
+    tags: ['Featured', 'Interactive']
   },
   {
     id: 'triangle-trail-status',
     name: 'Triangle Trail Status',
     description: 'Check where to ride, add your favorites, and get notified.',
     image: TriangleTrailStatus,
-    tags: ['Mobile', 'Design']
+    tags: ['Mobile Development']
   },
 
 ];

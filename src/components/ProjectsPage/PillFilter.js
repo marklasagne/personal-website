@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const PillFilter = ({ tag, onClick }) => {
-  const [isActive, setActive] = useState(false);
+  const [isActive, setActive] = useState(tag === 'Featured');
 
   const toggleClass = () => {
     setActive(!isActive);
@@ -15,7 +15,7 @@ const PillFilter = ({ tag, onClick }) => {
 
   return (
     <>
-      <PillButton className={isActive ? 'active': null} onClick={() => {toggleClass(); onClick();}}>{tag}</PillButton>
+      <PillButton className={isActive ? 'active' : null} onClick={() => { toggleClass(); onClick(); }}>{tag}</PillButton>
     </>
   );
 };

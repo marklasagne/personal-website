@@ -5,66 +5,66 @@ import GridItem from './GridItem.js';
 import PillFilter from './PillFilter.js';
 import { projects } from '../../assets/data/projects';
 
-// get the tags to render pill filters
-let tagList = []; 
+let tagList = [];
 projects.forEach((project) => {
   project.tags.forEach((tag) => {
     if (!tagList.includes(tag)) {
       tagList.push(tag);
     }
-  })
+  });
 });
 
 const ProjectGrid = () => {
-  const [filterList, setFilterList] = useState([]);
+  const [filterList, setFilterList] = useState(['Featured']); // Automatically select and display only the "featured" tag
   const [projectList, setProjectList] = useState(projects);
 
-  // on load set all of the projects
-  useEffect(() =>{
-    if (!filterList === undefined || !filterList.length < 1) {
-      let filtered = []
-      projects.forEach((item) => {
-        item.tags.forEach((tag) => {
-          if (filterList.includes(tag)) {
-            if (!filtered.includes(item)) {
-              filtered.push(item);
-            }
-          } 
-        }) 
-      })
-      setProjectList(filtered);
-    } else {
+  useEffect(() => {
+    if (filterList.includes('All')) {
       setProjectList(projects);
+    } else {
+      let filtered = projects.filter((item) => {
+        return item.tags.some((tag) => filterList.includes(tag));
+      });
+      setProjectList(filtered);
     }
   }, [filterList]);
-  
-return (
+
+  return (
     <>
       <PillContainer>
-        {tagList.map((data) => {
-          return (
-            <PillFilter key={data} tag={data} onClick={() => {
-              if(!filterList.includes(data)) {
-                setFilterList(filterList => [...filterList, data]);
-                
+        {/* Include an "ALL" tag */}
+        <PillFilter
+          key="All"
+          tag="All"
+          onClick={() => setFilterList(['All'])}
+        />
+        {tagList.map((data) => (
+          <PillFilter
+            key={data}
+            tag={data}
+            onClick={() => {
+              if (data === 'featured') {
+                // Toggle "featured" tag separately
+                setFilterList((prev) =>
+                  prev.includes(data) ? prev.filter((e) => e !== data) : [...prev, data]
+                );
               } else {
-                setFilterList(filterList.filter((e) => (e !== data)));
+                // Toggle other tags
+                setFilterList((prev) =>
+                  prev.includes(data) ? prev.filter((e) => e !== data) : [...prev, data]
+                );
               }
             }}
-            />
-          )
-        })}
+          />
+        ))}
       </PillContainer>
-        <ResponsiveMasonry columnsCountBreakPoints={{750: 1, 900: 2}}>
+      <ResponsiveMasonry columnsCountBreakPoints={{ 750: 1, 900: 2 }}>
         <Masonry gutter={8}>
-          {projectList.map((data) => {
-            return (
-              <GridItem key={data.id} title={data.name} image={data.image} description={data.description} id={data.id} />
-            )
-          })}
-       </Masonry>
-       </ResponsiveMasonry>
-      
+          {projectList.map((data) => (
+            <GridItem key={data.id} title={data.name} image={data.image} description={data.description} id={data.id} />
+          ))}
+        </Masonry>
+      </ResponsiveMasonry>
     </>
   );
 };
@@ -75,4 +75,3 @@ const PillContainer = styled.div`
 `;
 
 export default ProjectGrid;
-
