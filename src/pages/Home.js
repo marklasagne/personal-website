@@ -93,15 +93,13 @@ const Home = () => {
       if (scrollPosition > (window.innerWidth / 3)) {
         endpoint = 'projects';
       }
-      console.log(endpoint === 'projects');
-      setIsScrolledX(endpoint === 'projects');
-      window.history.pushState(null, null, `/${endpoint}`);
+      //window.history.replaceState(null, null, `/${endpoint}`);
     };
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [window.location.href]);
+  }, []);
 
   return (
     <MainFont>
