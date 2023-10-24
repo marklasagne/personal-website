@@ -13,15 +13,18 @@ const goBack = () => {
   window.history.back();
 };
 
+
 const NavigationArrow = () => {
   return (
-    <ArrowContainer>
-      <Arrow src={arrow} onClick={goBack} />
-    </ArrowContainer>
-  )
+    <>
+      <ArrowContainer>
+          <PageArrow src={arrow} onClick={goBack} />
+        </ArrowContainer >
+    </>
+  );
 }
 
-const Arrow = styled.img`
+const PageArrow = styled.img`
   cursor: pointer;
   color: black;
   width: 5rem;
@@ -31,6 +34,18 @@ const Arrow = styled.img`
   } 
   transform:  rotate(-90deg);
 `;
+
+const HomeArrow = styled.img`
+  cursor: pointer;
+  color: black;
+  width: 5rem;
+  text-decoration: none;
+  &:hover {
+      opacity: 75%;
+  } 
+  transform: ${props => props.isScrolledX === false ? `rotate(90deg)` : props.isScrolledX === true && props.scrollY > 0 ? `rotate(0deg)` : `rotate(-90deg)`};
+`;
+
 
 const ArrowContainer = styled.div`
   bottom: 0;
@@ -43,3 +58,17 @@ const ArrowContainer = styled.div`
 `;
 
 export default NavigationArrow;
+
+{/* 
+
+ <>
+      {isHome ? (
+        <ArrowContainer>
+          <HomeArrow src={arrow} onClick={goBack} />
+        </ArrowContainer >
+      ) : (
+        <ArrowContainer>
+          <PageArrow src={arrow} onClick={goBack} />
+        </ArrowContainer >
+      )}
+    </>*/}

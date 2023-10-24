@@ -17,7 +17,7 @@ const GridItem = ({ image, id, title, description}) => {
   return (
     <>
       <ContainerDiv onClick={handleRoute}>
-          <Item src={image} alt="whoops" />
+          <Item src={image} alt="missing image" />
           <TextContainer>
             <CenterText class="centered">{title}</CenterText>
             <DescriptionText class="centered">{description}</DescriptionText>

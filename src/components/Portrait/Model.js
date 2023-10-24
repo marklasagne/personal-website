@@ -78,7 +78,7 @@ const Model = ({ keyLightData, ...props }) => {
       eyes.current.rotation.y += (0 - eyes.current.rotation.y) * 0.1;
     }
   });
-  console.log(scrollY)
+
   const uniforms = useMemo(() => {
   
     if (keyLightData.current) {
