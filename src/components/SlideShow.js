@@ -50,7 +50,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 const Image = styled.img`
     max-width: 100%;
     width: auto;
-    max-height: 350px;
+    max-height: 500px;
     padding: 3rem;
 `;
 

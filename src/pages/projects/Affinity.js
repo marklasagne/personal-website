@@ -1,9 +1,9 @@
 // Personal website and portfolio //
-// 2022                           //
+// 2023                           //
 // Built by Mark Lisanti          //
 // https://github.com/marklasagne //
 
-// Ambie sense project page
+// Affinity project page
 
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
