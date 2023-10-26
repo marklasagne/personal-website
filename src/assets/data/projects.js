@@ -2,13 +2,14 @@ import TriangleTrailStatus from '../images/triangle_trail_status.png';
 //import SmartPalette from '../images/color_palette.gif';
 import CardinalPride from '../images/cardinal_pride.png';
 //import AmbieSense from '../images/ambie_sense.gif';
-//import AudioVisualizer from '../images/audio_visualization.gif';
+import AudioVisualizer from '../images/audio_visualizer.jpg';
 //import Jobzen from '../images/job_zen.png';
 import Affinity from '../images/affinity.png';
 import FuckYou from '../images/fuck_you_sign.png';
 import Nihilism from '../images/nihilism.png';
 import BoulderParks from '../images/boulder_parks.png';
 import SpotifyRewards from '../images/spotify_account_rewards.png';
+
 
 {/* 
 export const projects_temp = [
@@ -111,6 +112,13 @@ export const projects = [
     description: 'Fun sign that may or may not give you the finger.',
     image: FuckYou,
     tags: ['Featured', 'Fabrication', 'Interactive', 'Art']
+  },
+  {
+    id: 'audio-visualizer',
+    name: '3D Audio Visualizer',
+    description: 'Exploration of FTT data and GLSL',
+    image: AudioVisualizer, 
+    tags: ['Featured', 'Development', 'Art']
   },
   {
     id: 'spotify-account-rewards',

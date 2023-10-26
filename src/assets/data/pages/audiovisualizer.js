@@ -5,10 +5,6 @@
 
 // Audio viz project page data
 
-import AudioVisualizer_0 from '../../images/AudioVisualizer/AudioVisualizer.gif';
-import AudioVisualizer_1 from '../../images/AudioVisualizer/AudioVisualizer_1.gif';
-
-
 export const AudioVisualizerData = [
   {
     id: 0,
@@ -19,10 +15,9 @@ export const AudioVisualizerData = [
   {
     id: 1,
     heading: "none",
-    text: "This is a quick exploration of using FFT data from audio files to create visualization.  " +
+    text: "A quick exploration of using FFT data from audio files to create visualization.  " +
     " The waveform is passed as a uniform to a vertex shader to manipulate the shape of the 3D model. " +
     " The amplitude is used to change the rotational speed when the amplitude hits an upper threshold.",
-    image: AudioVisualizer_0
   },
   {
     id: 2,
@@ -30,7 +25,6 @@ export const AudioVisualizerData = [
     text: "I like the direction that this exploration went and would love " +
     "to expand on this project in the future.  I invision users being able to create their own visualization by uploading " +
     "3d models and music of their own tastes.",
-    image: AudioVisualizer_1
   }
 ];
 

@@ -15,7 +15,7 @@ projects.forEach((project) => {
 });
 
 const ProjectGrid = () => {
-  const [filterList, setFilterList] = useState(['Featured']); // Automatically select and display only the "featured" tag
+  const [filterList, setFilterList] = useState(['Featured']); 
   const [projectList, setProjectList] = useState(projects);
 
   useEffect(() => {
@@ -32,7 +32,6 @@ const ProjectGrid = () => {
   return (
     <>
       <PillContainer>
-        {/* Include an "ALL" tag */}
         <PillFilter
           key="All"
           tag="All"
@@ -44,12 +43,10 @@ const ProjectGrid = () => {
             tag={data}
             onClick={() => {
               if (data === 'featured') {
-                // Toggle "featured" tag separately
                 setFilterList((prev) =>
                   prev.includes(data) ? prev.filter((e) => e !== data) : [...prev, data]
                 );
               } else {
-                // Toggle other tags
                 setFilterList((prev) =>
                   prev.includes(data) ? prev.filter((e) => e !== data) : [...prev, data]
                 );
@@ -75,3 +72,4 @@ const PillContainer = styled.div`
 `;
 
 export default ProjectGrid;
+
