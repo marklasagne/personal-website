@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const PillFilter = ({ tag, onClick }) => {
-  const [isActive, setActive] = useState(tag === 'Featured');
+  const [isActive, setActive] = useState(false);
 
   const toggleClass = () => {
     setActive(!isActive);

@@ -1,4 +1,4 @@
-import TriangleTrailStatus from '../images/triangle_trail_status.png';
+import TriangleTrailStatus from '../images/triangle_trail_status.jpg';
 //import SmartPalette from '../images/color_palette.gif';
 import CardinalPride from '../images/cardinal_pride.png';
 //import AmbieSense from '../images/ambie_sense.gif';
@@ -97,28 +97,42 @@ export const projects = [
     name: 'Nihilism',
     description: 'Interactive sound and visual - reflective art installation.',
     image: Nihilism,
-    tags: ['Featured', 'Art', 'Interactive']
-  },
-  {
-    id: 'boulder-parks',
-    name: 'Boulder Parks',
-    description: 'Interactive map outlining the importance of going outside',
-    image: BoulderParks,
-    tags: ['Featured', 'Fabrication', 'Web Development',]
+    tags: ['Art', 'Interactive']
   },
   {
     id: 'fuck-you-sign',
     name: 'Fuck You Sign',
     description: 'Fun sign that may or may not give you the finger.',
     image: FuckYou,
-    tags: ['Featured', 'Fabrication', 'Interactive', 'Art']
+    tags: ['Fabrication', 'Interactive', 'Art']
+  },
+  {
+    id: 'boulder-parks',
+    name: 'Boulder Parks',
+    description: 'Interactive map outlining the importance of going outside',
+    image: BoulderParks,
+    tags: ['Fabrication', 'Web Development',]
   },
   {
     id: 'audio-visualizer',
     name: '3D Audio Visualizer',
     description: 'Exploration of FTT data and GLSL',
     image: AudioVisualizer, 
-    tags: ['Featured', 'Development', 'Art']
+    tags: ['Development', 'Art']
+  },
+  {
+    id: 'triangle-trail-status',
+    name: 'Triangle Trail Status',
+    description: 'Check where to ride, add your favorites, and get notified',
+    image: TriangleTrailStatus,
+    tags: ['Mobile Development']
+  },
+  {
+    id: 'affinity',
+    name: 'Affinity',
+    description: 'Interactive visual representation of physicality with biometrics',
+    image: Affinity, 
+    tags: ['Interactive']
   },
   {
     id: 'spotify-account-rewards',
@@ -133,20 +147,6 @@ export const projects = [
     description: 'Website for local handyman',
     image: CardinalPride, 
     tags: ['Web Development']
-  },
-  {
-    id: 'affinity',
-    name: 'Affinity',
-    description: 'Stay at home interactive experience taylored to mental health.',
-    image: Affinity, 
-    tags: ['Featured', 'Interactive']
-  },
-  {
-    id: 'triangle-trail-status',
-    name: 'Triangle Trail Status',
-    description: 'Check where to ride, add your favorites, and get notified.',
-    image: TriangleTrailStatus,
-    tags: ['Mobile Development']
   },
 
 ];

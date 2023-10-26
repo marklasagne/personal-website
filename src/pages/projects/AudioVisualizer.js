@@ -9,7 +9,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { Row, PageContainer, Image, MainFont, TextLink, VideoPlayer } from '../../components/PageComponents.js';
+import { Row, PageContainer, MainFont, TextLink, VideoPlayer } from '../../components/PageComponents.js';
 import { AudioVisualizerData } from '../../assets/data/pages/audiovisualizer.js'
 
 const AudioVisualizer = () => {
