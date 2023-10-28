@@ -7,7 +7,7 @@ import AudioVisualizer from '../images/audio_visualizer.jpg';
 import Affinity from '../images/affinity.png';
 import FuckYou from '../images/fuck_you_sign.png';
 import Nihilism from '../images/nihilism.png';
-import BoulderParks from '../images/boulder_parks.png';
+import BoulderParks from '../images/boulder_parks.jpg';
 import SpotifyRewards from '../images/spotify_account_rewards.png';
 
 

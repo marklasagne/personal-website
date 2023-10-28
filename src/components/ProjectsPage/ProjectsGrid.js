@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { createGlobalStyle } from 'styled-components';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import styled from 'styled-components';
 import GridItem from './GridItem.js';
 import PillFilter from './PillFilter.js';
+import { PageContainer } from '../PageComponents.js';
 import { projects } from '../../assets/data/projects';
 
 // get the tags to render pill filters
@@ -41,6 +41,7 @@ const ProjectGrid = () => {
   
 return (
     <>
+    <PageContainer>
       <PillContainer>
         {tagList.map((data) => {
           return (
@@ -65,7 +66,7 @@ return (
           })}
        </Masonry>
        </ResponsiveMasonry>
-      
+       </PageContainer>
     </>
   );
 };

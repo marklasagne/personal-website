@@ -74,7 +74,7 @@ const Home = () => {
 
     const handleResize = () => {
       setLeftAmmount(window.innerWidth);
-      const isMobileNow = window.innerWidth < 1000;
+      const isMobileNow = window.innerWidth < 1300;
       if (isMobile !== isMobileNow) {
         setIsMobile(isMobileNow);
       }

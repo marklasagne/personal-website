@@ -60,6 +60,7 @@ const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: left;
+  width: 100%;
 `;
 
 const StyledInput = styled.input`

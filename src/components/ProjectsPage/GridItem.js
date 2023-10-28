@@ -44,6 +44,9 @@ const TextContainer = styled.div`
   ${ContainerDiv}:hover & {
     height: 300px;
   }
+  @media (max-width: 1300px) {
+    height: 300px;
+  }
 `;
 
 const CenterText = styled.div`
@@ -65,6 +68,10 @@ const DescriptionText = styled.div`
   font-size: .75rem;
   transition: opacity 0.3s ease, transform 0.3s ease;
   ${TextContainer}:hover & {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  @media (max-width: 1300px) {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
