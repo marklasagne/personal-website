@@ -6,17 +6,19 @@
 // About page
 
 import React, { useEffect, useState } from 'react';
-import Portrait from '../components/Portrait/Composition.js';
 import { AboutPageData } from '../assets/data/pages/about.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
+import styled, { css } from 'styled-components';
+import ReactScrollWheelHandler from 'react-scroll-wheel-handler';
+// components
+import Portrait from '../components/Portrait/Composition.js';
 import { Row, MainFont } from '../components/PageComponents.js';
 import ContactForm from '../components/ContactForm.js';
-import styled, { css } from 'styled-components';
-import arrow from '../assets/icons/arrow.svg';
-import ReactScrollWheelHandler from 'react-scroll-wheel-handler';
 import ProjectsPage from '../components/ProjectsPage/ProjectsGrid.js';
+// assets
+import arrow from '../assets/icons/arrow.svg';
 import behance from '../assets/icons/behance.svg';
 import linkedin from '../assets/icons/linkedin.svg';
 import github from '../assets/icons/github.svg';
@@ -24,10 +26,10 @@ import codepen from '../assets/icons/codepen.svg';
 import Navbar from '../components/Navbar.js'; 
 
 const Home = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1100);
   const [isScrolledX, setIsScrolledX] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const [leftAmmount, setLeftAmmount] = useState(window.innerWidth);
+  const [leftAmmount, setLeftAmmount] = useState();
   const [scrollInProgress, setScrollInProgress] = useState(false);
 
   const handleScrollButtonClick = () => {
@@ -66,12 +68,9 @@ const Home = () => {
     });
   };
 
-
   useEffect(() => {
     Aos.init({ duration: 500 });
-    setLeftAmmount(window.innerWidth);
     document.body.style.overflowX = 'hidden';
-
     const handleResize = () => {
       setLeftAmmount(window.innerWidth);
       const isMobileNow = window.innerWidth < 1300;
@@ -79,37 +78,40 @@ const Home = () => {
         setIsMobile(isMobileNow);
       }
     };
-    window.addEventListener('resize', handleResize, false);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [isMobile]);
-
-  useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollX;
       setScrollY(window.scrollY);
-      let endpoint = '';
-      if (scrollPosition > (window.innerWidth / 3)) {
-        endpoint = 'projects';
+      if (scrollPosition > window.innerWidth / 3) {
+        window.history.replaceState(null, null, '/projects');
+      } else {
+        window.history.replaceState(null, null, '/');
       }
-      //window.history.replaceState(null, null, `/${endpoint}`);
     };
+    //const currentPath = window.location.pathname;
+    console.log(window.location.pathname);
+    
+    // Initial setup
+    handleResize();
+    handleScroll();
+
+    // Event listeners
+    window.addEventListener('resize', handleResize, false);
     window.addEventListener('scroll', handleScroll);
+
     return () => {
+      window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isMobile, isScrolledX]);
 
   return (
     <MainFont>
-      <Navbar isMobile={isMobile} onNavLinkClick={setIsScrolledX} isScrolledX={isScrolledX} homeNavClick={handleScrollButtonClick}/>
+      <Navbar isMobile={isMobile} onNavLinkClick={handleScrollButtonClick} isScrolledX={isScrolledX} homeNavClick={handleScrollButtonClick}/>
       {isMobile ? (
         <div id="container">
           <motion.div key="about">
             <h1>Howdy! I'm Mark</h1>
             <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
-            {AboutPageData.map((data, id) => {
               return (
                 <>
                   <Row>
@@ -131,7 +133,6 @@ const Home = () => {
                   </Row>
                 </>
               )
-            })}
           </motion.div>
         </div>
       ) : (

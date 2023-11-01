@@ -3,7 +3,7 @@ import TriangleTrailStatus from '../images/triangle_trail_status.jpg';
 import CardinalPride from '../images/cardinal_pride.png';
 //import AmbieSense from '../images/ambie_sense.gif';
 import AudioVisualizer from '../images/audio_visualizer.jpg';
-//import Jobzen from '../images/job_zen.png';
+import Jobzen from '../images/job_zen.png';
 import Affinity from '../images/affinity.png';
 import FuckYou from '../images/fuck_you_sign.png';
 import Nihilism from '../images/nihilism.png';
@@ -133,6 +133,13 @@ export const projects = [
     description: 'Interactive visual representation of physicality with biometrics',
     image: Affinity, 
     tags: ['Interactive']
+  },
+  {
+    id: 'jobzen',
+    name: 'Job Zen',
+    description: 'Mobile application promoting easier and productive job searching',
+    image: Jobzen, 
+    tags: ['UX/UI']
   },
   {
     id: 'spotify-account-rewards',

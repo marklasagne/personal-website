@@ -17,7 +17,7 @@ import FontStyles from '../../../src/assets/fonts/fonts.js';
 import Navbar from '../../components/Navbar.js'; 
 
 const Nihilism = () => {
-
+  console.log(window.location.pathname);
   useEffect(() => {
     Aos.init({ duration: 500 });
   }, []);

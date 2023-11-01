@@ -30,8 +30,8 @@ export const TriangleTrailStatusData = [
     heading: "Design and Style",
     text: "The layout and color scheme of the app were kept simple, using a natural palette and a single column list. Animation and illustration were created with Adobe software and implemented using CSS and Lottie JS. " +
       "After deploying test versions of the app, user feedback was used to make tweaks to the color and layout, improving usability and accessibility. ",
-    image: TriangTrail_2,
-    image: TriangTrail_1
+    image1: TriangTrail_2,
+    image2: TriangTrail_1
   },
   {
     id: 3,

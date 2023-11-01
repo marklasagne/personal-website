@@ -13,10 +13,6 @@ export const Row = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center; 
-    @media (max-width: 768px) {
-        width: 100%;
-        padding: 3px;
-    }
 }
 `;
 

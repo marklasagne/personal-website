@@ -30,6 +30,7 @@ const App = () => {
         <Router>
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/projects' element={<Home />} />
             <Route path='/projects/triangle-trail-status' element={<TriangleTrailStatus />} />
             <Route path='/projects/smart-palette' element={<SmartPalette />} />
             <Route path='/projects/ambie-sense' element={<AmbieSense />} />

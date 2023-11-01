@@ -59,7 +59,7 @@ export const JobzenData = [
     heading: "none",
     text: "I also wanted to outline the process a company might take to post a job. While I did not" +
     "wireframe this flow, I felt that it was important to showcase the simplicity behind this process as" +
-    " well.",
+    "well.",
     image: Jobzen_3
   },
   {

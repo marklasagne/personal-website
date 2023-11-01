@@ -3,19 +3,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { useNavigate  } from 'react-router-dom';
 
-const Navbar = ({ isMobile, onNavLinkClick, isScrolledX, onScrollButtonClick }) => {
+const Navbar = ({ isMobile, onNavLinkClick, isScrolledX }) => {
   const navigate = useNavigate();
-  const handleNavLinkClick = (route) => {
-    const currentUrl = window.location.pathname;
-    if (currentUrl.endsWith("projects/") || currentUrl.endsWith("projects")) {
-      onNavLinkClick();
-    } else if (route === '/projects') {
-      navigate('/projects');
-    } else { 
-      navigate('/');
-    }
 
-  };
+  const handleNavLinkClick = (route) => {
+    onNavLinkClick();  
+    navigate(route);    
+  }
+
 
   return (
     <Nav isMobile={isMobile}>
