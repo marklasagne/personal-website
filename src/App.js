@@ -60,6 +60,10 @@ const GlobalStyle = createGlobalStyle`
     -webkit-overflow-scrolling: touch;
     margin: 0;
   }
+  
+  body {
+    overflow-x: hidden;
+  }
 
   h1 {
     font-size: 1.5rem;

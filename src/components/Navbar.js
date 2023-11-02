@@ -1,23 +1,18 @@
 // Navbar.js
 import React from 'react';
 import styled from 'styled-components';
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-const Navbar = ({ isMobile, onNavLinkClick, isScrolledX }) => {
+const Navbar = ({ isMobile }) => {
   const navigate = useNavigate();
-
-  const handleNavLinkClick = (route) => {
-    onNavLinkClick();  
-    navigate(route);    
-  }
-
+  const location = useLocation();
 
   return (
     <Nav isMobile={isMobile}>
-      <NavLink onClick={() => handleNavLinkClick('/')} className={!isScrolledX ? 'active' : ''} to="/">
+      <NavLink onClick={() => navigate('/')} className={!location.pathname.includes('/projects') ? 'active' : ''} to="/">
         About
       </NavLink>
-      <NavLink onClick={() => handleNavLinkClick('/projects')} className={isScrolledX ? 'active' : ''} to="/projects">
+      <NavLink onClick={() => navigate('/projects')} className={location.pathname.includes('/projects') ? 'active' : ''} to="/projects">
         Projects
       </NavLink>
       <NavLink target="_blank" href="https://medium.com/@marklasagne">

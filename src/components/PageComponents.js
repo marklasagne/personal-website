@@ -53,5 +53,3 @@ export const MainFont = styled.div`
 
 
 
-
-

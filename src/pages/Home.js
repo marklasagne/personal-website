@@ -6,6 +6,7 @@
 // About page
 
 import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AboutPageData } from '../assets/data/pages/about.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -17,31 +18,61 @@ import Portrait from '../components/Portrait/Composition.js';
 import { Row, MainFont } from '../components/PageComponents.js';
 import ContactForm from '../components/ContactForm.js';
 import ProjectsPage from '../components/ProjectsPage/ProjectsGrid.js';
+import SocialIcons from '../components/SocialIcons';  // Import SocialIcons component
 // assets
 import arrow from '../assets/icons/arrow.svg';
-import behance from '../assets/icons/behance.svg';
-import linkedin from '../assets/icons/linkedin.svg';
-import github from '../assets/icons/github.svg';
-import codepen from '../assets/icons/codepen.svg';
-import Navbar from '../components/Navbar.js'; 
+import Navbar from '../components/Navbar.js';
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1100);
   const [isScrolledX, setIsScrolledX] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  const [isScrolledY, setIsScrolledY] = useState(false);
   const [leftAmmount, setLeftAmmount] = useState();
-  const [scrollInProgress, setScrollInProgress] = useState(false);
 
-  const handleScrollButtonClick = () => {
-    setIsScrolledX(!isScrolledX);
-    if (isScrolledX && scrollY > 0) {
-      scrollUp();
-    } else if (!isScrolledX) {
-      scrollRight();
-    } else {
-      scrollLeft();
-    }
-  };
+  const location = useLocation();
+  const navigate = useNavigate();
+
+
+  useEffect(() => {
+    Aos.init({ duration: 500 });
+
+    const handleResize = () => {
+      setLeftAmmount(window.innerWidth);
+      const isMobileNow = window.innerWidth < 1300;
+      if (isMobile !== isMobileNow) {
+        setIsMobile(isMobileNow);
+      }
+    };
+  
+    const handleScroll = () => {
+      window.scrollY > 0 ? setIsScrolledY(true) : setIsScrolledY(false) 
+    };
+  
+    const handleRoute = () => {
+      const isProjectsRoute = location.pathname.includes('/projects');
+      if (isProjectsRoute) {
+        setIsScrolledX(true);
+        document.body.style.overflowY = 'scroll';
+        scrollRight();
+      } else {
+        setIsScrolledX(false)
+        document.body.style.overflowY = 'hidden';
+        scrollLeft();
+      }
+    };
+
+    // Initial setup
+    
+    handleResize();
+    handleRoute();
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize, false);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isMobile, location.pathname]);
 
   const scrollUp = () => {
     window.scrollTo({
@@ -51,8 +82,6 @@ const Home = () => {
   };
 
   const scrollRight = () => {
-    setIsScrolledX(!isScrolledX)
-    document.body.style.overflowY = 'scroll';
     window.scrollTo({
       left: leftAmmount,
       behavior: 'smooth'
@@ -60,95 +89,46 @@ const Home = () => {
   };
 
   const scrollLeft = () => {
-    setIsScrolledX(!isScrolledX)
-    document.body.style.overflowY = 'hidden';
     window.scrollTo({
       left: 0,
       behavior: 'smooth'
     });
   };
 
-  useEffect(() => {
-    Aos.init({ duration: 500 });
-    document.body.style.overflowX = 'hidden';
-    const handleResize = () => {
-      setLeftAmmount(window.innerWidth);
-      const isMobileNow = window.innerWidth < 1300;
-      if (isMobile !== isMobileNow) {
-        setIsMobile(isMobileNow);
-      }
-    };
-    const handleScroll = () => {
-      const scrollPosition = window.scrollX;
-      setScrollY(window.scrollY);
-      if (scrollPosition > window.innerWidth / 3) {
-        window.history.replaceState(null, null, '/projects');
-      } else {
-        window.history.replaceState(null, null, '/');
-      }
-    };
-    //const currentPath = window.location.pathname;
-    console.log(window.location.pathname);
-    
-    // Initial setup
-    handleResize();
-    handleScroll();
-
-    // Event listeners
-    window.addEventListener('resize', handleResize, false);
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isMobile, isScrolledX]);
-
   return (
     <MainFont>
-      <Navbar isMobile={isMobile} onNavLinkClick={handleScrollButtonClick} isScrolledX={isScrolledX} homeNavClick={handleScrollButtonClick}/>
+      <Navbar isMobile={isMobile} />
       {isMobile ? (
         <div id="container">
           <motion.div key="about">
             <h1>Howdy! I'm Mark</h1>
             <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
-              return (
-                <>
-                  <Row>
-                    <h1>Howdy! I'm Mark</h1>
-                    <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
-                    <p>
-                      {AboutPageData[0].main}
-                    </p>
-                    <ContactForm />
-                    <SocialsContainer>
-                      <a href="https://www.linkedin.com/in/marklisanti/" rel="noopener noreferrer" target="_blank"><SocialIcon src={linkedin} /></a>
-                      <a href="https://github.com/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={github} /></a>
-                      <a href="https://codepen.io/marklasagne" rel="noopener noreferrer" target="_blank"><SocialIcon src={codepen} /></a>
-                      <a href="https://www.behance.net/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={behance} /></a>
-                    </SocialsContainer>
-                  </Row>
-                  <Row>
-                    <ProjectsPage />
-                  </Row>
-                </>
-              )
+            return (
+            <>
+              <Row>
+                <h1>Howdy! I'm Mark</h1>
+                <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
+                <p>
+                  {AboutPageData[0].main}
+                </p>
+                <ContactForm />
+                <SocialIcons />
+              </Row>
+              <Row>
+                <ProjectsPage />
+              </Row>
+            </>
+            )
           </motion.div>
         </div>
       ) : (
         <>
           <ReactScrollWheelHandler
             upHandler={() => {
-              if (window.scrollY === 0 && isScrolledX && !scrollInProgress) {
-                setScrollInProgress(true);
-                scrollLeft();
-              }
+              if (!isScrolledY) {navigate('/')}
             }}
             downHandler={() => {
-              if (!isScrolledX) {
-                setScrollInProgress(false);
-                scrollRight();
-              }
+              navigate('/projects');
             }}
           >
             <HorizontalScreen id="container">
@@ -159,12 +139,7 @@ const Home = () => {
                   {AboutPageData[0].main}
                 </p>
                 <ContactForm />
-                <SocialsContainer>
-                  <a href="https://www.linkedin.com/in/marklisanti/" rel="noopener noreferrer" target="_blank"><SocialIcon src={linkedin} /></a>
-                  <a href="https://github.com/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={github} /></a>
-                  <a href="https://codepen.io/marklasagne" rel="noopener noreferrer" target="_blank"><SocialIcon src={codepen} /></a>
-                  <a href="https://www.behance.net/marklasagne/" rel="noopener noreferrer" target="_blank"><SocialIcon src={behance} /></a>
-                </SocialsContainer>
+                <SocialIcons />
               </AboutColumn>
               <PortraitColumn>
                 <Portrait />
@@ -175,7 +150,20 @@ const Home = () => {
             </HorizontalScreen>
           </ReactScrollWheelHandler>
           <ArrowContainer>
-            <Arrow src={arrow} onClick={!isScrolledX ? scrollRight : isScrolledX && scrollY > 0 ? scrollUp : scrollLeft} isScrolledX={isScrolledX} scrollY={scrollY}/>
+            <Arrow
+              src={arrow}
+              onClick={() => {
+                if (!isScrolledX) {
+                  navigate('/projects');
+                } else if (isScrolledX && isScrolledY) {
+                  scrollUp();
+                } else {
+                  navigate('/');
+                }
+              }}
+              isScrolledX={isScrolledX}
+              isScrolledY={isScrolledY}
+            />
           </ArrowContainer>
         </>
       )}
@@ -219,7 +207,7 @@ const Arrow = styled.img`
   &:hover {
       opacity: 75%;
   } 
-  transform: ${props => props.isScrolledX === false ? `rotate(90deg)` : props.isScrolledX === true && props.scrollY > 0 ? `rotate(0deg)` : `rotate(-90deg)`};
+  transform: ${props => props.isScrolledX === false ? `rotate(90deg)` : props.isScrolledX === true && props.isScrolledY > 0 ? `rotate(0deg)` : `rotate(-90deg)`};
 `;
 
 const ArrowContainer = styled.div`
@@ -230,21 +218,6 @@ const ArrowContainer = styled.div`
   margin: 3rem;
   text-decoration: none;
   display: block;
-`;
-
-const SocialsContainer = styled.div`
-  flex-direction: horizontal;
-  margin: 2rem 1rem 1rem 0;
-`;
-
-const SocialIcon = styled.img`           
-    color: #000000;
-    width: 3.5rem;
-    text-decoration: none;
-    margin: 1rem;
-    &:hover {
-        opacity: 75%;
-    } 
 `;
 
 export default Home;
