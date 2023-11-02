@@ -6,7 +6,7 @@
 // About page
 
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate  } from 'react-router-dom';
 import { AboutPageData } from '../assets/data/pages/about.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -27,15 +27,13 @@ const Home = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1100);
   const [isScrolledX, setIsScrolledX] = useState(false);
   const [isScrolledY, setIsScrolledY] = useState(false);
-  const [leftAmmount, setLeftAmmount] = useState();
+  const [leftAmmount, setLeftAmmount] = useState(window.innerWidth);
 
   const location = useLocation();
   const navigate = useNavigate();
 
-
   useEffect(() => {
     Aos.init({ duration: 500 });
-
     const handleResize = () => {
       setLeftAmmount(window.innerWidth);
       const isMobileNow = window.innerWidth < 1300;
@@ -44,20 +42,20 @@ const Home = () => {
       }
     };
   
-    const handleScroll = () => {
+    const handleScrollY = () => {
       window.scrollY > 0 ? setIsScrolledY(true) : setIsScrolledY(false) 
     };
-  
+
     const handleRoute = () => {
       const isProjectsRoute = location.pathname.includes('/projects');
       if (isProjectsRoute) {
+        scrollRight();
         setIsScrolledX(true);
         document.body.style.overflowY = 'scroll';
-        scrollRight();
       } else {
+        scrollLeft();
         setIsScrolledX(false)
         document.body.style.overflowY = 'hidden';
-        scrollLeft();
       }
     };
 
@@ -66,10 +64,10 @@ const Home = () => {
     handleResize();
     handleRoute();
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScrollY);
     window.addEventListener('resize', handleResize, false);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScrollY);
       window.removeEventListener('resize', handleResize);
     };
   }, [isMobile, location.pathname]);
@@ -81,10 +79,10 @@ const Home = () => {
     });
   };
 
-  const scrollRight = () => {
+  const scrollRight = (behavior) => {
     window.scrollTo({
       left: leftAmmount,
-      behavior: 'smooth'
+      behavior: behavior
     });
   };
 
