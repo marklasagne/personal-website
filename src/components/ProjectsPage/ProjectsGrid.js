@@ -7,66 +7,74 @@ import { PageContainer } from '../PageComponents.js';
 import { projects } from '../../assets/data/projects';
 
 // get the tags to render pill filters
-let tagList = []; 
+let tagList = [];
 projects.forEach((project) => {
   project.tags.forEach((tag) => {
     if (!tagList.includes(tag)) {
       tagList.push(tag);
     }
-  })
+  });
 });
 
 const ProjectGrid = () => {
-  const [filterList, setFilterList] = useState([]);
+  const [filterList, setFilterList] = useState(['Featured']); // Initialize with 'Featured'
   const [projectList, setProjectList] = useState(projects);
 
   // on load set all of the projects
-  useEffect(() =>{
-    if (!filterList === undefined || !filterList.length < 1) {
-      let filtered = []
+  useEffect(() => {
+    if (filterList.length > 0) {
+      let filtered = [];
       projects.forEach((item) => {
         item.tags.forEach((tag) => {
           if (filterList.includes(tag)) {
             if (!filtered.includes(item)) {
               filtered.push(item);
             }
-          } 
-        }) 
-      })
+          }
+        });
+      });
       setProjectList(filtered);
     } else {
       setProjectList(projects);
     }
   }, [filterList]);
-  
-return (
+
+  return (
     <>
-    <PageContainer>
-      <PillContainer>
-        {tagList.map((data) => {
-          return (
-            <PillFilter key={data} tag={data} onClick={() => {
-              if(!filterList.includes(data)) {
-                setFilterList(filterList => [...filterList, data]);
-                
-              } else {
-                setFilterList(filterList.filter((e) => (e !== data)));
-              }
-            }}
-            />
-          )
-        })}
-      </PillContainer>
-        <ResponsiveMasonry columnsCountBreakPoints={{750: 1, 900: 2}}>
-        <Masonry gutter={8}>
-          {projectList.map((data) => {
+      <PageContainer>
+        <PillContainer>
+          {tagList.map((data) => {
             return (
-              <GridItem key={data.id} title={data.name} image={data.image} description={data.description} id={data.id} />
-            )
+              <PillFilter
+                key={data}
+                tag={data}
+                onClick={() => {
+                  if (!filterList.includes(data)) {
+                    setFilterList((filterList) => [...filterList, data]);
+                  } else {
+                    setFilterList(filterList.filter((e) => e !== data));
+                  }
+                }}
+              />
+            );
           })}
-       </Masonry>
-       </ResponsiveMasonry>
-       </PageContainer>
+        </PillContainer>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 750: 1, 900: 2 }}>
+          <Masonry gutter={8}>
+            {projectList.map((data) => {
+              return (
+                <GridItem
+                  key={data.id}
+                  title={data.name}
+                  image={data.image}
+                  description={data.description}
+                  id={data.id}
+                />
+              );
+            })}
+          </Masonry>
+        </ResponsiveMasonry>
+      </PageContainer>
     </>
   );
 };

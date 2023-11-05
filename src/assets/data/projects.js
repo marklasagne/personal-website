@@ -97,42 +97,42 @@ export const projects = [
     name: 'Nihilism',
     description: 'Interactive sound and visual - reflective art installation.',
     image: Nihilism,
-    tags: ['Art', 'Interactive']
+    tags: ['Featured', 'Art', 'Creative Code']
   },
-  {
-    id: 'fuck-you-sign',
-    name: 'Fuck You Sign',
-    description: 'Fun sign that may or may not give you the finger.',
-    image: FuckYou,
-    tags: ['Fabrication', 'Interactive', 'Art']
-  },
-  {
+    {
     id: 'boulder-parks',
     name: 'Boulder Parks',
     description: 'Interactive map outlining the importance of going outside',
     image: BoulderParks,
-    tags: ['Fabrication', 'Web Development',]
-  },
-  {
-    id: 'audio-visualizer',
-    name: '3D Audio Visualizer',
-    description: 'Exploration of FTT data and GLSL',
-    image: AudioVisualizer, 
-    tags: ['Development', 'Art']
-  },
-  {
-    id: 'triangle-trail-status',
-    name: 'Triangle Trail Status',
-    description: 'Check where to ride, add your favorites, and get notified',
-    image: TriangleTrailStatus,
-    tags: ['Mobile Development']
+    tags: ['Featured', 'Fabrication', 'Web Development',]
   },
   {
     id: 'affinity',
     name: 'Affinity',
     description: 'Interactive visual representation of physicality with biometrics',
     image: Affinity, 
-    tags: ['Interactive']
+    tags: ['Featured', 'Creative Code']
+  },
+  {
+    id: 'fuck-you-sign',
+    name: 'Fuck You Sign',
+    description: 'Fun sign that may or may not give you the finger.',
+    image: FuckYou,
+    tags: ['Featured', 'Fabrication', 'Art', 'Creative Code']
+  },
+  {
+    id: 'audio-visualizer',
+    name: '3D Audio Visualizer',
+    description: 'Exploration of FTT data and GLSL',
+    image: AudioVisualizer, 
+    tags: ['Creative Code', 'Art']
+  },
+  {
+    id: 'triangle-trail-status',
+    name: 'Triangle Trail Status',
+    description: 'Check where to ride, add your favorites, and get notified',
+    image: TriangleTrailStatus,
+    tags: ['Featured', 'Mobile Development']
   },
   {
     id: 'jobzen',
@@ -146,7 +146,7 @@ export const projects = [
     name: 'Spotify Account Rewards',
     description: 'Rework Spotify adding features and naviation improvements',
     image: SpotifyRewards, 
-    tags: ['UX/UI']
+    tags: ['UX/UI', 'Feature Design']
   },
   {
     id: 'cardinal-pride',

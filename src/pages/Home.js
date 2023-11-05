@@ -18,10 +18,10 @@ import Portrait from '../components/Portrait/Composition.js';
 import { Row, MainFont } from '../components/PageComponents.js';
 import ContactForm from '../components/ContactForm.js';
 import ProjectsPage from '../components/ProjectsPage/ProjectsGrid.js';
-import SocialIcons from '../components/SocialIcons';  // Import SocialIcons component
-// assets
-import arrow from '../assets/icons/arrow.svg';
 import Navbar from '../components/Navbar.js';
+// assets
+import SocialIcons from '../components/SocialIcons';  
+import arrow from '../assets/icons/arrow.svg';
 
 const Home = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1100);
@@ -79,10 +79,10 @@ const Home = () => {
     });
   };
 
-  const scrollRight = (behavior) => {
+  const scrollRight = () => {
     window.scrollTo({
       left: leftAmmount,
-      behavior: behavior
+      behavior: 'smooth'
     });
   };
 

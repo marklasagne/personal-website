@@ -3,11 +3,18 @@
 // Built by Mark Lisanti          //
 // https://github.com/marklasagne //
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const PillFilter = ({ tag, onClick }) => {
   const [isActive, setActive] = useState(false);
+
+  useEffect(() => {
+    // Check if the tag is 'Featured' and set it as active on load
+    if (tag === 'Featured') {
+      setActive(true);
+    }
+  }, [tag]);
 
   const toggleClass = () => {
     setActive(!isActive);

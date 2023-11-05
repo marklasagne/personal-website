@@ -1,6 +1,7 @@
 // Navbar.js
 import React from 'react';
 import styled from 'styled-components';
+import { MainFont } from '../components/PageComponents.js';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = ({ isMobile }) => {
@@ -8,17 +9,21 @@ const Navbar = ({ isMobile }) => {
   const location = useLocation();
 
   return (
-    <Nav isMobile={isMobile}>
-      <NavLink onClick={() => navigate('/')} className={!location.pathname.includes('/projects') ? 'active' : ''} to="/">
-        About
-      </NavLink>
-      <NavLink onClick={() => navigate('/projects')} className={location.pathname.includes('/projects') ? 'active' : ''} to="/projects">
-        Projects
-      </NavLink>
-      <NavLink target="_blank" href="https://medium.com/@marklasagne">
-        Blog
-      </NavLink>
-    </Nav>
+    <>
+      <MainFont>
+        <Nav isMobile={isMobile}>
+          <NavLink onClick={() => navigate('/')} className={!location.pathname.includes('/projects') ? 'active' : ''} to="/">
+            About
+          </NavLink>
+          <NavLink onClick={() => navigate('/projects')} className={location.pathname.includes('/projects') ? 'active' : ''} to="/projects">
+            Projects
+          </NavLink>
+          <NavLink target="_blank" href="https://medium.com/@marklasagne">
+            Blog
+          </NavLink>
+        </Nav>
+      </MainFont>
+    </>
   );
 };
 
