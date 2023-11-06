@@ -107,11 +107,11 @@ export const projects = [
     tags: ['Featured', 'Fabrication', 'Web Development',]
   },
   {
-    id: 'affinity',
-    name: 'Affinity',
-    description: 'Interactive visual representation of physicality with biometrics',
-    image: Affinity, 
-    tags: ['Featured', 'Creative Code']
+    id: 'triangle-trail-status',
+    name: 'Triangle Trail Status',
+    description: 'Check where to ride, add your favorites, and get notified',
+    image: TriangleTrailStatus,
+    tags: ['Featured', 'Mobile Development']
   },
   {
     id: 'fuck-you-sign',
@@ -121,18 +121,11 @@ export const projects = [
     tags: ['Featured', 'Fabrication', 'Art', 'Creative Code']
   },
   {
-    id: 'audio-visualizer',
-    name: '3D Audio Visualizer',
-    description: 'Exploration of FTT data and GLSL',
-    image: AudioVisualizer, 
-    tags: ['Creative Code', 'Art']
-  },
-  {
-    id: 'triangle-trail-status',
-    name: 'Triangle Trail Status',
-    description: 'Check where to ride, add your favorites, and get notified',
-    image: TriangleTrailStatus,
-    tags: ['Featured', 'Mobile Development']
+    id: 'affinity',
+    name: 'Affinity',
+    description: 'Interactive visual representation of physicality with biometrics',
+    image: Affinity, 
+    tags: ['Featured', 'Creative Code']
   },
   {
     id: 'jobzen',
@@ -140,6 +133,13 @@ export const projects = [
     description: 'Mobile application promoting easier and productive job searching',
     image: Jobzen, 
     tags: ['UX/UI']
+  },
+  {
+    id: 'audio-visualizer',
+    name: '3D Audio Visualizer',
+    description: 'Exploration of FTT data and GLSL',
+    image: AudioVisualizer, 
+    tags: ['Creative Code', 'Art']
   },
   {
     id: 'spotify-account-rewards',

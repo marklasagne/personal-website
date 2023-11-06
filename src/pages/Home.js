@@ -83,6 +83,7 @@ const Home = () => {
   const scrollRight = () => {
     window.scrollTo({
       left: leftAmmount,
+      top: 0,
       behavior: 'smooth'
     });
   };

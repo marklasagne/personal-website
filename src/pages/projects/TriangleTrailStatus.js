@@ -18,11 +18,14 @@ import TriangTrail_4 from '../../assets/images/TriangleTrailStatus/TriangTrail_4
 import TriangTrail_5 from '../../assets/images/TriangleTrailStatus/TriangTrail_5.png';
 import FontStyles from '../../../src/assets/fonts/fonts.js';
 import SlideShow from '../../components/SlideShow.js'
+import NavigationArrow from '../../components/NavigationArrow.js';
+import Navbar from '../../components/Navbar.js'; 
 
 const TriangTrail = () => {
   
   useEffect(() => {
     Aos.init({ duration: 500 });
+    window.scrollTo(0, 0);
   }, []);
 
   const slideshow_1 = [
@@ -33,6 +36,8 @@ const TriangTrail = () => {
 
   return (
     <>
+    <Navbar />
+    <NavigationArrow />
     <PageContainer>
     <MainFont>
       <FontStyles />
@@ -42,49 +47,41 @@ const TriangTrail = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
         <Row data-aos='fade-up'>
-          <img src={TriangTrail_0} style={{ width: '50%' }} alt="logo" />
+          <img src={TriangTrail_0} style={{ width: '50%', marginTop: '6rem' }} alt="logo" />
         </ Row>
-
         <Row data-aos='fade-up'>
             <p>{TriangleTrailStatusData[0].description}</p>
           </Row>
           <Row data-aos='fade-up'>
-            <p>Role(s): {TriangleTrailStatusData[0].roles}</p>
-            <p>Stack: {TriangleTrailStatusData[0].stack}</p>
+            <p>Key Technologies: {TriangleTrailStatusData[0].stack}</p>
         </Row>
-
         <Row data-aos='fade-up'>
           <VideoPlayer  controls={true} url='https://www.youtube.com/watch?v=JDh9jO79lLc' />
           <BackgroundImage src={TriangTrail_4} style={{ transform: `translate(150px, -275px)` }} alt="triangle" />
           <BackgroundImage src={TriangTrail_5} style={{ transform: `translate(-200px, 300px)` }} alt="triangle" />
         </ Row>
-
         <Row data-aos='fade-up'>
             <h1>{TriangleTrailStatusData[1].heading}</h1>
             <p>
               <TextLink href="https://www.trianglemtb.com/" target="_blank" rel="noopener noreferrer"> Triangle MTB's website</TextLink> {TriangleTrailStatusData[1].text1}
             </p>
-            <p>{TriangleTrailStatusData[1].text2}</p>
-          </Row>
-          <Row data-aos='fade-up'>
+        </Row>
+        <Row data-aos='fade-up'>
+          <p>{TriangleTrailStatusData[1].text2}</p>
+        </Row>
+        <Row data-aos='fade-up'>
           <Image src={TriangTrail_3} alt="logo" />
         </ Row>
-
         <Row data-aos='fade-up'>
             <h1>{TriangleTrailStatusData[2].heading}</h1>
             <p>{TriangleTrailStatusData[2].text}</p>
         </Row>
-        
         <Row data-aos='fade-up'>
             <SlideShow images={slideshow_1} />
         </Row>
-
-        
-
         <Row data-aos='fade-up'>
           <h1><TextLink href="https://play.google.com/store/apps/details?id=com.triangletrailstatus&hl=en_US&gl=US" rel="noopener noreferrer" target="_blank">Now available in the Google Play store.</TextLink></h1>
         </ Row>
-
         <Row data-aos='fade-up'>
             <p>
               {TriangleTrailStatusData[3].text1}

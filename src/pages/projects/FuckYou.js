@@ -20,6 +20,7 @@ const FuckYou = () => {
 
   useEffect(() => {
     Aos.init({ duration: 500 });
+    window.scrollTo(0, 0);
   }, []);
 
   const slideshow_1 = [
