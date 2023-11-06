@@ -27,24 +27,24 @@ export const JobzenData = [
     "online. In parallel the need for companies to provide online application portals arose. This " +
     "makes the process more prone to disorganization, especially if done within the limitations of " +
     "mobile devices.",
-    text2: "- Learn habits and behavior individuals have when applying for jobs online and more "+
+    text2: "Learn habits and behavior individuals have when applying for jobs online and more "+
     "specifically on a mobile device. It will be important to learn pain points and aspects of " +
     "the process that make it inconvenient.",
-    text3: "- Support the development of web and mobile application by understanding the behaviors " +
+    text3: "Support the development of web and mobile application by understanding the behaviors " +
     "involved with applying to jobs online"
   },
   {
     id: 2,
     heading: "User Research & Takeaways ",
     text: "Research was gathered in one on one interviews.  Had 6 participants of ages 16-30.",
-    text1: "- Job listing descriptions and details are a huge pain point ",
-    text2: "- Laptops are preferred " ,
-    text3: "- Multiple job boards are often used " ,
-    text4: "- There is a healthy split in people tracking their applications, but some apply to much " ,
+    text1: "Job listing descriptions and details are a huge pain point ",
+    text2: "Laptops are preferred " ,
+    text3: "Multiple job boards are often used " ,
+    text4: "There is a healthy split in people tracking their applications, but some apply to much " ,
     text5: "fewer jobs than others" ,
-    text6: "- Online applications feel like a dark void " ,
-    text7: "- Looking for work is overall a poor experience " ,
-    text8: "- The process of entering information is redundant and counterproductive ",
+    text6: "Online applications feel like a dark void " ,
+    text7: "Looking for work is overall a poor experience " ,
+    text8: "The process of entering information is redundant and counterproductive ",
     image: Jobzen_1
   },
   {
@@ -66,20 +66,20 @@ export const JobzenData = [
     id: 5,
     heading: "Mid Fidelity Prototyping",
     text1: "A few notable changes include: ",
-    text2: "- Moving the home page",
-    text3: "- Additional filters",
-    text4: "- Re-organizing the list cards",
-    text5: "- Slight stylistic changes",
-    text6: "- Allowing multiple user resumes"
+    text2: "Moving the home page",
+    text3: "Additional filters",
+    text4: "Re-organizing the list cards",
+    text5: "Slight stylistic changes",
+    text6: "Allowing multiple user resumes"
   },
   {
     id: 6,
     heading: "Based on the Research, why?       ",
-    text: "- How might we inspire confidence in online job applications?",
-    text2: "- How might we showcase descriptive but concise job postings?",
-    text3: "- How might we provide tools to allow individuals productively look for jobs online?",
-    text4: "- How might we present a standard in posting details?",
-    text5: "- How might we tailor job searching for a variety of backgrounds?"
+    text: "How might we inspire confidence in online job applications?",
+    text2: "How might we showcase descriptive but concise job postings?",
+    text3: "How might we provide tools to allow individuals productively look for jobs online?",
+    text4: "How might we present a standard in posting details?",
+    text5: "How might we tailor job searching for a variety of backgrounds?"
   }
 ];
 

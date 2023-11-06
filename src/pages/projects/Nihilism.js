@@ -1,5 +1,5 @@
 // Personal website and portfolio //
-// 2022                           //
+// 2023                          //
 // Built by Mark Lisanti          //
 // https://github.com/marklasagne //
 
@@ -11,11 +11,11 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
 import { Row, PageContainer, VideoPlayer, Image } from '../../components/PageComponents.js';
-import NavigationArrow from '../../components/NavigationArrow.js';
 import { NihilismData } from '../../assets/data/pages/nihilism.js';
 import FontStyles from '../../../src/assets/fonts/fonts.js';
 import Navbar from '../../components/Navbar.js'; 
-import SlideShow from '../../components/SlideShow.js'
+import SlideShow from '../../components/SlideShow.js';
+import NavigationArrow from '../../components/NavigationArrow.js';
 
 const Nihilism = () => {
   console.log(window.location.pathname);

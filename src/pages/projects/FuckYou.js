@@ -34,41 +34,41 @@ const FuckYou = () => {
     <>
       <Navbar />
       <NavigationArrow />
+      <MainFont>
       <PageContainer>
-        <MainFont>
-        <motion.div
-          key='fuckyou'
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}>
-          <Row data-aos='fade-up' style={{ marginTop: '6rem' }}>
-            <p>{FuckYouData[0].description}</p>
-          </Row>
-          <Row data-aos='fade-up'>
-            <p>Key Technologies: {FuckYouData[0].stack}</p>
-            <p>Hardware: {FuckYouData[0].hardware}</p>
-          </Row>
-          <Row data-aos='fade-up'>
-            <ReactPlayer url='https://www.youtube.com/watch?v=T_4N4yJ2iH0' />
-          </Row>
-          <Row data-aos='fade-up'>
-            <p>{FuckYouData[0].text}</p>
-          </Row>
-          <Row data-aos='fade-up'>
-            <ReactPlayer url=' https://youtu.be/6_zEE5xMQhM' />
-          </Row>
-          <Row data-aos='fade-up'>
-            <p>{FuckYouData[1].text}</p>
-          </Row>
-          <Row data-aos='fade-up'> 
-            <SlideShow images={slideshow_1} />
-          </Row>
-          <Row data-aos='fade-up'>
-            <p>{FuckYouData[2].text}</p>
-          </Row>
-        </motion.div>
-        </MainFont>
+          <motion.div
+            key='fuckyou'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
+            <Row data-aos='fade-up' style={{ marginTop: '6rem' }}>
+              <p>{FuckYouData[0].description}</p>
+            </Row>
+            <Row data-aos='fade-up'>
+              <p>Key Technologies: {FuckYouData[0].stack}</p>
+              <p>Hardware: {FuckYouData[0].hardware}</p>
+            </Row>
+            <Row data-aos='fade-up'>
+              <ReactPlayer url='https://www.youtube.com/watch?v=T_4N4yJ2iH0' />
+            </Row>
+            <Row data-aos='fade-up'>
+              <p>{FuckYouData[0].text}</p>
+            </Row>
+            <Row data-aos='fade-up'>
+              <ReactPlayer url=' https://youtu.be/6_zEE5xMQhM' />
+            </Row>
+            <Row data-aos='fade-up'>
+              <p>{FuckYouData[1].text}</p>
+            </Row>
+            <Row data-aos='fade-up'>
+              <SlideShow images={slideshow_1} />
+            </Row>
+            <Row data-aos='fade-up'>
+              <p>{FuckYouData[2].text}</p>
+            </Row>
+          </motion.div>
       </PageContainer>
+      </MainFont>
     </>
   );
 }
