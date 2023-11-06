@@ -11,6 +11,7 @@ import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
 import { Row, PageContainer, MainFont, VideoPlayer } from '../../components/PageComponents.js';
 import Navbar from '../../components/Navbar.js';
+import NavigationArrow from '../../components/NavigationArrow.js';
 import { BoulderParksData } from '../../assets/data/pages/boulderparks.js';
 import SlideShow from '../../components/SlideShow.js'
 
@@ -39,6 +40,7 @@ const BoulderParks = () => {
   return (
     <>
       <Navbar />
+      <NavigationArrow />
       <MainFont>
         <PageContainer>
           <motion.div
