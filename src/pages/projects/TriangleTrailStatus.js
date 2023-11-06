@@ -6,7 +6,6 @@
 // Triangle Trail Status Page
 
 import React, { useEffect } from 'react';
-import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -87,7 +86,6 @@ const TriangTrail = () => {
         </ Row>
 
         <Row data-aos='fade-up'>
-
             <p>
               {TriangleTrailStatusData[3].text1}
               <br />

@@ -26,11 +26,25 @@ const NavigationArrow = () => {
   const goBack = () => {
     window.history.back();
   };
+
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   
   return (
     <>
       <ArrowContainer>
-          <PageArrow src={arrow} onClick={goBack} isScrolledY={isScrolledY} />
+          <PageArrow src={arrow} onClick={() => {
+                if (!isScrolledY) {
+                  goBack();
+                } else {
+                  scrollUp();
+                }
+              }}
+              isScrolledY={isScrolledY} />
         </ArrowContainer >
     </>
   );
@@ -47,7 +61,6 @@ const PageArrow = styled.img`
   transform: ${props => props.isScrolledY === false ? `rotate(-90deg)` : `rotate(0deg)` };
 `;
 
-
 const ArrowContainer = styled.div`
   bottom: 0;
   right: 0;
@@ -59,17 +72,3 @@ const ArrowContainer = styled.div`
 `;
 
 export default NavigationArrow;
-
-{/* 
-
- <>
-      {isHome ? (
-        <ArrowContainer>
-          <HomeArrow src={arrow} onClick={goBack} />
-        </ArrowContainer >
-      ) : (
-        <ArrowContainer>
-          <PageArrow src={arrow} onClick={goBack} />
-        </ArrowContainer >
-      )}
-    </>*/}

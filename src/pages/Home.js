@@ -34,6 +34,7 @@ const Home = () => {
 
   useEffect(() => {
     Aos.init({ duration: 500 });
+   
     const handleResize = () => {
       setLeftAmmount(window.innerWidth);
       const isMobileNow = window.innerWidth < 1300;

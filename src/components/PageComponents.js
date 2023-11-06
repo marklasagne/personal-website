@@ -8,8 +8,7 @@ export const PageContainer = styled.div`
 `;
 
 export const Row = styled.div`
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 7rem;
     display: flex;
     flex-direction: column;
     align-items: center;

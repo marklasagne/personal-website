@@ -10,19 +10,19 @@ const Navbar = ({ isMobile }) => {
 
   return (
     <>
-      <MainFont>
-        <Nav isMobile={isMobile}>
-          <NavLink onClick={() => navigate('/')} className={!location.pathname.includes('/projects') ? 'active' : ''} to="/">
-            About
-          </NavLink>
-          <NavLink onClick={() => navigate('/projects')} className={location.pathname.includes('/projects') ? 'active' : ''} to="/projects">
-            Projects
-          </NavLink>
-          <NavLink target="_blank" href="https://medium.com/@marklasagne">
-            Blog
-          </NavLink>
-        </Nav>
-      </MainFont>
+    <MainFont>
+      <Nav isMobile={isMobile}>
+        <NavLink onClick={() => navigate('/')} className={!location.pathname.includes('/projects') ? 'active' : ''} to="/">
+          About
+        </NavLink>
+        <NavLink onClick={() => navigate('/projects')} className={location.pathname.includes('/projects') ? 'active' : ''} to="/projects">
+          Projects
+        </NavLink>
+        <NavLink target="_blank" href="https://medium.com/@marklasagne">
+          Blog
+        </NavLink>
+      </Nav>
+    </MainFont>
     </>
   );
 };
@@ -33,6 +33,7 @@ const Nav = styled.nav`
   background: #fff;
   padding: 1rem;
   position: fixed;
+  top: 0;
   z-index: 1;
   width: ${props => (props.isMobile ? '100%' : 'auto')};
 `;
