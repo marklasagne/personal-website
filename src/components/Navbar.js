@@ -15,7 +15,7 @@ const Navbar = ({ isMobile }) => {
         <NavLink onClick={() => navigate('/')} className={!location.pathname.includes('/projects') ? 'active' : ''} to="/">
           About
         </NavLink>
-        <NavLink onClick={() => navigate('/projects')} className={location.pathname.includes('/projects') ? 'active' : ''} to="/projects">
+        <NavLink onClick={() => navigate('/projects', { state: { prevUrl: location.pathname } })} className={location.pathname.includes('/projects') ? 'active' : ''} to="/projects">
           Projects
         </NavLink>
         <NavLink target="_blank" href="https://medium.com/@marklasagne">

@@ -9,6 +9,9 @@ const KeyLight = forwardRef(({ brightness, color }, ref) => {
     const handleScroll = () => {
       setScrollX(window.scrollX);
     };
+
+    handleScroll(); 
+    
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);

@@ -24,22 +24,25 @@ import SocialIcons from '../components/SocialIcons';
 import arrow from '../assets/icons/arrow.svg';
 
 const Home = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1100);
+  const [isMobile, setIsMobile] = useState();
   const [isScrolledX, setIsScrolledX] = useState(false);
   const [isScrolledY, setIsScrolledY] = useState(false);
   const [leftAmmount, setLeftAmmount] = useState(window.innerWidth);
 
+  const { state } = useLocation();
   const location = useLocation();
   const navigate = useNavigate();
 
+  const prevUrl = state && state.prevUrl;
+
   useEffect(() => {
     Aos.init({ duration: 500 });
-   
     const handleResize = () => {
       setLeftAmmount(window.innerWidth);
       const isMobileNow = window.innerWidth < 1300;
-      if (isMobile !== isMobileNow) {
-        setIsMobile(isMobileNow);
+      setIsMobile(isMobileNow)
+      if (isMobile) {
+        document.body.style.overflowY = 'scroll';
       }
     };
   
@@ -50,18 +53,24 @@ const Home = () => {
     const handleRoute = () => {
       const isProjectsRoute = location.pathname.includes('/projects');
       if (isProjectsRoute) {
-        scrollRight();
+        if (prevUrl !== '/') {
+          window.scrollTo(leftAmmount, 0);
+        } else {
+          scrollRight();
+        }
         setIsScrolledX(true);
         document.body.style.overflowY = 'scroll';
       } else {
         scrollLeft();
         setIsScrolledX(false)
-        document.body.style.overflowY = 'hidden';
+        if (!isMobile) { 
+          document.body.style.overflowY = 'hidden';
+        }
+
       }
     };
 
     // Initial setup
-    
     handleResize();
     handleRoute();
 
@@ -101,11 +110,8 @@ const Home = () => {
       {isMobile ? (
         <div id="container">
           <motion.div key="about">
-            <h1>Howdy! I'm Mark</h1>
-            <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
-            return (
             <>
-              <Row>
+              <Row style={{ marginTop: '10rem' }}>
                 <h1>Howdy! I'm Mark</h1>
                 <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
                 <p>
@@ -118,17 +124,16 @@ const Home = () => {
                 <ProjectsPage />
               </Row>
             </>
-            )
           </motion.div>
         </div>
       ) : (
         <>
           <ReactScrollWheelHandler
             upHandler={() => {
-              if (!isScrolledY) {navigate('/')}
+              if (!isScrolledY) {navigate('/', { state: { prevUrl: location.pathname } })}
             }}
             downHandler={() => {
-              navigate('/projects');
+              navigate('/projects', { state: { prevUrl: location.pathname } });
             }}
           >
             <HorizontalScreen id="container">
@@ -183,7 +188,7 @@ const HorizontalScreen = styled.div`
 
 const AboutColumn = styled.div`
   flex: 1;
-  margin-top: 5rem;
+  margin-top: 6rem;
   padding: 10rem;
 `;
 
