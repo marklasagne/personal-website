@@ -8,15 +8,18 @@
 import React, { useEffect, useState } from 'react';
 import arrow from '../assets/icons/arrow.svg';
 import styled from 'styled-components';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const NavigationArrow = () => {
   const [isScrolledY, setIsScrolledY] = useState(false);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  
   useEffect(() => {
     const handleScrollY = () => {
       window.scrollY > 0 ? setIsScrolledY(true) : setIsScrolledY(false) 
     };
-
     window.addEventListener('scroll', handleScrollY);
     return () => {
       window.removeEventListener('scroll', handleScrollY);
@@ -24,7 +27,7 @@ const NavigationArrow = () => {
   }, []);
   
   const goBack = () => {
-    window.history.back();
+    navigate('/projects', { state: { prevUrl: location.pathname } });
   };
 
   const scrollUp = () => {

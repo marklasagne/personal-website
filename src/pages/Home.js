@@ -159,11 +159,11 @@ const Home = () => {
               src={arrow}
               onClick={() => {
                 if (!isScrolledX) {
-                  navigate('/projects');
+                  navigate('/projects', { state: { prevUrl: location.pathname } })
                 } else if (isScrolledX && isScrolledY) {
                   scrollUp();
                 } else {
-                  navigate('/');
+                  navigate('/', { state: { prevUrl: location.pathname } })
                 }
               }}
               isScrolledX={isScrolledX}

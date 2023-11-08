@@ -7,11 +7,12 @@ const KeyLight = forwardRef(({ brightness, color }, ref) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollX(window.scrollX);
+      const normalizedScrollX = window.scrollX / (document.body.scrollWidth - window.innerWidth);
+      setScrollX(normalizedScrollX);
     };
 
     handleScroll(); 
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -23,8 +24,7 @@ const KeyLight = forwardRef(({ brightness, color }, ref) => {
   }, []);
 
   useFrame(() => {
-    // Update the X position of the light based on the scrollX value
-    keyLightRef.current.position.x = -3 + scrollX * 0.005; 
+    keyLightRef.current.position.x = -3 + scrollX * 6;
   });
   
   return (
