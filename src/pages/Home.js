@@ -39,7 +39,7 @@ const Home = () => {
     Aos.init({ duration: 500 });
     const handleResize = () => {
       setLeftAmmount(window.innerWidth);
-      const isMobileNow = window.innerWidth < 1300;
+      const isMobileNow = window.innerWidth < 1300 || window.innerHeight < 900;
       setIsMobile(isMobileNow)
       if (isMobile) {
         document.body.style.overflowY = 'scroll';
@@ -178,8 +178,6 @@ const Home = () => {
 
 const HorizontalScreen = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: center; 
   width: 150%;
   ${({ isProjectsEndpoint }) => isProjectsEndpoint && css`
     height: 100vh;
@@ -188,20 +186,17 @@ const HorizontalScreen = styled.div`
 
 const AboutColumn = styled.div`
   flex: 1;
-  margin-top: 6rem;
-  padding: 10rem;
+  margin-top: 15rem;
 `;
 
 const PortraitColumn = styled.div`
-  flex: 1;  
+  flex: 1;
   margin-top: 5rem;
 `;
 
 const ProjectColumn = styled.div`
   flex: 1;
-  overflow-x: ${props => props.isScrolledX === false ? `rotate(90deg)` : `rotate(-90deg)`};
-  margin-top: 5rem;
-  padding: 10rem;
+  margin-top: 15rem;
 `
 
 const Arrow = styled.img`

@@ -30,7 +30,7 @@ const Navbar = ({ isMobile }) => {
 const Nav = styled.nav`
   display: flex;
   justify-content: left;
-  background: #fff;
+  background: ${props => (props.isMobile ? '#ffffff' : 'none')};;
   padding: 1rem;
   position: fixed;
   top: 0;
