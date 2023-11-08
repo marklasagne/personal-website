@@ -12,6 +12,9 @@ const meltingVertexShader = `
   uniform float scrollY;
   uniform float uTime;
 
+  float lastScrollY = 0.0;
+  float wiggleY = 0.0;
+
   vec4 taylorInvSqrt(vec4 r) {
     return 1.79284291400159 - 0.85373472095314 * r;
   }
@@ -85,9 +88,21 @@ const meltingVertexShader = `
     float distanceFromCenter = length(position.xy);
     vec4 modelPosition = modelMatrix * vec4(position, 1.0);
     float blendFactor = smoothstep(0.0, 0.7, distanceFromCenter);
+
+    float velocity = scrollY - lastScrollY;
+    lastScrollY = scrollY;
+
+    float bounce = 2.02;
+    float damping = 1.95;
+
+    wiggleY += velocity * 0.001;
+
+    wiggleY *= damping;
+    if (abs(wiggleY) < bounce) {
+        wiggleY = 0.0;
+    }
     
     if (scrollY > 0.0) {
-
       float meltingFactor = max(0.0, scrollY/ 2.5) * 0.014;
       float complexityFactor = snoise(position * 3.0);
 
@@ -99,23 +114,16 @@ const meltingVertexShader = `
     
       if (position.y < -0.5) {
         float animationFactor = sin(uTime) * 0.05;
-        float wiggleFactorX = snoise(position.yzx + uTime ) * 0.002; 
-        float wiggleFactorY = snoise(position.zxy + uTime ) * 0.002; 
+        float wiggleFactorY = snoise(position.zxy + uTime * 0.5 ) * meltingFactor / 8.0; 
         modelPosition.y += (meltingFactor * complexityFactor + animationFactor) * blendFactor;
         modelPosition.y -= (meltingFactor + animationFactor) * blendFactor;
-        modelPosition.x += wiggleFactorX / 2.0 * blendFactor;
-        modelPosition.z += wiggleFactorY / 2.0 * blendFactor;
+        modelPosition.y += wiggleFactorY / 2.0 * blendFactor;
 
       }  
       if (position.y > -0.5) {
         float animationFactor = sin(uTime) * 0.05;
-        float wiggleFactorX = snoise(position.yzx + uTime * 0.8) * 0.002; 
-        float wiggleFactorY = snoise(position.zxy + uTime * 0.8) * 0.002; 
-
         modelPosition.y += (meltingFactor / 2.0 * complexityFactor + animationFactor) * blendFactor;
         modelPosition.y -= (meltingFactor / 4.0 + animationFactor) * blendFactor;
-        modelPosition.x += wiggleFactorX / 2.0 * blendFactor;
-        modelPosition.z += wiggleFactorY / 2.0 * blendFactor;
       }
     }
     vec4 viewPosition = viewMatrix * modelPosition;
