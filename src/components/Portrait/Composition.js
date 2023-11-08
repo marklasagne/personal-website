@@ -33,15 +33,15 @@ const ContainerDiv = styled.div`
   display: flex;
   width: 50vw;
   height: 100vh;
+  position: relative;
 `;
 
 const LoadingDiv = styled.img`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(50%, -50%);
-  height: auto;
-  width: auto;
+  transform: translate(-50%, -55%);
+  height: 75%; 
 `;
 
 export default Composition;

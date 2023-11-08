@@ -53,20 +53,25 @@ const Home = () => {
     const handleRoute = () => {
       const isProjectsRoute = location.pathname.includes('/projects');
       if (isProjectsRoute) {
-        if (prevUrl !== '/') {
-          window.scrollTo(leftAmmount, 0);
-        } else {
-          scrollRight();
+        if (!isMobile) {
+          if (prevUrl !== '/') {
+            window.scrollTo(leftAmmount, 0);
+          } else {
+            scrollRight();
+          }
+          setIsScrolledX(true);
+          document.body.style.overflowY = 'scroll';
+        }  else {
+          scrollToProjects();
         }
-        setIsScrolledX(true);
-        document.body.style.overflowY = 'scroll';
       } else {
-        scrollLeft();
-        setIsScrolledX(false)
         if (!isMobile) { 
           document.body.style.overflowY = 'hidden';
+          scrollLeft();
+          setIsScrolledX(false);
+        } else {
+          scrollUp();
         }
-
       }
     };
 
@@ -104,6 +109,13 @@ const Home = () => {
     });
   };
 
+  const scrollToProjects = () => {
+    const projectsRow = document.getElementById('projectsRow');
+    if (projectsRow) {
+      projectsRow.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <MainFont>
       <Navbar isMobile={isMobile} />
@@ -120,9 +132,16 @@ const Home = () => {
                 <ContactForm />
                 <SocialIcons />
               </Row>
-              <Row>
+              <Row id="projectsRow">
                 <ProjectsPage />
               </Row>
+              <ArrowContainer>
+            <ArrowMobile
+              src={arrow}
+              onClick={() => isScrolledY ? scrollUp() : scrollToProjects()}              
+              isScrolledY={isScrolledY}
+            />
+          </ArrowContainer>
             </>
           </motion.div>
         </div>
@@ -208,6 +227,17 @@ const Arrow = styled.img`
       opacity: 75%;
   } 
   transform: ${props => props.isScrolledX === false ? `rotate(90deg)` : props.isScrolledX === true && props.isScrolledY > 0 ? `rotate(0deg)` : `rotate(-90deg)`};
+`;
+
+const ArrowMobile = styled.img`
+  cursor: pointer;
+  color: black;
+  width: 5rem;
+  text-decoration: none;
+  &:hover {
+      opacity: 75%;
+  } 
+  transform: ${props => props.isScrolledY === false ? `rotate(180deg)` : `rotate(0deg)`};
 `;
 
 const ArrowContainer = styled.div`
