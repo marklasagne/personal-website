@@ -6,7 +6,7 @@
 // About page
 
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate  } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AboutPageData } from '../assets/data/pages/about.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -20,7 +20,7 @@ import ContactForm from '../components/ContactForm.js';
 import ProjectsPage from '../components/ProjectsPage/ProjectsGrid.js';
 import Navbar from '../components/Navbar.js';
 // assets
-import SocialIcons from '../components/SocialIcons';  
+import SocialIcons from '../components/SocialIcons';
 import arrow from '../assets/icons/arrow.svg';
 
 const Home = () => {
@@ -45,9 +45,9 @@ const Home = () => {
         document.body.style.overflowY = 'scroll';
       }
     };
-  
+
     const handleScrollY = () => {
-      window.scrollY > 0 ? setIsScrolledY(true) : setIsScrolledY(false) 
+      window.scrollY > 0 ? setIsScrolledY(true) : setIsScrolledY(false)
     };
 
     const handleRoute = () => {
@@ -61,11 +61,11 @@ const Home = () => {
           }
           setIsScrolledX(true);
           document.body.style.overflowY = 'scroll';
-        }  else {
+        } else {
           scrollToProjects();
         }
       } else {
-        if (!isMobile) { 
+        if (!isMobile) {
           document.body.style.overflowY = 'hidden';
           scrollLeft();
           setIsScrolledX(false);
@@ -120,9 +120,13 @@ const Home = () => {
     <MainFont>
       <Navbar isMobile={isMobile} />
       {isMobile ? (
-        <div id="container">
-          <motion.div key="about">
-            <>
+        <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            key="about">
+            <div id="container">
               <Row style={{ marginTop: '10rem' }}>
                 <h1>Howdy! I'm Mark</h1>
                 <h1 style={{ fontSize: 12 }}>[ software / art / fabrication / anxiety ]</h1>
@@ -136,20 +140,33 @@ const Home = () => {
                 <ProjectsPage />
               </Row>
               <ArrowContainer>
-            <ArrowMobile
-              src={arrow}
-              onClick={() => isScrolledY ? scrollUp() : scrollToProjects()}              
-              isScrolledY={isScrolledY}
-            />
-          </ArrowContainer>
-            </>
+                <ArrowMobile
+                  src={arrow}
+                  onClick={() => {
+                    if (!isScrolledY) {
+                      navigate('/projects', { state: { prevUrl: location.pathname } })
+                      scrollToProjects();
+                    } else {
+                      navigate('/', { state: { prevUrl: location.pathname } })
+                      scrollUp();
+                    }
+                  }}
+                  isScrolledY={isScrolledY}
+                />
+              </ArrowContainer>
+            </div>
           </motion.div>
-        </div>
+        </>
       ) : (
         <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            key="about">
           <ReactScrollWheelHandler
             upHandler={() => {
-              if (!isScrolledY) {navigate('/', { state: { prevUrl: location.pathname } })}
+              if (!isScrolledY) { navigate('/', { state: { prevUrl: location.pathname } }) }
             }}
             downHandler={() => {
               navigate('/projects', { state: { prevUrl: location.pathname } });
@@ -189,6 +206,7 @@ const Home = () => {
               isScrolledY={isScrolledY}
             />
           </ArrowContainer>
+          </motion.div>
         </>
       )}
     </MainFont>

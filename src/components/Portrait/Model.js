@@ -17,6 +17,7 @@ import ringShader from './shaders/ringShader';
 
 const Model = ({ keyLightData, ...props }) => {
   const [scrollY, setScrollY] = useState(0);
+  const [changeVal, setchangeVal] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const { viewport } = useThree();
   const { nodes, materials } = useGLTF('/portrait.glb');
@@ -29,7 +30,6 @@ const Model = ({ keyLightData, ...props }) => {
   let y_middle = viewport.height / 2;
 
   useGLTF.preload('/portrait.glb');
-
   // listen and capture scroll y value and the mouse movement
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -51,8 +51,24 @@ const Model = ({ keyLightData, ...props }) => {
   useFrame((state) => {
     // update uniforms
     const { clock } = state;
+    const currentScrollY = scrollY;
+
     head.current.material.uniforms.uTime.value = clock.getElapsedTime();
-    head.current.material.uniforms.scrollY.value = scrollY;
+    if (head.current.material.uniforms.scrollY.value !== currentScrollY) {
+      head.current.material.uniforms.scrollY.value = currentScrollY;
+      const targetValue = 0.7;
+      const easingFactor = 0.05;
+      const delta = targetValue - changeVal;
+      setchangeVal(changeVal + delta * easingFactor);
+    } else {
+      if (changeVal > 0.0) {
+          const oscillation = Math.sin((changeVal - 0.2) * 5);
+          let tempVal = changeVal - 0.01 * oscillation;
+          setchangeVal(tempVal);
+  
+          head.current.material.uniforms.changeVal.value = tempVal;
+      }
+    }
 
     // normalize mouse position
     const normalizedMouseX = (mousePosition.x / window.outerWidth) * 2 - 1;
@@ -80,7 +96,6 @@ const Model = ({ keyLightData, ...props }) => {
   });
 
   const uniforms = useMemo(() => {
-  
     if (keyLightData.current) {
       return {
         headTexture: {
@@ -96,13 +111,17 @@ const Model = ({ keyLightData, ...props }) => {
           value: keyLightData.current.position,
         },
         scrollY: {
-          value: 0.0,
+          value: 0.0
+        },
+        changeVal: {
+          value: 0.0
         },
         uTime: {
-          value: 0.0,
+          value: 0.0
         },
       };
     }
+
   }, [keyLightData.current]);
 
 
@@ -132,7 +151,6 @@ const Model = ({ keyLightData, ...props }) => {
               fragmentShader={hairShader}
               vertexShader={meltingVertexShader}
               uniforms={uniforms}
-              
             />
           </mesh>
         </mesh>
