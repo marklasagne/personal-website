@@ -23,7 +23,7 @@ import BoulderParks_11 from '../../images/BoulderParks/map_screenshot.png';
 export const BoulderParksData = [
     {
       id: 0,
-      description: "Interactive map created aimed to raise awareness about the significance of green spaces and the availability of such spaces in Boulder. It is constructed using scrap wood and can be accessed through any device equipped with location services." ,
+      description: "Interactive map created with the aim to raise awareness about the significance of green spaces and the availability of such spaces in Boulder. It is constructed using scrap wood and can be accessed through any device equipped with location services." ,
       text1: "Boulder is home to a wealth of parks and open spaces, offering numerous benefits to its residents. To highlight the importance of green space and promote accessibility, I created an interactive map using scrap wood. The map is designed to work seamlessly with any device with location services, allowing visitors to explore the city's parks and open spaces in an engaging and educational way.",
       image: BoulderParks_11,
       stack: "Firebase, Python, Arduino, React",

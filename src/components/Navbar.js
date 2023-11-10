@@ -12,7 +12,7 @@ const Navbar = ({ isMobile }) => {
     <>
     <MainFont>
       <Nav isMobile={isMobile}>
-        <NavLink onClick={() => navigate('/', { state: { prevUrl: location.pathname } })} className={!location.pathname.includes('/projects') ? 'active' : ''} to="/">
+        <NavLink onClick={() => navigate('/')} className={!location.pathname.includes('/projects') ? 'active' : ''} to="/">
           About
         </NavLink>
         <NavLink onClick={() => navigate('/projects', { state: { prevUrl: location.pathname } })} className={location.pathname.includes('/projects') ? 'active' : ''} to="/projects">
