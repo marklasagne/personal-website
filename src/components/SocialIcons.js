@@ -28,14 +28,13 @@ const SocialIcons = () => {
 const SocialsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 2rem 1rem 1rem 0;
 `;
 
 const SocialIcon = styled.img`
   color: #000000;
   width: 3.5rem;
   text-decoration: none;
-  margin: 1rem;
+  margin: 0.5rem;
   &:hover {
     opacity: 75%;
   }

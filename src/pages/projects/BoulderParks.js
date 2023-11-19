@@ -64,8 +64,10 @@ const BoulderParks = () => {
               </div>
             </Row>
             <Row data-aos='fade-up'>
+            <ul>
               <p>Key Technology: {BoulderParksData[0].stack}</p>
               <p>Hardware: {BoulderParksData[0].hardware}</p>
+              </ul>
             </Row>
             <Row data-aos='fade-up'>
               <VideoPlayer controls={true} url='https://youtu.be/6n3zG3Fx4qk' />

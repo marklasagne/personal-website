@@ -45,8 +45,10 @@ const FuckYou = () => {
               <p>{FuckYouData[0].description}</p>
             </Row>
             <Row data-aos='fade-up'>
+              <ul>
               <p>Key Technologies: {FuckYouData[0].stack}</p>
               <p>Hardware: {FuckYouData[0].hardware}</p>
+              </ul>
             </Row>
             <Row data-aos='fade-up'>
               <ReactPlayer url='https://www.youtube.com/watch?v=T_4N4yJ2iH0' />

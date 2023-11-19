@@ -20,7 +20,6 @@ import ContactForm from '../components/ContactForm.js';
 import ProjectsPage from '../components/ProjectsPage/ProjectsGrid.js';
 import Navbar from '../components/Navbar.js';
 // assets
-import SocialIcons from '../components/SocialIcons';
 import arrow from '../assets/icons/arrow.svg';
 
 const Home = () => {
@@ -39,7 +38,7 @@ const Home = () => {
     Aos.init({ duration: 500 });
     const handleResize = () => {
       setLeftAmmount(window.innerWidth);
-      const isMobileNow = window.innerWidth < 1300 || window.innerHeight < 900;
+      const isMobileNow = window.innerWidth < 1300;
       setIsMobile(isMobileNow)
       if (isMobile) {
         document.body.style.overflowY = 'scroll';
@@ -134,7 +133,6 @@ const Home = () => {
                   {AboutPageData[0].main}
                 </p>
                 <ContactForm />
-                <SocialIcons />
               </Row>
               <Row id="projectsRow">
                 <ProjectsPage />
@@ -180,7 +178,6 @@ const Home = () => {
                   {AboutPageData[0].main}
                 </p>
                 <ContactForm />
-                <SocialIcons />
               </AboutColumn>
               <PortraitColumn>
                 <Portrait />
@@ -223,7 +220,7 @@ const HorizontalScreen = styled.div`
 
 const AboutColumn = styled.div`
   flex: 1;
-  margin-top: 15rem;
+  margin-top: 8rem;
 `;
 
 const PortraitColumn = styled.div`
@@ -233,7 +230,7 @@ const PortraitColumn = styled.div`
 
 const ProjectColumn = styled.div`
   flex: 1;
-  margin-top: 15rem;
+  margin-top: 8rem;
 `
 
 const Arrow = styled.img`

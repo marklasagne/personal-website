@@ -39,12 +39,15 @@ const Jobzen = () => {
           </Row>
           <Row data-aos='fade-up'>
             <p>{JobzenData[0].description}</p>
-            <br />
-            <br />
+
+          </Row>
+          <Row data-aos='fade-up'>
             <p>
+              <ul>
               Role(s): {JobzenData[0].roles}
               <br />
               Tools: {JobzenData[0].tools}
+              </ul>
             </p>
           </Row>
           <Row data-aos='fade-up'>

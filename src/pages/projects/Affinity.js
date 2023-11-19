@@ -53,10 +53,12 @@ const AmbioSense = () => {
               <p>{AffinityData[0].description}</p>
             </Row>
             <Row data-aos='fade-up'>
+              <ul>
               <p><u>Team:</u> {AffinityData[0].team}</p>
               <p><u>My Role(s):</u> {AffinityData[0].roles}</p>
               <p><u>Stack:</u> {AffinityData[0].stack}</p>
               <p><u>Hardware:</u> {AffinityData[0].hardware}</p>
+              </ul>
             </Row>
             <Row data-aos='fade-up'>
               <VideoPlayer controls={true} url='https://youtu.be/fXRbemHgRYE' />

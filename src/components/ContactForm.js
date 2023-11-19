@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import styled from 'styled-components';
+import SocialIcons from '../components/SocialIcons.js';
 
 const ContactForm = () => {
   const form = useRef();
@@ -9,7 +10,7 @@ const ContactForm = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_xtktt7b','template_jwu0pys', form.current, 'paGw-b_4m1vD028Ql')
+    emailjs.sendForm('service_xtktt7b', 'template_jwu0pys', form.current, 'paGw-b_4m1vD028Ql')
       .then((result) => {
         console.log(result.text);
         setButtonText('Message Sent \u2714');
@@ -17,7 +18,7 @@ const ContactForm = () => {
       }, (error) => {
         console.log(error.text);
         setButtonText('Try again \u2718');
-        setButtonStyle({ color: 'red' }); 
+        setButtonStyle({ color: 'red' });
       });
   };
 
@@ -41,10 +42,11 @@ const ContactForm = () => {
           name="message"
           placeholder="Message"
         ></StyledTextarea>
-        <StyledButton style={buttonStyle} type="submit">{buttonText}</StyledButton>
+        <InputContainer>
+          <StyledButton style={buttonStyle} type="submit">{buttonText}</StyledButton>
+          <SocialIcons />
+        </InputContainer>
       </FormContainer>
-
-
     </>
   );
 };
@@ -99,10 +101,10 @@ const StyledTextarea = styled.textarea`
 
 const StyledButton = styled.button`
   overflow-x: ${props => props.isScrolledX === false ? `rotate(90deg)` : `rotate(-90deg)`};
-  margin: 1rem 1rem 1rem 1rem;
   color: #808080;
   background: none;
   border: 2px solid #808080;
+  margin: 1rem 2rem 1rem 1rem;
   font-size: 0.8rem;
   width: 25%;
   padding: 15px;
@@ -115,6 +117,11 @@ const StyledButton = styled.button`
     background: #000000;
     border: 2px solid #000000;
   }
+`;
+
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 
